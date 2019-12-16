@@ -16,7 +16,7 @@ cd('models')
 th_sweep=-1:-1:-100; %% sweeping  thresholds
 numSims = length(th_sweep);
 
-mdl='hard_threshold_fixed';
+mdl='hard_threshold_fixed_multichannel';
 load_system(mdl);
 BlockPaths = find_system(mdl,'Type','Block')
 BlockDialogParameters = get_param([mdl '/Compare_to_threshold'],'DialogParameters')
@@ -73,14 +73,16 @@ ts_ground_truth=cell(10,1);
 for curr_cell=1:10
     ts_ground_truth{curr_cell,1}=find(spike_train(curr_cell+1,:));
 end
-n_matched_spikes=zeros(numSims,n_el);
-for curr_el=1:n_el
-    for curr_sim = 1:numSims
-        ts_curr_sim=match_timestamps_per_sim{curr_sim,curr_el};
-        n_spikes_curr_sim=length(ts_curr_sim);
-        for curr_spike=1:n_spikes_curr_sim
-            if min(abs(ts_curr_sim(curr_spike)-ts_ground_truth{curr_cell,1})) <= tol
-                n_matched_spikes(curr_sim,curr_el)=n_matched_spikes(curr_sim,curr_el)+1;
+n_matched_spikes=zeros(numSims,n_el,10);
+for curr_cell=1:10
+    for curr_el=1:n_el
+        for curr_sim = 1:numSims
+            ts_curr_sim=match_timestamps_per_sim{curr_sim,curr_el};
+            n_spikes_curr_sim=length(ts_curr_sim);
+            for curr_spike=1:n_spikes_curr_sim
+                if min(abs(ts_curr_sim(curr_spike)-ts_ground_truth{curr_cell,1})) <= tol
+                    n_matched_spikes(curr_sim,curr_el,curr_cell)=n_matched_spikes(curr_sim,curr_el,curr_cell)+1;
+                end
             end
         end
     end
@@ -88,57 +90,68 @@ end
 %% plot matched spikes (true positive) problem is that there's no 
 %% refractory and thus it's possible for 2 edges to be so close they are counted twice as matched spikes
 figure
-plot(th_sweep,n_matched_spikes)
-hold on
-plot([th_sweep(1) th_sweep(end)],[n_ground_truth n_ground_truth],'-.')
-xlabel('threshold')
-ylabel('# of matched spikes')
-title('matched spikes per threshold')
-legend({'simulations','ground truth'})
+for curr_cell=1:10
+    subplot(2,5,curr_cell)
+    plot(th_sweep,n_matched_spikes(:,:,curr_cell))
+    hold on
+    plot([th_sweep(1) th_sweep(end)],[n_ground_truth(curr_cell) n_ground_truth(curr_cell)],'-.')
+    xlabel('threshold')
+    ylabel('# of matched spikes')
+    title(['matched spikes, curr cell: ' num2str(curr_cell)])
+end
 
 %% get spikes above refractory period (true positives)
 ts_ref=timeseries;
-n_above_refractory=zeros(numSims,1);
+n_above_refractory=zeros(numSims,n_el);
 for curr_sim = 1:numSims
         simOut = out(curr_sim);
         ts_ref(curr_sim,:) = simOut.logsout.get('spike_above_refractory').Values;
-        n_above_refractory(curr_sim,1)=sum(ts_ref(curr_sim,:).Data);
+        n_above_refractory(curr_sim,:)=sum(ts_ref(curr_sim,:).Data);
 end
-match_ref_timestamps_per_sim=cell(numSims,1);
-for curr_sim = 1:numSims
-        match_ref_timestamps_per_sim{curr_sim,1}=find(ts_ref(curr_sim).Data);
+match_ref_timestamps_per_sim=cell(numSims,n_el);
+for curr_el=1:n_el
+    for curr_sim = 1:numSims
+        match_ref_timestamps_per_sim{curr_sim,n_el}=find(ts_ref(curr_sim).Data(:,curr_el));
+    end
 end
-ts_ground_truth=find(spike_train(2,:));
-n_false_positive=zeros(numSims,1);
-n_matched_ref_spikes=zeros(numSims,1);
-for curr_sim = 1:numSims
-    ts_curr_sim=match_ref_timestamps_per_sim{curr_sim,1};
-    n_spikes_curr_sim=length(ts_curr_sim);
-    for curr_spike=1:n_spikes_curr_sim
-        if min(abs(ts_curr_sim(curr_spike)-ts_ground_truth)) <= tol
-            n_matched_ref_spikes(curr_sim,1)=n_matched_ref_spikes(curr_sim,1)+1;
-        else
-            n_false_positive(curr_sim,1)=n_false_positive(curr_sim,1)+1;
+
+n_false_positive=zeros(numSims,n_el,10);
+n_matched_ref_spikes=zeros(numSims,n_el,10);
+for curr_cell=1:10
+    for curr_el=1:n_el
+        for curr_sim = 1:numSims
+            ts_curr_sim=match_ref_timestamps_per_sim{curr_sim,curr_el};
+            n_spikes_curr_sim=length(ts_curr_sim);
+            for curr_spike=1:n_spikes_curr_sim
+                if min(abs(ts_curr_sim(curr_spike)-ts_ground_truth{curr_cell,1})) <= tol
+                    n_matched_ref_spikes(curr_sim,curr_el,curr_cell)=n_matched_ref_spikes(curr_sim,curr_el,curr_cell)+1;
+                else
+                    n_false_positive(curr_sim,curr_el,curr_cell)=n_false_positive(curr_sim,curr_el,curr_cell)+1;
+                end
+            end
         end
     end
 end
-figure
-subplot(1,2,1)
-plot(th_sweep,n_matched_ref_spikes)
-hold on
-plot([th_sweep(1) th_sweep(end)],[n_ground_truth n_ground_truth],'-.')
-xlabel('threshold')
-ylabel('# True positives')
-title('matched spikes (above refractory period) per threshold')
-legend({'simulations','ground truth'},'Location','Best')
-ylim([-1 n_ground_truth+5])
-subplot(1,2,2)
-plot(th_sweep,n_false_positive)
-title('False positive')
-xlabel('threshold')
-ylabel('# False positives')
-curr_lim=ylim;
-ylim([-10 curr_lim(2)])
+%% plot
+for curr_cell=1:10
+    figure
+    subplot(1,2,1)
+    plot(th_sweep,n_matched_ref_spikes(:,:,curr_cell))
+    hold on
+    plot([th_sweep(1) th_sweep(end)],[n_ground_truth(curr_cell) n_ground_truth(curr_cell)],'-.')
+    xlabel('threshold')
+    ylabel('# True positives')
+    title('matched spikes (above refractory period) per threshold')
+    legend({'simulations','ground truth'},'Location','Best')
+    
+    subplot(1,2,2)
+    plot(th_sweep,n_false_positive(:,:,curr_cell))
+    title('False positive')
+    xlabel('threshold')
+    ylabel('# False positives')
+    curr_lim=ylim;
+    ylim([-10 curr_lim(2)])
+end
 
 
 
