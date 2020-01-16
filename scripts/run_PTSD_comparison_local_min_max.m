@@ -14,7 +14,7 @@ cd('models')
 
 %%
 data_in=rec_single_ch(2,:);
-threshold=50;
+threshold=100;
 fs=32e3;
 w_pre=1;
 w_post=1;
@@ -48,13 +48,13 @@ end
 
 %%
 [spkValues, spkTimeStamps] = SpikeDetection_PTSD_core(double(data_in)', threshold, peakDuration_samples, refrTime_samples, alignFlag);
-spikesTime  = 1 + spkTimeStamps( spkTimeStamps > 0 ); % +1 added to accomodate for zero- (c) or one-based (matlab) array indexing
+spikesTime_cpp  = 1 + spkTimeStamps( spkTimeStamps > 0 ); % +1 added to accomodate for zero- (c) or one-based (matlab) array indexing
 dthresh= []; %DiffThr( spkTimeStamps > 0 );
 spikesValue = spkValues( spkTimeStamps > 0 );
 %% this is to exclude spikes too close to the start and end
-% spikesValue(spikesTime<=w_pre+1 | spikesTime>=length(data_in)-w_post-2)=[];
-% spikesTime(spikesTime<=w_pre+1 | spikesTime>=length(data_in)-w_post-2)=[];
-nspk = length(spikesTime);
+spikesValue(spikesTime_cpp<=w_pre+1 | spikesTime_cpp>=length(data_in)-w_post-2)=[];
+spikesTime_cpp(spikesTime_cpp<=w_pre+1 | spikesTime_cpp>=length(data_in)-w_post-2)=[];
+nspk = length(spikesTime_cpp);
 
 %% plot results
 % figure
@@ -68,7 +68,8 @@ PLP_sweep=peakDuration_samples; %% sweeping  thresholds
 numSims = length(PLP_sweep);
 
 % mdl='PTSD_single_channel_buffer_2';
-mdl='PTSD_single_channel_local_min_max_2';
+% mdl='PTSD_single_channel_local_min_max_2';
+mdl='PTSD_single_channel_local_min_max_5';
 load_system(mdl);
 BlockPaths = find_system(mdl,'Type','Block')
 % BlockDialogParameters = get_param([mdl '/within_PLP'],'DialogParameters')
@@ -77,7 +78,9 @@ for curr_sim = numSims:-1:1
     in(curr_sim) = Simulink.SimulationInput(mdl);
 %     in(curr_sim) = setBlockParameter(in(curr_sim), [mdl '/within_PLP'], 'const', num2str(PLP_sweep(curr_sim)));
     in(curr_sim) = setBlockParameter(in(curr_sim), [mdl '/differential_threshold'], 'const', num2str(threshold));
-    in(curr_sim) = setBlockParameter(in(curr_sim), [mdl '/check_refractory/Enabling_condition'], 'const', num2str(RP_ms/1e3));
+    in(curr_sim) = setBlockParameter(in(curr_sim), [mdl '/check_refractory_1/Enabling_condition'], 'const', num2str((RP_ms)/1e3));
+    in(curr_sim) = setBlockParameter(in(curr_sim), [mdl '/check_refractory_3/Enabling_condition'], 'const', num2str((RP_ms)/1e3));
+    %% NOTE i PUT -1MS IN THE REF BECAUSE IN THE ACTUAL TIME i SEE THE NEXT plp + OVERLAP (I SHOULD SUBTRACT 1+5 SAMPLES)
 end
 % out = parsim(in, 'ShowProgress', 'on');
 out = sim(in, 'ShowProgress', 'on');
@@ -96,12 +99,34 @@ for curr_sim = 1:numSims
         peak_to_peak_above_th(curr_sim,:) = simOut.logsout.get('peak_to_peak_above_th').Values;
         spike_above_refractory(curr_sim,:) = simOut.logsout.get('spike_above_refractory').Values;
         aligned_min(curr_sim,:) = simOut.logsout.get('aligned_min').Values;
-        sum_spikes_above_ref(curr_sim,1)=sum(spike_above_refractory(curr_sim,:).Data);
-        ts_above_ref{curr_sim,1}=find(spike_above_refractory(curr_sim,:).Data);
+        ts_above_ref{curr_sim,1}=find(squeeze(spike_above_refractory(curr_sim,:).Data));
 end
+ts_above_ref{1,1}(ts_above_ref{1,1}<=w_pre+1 | ts_above_ref{1,1}>=length(data_in)-w_post-2)=[];
 
+%% let's see to have edge detected
+values_align=squeeze(aligned_min.Data(1,1,ts_above_ref{1,1}));
+
+%% spikes above ref
+figure
+ts_above_ref_aligned=ts_above_ref{1,1}-39+values_align;
+plot(ts_above_ref_aligned./fs,ones(length(ts_above_ref{1,1})),'bo')
+hold on
+plot(spikesTime_cpp./fs,ones(nspk,1),'r.')
+title(['comparison cpp ' num2str(nspk) ' vs Simulink ' num2str(length(ts_above_ref{curr_sim,1}))])
+
+%% check distance
+figure
+plot(diff(ts_above_ref_aligned),'b')
+hold on
+plot(diff(spikesTime_cpp),'r')
+plot([0 length(ts_above_ref{1,1})],[64 64])
+ylabel('ISI [samples]')
+%% figure plot differences cpp - simulink
+figure
+plot(spikesTime_cpp./fs,spikesTime_cpp-ts_above_ref_aligned)
+ylabel('samples')
+title('cpp - simulink')
 %% for each spike
-
 for curr_spike=1:length(ts_above_ref{curr_sim,1})
     locations(curr_spike,1)=ts_above_ref{curr_sim,1}(curr_spike,1)-39+squeeze(aligned_min(curr_sim,:).Data(:,:,ts_above_ref{curr_sim,1}(curr_spike,1)));
 end
@@ -109,25 +134,26 @@ end
 %% plot comparison
 for curr_sim = 1:numSims
     figure
-    plot(ts_above_ref{curr_sim,1}./fs,ones(sum_spikes_above_ref(curr_sim,1),1),'bo')
+    plot(ts_above_ref{curr_sim,1}./fs,ones(length(ts_above_ref{curr_sim,1}),1),'bo')
     hold on
-    plot(spikesTime./fs,ones(nspk,1),'r.')
+    plot(spikesTime_cpp./fs,ones(nspk,1),'r.')
     title(['comparison cpp ' num2str(nspk) ' vs Simulink ' num2str(length(ts_above_ref{curr_sim,1}))])
     legend({'Simulink','cpp'})
 end
+
 %%
 figure
 if nspk<length(ts_above_ref{curr_sim,1})
-    plot(ts_above_ref{curr_sim,1}(1:nspk)/fs,ts_above_ref{curr_sim,1}(1:nspk)-spikesTime)
+    plot(ts_above_ref{curr_sim,1}(1:nspk)/fs,ts_above_ref{curr_sim,1}(1:nspk)-spikesTime_cpp)
 else
-    plot(ts_above_ref{curr_sim,1}/fs,ts_above_ref{curr_sim,1}-spikesTime(1:sum_spikes_above_ref(curr_sim,1)))
+    plot(ts_above_ref{curr_sim,1}/fs,ts_above_ref{curr_sim,1}-spikesTime_cpp(1:sum_spikes_above_ref(curr_sim,1)))
 end
 ylabel('difference in samples')
 title('Simulink timestamps - cpp timestamps')
 
 %% shifted
 figure
-plot(ts_above_ref{curr_sim,1}/fs,spikesTime-locations)
+plot(ts_above_ref{curr_sim,1}/fs,spikesTime_cpp-locations)
 %% getting the number of edges detected below threshold 
 n_ground_truth=sum(spike_train(2,:));
 ts=timeseries;
@@ -233,7 +259,7 @@ nspk_matlab = length(spikesTime_matlab);
 figure
 plot(spikesTime_matlab,spikesValue_matlab,'r.')
 hold on
-plot(spikesTime,spikesValue,'bO')
+plot(spikesTime_cpp,spikesValue,'bO')
 title('comparing cpp and matlab')
 legend({'from matlab','from cpp'})
 disp(['sum(difference (matlab - cpp)) = ' num2str(sum(spikesValue_matlab-spikesValue))])
