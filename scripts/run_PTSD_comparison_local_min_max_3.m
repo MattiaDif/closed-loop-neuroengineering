@@ -14,7 +14,7 @@ cd('models')
 
 %%
 data_in=rec_single_ch(2,:);
-threshold=20;
+threshold=40;
 fs=32e3;
 w_pre=2;
 w_post=2;
@@ -133,22 +133,22 @@ ylabel('samples')
 title('difference in samples cpp - simulink')
 xlabel('time [s]')
 
-%%
-time=simOut.logsout.get('time').Values;
-great_th=simOut.logsout.get('great_eq').Values;
-comparison_ms=simOut.logsout.get('comparison_ms').Values;
-
-figure
-h(1)=subplot(3,1,1);
-plot(time,'.')
-hold on
-plot(spike_above_refractory(1,:),'.')
-
-h(2)=subplot(3,1,2);
-plot(great_th)
-hold on
-plot(time.Time,time.Data>=2*1e-3)
-
-h(3)=subplot(3,1,3);
-plot(comparison_ms)
-linkaxes(h,'x')
+%% this was to check the behavior
+% time=simOut.logsout.get('time').Values;
+% great_th=simOut.logsout.get('great_eq').Values;
+% comparison_ms=simOut.logsout.get('comparison_ms').Values;
+% 
+% figure
+% h(1)=subplot(3,1,1);
+% plot(time,'.')
+% hold on
+% plot(spike_above_refractory(1,:),'.')
+% 
+% h(2)=subplot(3,1,2);
+% plot(great_th)
+% hold on
+% plot(time.Time,time.Data>=2*1e-3)
+% 
+% h(3)=subplot(3,1,3);
+% plot(comparison_ms)
+% linkaxes(h,'x')
