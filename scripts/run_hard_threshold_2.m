@@ -56,7 +56,7 @@ above_th_ref_d=above_th_ref(1).Data;
 %% just to confirm that simulink is doing it's job correctly
 n_spk_simulink=sum(above);
 ts_simulink=find(above);
-[pk,loc]=findpeaks(ts_ref_d,'MinPeakHeight',0,'MinPeakDistance',32); %input is spike above refractory
+[pk,loc]=findpeaks(double(ts_ref_d),'MinPeakHeight',0,'MinPeakDistance',32); %input is spike above refractory
 [pk_2,loc_2]=findpeaks(double(above_th_ref_d),'MinPeakHeight',0,'MinPeakDistance',32); %input is above threshold from simulink
 above_th_matlab=rec_single_ch(2,:)<=-1;
 [pk_3,loc_3]=findpeaks(double(above_th_matlab'),'MinPeakHeight',0,'MinPeakDistance',32); %input is above threshold from matlab
