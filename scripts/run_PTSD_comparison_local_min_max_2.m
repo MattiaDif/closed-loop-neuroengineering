@@ -14,7 +14,7 @@ cd('models')
 
 %%
 data_in=rec_single_ch(2,:);
-threshold=60;
+threshold=20;
 fs=32e3;
 w_pre=2;
 w_post=2;

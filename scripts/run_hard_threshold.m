@@ -132,7 +132,16 @@ ylabel('# False positives')
 curr_lim=ylim;
 ylim([-10 curr_lim(2)])
 
+%% compare spike above ref with findpeaks
+load('data\rec_single_ch.mat')
+ts_ref_d=ts_ref(1).Data;
+ts_ref_t=ts_ref.Time;
+above=ts_ref_d>0;
 
+figure
+plot(ts_ref_t(above),ones(sum(above)),'o')
+hold on
+plot(rec_single_ch(1,:),rec_single_ch(2,:)<=-1)
 
 
 
