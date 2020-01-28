@@ -113,3 +113,12 @@ plot((loc_th_simulink-2)-loc_th_findpeaks')
 % % % Start with the larger peaks to make sure we don't accidentally keep a
 % % % small peak and remove a large peak in its neighborhood. 
 % % There’s a sorting of peakValues. This can’t be reproduced. That’s why is different!
+
+%% exactly the same if no min peakDistance!
+[pk_th_no_dist,loc_th_findpeaks_no_dist]=findpeaks(double(-rec_single_ch(2,:)),'MinPeakHeight',-th_sweep); 
+loc_th_findpeaks_no_dist_simulink=find(above_th_and_LMM.Data>0)';
+figure
+plot(loc_th_findpeaks_no_dist_simulink-loc_th_findpeaks_no_dist)
+
+
+
