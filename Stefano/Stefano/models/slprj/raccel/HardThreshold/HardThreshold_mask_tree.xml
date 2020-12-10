@@ -1,0 +1,435 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MF0 version="1.1" packageUris="http://schema.mathworks.com/mf0/slsa_mm/R2020a">
+  <slsa.mm.MaskTree type="slsa.mm.MaskTree" uuid="47b4b63d-696f-4f90-85e6-464f911561cd">
+    <maskedBlocks type="slsa.mm.MaskedBlock" uuid="2750307b-2c54-4bb1-97f1-552fdbd102e5">
+      <blockPath>HardThreshold/Highpass Filter2</blockPath>
+      <id>HardThreshold:107</id>
+      <masks type="slsa.mm.Mask" uuid="2baa8ae6-eabb-49af-8503-a162f59f4e16">
+        <dialogParameters type="slsa.mm.DialogParameterInfo" uuid="e1747d80-f03a-4abd-805b-fb86fd87d663">
+          <expression>2</expression>
+          <name>FilterType</name>
+        </dialogParameters>
+        <dialogParameters type="slsa.mm.DialogParameterInfo" uuid="4f01eed8-ed6b-4657-99d0-226fb2c43350">
+          <expression>0</expression>
+          <name>DesignForMinimumOrder</name>
+        </dialogParameters>
+        <dialogParameters type="slsa.mm.DialogParameterInfo" uuid="337f06b8-3eaa-4688-b060-5b99284ccac4">
+          <expression>3</expression>
+          <name>FilterOrder</name>
+        </dialogParameters>
+        <dialogParameters type="slsa.mm.DialogParameterInfo" uuid="1b9f0c27-8093-41a6-8e61-af11394524ae">
+          <expression>300</expression>
+          <name>PassbandFrequency</name>
+        </dialogParameters>
+        <dialogParameters type="slsa.mm.DialogParameterInfo" uuid="7a0e610a-def8-48e7-bafd-321c3ab0ec48">
+          <expression>80</expression>
+          <name>StopbandAttenuation</name>
+        </dialogParameters>
+        <dialogParameters type="slsa.mm.DialogParameterInfo" uuid="986e9c02-2d41-40e2-b096-c47f7454ca31">
+          <expression>0.1</expression>
+          <name>PassbandRipple</name>
+        </dialogParameters>
+        <dialogParameters type="slsa.mm.DialogParameterInfo" uuid="9f008054-4015-44b7-b734-b0a3acd16845">
+          <expression>0</expression>
+          <name>InheritSampleRate</name>
+        </dialogParameters>
+        <dialogParameters type="slsa.mm.DialogParameterInfo" uuid="9074236a-f4e3-40df-a709-9c2aff9dbf83">
+          <expression>fs</expression>
+          <name>SampleRate</name>
+        </dialogParameters>
+        <dialogParameters type="slsa.mm.DialogParameterInfo" uuid="4a231e5c-1748-4188-812c-37e62a5b09b2">
+          <expression>2</expression>
+          <name>SimulateUsing</name>
+        </dialogParameters>
+        <dialogParameters type="slsa.mm.DialogParameterInfo" uuid="9c456066-731c-49f4-97fe-462e9a19383e">
+          <expression>3</expression>
+          <name>roundingMode</name>
+        </dialogParameters>
+        <dialogParameters type="slsa.mm.DialogParameterInfo" uuid="bf803a9a-cf0e-4603-bb00-4cba19b57c2a">
+          <expression>fixdt(1,16)</expression>
+          <name>coeffsDataTypeStr</name>
+        </dialogParameters>
+        <initializationCode>matlab.system.MLSysBlockIconAndPortLabelsInfo.updateMLSysBlockIconAndPortLabels(gcbh)</initializationCode>
+        <skipInitializationCode>true</skipInitializationCode>
+      </masks>
+      <parentId>root</parentId>
+    </maskedBlocks>
+    <maskedBlocks type="slsa.mm.MaskedBlock" uuid="f83536dd-360c-495b-91e6-87e97f2aa7c2">
+      <blockPath>HardThreshold/Edge Detector</blockPath>
+      <childrenIds>HardThreshold:109:2</childrenIds>
+      <childrenIds>HardThreshold:109:3</childrenIds>
+      <id>HardThreshold:109</id>
+      <masks type="slsa.mm.Mask" uuid="f6fdf9f2-9dbb-42d0-a732-16aab29bfac5">
+        <dialogParameters type="slsa.mm.DialogParameterInfo" uuid="81a565fd-71c8-478e-9c2d-c98e8115ac51">
+          <expression>1</expression>
+          <name>InputProcessing</name>
+          <refersToVariables>true</refersToVariables>
+        </dialogParameters>
+        <initializationCode>[x,y] = dspblkedetect2(&apos;icon&apos;);
+dspblkedetect2(&apos;init&apos;, gcbh, gcb);</initializationCode>
+        <skipInitializationCode>true</skipInitializationCode>
+      </masks>
+      <parentId>root</parentId>
+    </maskedBlocks>
+    <maskedBlocks type="slsa.mm.MaskedBlock" uuid="53213098-cbcd-4b12-a4fc-37b0a7dc4a73">
+      <blockPath>HardThreshold/Edge Detector/Check Signal Attributes</blockPath>
+      <id>HardThreshold:109:2</id>
+      <masks type="slsa.mm.Mask" uuid="fe0bb950-08f7-49b8-845e-3a00335522d9">
+        <dialogParameters type="slsa.mm.DialogParameterInfo" uuid="cf50f5e4-1b65-4110-8405-0be78d67c414">
+          <expression>2</expression>
+          <name>SigAttribCheckMethod</name>
+          <refersToVariables>true</refersToVariables>
+        </dialogParameters>
+        <dialogParameters type="slsa.mm.DialogParameterInfo" uuid="0082daaf-ff91-495c-a51f-cef8342b97d1">
+          <expression>1</expression>
+          <name>Complexity</name>
+          <refersToVariables>true</refersToVariables>
+        </dialogParameters>
+        <dialogParameters type="slsa.mm.DialogParameterInfo" uuid="56a9eff3-eb32-42eb-a5e2-9a8076ebdae8">
+          <expression>1</expression>
+          <name>DimsCheckMethod</name>
+          <refersToVariables>true</refersToVariables>
+        </dialogParameters>
+        <dialogParameters type="slsa.mm.DialogParameterInfo" uuid="b6ec7542-a9b9-4a54-be30-ac0924257e2c">
+          <expression>2</expression>
+          <name>DatatypeCheckMethod</name>
+          <refersToVariables>true</refersToVariables>
+        </dialogParameters>
+        <dialogParameters type="slsa.mm.DialogParameterInfo" uuid="341af7ec-1ab5-4ab6-bc86-28f64d43b2de">
+          <expression>2</expression>
+          <name>DatatypeGeneral</name>
+          <refersToVariables>true</refersToVariables>
+        </dialogParameters>
+        <dialogParameters type="slsa.mm.DialogParameterInfo" uuid="df9b722e-9dba-4d9e-a2b5-13ff42c048af">
+          <expression>1</expression>
+          <name>SampleMode</name>
+          <refersToVariables>true</refersToVariables>
+        </dialogParameters>
+        <skipInitializationCode>true</skipInitializationCode>
+      </masks>
+      <parentId>HardThreshold:109</parentId>
+    </maskedBlocks>
+    <maskedBlocks type="slsa.mm.MaskedBlock" uuid="37bf355b-26ea-40f3-b07b-6a8b8c3de424">
+      <blockPath>HardThreshold/Edge Detector/Check Signal Attributes1</blockPath>
+      <id>HardThreshold:109:3</id>
+      <masks type="slsa.mm.Mask" uuid="f58f6ae4-ba02-4db7-a941-d58eebc5af6c">
+        <dialogParameters type="slsa.mm.DialogParameterInfo" uuid="88f634fe-2d99-4c0b-867d-0613fa3c61c9">
+          <expression>2</expression>
+          <name>SigAttribCheckMethod</name>
+          <refersToVariables>true</refersToVariables>
+        </dialogParameters>
+        <dialogParameters type="slsa.mm.DialogParameterInfo" uuid="f56f9efa-b73c-4355-beee-39327ea8ac45">
+          <expression>1</expression>
+          <name>Complexity</name>
+          <refersToVariables>true</refersToVariables>
+        </dialogParameters>
+        <dialogParameters type="slsa.mm.DialogParameterInfo" uuid="408a4d4b-5041-4b22-be9b-370ebd478378">
+          <expression>1</expression>
+          <name>DimsCheckMethod</name>
+          <refersToVariables>true</refersToVariables>
+        </dialogParameters>
+        <dialogParameters type="slsa.mm.DialogParameterInfo" uuid="40034b3c-13ab-4854-9a8f-89b95d501887">
+          <expression>2</expression>
+          <name>DatatypeCheckMethod</name>
+          <refersToVariables>true</refersToVariables>
+        </dialogParameters>
+        <dialogParameters type="slsa.mm.DialogParameterInfo" uuid="aa65386d-f3bc-407b-bb95-8a5aca9d1218">
+          <expression>2</expression>
+          <name>DatatypeGeneral</name>
+          <refersToVariables>true</refersToVariables>
+        </dialogParameters>
+        <dialogParameters type="slsa.mm.DialogParameterInfo" uuid="3cd48c90-4aaa-4eca-90ff-801d671bf966">
+          <expression>1</expression>
+          <name>SampleMode</name>
+          <refersToVariables>true</refersToVariables>
+        </dialogParameters>
+        <skipInitializationCode>true</skipInitializationCode>
+      </masks>
+      <parentId>HardThreshold:109</parentId>
+    </maskedBlocks>
+    <maskedBlocks type="slsa.mm.MaskedBlock" uuid="08ff9de9-4e0f-4189-a8a4-428a0ba6a647">
+      <blockPath>HardThreshold/Refractory check/Refractory period</blockPath>
+      <id>HardThreshold:115</id>
+      <masks type="slsa.mm.Mask" uuid="f12f073f-fba9-4b48-b18b-47e1b7d43e28">
+        <dialogParameters type="slsa.mm.DialogParameterInfo" uuid="c60cd13b-703c-4c85-9610-25a5a6c9fac6">
+          <expression>5</expression>
+          <name>relop</name>
+        </dialogParameters>
+        <dialogParameters type="slsa.mm.DialogParameterInfo" uuid="f360ccee-cf8c-4494-8361-f4f233d24b53">
+          <expression>2.7e-4</expression>
+          <isTunable>true</isTunable>
+          <name>const</name>
+          <refersToVariables>true</refersToVariables>
+        </dialogParameters>
+        <dialogParameters type="slsa.mm.DialogParameterInfo" uuid="7a4c9be2-a881-4e8f-86ef-aad2b634b6f9">
+          <expression>2</expression>
+          <name>OutDataTypeStr</name>
+        </dialogParameters>
+        <dialogParameters type="slsa.mm.DialogParameterInfo" uuid="a0f5f597-8586-4dcf-8e2e-2e3664e953e8">
+          <expression>1</expression>
+          <name>ZeroCross</name>
+        </dialogParameters>
+        <initializationCode>blkName = gcb;
+
+if strcmp(get_param(gcbh,&apos;OutDataTypeStr&apos;),&apos;boolean&apos;)
+	setValue = &apos;boolean&apos;;
+else
+	setValue = &apos;fixdt(0, 8)&apos;;
+end
+
+set_param([blkName,&apos;/Compare&apos;],&apos;relop&apos;,relop, ...
+	&apos;OutDataTypeStr&apos;, setValue, &apos;ZeroCross&apos;, ZeroCross);
+
+str = [relop,&apos; C&apos;]; %default
+
+const_str = get_param(blkName, &apos;const&apos;);
+const_val = str2num(const_str);
+
+if isempty(const_val) %#ok&lt;ST2NM&gt;
+    %Expression/Variable
+    str = [relop, &apos; &apos;, strtrim(const_str)];
+else
+    if length(const_val) == 1 
+        if Simulink.data.isSupportedEnumClass(class(const_val))
+            % Special Handling for Enumerations
+            if Simulink.data.getEnumTypeInfo(class(const_val), &apos;AddClassNameToEnumNames&apos;)
+                str = [relop, &apos; &apos;, strtrim(const_str)];
+            else
+                str = [relop, &apos; &apos;, char(const_val)];
+            end
+        elseif(isfloat(const_val) || isinteger(const_val) || islogical(const_val)) 
+                str = [relop, &apos; &apos;, num2str(const_val)];
+        end
+    end
+end</initializationCode>
+        <skipInitializationCode>true</skipInitializationCode>
+      </masks>
+      <parentId>root</parentId>
+    </maskedBlocks>
+    <maskedBlocks type="slsa.mm.MaskedBlock" uuid="d0fb4631-d822-4ce8-bd50-1f4d4125670a">
+      <blockPath>HardThreshold/Refractory check/Time since last event/HDL Counter</blockPath>
+      <childrenIds>HardThreshold:119:20</childrenIds>
+      <id>HardThreshold:119</id>
+      <masks type="slsa.mm.Mask" uuid="d35b268d-706e-412f-af24-1bc2ccb3f62d">
+        <dialogParameters type="slsa.mm.DialogParameterInfo" uuid="ec225adb-5354-4beb-8f07-99d6c1e837df">
+          <expression>1</expression>
+          <isTunable>true</isTunable>
+          <name>CountType</name>
+          <refersToVariables>true</refersToVariables>
+        </dialogParameters>
+        <dialogParameters type="slsa.mm.DialogParameterInfo" uuid="41a124ce-fb61-4376-afb0-84d7a33e84e7">
+          <expression>1</expression>
+          <isTunable>true</isTunable>
+          <name>CountInit</name>
+          <refersToVariables>true</refersToVariables>
+        </dialogParameters>
+        <dialogParameters type="slsa.mm.DialogParameterInfo" uuid="8c8d2ae9-5b7c-4be4-8a13-bfe984be39e5">
+          <expression>1</expression>
+          <isTunable>true</isTunable>
+          <name>CountStep</name>
+          <refersToVariables>true</refersToVariables>
+        </dialogParameters>
+        <dialogParameters type="slsa.mm.DialogParameterInfo" uuid="bcd3fe8b-0cf5-456d-9900-f7b2bd5f64e6">
+          <expression>25</expression>
+          <isTunable>true</isTunable>
+          <name>CountMax</name>
+        </dialogParameters>
+        <dialogParameters type="slsa.mm.DialogParameterInfo" uuid="e8a6f627-4a7d-4aa7-9e08-723d9177b495">
+          <expression>1</expression>
+          <isTunable>true</isTunable>
+          <name>CountFromType</name>
+        </dialogParameters>
+        <dialogParameters type="slsa.mm.DialogParameterInfo" uuid="39d1cb6e-7dda-4353-a180-aba57ee93962">
+          <expression>1</expression>
+          <isTunable>true</isTunable>
+          <name>CountFrom</name>
+        </dialogParameters>
+        <dialogParameters type="slsa.mm.DialogParameterInfo" uuid="7f7ac544-71ef-44a9-b491-1c4a400ad811">
+          <expression>1</expression>
+          <isTunable>true</isTunable>
+          <name>CountResetPort</name>
+          <refersToVariables>true</refersToVariables>
+        </dialogParameters>
+        <dialogParameters type="slsa.mm.DialogParameterInfo" uuid="f70776ad-fd2f-4aad-98b9-732c4a411f43">
+          <expression>0</expression>
+          <isTunable>true</isTunable>
+          <name>CountLoadPort</name>
+          <refersToVariables>true</refersToVariables>
+        </dialogParameters>
+        <dialogParameters type="slsa.mm.DialogParameterInfo" uuid="14c6c0b1-30dd-4de6-93ca-72be84aefab2">
+          <expression>0</expression>
+          <isTunable>true</isTunable>
+          <name>CountEnbPort</name>
+          <refersToVariables>true</refersToVariables>
+        </dialogParameters>
+        <dialogParameters type="slsa.mm.DialogParameterInfo" uuid="fdc3bea5-18a5-4820-9caa-2f108a03150b">
+          <expression>0</expression>
+          <isTunable>true</isTunable>
+          <name>CountDirPort</name>
+          <refersToVariables>true</refersToVariables>
+        </dialogParameters>
+        <dialogParameters type="slsa.mm.DialogParameterInfo" uuid="e6a5275c-bd4b-4323-934d-3203552b3155">
+          <expression>1</expression>
+          <isTunable>true</isTunable>
+          <name>CountDataType</name>
+          <refersToVariables>true</refersToVariables>
+        </dialogParameters>
+        <dialogParameters type="slsa.mm.DialogParameterInfo" uuid="9241c7d4-26fd-4f21-8887-61f4c137e0c3">
+          <expression>32</expression>
+          <isTunable>true</isTunable>
+          <name>CountWordLen</name>
+          <refersToVariables>true</refersToVariables>
+        </dialogParameters>
+        <dialogParameters type="slsa.mm.DialogParameterInfo" uuid="dde441e1-43a5-465c-8b01-8b58ef4ecd42">
+          <expression>0</expression>
+          <isTunable>true</isTunable>
+          <name>CountFracLen</name>
+          <refersToVariables>true</refersToVariables>
+        </dialogParameters>
+        <dialogParameters type="slsa.mm.DialogParameterInfo" uuid="0b0401bb-c8a1-4435-8648-44edafb6b1a6">
+          <expression>1</expression>
+          <isTunable>true</isTunable>
+          <name>CountSampTime</name>
+        </dialogParameters>
+        <initializationCode>issigned = double(strcmp(get_param(gcb, &apos;CountDataType&apos;), &apos;Signed&apos;));
+[maxval_sc freerun samptime] = hdlblkmask_counter;</initializationCode>
+      </masks>
+      <parentId>root</parentId>
+    </maskedBlocks>
+    <maskedBlocks type="slsa.mm.MaskedBlock" uuid="fad71208-cff7-4ab7-ad64-d92a26c895bd">
+      <blockPath>HardThreshold/Refractory check/Time since last event/HDL Counter/Max_value</blockPath>
+      <id>HardThreshold:119:20</id>
+      <masks type="slsa.mm.Mask" uuid="a202740d-a11a-48a4-bd14-f66199dab55e">
+        <dialogParameters type="slsa.mm.DialogParameterInfo" uuid="99b72c93-83b7-46e1-893f-609cc2a0c4a5">
+          <expression>1</expression>
+          <name>relop</name>
+        </dialogParameters>
+        <dialogParameters type="slsa.mm.DialogParameterInfo" uuid="0a6ce4b6-a04b-4749-825d-19a6c75b35d4">
+          <expression>fi(maxval_sc, issigned, CountWordLen, 0)</expression>
+          <isTunable>true</isTunable>
+          <name>const</name>
+          <refersToVariables>true</refersToVariables>
+        </dialogParameters>
+        <dialogParameters type="slsa.mm.DialogParameterInfo" uuid="cd1ef2ec-9da7-4984-b46f-3b19fd07521d">
+          <expression>2</expression>
+          <name>OutDataTypeStr</name>
+        </dialogParameters>
+        <dialogParameters type="slsa.mm.DialogParameterInfo" uuid="5cc06e20-3af7-42ad-a5be-d28154797a12">
+          <expression>0</expression>
+          <name>ZeroCross</name>
+        </dialogParameters>
+        <initializationCode>blkName = gcb;
+
+if strcmp(get_param(gcbh,&apos;OutDataTypeStr&apos;),&apos;boolean&apos;)
+	setValue = &apos;boolean&apos;;
+else
+	setValue = &apos;fixdt(0, 8)&apos;;
+end
+
+set_param([blkName,&apos;/Compare&apos;],&apos;relop&apos;,relop, ...
+	&apos;OutDataTypeStr&apos;, setValue, &apos;ZeroCross&apos;, ZeroCross);
+
+str = [relop,&apos; C&apos;]; %default
+
+const_str = get_param(blkName, &apos;const&apos;);
+const_val = str2num(const_str);
+
+if isempty(const_val) %#ok&lt;ST2NM&gt;
+    %Expression/Variable
+    str = [relop, &apos; &apos;, strtrim(const_str)];
+else
+    if length(const_val) == 1 
+        if Simulink.data.isSupportedEnumClass(class(const_val))
+            % Special Handling for Enumerations
+            if Simulink.data.getEnumTypeInfo(class(const_val), &apos;AddClassNameToEnumNames&apos;)
+                str = [relop, &apos; &apos;, strtrim(const_str)];
+            else
+                str = [relop, &apos; &apos;, char(const_val)];
+            end
+        elseif(isfloat(const_val) || isinteger(const_val) || islogical(const_val)) 
+                str = [relop, &apos; &apos;, num2str(const_val)];
+        end
+    end
+end</initializationCode>
+        <skipInitializationCode>true</skipInitializationCode>
+      </masks>
+      <parentId>HardThreshold:119</parentId>
+    </maskedBlocks>
+    <maskedBlocks type="slsa.mm.MaskedBlock" uuid="567baaf9-094c-42ab-a411-8e64e89e27e7">
+      <blockPath>HardThreshold/Compare To Constant</blockPath>
+      <id>HardThreshold:79</id>
+      <masks type="slsa.mm.Mask" uuid="936af22d-d0f6-48c9-9341-f1aa7f8f16d5">
+        <dialogParameters type="slsa.mm.DialogParameterInfo" uuid="7b089b0c-41f2-46eb-96ec-f4581f6ac35d">
+          <expression>6</expression>
+          <name>relop</name>
+        </dialogParameters>
+        <dialogParameters type="slsa.mm.DialogParameterInfo" uuid="3bc62cff-cd5f-4dc3-b25b-8e7f952ac096">
+          <expression>th</expression>
+          <isTunable>true</isTunable>
+          <name>const</name>
+          <refersToVariables>true</refersToVariables>
+        </dialogParameters>
+        <dialogParameters type="slsa.mm.DialogParameterInfo" uuid="b1a7856f-05a0-4811-a03e-8c60da33fda4">
+          <expression>2</expression>
+          <name>OutDataTypeStr</name>
+        </dialogParameters>
+        <dialogParameters type="slsa.mm.DialogParameterInfo" uuid="0b1ebc96-db01-4777-9ad3-f8df7b6b0bbd">
+          <expression>1</expression>
+          <name>ZeroCross</name>
+        </dialogParameters>
+        <initializationCode>blkName = gcb;
+
+if strcmp(get_param(gcbh,&apos;OutDataTypeStr&apos;),&apos;boolean&apos;)
+	setValue = &apos;boolean&apos;;
+else
+	setValue = &apos;fixdt(0, 8)&apos;;
+end
+
+set_param([blkName,&apos;/Compare&apos;],&apos;relop&apos;,relop, ...
+	&apos;OutDataTypeStr&apos;, setValue, &apos;ZeroCross&apos;, ZeroCross);
+
+str = [relop,&apos; C&apos;]; %default
+
+const_str = get_param(blkName, &apos;const&apos;);
+const_val = str2num(const_str);
+
+if isempty(const_val) %#ok&lt;ST2NM&gt;
+    %Expression/Variable
+    str = [relop, &apos; &apos;, strtrim(const_str)];
+else
+    if length(const_val) == 1 
+        if Simulink.data.isSupportedEnumClass(class(const_val))
+            % Special Handling for Enumerations
+            if Simulink.data.getEnumTypeInfo(class(const_val), &apos;AddClassNameToEnumNames&apos;)
+                str = [relop, &apos; &apos;, strtrim(const_str)];
+            else
+                str = [relop, &apos; &apos;, char(const_val)];
+            end
+        elseif(isfloat(const_val) || isinteger(const_val) || islogical(const_val)) 
+                str = [relop, &apos; &apos;, num2str(const_val)];
+        end
+    end
+end</initializationCode>
+        <referencedGlobalVariableInfo type="slsa.mm.VariableInfo" uuid="48efde31-ace1-45a5-93fe-7a67f4861639">
+          <name>th</name>
+          <workspace>global</workspace>
+        </referencedGlobalVariableInfo>
+        <skipInitializationCode>true</skipInitializationCode>
+      </masks>
+      <parentId>root</parentId>
+    </maskedBlocks>
+    <maskedBlocks type="slsa.mm.MaskedBlock" uuid="af0ac596-ede3-4871-910f-9e9bc3941e0c">
+      <childrenIds>HardThreshold:107</childrenIds>
+      <childrenIds>HardThreshold:109</childrenIds>
+      <childrenIds>HardThreshold:115</childrenIds>
+      <childrenIds>HardThreshold:119</childrenIds>
+      <childrenIds>HardThreshold:79</childrenIds>
+      <id>root</id>
+    </maskedBlocks>
+    <referencedGlobalWorkspaceVariables type="slsa.mm.Variable" uuid="e06e3424-5162-4e20-a618-a2f2465137f1">
+      <name>th</name>
+      <value>AAFJTQAAAAAOAAAAOAAAAAYAAAAIAAAABgAAAAAAAAAFAAAACAAAAAEAAAABAAAAAQAAAAAAAAAJAAAACAAAAAAAAAAAAGlA</value>
+      <workspace>global</workspace>
+    </referencedGlobalWorkspaceVariables>
+  </slsa.mm.MaskTree>
+</MF0>
