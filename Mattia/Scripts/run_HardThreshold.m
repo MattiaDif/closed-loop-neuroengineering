@@ -4,7 +4,7 @@ clc
 
 
 %% Data loading and processing
-fs = 24000; %Hz - sampling frequency
+fs = 30000; %Hz - sampling frequency
 fn = fs/2;  %Hz - Nyquist frequency
 refractory = 10^-3; %refractory period
 w_len = 24;  %samples --> 1ms
@@ -12,15 +12,15 @@ peak_diff = 7; %samples --> max spike position distance between EC and ground tr
 
 
 %% Simulation with different thresholds
-th=[0:0.05:1]; % sweeping  thresholds
+th=-[50]; % sweeping  thresholds
 numSims = length(th);   %number of simulation depending on number of thresholds
 
 
 %Simulation parameters
 mdl='HardThreshold';
 load_system(mdl);
-set_param(mdl, 'SimulationMode', 'rapid')
-set_param(mdl,'StartTime','0','StopTime','600')
+set_param(mdl, 'SimulationMode', 'normal')
+set_param(mdl,'StartTime','0','StopTime','10')
 BlockPaths = find_system(mdl,'Type','Block')
 BlockDialogParameters = get_param([mdl '/Threshold'],'DialogParameters')
 
@@ -90,6 +90,7 @@ for curr_sim = 1:numSims
     FNR(curr_sim) = FN(curr_sim)/(FN(curr_sim)+TP(curr_sim));
     FPR(curr_sim) = FP(curr_sim)/(FP(curr_sim)+TP(curr_sim));
     F1score(curr_sim) = 2*TP(curr_sim)/(2*TP(curr_sim)+FN(curr_sim)+FP(curr_sim));
+    MCC(curr_sim) = (TP(curr_sim)*TN(curr_sim))/sqrt((TP(curr_sim)+FP(curr_sim))*(TP(curr_sim)+FN(curr_sim))*(TN(curr_sim)+FP(curr_sim))*(TN(curr_sim)+FN(curr_sim)));
 
     FPrate(curr_sim) = FP(curr_sim)/N(curr_sim);
     TPrate(curr_sim) = TP(curr_sim)/P(curr_sim);
@@ -99,6 +100,9 @@ end
 
 %% ROC, confusion matrix, AUC
 
+FPrate = [1 FPrate 0];
+TPrate = [1 TPrate 0];
+
 figure
 plot((FPrate),TPrate,'r','LineWidth',2)
 xlabel('FP rate')
@@ -107,7 +111,7 @@ title('Hard Threshold ROC')
 set(gca,'FontSize',14)
 axis([0 1 0 1])
 
-AUC = -trapz(FPrate,TPrate);
+AUC = trapz(FPrate,TPrate);
 
 
 
