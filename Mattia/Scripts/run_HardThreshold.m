@@ -7,20 +7,20 @@ clc
 fs = 30000; %Hz - sampling frequency
 fn = fs/2;  %Hz - Nyquist frequency
 refractory = 10^-3; %refractory period
-w_len = 24;  %samples --> 1ms
-peak_diff = 7; %samples --> max spike position distance between EC and ground truth
+w_len = fs/1000;  %samples --> 1ms
+peak_diff = 10; %samples --> max spike position distance between EC and ground truth
 
 
 %% Simulation with different thresholds
-th=-[50]; % sweeping  thresholds
+th=-[25:12.5:75]; % sweeping  thresholds
 numSims = length(th);   %number of simulation depending on number of thresholds
 
 
 %Simulation parameters
 mdl='HardThreshold';
 load_system(mdl);
-set_param(mdl, 'SimulationMode', 'normal')
-set_param(mdl,'StartTime','0','StopTime','10')
+set_param(mdl, 'SimulationMode', 'rapid')
+set_param(mdl,'StartTime','0','StopTime','120')
 BlockPaths = find_system(mdl,'Type','Block')
 BlockDialogParameters = get_param([mdl '/Threshold'],'DialogParameters')
 
@@ -78,7 +78,9 @@ for curr_sim = 1:numSims
 
     FN(curr_sim) = P(curr_sim) - TP(curr_sim);
     FP(curr_sim) = NDS(curr_sim) - TP(curr_sim);
+    
     N(curr_sim) = ((length(EC(curr_sim,:)))-P(curr_sim)*w_len)/w_len;
+    
     TN(curr_sim) = N(curr_sim) - FP(curr_sim);
     accuracy(curr_sim) = (TP(curr_sim) + TN(curr_sim))/(P(curr_sim)+N(curr_sim));
     perf(curr_sim) = TP(curr_sim)/(FP(curr_sim)+FN(curr_sim));
