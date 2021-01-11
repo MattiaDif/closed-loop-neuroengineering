@@ -1,4 +1,4 @@
-# closed-loop-neuroscience: A reference architecture for closed-loop systems in the neurotechnology field
+# closed-loop-neuroscience: a reference architecture for closed-loop systems in the neurotechnology field
 
 To clone this repo open your terminal and run:
 
