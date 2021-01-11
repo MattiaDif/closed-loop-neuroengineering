@@ -1,4 +1,5 @@
-# closed-loop-neuroscience
+# closed-loop-neuroscience: A reference architecture for closed-loop systems in the neurotechnology field
 
 To clone this repo open your terminal and run:
-'git clone https://github.com/alejoe91/MEArec.git'
+
+`git clone https://github.com/alejoe91/MEArec.git`
