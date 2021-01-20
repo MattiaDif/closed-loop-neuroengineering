@@ -3,37 +3,46 @@ close all
 clc
 
 
-result_flag = 1;    %1 --> save results, 0 --> not save
+%%%%%%%%% CHANGE THE noise_level VARIABLE ACCORDING TO THE SIMULATION RECORDING %%%%%%%%%
+noise_level = 10;   %10, 20, 30
+%%%%%%%%% CHANGE THE mdl_name VARIABLE ACCORDING TO THE SIMULINK MODEL %%%%%%%%%
+mdl_name = "HardThreshold";
+
+
+result_flag = 0;    %1 --> save results, 0 --> not save
+
 
 %% Simulation parameters
 fs = 32000; %Hz - sampling frequency
 fn = fs/2;  %Hz - Nyquist frequency
 refractory = 10^-3; %refractory period
 th=[-10:-10:-40]; % sweeping  thresholds
-sim_type = 'rapid';
+sim_type = 'rapid'; %simulation speed
 sim_stop_time = '10';   %s
+
 
 %% Performance analysis parameters
 w_len = fs/1000;  %samples --> 1ms
-peak_diff = 10; %samples --> max spike position distance between recording and ground truth
-
+peak_diff = 25; %samples --> max spike position distance between recording and ground truth
+%peak_diff --> tolerance
 
 %% Data loading
-%%%%%%%%% CHANGE THE noise_level VARIABLE ACCORDING TO THE SIMULATION RECORDING %%%%%%%%%%%%
-noise_level = 30;   %10, 20, 30
+%worskpace saving --> sim parameters saving
+if result_flag == 1
+    save(['C:/Users/diflo/Google Drive/IIT - Neuroengineering/Progetto MathWorks/Data/MEArec/ResultTable/sim_par_',convertStringsToChars(mdl_name),'_',num2str(noise_level),'.mat'])
+end
 
 signal = load(['recording',num2str(noise_level),'.mat']);
 ground = load('ground_truth.mat');
 
 load(['sim_results_',num2str(noise_level),'.mat']);
-mdl_name = "HardThreshold";
 
 
 %% Simulation with different thresholds
 numSims = length(th);   %number of simulation depending on number of thresholds
 
 %Simulation parameters
-mdl='HardThreshold';
+mdl=convertStringsToChars(mdl_name);
 load_system(mdl);
 set_param(mdl, 'SimulationMode', sim_type)
 set_param(mdl,'StartTime','0','StopTime',sim_stop_time)
@@ -79,8 +88,7 @@ for curr_sim = 1:numSims
     for i=1:length(ground_locks{curr_sim,:})
         for j=1:length(spikes_locks{curr_sim,:})
             if  abs(spikes_locks{curr_sim}(j)-ground_locks{curr_sim}(i)) <= peak_diff
-                    TP(curr_sim) = TP(curr_sim) + 1;    %TP
-                    
+                    TP(curr_sim) = TP(curr_sim) + 1;    %TP   
             end
         end
     end
@@ -101,7 +109,8 @@ for curr_sim = 1:numSims
     FNR(curr_sim) = FN(curr_sim)/(FN(curr_sim)+TP(curr_sim));
     FPR(curr_sim) = FP(curr_sim)/(FP(curr_sim)+TP(curr_sim));
     F1score(curr_sim) = 2*TP(curr_sim)/(2*TP(curr_sim)+FN(curr_sim)+FP(curr_sim));
-    MCC(curr_sim) = (TP(curr_sim)*TN(curr_sim))/sqrt((TP(curr_sim)+FP(curr_sim))*(TP(curr_sim)+FN(curr_sim))*(TN(curr_sim)+FP(curr_sim))*(TN(curr_sim)+FN(curr_sim)));
+    MCC(curr_sim) = (TP(curr_sim)*TN(curr_sim)-FP(curr_sim)*FN(curr_sim))/...
+                    sqrt((TP(curr_sim)+FP(curr_sim))*(TP(curr_sim)+FN(curr_sim))*(TN(curr_sim)+FP(curr_sim))*(TN(curr_sim)+FN(curr_sim)));
 
     FPrate(curr_sim) = FP(curr_sim)/N(curr_sim);
     TPrate(curr_sim) = TP(curr_sim)/P(curr_sim);
