@@ -4,11 +4,11 @@ clc
 
 
 %%%%%%%%% CHANGE THE noise_level VARIABLE ACCORDING TO THE SIMULATION RECORDING %%%%%%%%%
-noise_level = 30;   %10, 20, 30
+noise_level = 20;   %10, 20, 30
 %%%%%%%%% CHANGE THE ch VARIABLE ACCORDING TO THE SIMULATION RECORDING %%%%%%%%%
 ch = 'ch7';
 %%%%%%%%% CHANGE THE mdl_name VARIABLE ACCORDING TO THE SIMULINK MODEL %%%%%%%%%
-mdl_name = "HardThreshold";
+mdl_name = "SNEO";
 
 
 result_flag = 0;    %1 --> save results, 0 --> not save
@@ -18,7 +18,11 @@ result_flag = 0;    %1 --> save results, 0 --> not save
 fs = 30000; %Hz - sampling frequency
 fn = fs/2;  %Hz - Nyquist frequency
 refractory = 10^-3; %refractory period
-th=[-10:-10:-40]; % sweeping  thresholds
+w_smooth = fs/1000;  %smoothing window length
+TEO_buffer = w_smooth;    %TEO buffer length
+TEO_buffer_overlap = TEO_buffer - 1;    %TEO buffer overlap
+feature_buffer = fs;    %feature buffer length
+feature_gain = [1 3 5];   %adaptive threshold gain
 sim_type = 'normal'; %simulation speed
 sim_stop_time = '10';   %s
 
@@ -44,7 +48,7 @@ load(['sim_results_',num2str(noise_level),'.mat']);
 
 
 %% Simulation with different thresholds
-numSims = length(th);   %number of simulation depending on number of thresholds
+numSims = length(feature_gain);   %number of simulation depending on number of feature gain
 
 %Simulation parameters
 mdl=convertStringsToChars(mdl_name);
@@ -52,12 +56,12 @@ load_system(mdl);
 set_param(mdl, 'SimulationMode', sim_type)
 set_param(mdl,'StartTime','0','StopTime',sim_stop_time)
 BlockPaths = find_system(mdl,'Type','Block')
-BlockDialogParameters = get_param([mdl '/threshold'],'DialogParameters')
+BlockDialogParameters = get_param([mdl '/th gain'],'DialogParameters')
 
 %Input setting
 for curr_sim = 1:numSims
     in(curr_sim) = Simulink.SimulationInput(mdl);
-    in(curr_sim) = setBlockParameter(in(curr_sim), [mdl '/threshold'], 'const', num2str(th(curr_sim)));
+    in(curr_sim) = setBlockParameter(in(curr_sim), [mdl '/th gain'], 'Gain', num2str(feature_gain(curr_sim)));
 end
 
 %Simulation running
@@ -70,13 +74,17 @@ for curr_sim = 1:numSims
     simOut = out(curr_sim);
     ground_truth_ts(curr_sim,:) = simOut.logsout.get('ground_truth').Values;
     recording_ts(curr_sim,:) = simOut.logsout.get('recording').Values;
-    sample_above_th_ts(curr_sim,:) = simOut.logsout.get('sample_above_th').Values;
+    SNEO_ts(curr_sim,:) = simOut.logsout.get('SNEO').Values;
+    threshold_ts(curr_sim,:) = simOut.logsout.get('threshold').Values;
+    SNEO_above_th_ts(curr_sim,:) = simOut.logsout.get('SNEO_above_th').Values;
     spikes_ts(curr_sim,:) = simOut.logsout.get('spikes').Values;
     interspike_ts(curr_sim,:) = simOut.logsout.get('interspike').Values;
 
     ground_truth(curr_sim,:) = ground_truth_ts(curr_sim).Data(:,spiketrain);
     recording(curr_sim,:) = recording_ts(curr_sim).Data;
-    sample_above_th(curr_sim,:) = sample_above_th_ts(curr_sim).Data;
+    SNEO(curr_sim,:) = SNEO_ts(curr_sim).Data;
+    threshold(curr_sim,:) = threshold_ts(curr_sim).Data;
+    SNEO_above_th(curr_sim,:) = SNEO_above_th_ts(curr_sim).Data;
     spikes(curr_sim,:) = spikes_ts(curr_sim).Data;
     interspike(curr_sim,:) = interspike_ts(curr_sim).Data;
 
@@ -123,7 +131,7 @@ for curr_sim = 1:numSims
 end
 
 
-%% ROC, confusion matrix, AUC
+%% ROC, AUC
 
 FPrate = [1 FPrate 0];
 TPrate = [0 TPrate 1];
