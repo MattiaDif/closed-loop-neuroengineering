@@ -4,7 +4,7 @@ clc
 
 
 %%%%%%%%% CHANGE THE noise_level VARIABLE ACCORDING TO THE SIMULATION RECORDING %%%%%%%%%
-noise_level = 30;   %10, 20, 30
+noise_level = 10;   %10, 20, 30
 %%%%%%%%% CHANGE THE ch VARIABLE ACCORDING TO THE SIMULATION RECORDING %%%%%%%%%
 ch = 'ch7';
 %%%%%%%%% CHANGE THE mdl_name VARIABLE ACCORDING TO THE SIMULINK MODEL %%%%%%%%%
@@ -19,7 +19,7 @@ fs = 30000; %Hz - sampling frequency
 fn = fs/2;  %Hz - Nyquist frequency
 refractory = 10^-3; %refractory period
 feature_buffer = fs;    %feature buffer length
-feature_gain = [1 3 5 7];   %%adaptive threshold gain
+feature_gain = [1:0.25:7];   %%adaptive threshold gain
 sim_type = 'rapid'; %simulation speed
 sim_stop_time = '180';   %s
 

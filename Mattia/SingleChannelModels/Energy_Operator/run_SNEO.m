@@ -4,7 +4,7 @@ clc
 
 
 %%%%%%%%% CHANGE THE noise_level VARIABLE ACCORDING TO THE SIMULATION RECORDING %%%%%%%%%
-noise_level = 30;   %10, 20, 30
+noise_level = 10;   %10, 20, 30
 %%%%%%%%% CHANGE THE ch VARIABLE ACCORDING TO THE SIMULATION RECORDING %%%%%%%%%
 ch = 'ch7';
 %%%%%%%%% CHANGE THE mdl_name VARIABLE ACCORDING TO THE SIMULINK MODEL %%%%%%%%%
@@ -22,7 +22,7 @@ w_smooth = fs/1000;  %smoothing window length
 TEO_buffer = w_smooth;    %TEO buffer length
 TEO_buffer_overlap = TEO_buffer - 1;    %TEO buffer overlap
 feature_buffer = fs;    %feature buffer length
-feature_gain = [1 3 5 7];   %adaptive threshold gain
+feature_gain = [1:0.25:7];   %adaptive threshold gain
 sim_type = 'rapid'; %simulation speed
 sim_stop_time = '180';   %s
 

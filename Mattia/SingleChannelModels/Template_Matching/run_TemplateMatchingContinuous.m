@@ -26,7 +26,7 @@ template2 = double(mean_waveform{1, 2}(:,str2num(ch(3:end))))';
 template3 = double(mean_waveform{1, 3}(:,str2num(ch(3:end))))';
 buffer_rec = length(template1);    %buffer length
 buffer_overlap = buffer_rec - 1;    %buffer overlap
-score = [3000:200:3600];
+score = [3000:25:3600];
 sim_type = 'rapid'; %simulation speed
 sim_stop_time = '180';   %s
 
