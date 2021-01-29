@@ -4,35 +4,35 @@ clc
 
 
 %%%%%%%%% CHANGE THE noise_level VARIABLE ACCORDING TO THE SIMULATION RECORDING %%%%%%%%%
-noise_level = 20;   %10, 20, 30
+noise_level = 30;   %10, 20, 30
 %%%%%%%%% CHANGE THE ch VARIABLE ACCORDING TO THE SIMULATION RECORDING %%%%%%%%%
 ch = 'ch7';
 %%%%%%%%% CHANGE THE mdl_name VARIABLE ACCORDING TO THE SIMULINK MODEL %%%%%%%%%
 mdl_name = "HardThresholdLocalMaxima";
 
 
-result_flag = 0;    %1 --> save results, 0 --> not save
+result_flag = 1;    %1 --> save results, 0 --> not save
 
 
 %% Simulation parameters
 fs = 30000; %Hz - sampling frequency
 fn = fs/2;  %Hz - Nyquist frequency
 refractory = 10^-3; %refractory period
-th=[-10:-10:-40]; % sweeping  thresholds
-sim_type = 'normal'; %simulation speed
-sim_stop_time = '10';   %s
+th=[-10:-5:-25]; % sweeping  thresholds
+sim_type = 'rapid'; %simulation speed
+sim_stop_time = '180';   %s
 
 
 %% Performance analysis parameters
 w_len = fs/1000;  %samples --> 1ms
-peak_diff = 25; %samples --> max spike position distance between recording and ground truth
-spiketrain = 2; %ground_truth selected for performance evaluation
+peak_diff = 15; %samples --> max spike position distance between recording and ground truth
+spiketrain = 3; %number of ground_truth
 %peak_diff --> tolerance
 
 %% Data loading
 %worskpace saving --> sim parameters saving
 if result_flag == 1
-    save(['C:/Users/diflo/Google Drive/IIT - Neuroengineering/Progetto MathWorks/Data/MEArec/ResultTable/sim_par_',convertStringsToChars(mdl_name),'_',num2str(noise_level),'.mat'])
+    save(['C:/File/IIT - Neuroengineering/Progetto MathWorks/Data/MEArec/ResultTable/sim_par_',convertStringsToChars(mdl_name),'_',num2str(noise_level),'.mat'])
 end
 
 filename = [ch,'_neuronexus32_recording_',num2str(noise_level)];
@@ -74,13 +74,15 @@ for curr_sim = 1:numSims
     spikes_ts(curr_sim,:) = simOut.logsout.get('spikes').Values;
     interspike_ts(curr_sim,:) = simOut.logsout.get('interspike').Values;
 
-    ground_truth(curr_sim,:) = ground_truth_ts(curr_sim).Data(:,spiketrain);
     recording(curr_sim,:) = recording_ts(curr_sim).Data;
     sample_above_th(curr_sim,:) = sample_above_th_ts(curr_sim).Data;
     spikes(curr_sim,:) = spikes_ts(curr_sim).Data;
     interspike(curr_sim,:) = interspike_ts(curr_sim).Data;
-
-
+    
+    ground_truth(curr_sim,:) = zeros(1,size(recording,2));
+    for train = 1:spiketrain
+        ground_truth(curr_sim,:) = ground_truth(curr_sim,:) + ground_truth_ts(curr_sim).Data(:,train)';
+    end
 
     % Performance evaluation
     P(curr_sim) = sum(round(ground_truth(curr_sim,:)));    %P    %round due to some quantization error (some samples were e-11 instead of 0)
@@ -88,21 +90,26 @@ for curr_sim = 1:numSims
 
     spikes_locks{curr_sim,:} = find(round(spikes(curr_sim,:)));    %samples
     ground_locks{curr_sim,:} = find(round(ground_truth(curr_sim,:))); %samples
-    
+
     TP(curr_sim) = 0;
     for i=1:length(ground_locks{curr_sim,:})
-        for j=1:length(spikes_locks{curr_sim,:})
-            if  abs(spikes_locks{curr_sim}(j)-ground_locks{curr_sim}(i)) <= peak_diff
-                    TP(curr_sim) = TP(curr_sim) + 1;    %TP   
-            end
+        locks_diff = [];
+        TP_temp = [];
+        locks_diff = abs(ground_locks{curr_sim,:}(i) - spikes_locks{curr_sim,:});
+        TP_temp = find(locks_diff <= peak_diff);
+        if isempty(TP_temp)
+            TP(curr_sim) = TP(curr_sim);
+        else
+            TP(curr_sim) = TP(curr_sim) + 1;
         end
     end
+    
 
     FN(curr_sim) = P(curr_sim) - TP(curr_sim);
     FP(curr_sim) = NDS(curr_sim) - TP(curr_sim);
-    
+
     N(curr_sim) = ((length(recording(curr_sim,:)))-P(curr_sim)*w_len)/w_len;
-    
+
     TN(curr_sim) = N(curr_sim) - FP(curr_sim);
     accuracy(curr_sim) = (TP(curr_sim) + TN(curr_sim))/(P(curr_sim)+N(curr_sim));
     perf(curr_sim) = TP(curr_sim)/(FP(curr_sim)+FN(curr_sim));
@@ -119,17 +126,16 @@ for curr_sim = 1:numSims
 
     FPrate(curr_sim) = FP(curr_sim)/N(curr_sim);
     TPrate(curr_sim) = TP(curr_sim)/P(curr_sim);
-        
+
 end
 
 
-%% ROC, confusion matrix, AUC
-
+%% ROC, AUC
 FPrate = [1 FPrate 0];
-TPrate = [0 TPrate 1];
+TPrate = [1 TPrate 0];
 
 figure
-plot(flip(FPrate),TPrate,'r','LineWidth',2)
+plot(flip(FPrate),flip(TPrate),'r','LineWidth',2)
 xlabel('FP rate')
 ylabel('TP rate')
 title('Hard Threshold ROC')
@@ -137,6 +143,7 @@ set(gca,'FontSize',14)
 axis([0 1 0 1])
 
 AUC = -trapz(FPrate,TPrate);
+
 
 
 %% Result saving
@@ -163,7 +170,7 @@ if result_flag == 1
     results_table{"TPrate",mdl_name} = num2cell(TPrate,2);
     results_table{"AUC",mdl_name} = num2cell(AUC,2);
     
-    save(['C:/Users/diflo/Google Drive/IIT - Neuroengineering/Progetto MathWorks/Data/MEArec/ResultTable/sim_results_',num2str(noise_level),'.mat'],'results_table');   %std noise: 10
+    save(['C:/File/IIT - Neuroengineering/Progetto MathWorks/Data/MEArec/ResultTable/sim_results_',num2str(noise_level),'.mat'],'results_table');  
 
 end
 

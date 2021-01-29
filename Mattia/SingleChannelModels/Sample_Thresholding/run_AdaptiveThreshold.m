@@ -4,11 +4,11 @@ clc
 
 
 %%%%%%%%% CHANGE THE noise_level VARIABLE ACCORDING TO THE SIMULATION RECORDING %%%%%%%%%
-noise_level = 30;   %10, 20, 30
+noise_level = 10;   %10, 20, 30
 %%%%%%%%% CHANGE THE ch VARIABLE ACCORDING TO THE SIMULATION RECORDING %%%%%%%%%
 ch = 'ch7';
 %%%%%%%%% CHANGE THE mdl_name VARIABLE ACCORDING TO THE SIMULINK MODEL %%%%%%%%%
-mdl_name = "SNEO";
+mdl_name = "AdaptiveThreshold";
 
 
 result_flag = 1;    %1 --> save results, 0 --> not save
@@ -18,19 +18,16 @@ result_flag = 1;    %1 --> save results, 0 --> not save
 fs = 30000; %Hz - sampling frequency
 fn = fs/2;  %Hz - Nyquist frequency
 refractory = 10^-3; %refractory period
-w_smooth = fs/1000;  %smoothing window length
-TEO_buffer = w_smooth;    %TEO buffer length
-TEO_buffer_overlap = TEO_buffer - 1;    %TEO buffer overlap
 feature_buffer = fs;    %feature buffer length
-feature_gain = [1 3 5 7];   %adaptive threshold gain
+feature_gain = [1, 3, 5, 7];   %%adaptive threshold gain
 sim_type = 'rapid'; %simulation speed
 sim_stop_time = '180';   %s
 
 
 %% Performance analysis parameters
 w_len = fs/1000;  %samples --> 1ms
-peak_diff = 25; %samples --> max spike position distance between recording and ground truth
-spiketrain = 2; %ground_truth selected for performance evaluation
+peak_diff = 15; %samples --> max spike position distance between recording and ground truth
+spiketrain = 3; %ground_truth selected for performance evaluation
 %peak_diff --> tolerance
 
 %% Data loading
@@ -48,7 +45,7 @@ load(['sim_results_',num2str(noise_level),'.mat']);
 
 
 %% Simulation with different thresholds
-numSims = length(feature_gain);   %number of simulation depending on number of feature gain
+numSims = length(feature_gain);   %number of simulation depending on number of thresholds
 
 %Simulation parameters
 mdl=convertStringsToChars(mdl_name);
@@ -74,19 +71,22 @@ for curr_sim = 1:numSims
     simOut = out(curr_sim);
     ground_truth_ts(curr_sim,:) = simOut.logsout.get('ground_truth').Values;
     recording_ts(curr_sim,:) = simOut.logsout.get('recording').Values;
-    SNEO_ts(curr_sim,:) = simOut.logsout.get('SNEO').Values;
-    threshold_ts(curr_sim,:) = simOut.logsout.get('threshold').Values;
-    SNEO_above_th_ts(curr_sim,:) = simOut.logsout.get('SNEO_above_th').Values;
+    sample_above_th_ts(curr_sim,:) = simOut.logsout.get('sample_above_th').Values;
     spikes_ts(curr_sim,:) = simOut.logsout.get('spikes').Values;
     interspike_ts(curr_sim,:) = simOut.logsout.get('interspike').Values;
-
-    ground_truth(curr_sim,:) = ground_truth_ts(curr_sim).Data(:,spiketrain);
-    recording(curr_sim,:) = recording_ts(curr_sim).Data;
-    SNEO(curr_sim,:) = SNEO_ts(curr_sim).Data;
-    threshold(curr_sim,:) = threshold_ts(curr_sim).Data;
-    SNEO_above_th(curr_sim,:) = SNEO_above_th_ts(curr_sim).Data;
-    spikes(curr_sim,:) = spikes_ts(curr_sim).Data;
-    interspike(curr_sim,:) = interspike_ts(curr_sim).Data;
+    
+    % in the adaptive threshold model is necessary to avoid the performance
+    % analysis in the initial part (see feature_buffer variable) of the
+    % signal since it is necessary to the th computation
+    recording(curr_sim,:) = recording_ts(curr_sim).Data(1,1,feature_buffer+1:end);
+    sample_above_th(curr_sim,:) = sample_above_th_ts(curr_sim).Data(1,1,feature_buffer+1:end);
+    spikes(curr_sim,:) = spikes_ts(curr_sim).Data(1,1,feature_buffer+1:end);
+    interspike(curr_sim,:) = interspike_ts(curr_sim).Data(1,1,feature_buffer+1:end);
+    
+    ground_truth(curr_sim,:) = zeros(1,size(recording,2));
+    for train = 1:spiketrain
+        ground_truth(curr_sim,:) = ground_truth(curr_sim,:) + ground_truth_ts(curr_sim).Data(feature_buffer+1:end,train)';
+    end
 
 
 
@@ -98,16 +98,15 @@ for curr_sim = 1:numSims
     ground_locks{curr_sim,:} = find(round(ground_truth(curr_sim,:))); %samples
     
     TP(curr_sim) = 0;
+    n = 1;
     for i=1:length(ground_locks{curr_sim,:})
-        locks_diff = [];
-        TP_temp = [];
-        locks_diff = abs(ground_locks{curr_sim,:}(i) - spikes_locks{curr_sim,:});
-        TP_temp = find(locks_diff <= peak_diff);
-        if isempty(TP_temp)
-            TP(curr_sim) = TP(curr_sim);
-        else
-            TP(curr_sim) = TP(curr_sim) + 1;
+        for j=n:length(spikes_locks{curr_sim,:})
+            if  abs(spikes_locks{curr_sim}(j)-ground_locks{curr_sim}(i)) <= peak_diff
+                TP(curr_sim) = TP(curr_sim) + 1;    %TP
+                break
+            end
         end
+        n = n + 1;
     end
 
     FN(curr_sim) = P(curr_sim) - TP(curr_sim);
@@ -135,7 +134,7 @@ for curr_sim = 1:numSims
 end
 
 
-%% ROC, AUC
+%% ROC, confusion matrix, AUC
 FPrate = [1 FPrate 0];
 TPrate = [1 TPrate 0];
 
