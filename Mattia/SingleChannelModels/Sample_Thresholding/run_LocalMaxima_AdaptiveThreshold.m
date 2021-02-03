@@ -8,7 +8,7 @@ noise_level = 10;   %10, 20, 30
 %%%%%%%%% CHANGE THE ch VARIABLE ACCORDING TO THE SIMULATION RECORDING %%%%%%%%%
 ch = 'ch7';
 %%%%%%%%% CHANGE THE mdl_name VARIABLE ACCORDING TO THE SIMULINK MODEL %%%%%%%%%
-mdl_name = "AdaptiveThresholdLocalMaxima";
+mdl_name = "LocalMaxima_AdaptiveThreshold";
 
 
 result_flag = 1;    %1 --> save results, 0 --> not save
@@ -19,7 +19,7 @@ fs = 30000; %Hz - sampling frequency
 fn = fs/2;  %Hz - Nyquist frequency
 refractory = 10^-3; %refractory period
 feature_buffer = fs;    %feature buffer length
-feature_gain = [1:0.25:7];   %%adaptive threshold gain
+feature_gain = [5, 7];   %%adaptive threshold gain
 sim_type = 'rapid'; %simulation speed
 sim_stop_time = '180';   %s
 

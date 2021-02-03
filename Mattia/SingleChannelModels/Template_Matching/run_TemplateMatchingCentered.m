@@ -8,30 +8,36 @@ noise_level = 10;   %10, 20, 30
 %%%%%%%%% CHANGE THE ch VARIABLE ACCORDING TO THE SIMULATION RECORDING %%%%%%%%%
 ch = 'ch7';
 %%%%%%%%% CHANGE THE mdl_name VARIABLE ACCORDING TO THE SIMULINK MODEL %%%%%%%%%
-mdl_name = "SNEO";
+mdl_name = "TemplateMatchingCentered";
 
 
-result_flag = 1;    %1 --> save results, 0 --> not save
+result_flag = 0;    %1 --> save results, 0 --> not save
 
+filename = ['neuronexus32_recording_',num2str(noise_level)];
+load([filename,'_waveforms_mean.mat']);
 
 %% Simulation parameters
+load([filename,'.mat']);
 fs = 30000; %Hz - sampling frequency
 fn = fs/2;  %Hz - Nyquist frequency
 refractory = 10^-3; %refractory period
-w_smooth = fs/1000;  %smoothing window length
-TEO_buffer = w_smooth;    %TEO buffer length
-TEO_buffer_overlap = TEO_buffer - 1;    %TEO buffer overlap
-feature_buffer = fs;    %feature buffer length
-feature_gain = [1:0.25:7];   %adaptive threshold gain
-sim_type = 'rapid'; %simulation speed
-sim_stop_time = '180';   %s
+template = double(mean_waveform{1, 2}(:,str2num(ch(3:end))))';  %template extracted from MEArec dataset
+% template2 = double(mean_waveform{1, 2}(:,str2num(ch(3:end))))';
+% template3 = double(mean_waveform{1, 3}(:,str2num(ch(3:end))))';
+delay = round(length(template)/2);    %delay to apply to the recording to align the template and the buffer
+th = 70;   %threshold to detect a local maximum (minimum)
+buffer_rec = length(template);    %buffer length
+buffer_overlap = buffer_rec - 1;    %buffer overlap
+score = [3000];
+sim_type = 'normal'; %simulation speed
+sim_stop_time = '10';   %s
 
 
 %% Performance analysis parameters
 w_len = fs/1000;  %samples --> 1ms
-peak_diff = 25; %samples --> max spike position distance between recording and ground truth
-spiketrain = 2; %ground_truth selected for performance evaluation
-%peak_diff --> tolerance
+peak_diff = 65; %samples --> max spike position distance between recording and ground truth
+spiketrain = 3; %ground_truth selected for performance evaluation
+
 
 %% Data loading
 %worskpace saving --> sim parameters saving
@@ -48,7 +54,7 @@ load(['sim_results_',num2str(noise_level),'.mat']);
 
 
 %% Simulation with different thresholds
-numSims = length(feature_gain);   %number of simulation depending on number of feature gain
+numSims = length(score);   %number of simulation depending on number of thresholds
 
 %Simulation parameters
 mdl=convertStringsToChars(mdl_name);
@@ -56,12 +62,17 @@ load_system(mdl);
 set_param(mdl, 'SimulationMode', sim_type)
 set_param(mdl,'StartTime','0','StopTime',sim_stop_time)
 BlockPaths = find_system(mdl,'Type','Block')
-BlockDialogParameters = get_param([mdl '/th gain'],'DialogParameters')
+BlockDialogParameters = get_param([mdl '/template matching/score_th'],'DialogParameters')
+% BlockDialogParameters = get_param([mdl '/template matching2/score_th'],'DialogParameters')
+% BlockDialogParameters = get_param([mdl '/template matching2/score_th'],'DialogParameters')
+
 
 %Input setting
 for curr_sim = 1:numSims
     in(curr_sim) = Simulink.SimulationInput(mdl);
-    in(curr_sim) = setBlockParameter(in(curr_sim), [mdl '/th gain'], 'Gain', num2str(feature_gain(curr_sim)));
+    in(curr_sim) = setBlockParameter(in(curr_sim), [mdl '/template matching/score_th'], 'const', num2str(score(curr_sim)));
+%     in(curr_sim) = setBlockParameter(in(curr_sim), [mdl '/template matching2/score_th'], 'const', num2str(score(curr_sim)));
+%     in(curr_sim) = setBlockParameter(in(curr_sim), [mdl '/template matching3/score_th'], 'const', num2str(score(curr_sim)));
 end
 
 %Simulation running
@@ -74,21 +85,19 @@ for curr_sim = 1:numSims
     simOut = out(curr_sim);
     ground_truth_ts(curr_sim,:) = simOut.logsout.get('ground_truth').Values;
     recording_ts(curr_sim,:) = simOut.logsout.get('recording').Values;
-    SNEO_ts(curr_sim,:) = simOut.logsout.get('SNEO').Values;
-    threshold_ts(curr_sim,:) = simOut.logsout.get('threshold').Values;
-    SNEO_above_th_ts(curr_sim,:) = simOut.logsout.get('SNEO_above_th').Values;
     spikes_ts(curr_sim,:) = simOut.logsout.get('spikes').Values;
     interspike_ts(curr_sim,:) = simOut.logsout.get('interspike').Values;
-
-    ground_truth(curr_sim,:) = ground_truth_ts(curr_sim).Data(:,spiketrain);
+    
     recording(curr_sim,:) = recording_ts(curr_sim).Data;
-    SNEO(curr_sim,:) = SNEO_ts(curr_sim).Data;
-    threshold(curr_sim,:) = threshold_ts(curr_sim).Data;
-    SNEO_above_th(curr_sim,:) = SNEO_above_th_ts(curr_sim).Data;
     spikes(curr_sim,:) = spikes_ts(curr_sim).Data;
     interspike(curr_sim,:) = interspike_ts(curr_sim).Data;
+    
+    ground_truth(curr_sim,:) = zeros(1,size(recording,2));
+    for train = 1:spiketrain
+        ground_truth(curr_sim,:) = ground_truth(curr_sim,:) + ground_truth_ts(curr_sim).Data(:,train)';
+    end
 
-
+    
 
     % Performance evaluation
     P(curr_sim) = sum(round(ground_truth(curr_sim,:)));    %P    %round due to some quantization error (some samples were e-11 instead of 0)
@@ -113,6 +122,7 @@ for curr_sim = 1:numSims
     if TP(curr_sim) > NDS(curr_sim)
         TP(curr_sim) = NDS(curr_sim);
     end
+
 
     FN(curr_sim) = P(curr_sim) - TP(curr_sim);
     FP(curr_sim) = NDS(curr_sim) - TP(curr_sim);
@@ -139,7 +149,7 @@ for curr_sim = 1:numSims
 end
 
 
-%% ROC, AUC
+%% ROC, confusion matrix, AUC
 FPrate = [1 FPrate 0];
 TPrate = [1 TPrate 0];
 
@@ -152,6 +162,7 @@ set(gca,'FontSize',14)
 axis([0 1 0 1])
 
 AUC = -trapz(FPrate,TPrate);
+
 
 
 %% Result saving

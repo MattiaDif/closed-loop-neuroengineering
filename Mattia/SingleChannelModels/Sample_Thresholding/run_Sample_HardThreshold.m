@@ -8,7 +8,7 @@ noise_level = 30;   %10, 20, 30
 %%%%%%%%% CHANGE THE ch VARIABLE ACCORDING TO THE SIMULATION RECORDING %%%%%%%%%
 ch = 'ch7';
 %%%%%%%%% CHANGE THE mdl_name VARIABLE ACCORDING TO THE SIMULINK MODEL %%%%%%%%%
-mdl_name = "HardThreshold";
+mdl_name = "Sample_HardThreshold";
 
 
 result_flag = 0;    %1 --> save results, 0 --> not save
@@ -93,15 +93,20 @@ for curr_sim = 1:numSims
     ground_locks{curr_sim,:} = find(round(ground_truth(curr_sim,:))); %samples
     
     TP(curr_sim) = 0;
-    n = 1;
     for i=1:length(ground_locks{curr_sim,:})
-        for j=n:length(spikes_locks{curr_sim,:})
-            if  abs(spikes_locks{curr_sim}(j)-ground_locks{curr_sim}(i)) <= peak_diff
-                TP(curr_sim) = TP(curr_sim) + 1;    %TP
-                break
-            end
+        locks_diff = [];
+        TP_temp = [];
+        locks_diff = abs(ground_locks{curr_sim,:}(i) - spikes_locks{curr_sim,:});
+        TP_temp = find(locks_diff <= peak_diff);
+        if isempty(TP_temp)
+            TP(curr_sim) = TP(curr_sim);
+        else
+            TP(curr_sim) = TP(curr_sim) + 1;
         end
-        n = n + 1;
+    end
+
+    if TP(curr_sim) > NDS(curr_sim)
+        TP(curr_sim) = NDS(curr_sim);
     end
 
     FN(curr_sim) = P(curr_sim) - TP(curr_sim);

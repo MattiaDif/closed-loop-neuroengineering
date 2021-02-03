@@ -8,7 +8,7 @@ noise_level = 30;   %10, 20, 30
 %%%%%%%%% CHANGE THE ch VARIABLE ACCORDING TO THE SIMULATION RECORDING %%%%%%%%%
 ch = 'ch7';
 %%%%%%%%% CHANGE THE mdl_name VARIABLE ACCORDING TO THE SIMULINK MODEL %%%%%%%%%
-mdl_name = "HardThresholdLocalMaxima";
+mdl_name = "LocalMaxima_HardThreshold";
 
 
 result_flag = 1;    %1 --> save results, 0 --> not save
@@ -102,6 +102,10 @@ for curr_sim = 1:numSims
         else
             TP(curr_sim) = TP(curr_sim) + 1;
         end
+    end
+
+    if TP(curr_sim) > NDS(curr_sim)
+        TP(curr_sim) = NDS(curr_sim);
     end
     
 

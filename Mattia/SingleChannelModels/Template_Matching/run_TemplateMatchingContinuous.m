@@ -83,15 +83,10 @@ for curr_sim = 1:numSims
     simOut = out(curr_sim);
     ground_truth_ts(curr_sim,:) = simOut.logsout.get('ground_truth').Values;
     recording_ts(curr_sim,:) = simOut.logsout.get('recording').Values;
-%     sample_above_th_ts(curr_sim,:) = simOut.logsout.get('sample_above_th').Values;
     spikes_ts(curr_sim,:) = simOut.logsout.get('spikes').Values;
     interspike_ts(curr_sim,:) = simOut.logsout.get('interspike').Values;
     
-    % in the adaptive threshold model is necessary to avoid the performance
-    % analysis in the initial part (see feature_buffer variable) of the
-    % signal since it is necessary to the th computation
     recording(curr_sim,:) = recording_ts(curr_sim).Data;
-%     sample_above_th(curr_sim,:) = sample_above_th_ts(curr_sim).Data;
     spikes(curr_sim,:) = spikes_ts(curr_sim).Data;
     interspike(curr_sim,:) = interspike_ts(curr_sim).Data;
     
@@ -120,6 +115,10 @@ for curr_sim = 1:numSims
         else
             TP(curr_sim) = TP(curr_sim) + 1;
         end
+    end
+
+    if TP(curr_sim) > NDS(curr_sim)
+        TP(curr_sim) = NDS(curr_sim);
     end
 
 
