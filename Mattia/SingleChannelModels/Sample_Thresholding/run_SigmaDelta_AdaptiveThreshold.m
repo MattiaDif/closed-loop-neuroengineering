@@ -4,7 +4,7 @@ clc
 
 
 %%%%%%%%% CHANGE THE noise_level VARIABLE ACCORDING TO THE SIMULATION RECORDING %%%%%%%%%
-noise_level = 20;   %10, 20, 30
+noise_level = 10;   %10, 20, 30
 %%%%%%%%% CHANGE THE ch VARIABLE ACCORDING TO THE SIMULATION RECORDING %%%%%%%%%
 ch = 'ch7';
 %%%%%%%%% CHANGE THE mdl_name VARIABLE ACCORDING TO THE SIMULINK MODEL %%%%%%%%%
@@ -21,10 +21,10 @@ refractory = 10^-3; %refractory period
 ToStd = 1.27;   %conversion coefficient from % to std
 buffer_PWM = 128;   %length of the PWM buffer
 buffer_PWM_overlap = 0; %overlap of the PWM buffer
-feature_gain = [1 3 5 7];   %%adaptive threshold gain
+feature_gain = [5];   %%adaptive threshold gain
 prop_coeff = 0.1;   %proportional coefficiant of the integrator
 sim_type = 'normal'; %simulation speed
-sim_stop_time = '10';   %s
+sim_stop_time = '60';   %s
 
 
 %% Performance analysis parameters
@@ -80,16 +80,18 @@ for curr_sim = 1:numSims
     spikes_ts(curr_sim,:) = simOut.logsout.get('spikes').Values;
     interspike_ts(curr_sim,:) = simOut.logsout.get('interspike').Values;
     
-    recording(curr_sim,:) = recording_ts(curr_sim).Data;
+    % to avoid the first 30s of recording to allow the achievement of the
+    % convergence by the adaptive threshold except for PWM
+    recording(curr_sim,:) = recording_ts(curr_sim).Data(1,1,fs*30+1:end);
     PWM(curr_sim,:) = PWM_ts(curr_sim).Data;
-    threshold(curr_sim,:) = threshold_ts(curr_sim).Data;
-    sample_above_th(curr_sim,:) = sample_above_th_ts(curr_sim).Data;
-    spikes(curr_sim,:) = spikes_ts(curr_sim).Data;
-    interspike(curr_sim,:) = interspike_ts.Data;
+    threshold(curr_sim,:) = threshold_ts(curr_sim).Data(1,1,fs*30+1:end);
+    sample_above_th(curr_sim,:) = sample_above_th_ts(curr_sim).Data(1,1,fs*30+1:end);
+    spikes(curr_sim,:) = spikes_ts(curr_sim).Data(1,1,fs*30+1:end);
+    interspike(curr_sim,:) = interspike_ts(curr_sim).Data(1,1,fs*30+1:end);
     
     ground_truth(curr_sim,:) = zeros(1,size(recording,2));
     for train = 1:spiketrain
-        ground_truth(curr_sim,:) = ground_truth(curr_sim,:) + ground_truth_ts(curr_sim).Data(:,train)';
+        ground_truth(curr_sim,:) = ground_truth(curr_sim,:) + ground_truth_ts(curr_sim).Data(fs*30+1:end,train)';
     end
 
 
