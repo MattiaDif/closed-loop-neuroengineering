@@ -13,7 +13,7 @@ Retracing these steps, the user will be driven through the development process o
 
 To clone this repo open your terminal and run:
 
-`git clone https://github.com/alejoe91/MEArec.git`
+`https://github.com/StefanoBuccelli/closed-loop-neuroscience.git`
 
 
 ## Repository content
