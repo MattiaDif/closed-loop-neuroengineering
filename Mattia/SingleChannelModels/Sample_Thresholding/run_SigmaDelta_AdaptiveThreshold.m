@@ -24,7 +24,7 @@ buffer_PWM_overlap = 0; %overlap of the PWM buffer
 feature_gain = [5];   %%adaptive threshold gain
 prop_coeff = 0.1;   %proportional coefficiant of the integrator
 sim_type = 'normal'; %simulation speed
-sim_stop_time = '60';   %s
+sim_stop_time = '60';   %s --> at least 40s, see below
 
 
 %% Performance analysis parameters
