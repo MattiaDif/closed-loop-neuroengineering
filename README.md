@@ -13,7 +13,7 @@ Retracing these steps, the user will be driven through the development process o
 
 To clone this repo open your terminal and run:
 
-`https://github.com/StefanoBuccelli/closed-loop-neuroscience.git`
+`git clone https://github.com/StefanoBuccelli/closed-loop-neuroscience.git`
 
 
 ## Repository content
