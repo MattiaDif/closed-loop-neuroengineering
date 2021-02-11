@@ -18,10 +18,10 @@ result_flag = 0;    %1 --> save results, 0 --> not save
 fs = 30000; %Hz - sampling frequency
 fn = fs/2;  %Hz - Nyquist frequency
 refractory = 10^-3; %refractory period
-diff_th=[50]; % sweeping  thresholds
-buffer_rec = 14;    %buffer length of the recording
+diff_th = [50]; % sweeping  thresholds
+buffer_rec = 30;    %buffer length of the recording
 buffer_overlap = buffer_rec - 1;    %buffer overlap
-PLP = 24;   %peak lifetime period
+PLP = 22;   %peak lifetime period
 sim_type = 'normal'; %simulation speed
 sim_stop_time = '5';   %s
 
@@ -96,20 +96,16 @@ for curr_sim = 1:numSims
     ground_locks{curr_sim,:} = find(round(ground_truth(curr_sim,:))); %samples
     
     TP(curr_sim) = 0;
-    for i=1:length(ground_locks{curr_sim,:})
+    for i=1:length(spikes_locks{curr_sim,:})
         locks_diff = [];
         TP_temp = [];
-        locks_diff = abs(ground_locks{curr_sim,:}(i) - spikes_locks{curr_sim,:});
+        locks_diff = abs(ground_locks{curr_sim,:}(i) - ground_locks{curr_sim,:});
         TP_temp = find(locks_diff <= peak_diff);
         if isempty(TP_temp)
             TP(curr_sim) = TP(curr_sim);
         else
             TP(curr_sim) = TP(curr_sim) + 1;
         end
-    end
-
-    if TP(curr_sim) > NDS(curr_sim)
-        TP(curr_sim) = NDS(curr_sim);
     end
 
     FN(curr_sim) = P(curr_sim) - TP(curr_sim);
