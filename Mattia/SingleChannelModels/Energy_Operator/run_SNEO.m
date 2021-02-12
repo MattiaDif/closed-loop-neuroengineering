@@ -101,7 +101,7 @@ for curr_sim = 1:numSims
     for i=1:length(spikes_locks{curr_sim,:})
         locks_diff = [];
         TP_temp = [];
-        locks_diff = abs(ground_locks{curr_sim,:}(i) - ground_locks{curr_sim,:});
+        locks_diff = abs(spikes_locks{curr_sim,:}(i) - ground_locks{curr_sim,:});
         TP_temp = find(locks_diff <= peak_diff);
         if isempty(TP_temp)
             TP(curr_sim) = TP(curr_sim);

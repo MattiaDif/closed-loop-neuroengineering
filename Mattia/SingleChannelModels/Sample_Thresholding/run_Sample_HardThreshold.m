@@ -4,7 +4,7 @@ clc
 
 
 %%%%%%%%% CHANGE THE noise_level VARIABLE ACCORDING TO THE SIMULATION RECORDING %%%%%%%%%
-noise_level = 30;   %10, 20, 30
+noise_level = 10;   %10, 20, 30
 %%%%%%%%% CHANGE THE ch VARIABLE ACCORDING TO THE SIMULATION RECORDING %%%%%%%%%
 ch = 'ch7';
 %%%%%%%%% CHANGE THE mdl_name VARIABLE ACCORDING TO THE SIMULINK MODEL %%%%%%%%%
@@ -18,8 +18,8 @@ result_flag = 0;    %1 --> save results, 0 --> not save
 fs = 30000; %Hz - sampling frequency
 fn = fs/2;  %Hz - Nyquist frequency
 refractory = 10^-3; %refractory period
-th=[-10]; % sweeping  thresholds
-sim_type = 'normal'; %simulation speed
+th=[-70]; % sweeping  thresholds
+sim_type = 'rapid'; %simulation speed
 sim_stop_time = '10';   %s
 
 
@@ -96,7 +96,7 @@ for curr_sim = 1:numSims
     for i=1:length(spikes_locks{curr_sim,:})
         locks_diff = [];
         TP_temp = [];
-        locks_diff = abs(ground_locks{curr_sim,:}(i) - ground_locks{curr_sim,:});
+        locks_diff = abs(spikes_locks{curr_sim,:}(i) - ground_locks{curr_sim,:});
         TP_temp = find(locks_diff <= peak_diff);
         if isempty(TP_temp)
             TP(curr_sim) = TP(curr_sim);
