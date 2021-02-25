@@ -6,7 +6,7 @@ clc
 %%%%%%%%% CHANGE THE noise_level VARIABLE ACCORDING TO THE SIMULATION RECORDING %%%%%%%%%
 noise_level = 10;   %10, 20, 30
 %%%%%%%%% CHANGE THE ch VARIABLE ACCORDING TO THE SIMULATION RECORDING %%%%%%%%%
-ch = 'ch7';
+ch = 'ch10';
 %%%%%%%%% CHANGE THE mdl_name VARIABLE ACCORDING TO THE SIMULINK MODEL %%%%%%%%%
 mdl_name = "Sample_HardThreshold";
 
@@ -18,7 +18,7 @@ result_flag = 0;    %1 --> save results, 0 --> not save
 fs = 30000; %Hz - sampling frequency
 fn = fs/2;  %Hz - Nyquist frequency
 refractory = 10^-3; %refractory period
-th=[-70]; % sweeping  thresholds
+th=[-20]; % sweeping  thresholds
 sim_type = 'rapid'; %simulation speed
 sim_stop_time = '10';   %s
 
