@@ -4,7 +4,7 @@ clc
 
 
 %%%%%%%%% CHANGE THE noise_level VARIABLE ACCORDING TO THE SIMULATION RECORDING %%%%%%%%%
-noise_level = 10;   %10, 20, 30
+noise_level = 20;   %10, 20, 30
 %%%%%%%%% CHANGE THE ch VARIABLE ACCORDING TO THE SIMULATION RECORDING %%%%%%%%%
 ch = 'ch10';
 %%%%%%%%% CHANGE THE mdl_name VARIABLE ACCORDING TO THE SIMULINK MODEL %%%%%%%%%
