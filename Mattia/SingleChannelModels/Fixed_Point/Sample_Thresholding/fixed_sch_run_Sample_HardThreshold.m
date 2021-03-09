@@ -18,7 +18,7 @@ result_flag = 0;    %1 --> save results, 0 --> not save
 fs = 30000; %Hz - sampling frequency
 fn = fs/2;  %Hz - Nyquist frequency
 refractory = 10^-3; %refractory period
-th=[-70*10^-6]; % sweeping  thresholds
+th=32408; % sweeping  thresholds, from -70 µV --> (-70*10^-6*192*(2^16-1))/(2*1.225) + 32768 and quantized using a voltage step size of 0.195 µV
 sim_type = 'rapid'; %simulation speed
 sim_stop_time = '10';   %s
 
@@ -68,113 +68,51 @@ out = sim(in,'ShowProgress', 'on');
 for curr_sim = 1:numSims
     
     simOut = out(curr_sim);
-    ground_truth_ts(curr_sim,:) = simOut.logsout.get('ground_truth').Values;
-    recording_ts(curr_sim,:) = simOut.logsout.get('recording').Values;
-    sample_above_th_ts(curr_sim,:) = simOut.logsout.get('sample_above_th').Values;
-    spikes_ts(curr_sim,:) = simOut.logsout.get('spikes').Values;
-    interspike_ts(curr_sim,:) = simOut.logsout.get('interspike').Values;
-
-    recording(curr_sim,:) = recording_ts(curr_sim).Data;
-    sample_above_th(curr_sim,:) = sample_above_th_ts(curr_sim).Data;
-    spikes(curr_sim,:) = spikes_ts(curr_sim).Data;
-    interspike(curr_sim,:) = interspike_ts(curr_sim).Data;
+    float_filtered_recording_ts(curr_sim,:) = simOut.logsout.get('float_filtered_recording').Values;
+    float_sample_above_th_ts(curr_sim,:) = simOut.logsout.get('float_sample_above_th').Values;
+    float_spikes_ts(curr_sim,:) = simOut.logsout.get('float_spikes').Values;
+    float_interspike_ts(curr_sim,:) = simOut.logsout.get('float_interspike').Values;
     
-    ground_truth(curr_sim,:) = zeros(1,size(recording,2));
-    for train = 1:spiketrain
-        ground_truth(curr_sim,:) = ground_truth(curr_sim,:) + ground_truth_ts(curr_sim).Data(:,train)';
-    end
-
-
-    % Performance evaluation
-    P(curr_sim) = sum(round(ground_truth(curr_sim,:)));    %P    %round due to some quantization error (some samples were e-11 instead of 0)
-    NDS(curr_sim) = sum(round(spikes(curr_sim,:)));  %NDS
-
-    spikes_locks{curr_sim,:} = find(round(spikes(curr_sim,:)));    %samples
-    ground_locks{curr_sim,:} = find(round(ground_truth(curr_sim,:))); %samples
+    float_filtered_recording(curr_sim,:) = float_filtered_recording_ts(curr_sim).Data;
+    float_sample_above_th(curr_sim,:) = float_sample_above_th_ts(curr_sim).Data;
+    float_spikes(curr_sim,:) = float_spikes_ts(curr_sim).Data;
+    float_interspike(curr_sim,:) = float_interspike_ts(curr_sim).Data;
     
-    TP(curr_sim) = 0;
-    for i=1:length(spikes_locks{curr_sim,:})
-        locks_diff = [];
-        TP_temp = [];
-        locks_diff = abs(spikes_locks{curr_sim,:}(i) - ground_locks{curr_sim,:});
-        TP_temp = find(locks_diff <= peak_diff);
-        if isempty(TP_temp)
-            TP(curr_sim) = TP(curr_sim);
-        else
-            TP(curr_sim) = TP(curr_sim) + 1;
-        end
-    end
-
-    FN(curr_sim) = P(curr_sim) - TP(curr_sim);
-    FP(curr_sim) = NDS(curr_sim) - TP(curr_sim);
     
-    N(curr_sim) = ((length(recording(curr_sim,:)))-P(curr_sim)*w_len)/w_len;
+    fixed_filtered_recording_ts(curr_sim,:) = simOut.logsout.get('fixed_filtered_recording').Values;
+    fixed_sample_above_th_ts(curr_sim,:) = simOut.logsout.get('fixed_sample_above_th').Values;
+    fixed_spikes_ts(curr_sim,:) = simOut.logsout.get('fixed_spikes').Values;
+    fixed_interspike_ts(curr_sim,:) = simOut.logsout.get('fixed_interspike').Values;
     
-    TN(curr_sim) = N(curr_sim) - FP(curr_sim);
-    accuracy(curr_sim) = (TP(curr_sim) + TN(curr_sim))/(P(curr_sim)+N(curr_sim));
-    perf(curr_sim) = TP(curr_sim)/(FP(curr_sim)+FN(curr_sim));
-    eff(curr_sim) = perf(curr_sim)/(perf(curr_sim)+1);
-    sens(curr_sim) = TP(curr_sim)/(TP(curr_sim)+FN(curr_sim));
-    spec(curr_sim) = TN(curr_sim)/N(curr_sim);
-    prec(curr_sim) = TP(curr_sim)/(TP(curr_sim)+FP(curr_sim));
-    NPV(curr_sim) = TN(curr_sim)/(TN(curr_sim)+FN(curr_sim));
-    FNR(curr_sim) = FN(curr_sim)/(FN(curr_sim)+TP(curr_sim));
-    FPR(curr_sim) = FP(curr_sim)/(FP(curr_sim)+TP(curr_sim));
-    F1score(curr_sim) = 2*TP(curr_sim)/(2*TP(curr_sim)+FN(curr_sim)+FP(curr_sim));
-    MCC(curr_sim) = (TP(curr_sim)*TN(curr_sim)-FP(curr_sim)*FN(curr_sim))/...
-                    sqrt((TP(curr_sim)+FP(curr_sim))*(TP(curr_sim)+FN(curr_sim))*(TN(curr_sim)+FP(curr_sim))*(TN(curr_sim)+FN(curr_sim)));
-
-    FPrate(curr_sim) = FP(curr_sim)/N(curr_sim);
-    TPrate(curr_sim) = TP(curr_sim)/P(curr_sim);
+    fixed_filtered_recording(curr_sim,:) = fixed_filtered_recording_ts(curr_sim).Data;
+    fixed_sample_above_th(curr_sim,:) = fixed_sample_above_th_ts(curr_sim).Data;
+    fixed_spikes(curr_sim,:) = fixed_spikes_ts(curr_sim).Data;
+    fixed_interspike(curr_sim,:) = fixed_interspike_ts(curr_sim).Data;
         
 end
 
 
-%% ROC, confusion matrix, AUC
-FPrate = [1 FPrate 0];
-TPrate = [1 TPrate 0];
+t_axis = (0:length(float_filtered_recording)-1)/fs;
 
 figure
-plot(flip(FPrate),flip(TPrate),'r','LineWidth',2)
-xlabel('FP rate')
-ylabel('TP rate')
-title('Hard Threshold ROC')
+ax(1)=subplot(2,1,1);
+stairs(t_axis,float_filtered_recording,'b','LineWidth',1),hold on
+stairs(t_axis,fixed_filtered_recording,'r','LineWidth',1),hold off
+title('Filtered recording - uint16')
 set(gca,'FontSize',14)
-axis([0 1 0 1])
+legend('Floating','Fixed')
 
-AUC = -trapz(FPrate,TPrate);
+ax(2)=subplot(2,1,2);
+stairs(t_axis,float_filtered_recording-fixed_filtered_recording,'k','LineWidth',1)
+title('Difference')
+xlabel('Time (s)')
+set(gca,'FontSize',14)
 
-
-
-%% Result saving
-if result_flag == 1
-    results_table{"P",mdl_name} = num2cell(P,2);
-    results_table{"NDS",mdl_name} = num2cell(NDS,2);
-    results_table{"TP",mdl_name} = num2cell(TP,2);
-    results_table{"FN",mdl_name} = num2cell(FN,2);
-    results_table{"FP",mdl_name} = num2cell(FP,2);
-    results_table{"N",mdl_name} = num2cell(N,2);
-    results_table{"TN",mdl_name} = num2cell(TN,2);
-    results_table{"accuracy",mdl_name} = num2cell(accuracy,2);
-    results_table{"perf",mdl_name} = num2cell(perf,2);
-    results_table{"eff",mdl_name} = num2cell(eff,2);
-    results_table{"sens",mdl_name} = num2cell(sens,2);
-    results_table{"spec",mdl_name} = num2cell(spec,2);
-    results_table{"prec",mdl_name} = num2cell(prec,2);
-    results_table{"NPV",mdl_name} = num2cell(NPV,2);
-    results_table{"FNR",mdl_name} = num2cell(FNR,2);
-    results_table{"FPR",mdl_name} = num2cell(FPR,2);
-    results_table{"F1score",mdl_name} = num2cell(F1score,2);
-    results_table{"MCC",mdl_name} = num2cell(MCC,2);
-    results_table{"FPrate",mdl_name} = num2cell(FPrate,2);
-    results_table{"TPrate",mdl_name} = num2cell(TPrate,2);
-    results_table{"AUC",mdl_name} = num2cell(AUC,2);
-    
-    save(['C:/File/IIT - Neuroengineering/Progetto MathWorks/Data/MEArec/ResultTable/sim_results_',num2str(noise_level),'.mat'],'results_table'); 
-
-end
+linkaxes(ax,'x')
 
 
+
+max_diff = max(abs(float_filtered_recording-fixed_filtered_recording));
 
 
 
