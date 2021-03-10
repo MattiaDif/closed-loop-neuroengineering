@@ -27,7 +27,7 @@ The repo consists in a hierarchical folder structure as a function of the spike 
 <br />
 
 ![Fig. 1: Current model developed](Mattia/Images/model_summary.png)  
-_**Figure 1:** This image summarizes the working spike detection models developed in both single- and multi- channel modes, highlighting the candidates for the next FPGA implementation._
+_**Figure 1:** Summary of the working spike detection models developed in both single- and multi- channel modes, highlighting the candidates for the next FPGA implementation._
 
 
 
