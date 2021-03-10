@@ -24,7 +24,7 @@ The repo consists in a hierarchical folder structure as a function of the spike 
 2.  MODALITIES subdivided by spike detection FAMILY: **sample thresholding** (spike detected if it is above a threshold), **energy operator** (operator computation to enhance the high frequency content), **template matching** (spike detection based on the similarity between a waveform and a template);
 3.  FAMILIES subdivided by model DATA TYPE: **fixed-** and **floating-point**.
 
-![Fig. 1: Current model developed](Mattia/Images/model_summary.PNG)  
+![Fig. 1: Current model developed](Mattia/Images/model_summary.png)  
 _**Figure 1:** This image summarizes the working spike detection models developed in both single- and multi- channel modes, highlighting the candidates for the next FPGA implementation._
 
 
