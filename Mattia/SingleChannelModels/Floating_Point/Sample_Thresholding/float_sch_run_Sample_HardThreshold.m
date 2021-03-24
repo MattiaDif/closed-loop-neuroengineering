@@ -18,9 +18,9 @@ result_flag = 0;    %1 --> save results, 0 --> not save
 fs = 30000; %Hz - sampling frequency
 fn = fs/2;  %Hz - Nyquist frequency
 refractory = 10^-3; %refractory period
-th=[-70]; % sweeping  thresholds
+th=[-20]; % sweeping  thresholds
 sim_type = 'rapid'; %simulation speed
-sim_stop_time = '10';   %s
+sim_stop_time = '1';   %s
 
 
 %% Performance analysis parameters
