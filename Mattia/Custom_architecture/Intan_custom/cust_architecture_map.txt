@@ -1,0 +1,20 @@
+gm_cust_arch_7/cust_architecture/Input State to RAM address (to write) --> Input_State_to_RAM_address_to_write
+gm_cust_arch_7/cust_architecture/Output State to RAM address (to read) --> Output_State_to_RAM_address_to_read
+gm_cust_arch_7/cust_architecture/get enabled timings /Detect Change --> Detect_Change
+gm_cust_arch_7/cust_architecture/get enabled timings /Subsystem --> Subsystem
+gm_cust_arch_7/cust_architecture/get enabled timings /Triggered Subsystem --> Triggered_Subsystem
+gm_cust_arch_7/cust_architecture/get enabled timings  --> get_enabled_timings
+gm_cust_arch_7/cust_architecture/get enabled timings 1 --> get_enabled_timings_1
+gm_cust_arch_7/cust_architecture/get_data only when enabled --> get_data_only_when_enabled
+gm_cust_arch_7/cust_architecture/getting address and enable for Magic and Timestamps --> getting_address_and_enable_for_Magic_and_Timestamps
+gm_cust_arch_7/cust_architecture/interpret data/condition to count --> condition_to_count
+gm_cust_arch_7/cust_architecture/interpret data/condition to count DAC or ADC  --> condition_to_count_DAC_or_ADC
+gm_cust_arch_7/cust_architecture/interpret data/get chan_en_rollmap/Subsystem --> Subsystem_block
+gm_cust_arch_7/cust_architecture/interpret data/get chan_en_rollmap --> get_chan_en_rollmap
+gm_cust_arch_7/cust_architecture/interpret data/get source channel and device output --> get_source_channel_and_device_output
+gm_cust_arch_7/cust_architecture/interpret data/rollmap to next source increment --> rollmap_to_next_source_increment
+gm_cust_arch_7/cust_architecture/interpret data --> interpret_data
+gm_cust_arch_7/cust_architecture/InputStateMachine --> InputStateMachine
+gm_cust_arch_7/cust_architecture/OutputStateMachine --> OutputStateMachine
+gm_cust_arch_7/cust_architecture/DualPortRAM_generic --> DualPortRAM_generic
+gm_cust_arch_7/cust_architecture --> cust_architecture

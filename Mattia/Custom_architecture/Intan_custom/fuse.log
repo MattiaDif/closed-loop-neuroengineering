@@ -1,0 +1,22 @@
+Running: C:\Xilinx\14.6\ISE_DS\ISE\bin\nt\unwrapped\fuse.exe -intstyle ise -incremental -lib unisims_ver -lib unimacro_ver -lib xilinxcorelib_ver -lib secureip -o C:/GitHub/intan_custom_arch/FPGA/New code/Working_project_from_simulink/RHS2000InterfaceXEM6010 release 180814_cust_arch/custom_proc_architecture_tb_isim_beh.exe -prj C:/GitHub/intan_custom_arch/FPGA/New code/Working_project_from_simulink/RHS2000InterfaceXEM6010 release 180814_cust_arch/custom_proc_architecture_tb_beh.prj work.custom_proc_architecture_tb work.glbl 
+ISim P.68d (signature 0x8ef4fb42)
+Number of CPUs detected in this system: 8
+Turning on mult-threading, number of parallel sub-compilation jobs: 16 
+Determining compilation order of HDL files
+Analyzing Verilog file "C:/GitHub/intan_custom_arch/FPGA/New code/Working_project_from_simulink/RHS2000InterfaceXEM6010 release 180814_cust_arch/cust_spike_detect_0.v" into library work
+Analyzing Verilog file "C:/GitHub/intan_custom_arch/FPGA/New code/Working_project_from_simulink/RHS2000InterfaceXEM6010 release 180814_cust_arch/cust_HP_filter.v" into library work
+Analyzing Verilog file "C:/GitHub/intan_custom_arch/FPGA/New code/Working_project_from_simulink/RHS2000InterfaceXEM6010 release 180814_cust_arch/cust_arch.v" into library work
+Analyzing Verilog file "C:/GitHub/intan_custom_arch/FPGA/New code/Working_project_from_simulink/RHS2000InterfaceXEM6010 release 180814_cust_arch/custom_proc_architecture_tb.v" into library work
+Analyzing Verilog file "C:/Xilinx/14.6/ISE_DS/ISE//verilog/src/glbl.v" into library work
+Starting static elaboration
+Completed static elaboration
+Fuse Memory Usage: 159576 KB
+Fuse CPU Usage: 108 ms
+Compiling module CUST_HP_filter
+Compiling module CUST_spike_detect_0
+Compiling module CUST_ARCH(HEADER_MAGIC_NUMBER=64...
+Compiling module custom_proc_architecture_tb
+Compiling module glbl
+Time Resolution for simulation is 1ps.
+Waiting for 1 sub-compilation(s) to finish...
+ERROR:Simulator:861 - Failed to link the design

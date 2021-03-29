@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=C:\Users\BuccelliLab\Documents\GitHub\intan_custom_arch\FPGA\New code\Working_project_from_simulink\RHS2000InterfaceXEM6010 release 180814_cust_arch\main.ncd
+OUTFILE=C:\Users\BuccelliLab\Documents\GitHub\intan_custom_arch\FPGA\New code\Working_project_from_simulink\RHS2000InterfaceXEM6010 release 180814_cust_arch\main.bit
+FAMILY=Spartan6
+PART=xc6slx45-2fgg484
+WORKINGDIR=C:\Users\BuccelliLab\Documents\GitHub\intan_custom_arch\FPGA\New code\Working_project_from_simulink\RHS2000InterfaceXEM6010 release 180814_cust_arch
+LICENSE=WebPack
+USER_INFO=211536631_0_0_879
