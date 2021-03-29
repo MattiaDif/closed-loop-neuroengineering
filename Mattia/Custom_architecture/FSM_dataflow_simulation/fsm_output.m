@@ -20,7 +20,7 @@
 % • State ms_cs_f is used to send the 16 TTL inputs only when channel = 19.
 % • State ms_cs_g is used to send the current value of the 16 TTL outputs only when channel = 19.
 
-% in the Intan platform all data are communicated using to UINT16 datatype
+% within the Intan platform all data are communicated using the UINT16 format
 
 
 
@@ -29,19 +29,22 @@ clc
 
 
 %% Initial conditions
-%MIN 1, MAX 8
+%MIN 1, MAX 8 --> n_chip
 n_chip = 8; %how much chip you want to simulate (example: if you want to simulate an acquisition using a headstage 16 channels (1 chip) write 1;
             %if you want to simulate an acquisition using two headstages 32 channels (4 chip) write 4
-n_dataframe = 100;  %how much dataframe simulate
-on_off = 1; %stimulation on/off, 1 --> on, 0 --> not
-polarity = 1; %polarity, 1 --> on, 0 --> not
-settle = 1; %amplifier settle, 1 --> on, 0 --> not
-recovery = 1; %charge recovery, 1 --> on, 0 --> not
+n_dataframe = 300000;  %how much dataframe simulate (samples per channel)
+on_off = 0; %stimulation on/off, 1 --> on, 0 --> not
+polarity = 0; %polarity, 1 --> on, 0 --> not
+settle = 0; %amplifier settle, 1 --> on, 0 --> not
+recovery = 0; %charge recovery, 1 --> on, 0 --> not
 
 
 %% Data flow replica
-dc_data = ones(10000000,1)*535;
-ac_data = ones(10000000,1)*7535;
+signal = load('neuronexus32_recording_20.mat'); %MEArec data to simulate ac high gain samples
+signal = signal.signal(2:end,:);
+
+dc_data = ones(n_dataframe*n_chip*16,1)*535; % DC low gain amplifier data
+ac_data = repmat(signal,128/size(signal,1),1)/10^6;  % AC high gain amplifier data
 
 fsm_out = char(dec2bin(zeros(140*20,1),16)); %140 --> states of the FSM, constant, 20 --> 16 channels + 4 aux commands
 fsm_valid = zeros(140*20,1);
@@ -395,7 +398,7 @@ end
 
 %conversion to uint16
 fsm_out = uint16(bin2dec(fsm_out));
-fsm_valid = uint16(fsm_valid);
+fsm_valid = logical(fsm_valid);
 
 %replicate the previous sequence n_samples time
 fsm_out_def = repmat(fsm_out,n_dataframe,1);
@@ -410,7 +413,9 @@ fsm_out_def(dc_locks) = dc_data(1:n_dataframe*n_chip*16);
 
 
 ac_locks = find(fsm_out_def == 20000);  %AC high gain
-fsm_out_def(ac_locks) = ac_data(1:n_dataframe*n_chip*16);
+ac_data_reshape = ac_data(1:16*n_chip,1:n_dataframe);
+ac_data_reshape = reshape(ac_data_reshape,[size(ac_data_reshape,1)*size(ac_data_reshape,2),1]);
+fsm_out_def(ac_locks) = uint16(ac_data_reshape*192*(2^16-1)/((1.225*2))+32768); %ADC conversion according to Intan datasheet
 
 
 timestamp = char(dec2bin(1:n_dataframe,32));    %timestamp
@@ -422,6 +427,25 @@ fsm_out_def(time_low_locks) = timestamp_low;
 fsm_out_def(time_high_locks) = timestamp_high;
 
 
+%% saving
+fsm_out_def_time = timeseries(fsm_out_def);
+fsm_valid_def_time = timeseries(fsm_valid_def);
 
-% save('C:\Users\BuccelliLab\Desktop\Chronics_paper\Sync Artifact Vid Data\all_valid_u16_time_8','all_valid_u16_16_time_8')
-% save('C:\Users\BuccelliLab\Desktop\Chronics_paper\Sync Artifact Vid Data\all_data_u16_time_8','all_data_u16_time_8')
+save('C:\File\IIT - Neuroengineering\Progetto MathWorks\Data\Intan recordings\FSM_data_simulated\fsm_out','fsm_out_def_time','-v7.3')
+save('C:\File\IIT - Neuroengineering\Progetto MathWorks\Data\Intan recordings\FSM_data_simulated\fsm_valid','fsm_valid_def_time','-v7.3')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
