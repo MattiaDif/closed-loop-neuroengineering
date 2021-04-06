@@ -1,12 +1,12 @@
-C:\Users\BuccelliLab\Documents\GitHub\intan_custom_arch\FPGA\New code\Working_project_from_simulink\RHS2000InterfaceXEM6010 release 180814_cust_arch\main.ngc 1570813578
-C:\Users\BuccelliLab\Documents\GitHub\intan_custom_arch\FPGA\New code\Working_project_from_simulink\RHS2000InterfaceXEM6010 release 180814_cust_arch/okWireIn.ngc 1554448312
-C:\Users\BuccelliLab\Documents\GitHub\intan_custom_arch\FPGA\New code\Working_project_from_simulink\RHS2000InterfaceXEM6010 release 180814_cust_arch/okTriggerIn.ngc 1554448312
-C:\Users\BuccelliLab\Documents\GitHub\intan_custom_arch\FPGA\New code\Working_project_from_simulink\RHS2000InterfaceXEM6010 release 180814_cust_arch/okWireOut.ngc 1554448312
-C:\Users\BuccelliLab\Documents\GitHub\intan_custom_arch\FPGA\New code\Working_project_from_simulink\RHS2000InterfaceXEM6010 release 180814_cust_arch/okPipeIn.ngc 1554448312
-C:\Users\BuccelliLab\Documents\GitHub\intan_custom_arch\FPGA\New code\Working_project_from_simulink\RHS2000InterfaceXEM6010 release 180814_cust_arch/okPipeOut.ngc 1554448312
-C:\Users\BuccelliLab\Documents\GitHub\intan_custom_arch\FPGA\New code\Working_project_from_simulink\RHS2000InterfaceXEM6010 release 180814_cust_arch/okCoreHarness.ngc 1554448312
-C:\Users\BuccelliLab\Documents\GitHub\intan_custom_arch\FPGA\New code\Working_project_from_simulink\RHS2000InterfaceXEM6010 release 180814_cust_arch/TFIFO64x8a_64x8b.ngc 1554448313
-C:\Users\BuccelliLab\Documents\GitHub\intan_custom_arch\FPGA\New code\Working_project_from_simulink\RHS2000InterfaceXEM6010 release 180814_cust_arch/fifo_w16_2048_r64_512.ngc 1554448305
-C:\Users\BuccelliLab\Documents\GitHub\intan_custom_arch\FPGA\New code\Working_project_from_simulink\RHS2000InterfaceXEM6010 release 180814_cust_arch/fifo_w64_512_r16_2048.ngc 1554448305
-C:\Users\BuccelliLab\Documents\GitHub\intan_custom_arch\FPGA\New code\Working_project_from_simulink\RHS2000InterfaceXEM6010 release 180814_cust_arch/multiplier_18x18.ngc 1554448312
+C:\GitHub\closed-loop-neuroscience\Mattia\Custom_architecture\Intan_custom\main.ngc 1617090069
+C:\GitHub\closed-loop-neuroscience\Mattia\Custom_architecture\Intan_custom/okWireIn.ngc 1615565088
+C:\GitHub\closed-loop-neuroscience\Mattia\Custom_architecture\Intan_custom/okTriggerIn.ngc 1615565088
+C:\GitHub\closed-loop-neuroscience\Mattia\Custom_architecture\Intan_custom/okWireOut.ngc 1615565088
+C:\GitHub\closed-loop-neuroscience\Mattia\Custom_architecture\Intan_custom/okPipeIn.ngc 1615565088
+C:\GitHub\closed-loop-neuroscience\Mattia\Custom_architecture\Intan_custom/okPipeOut.ngc 1615565088
+C:\GitHub\closed-loop-neuroscience\Mattia\Custom_architecture\Intan_custom/okCoreHarness.ngc 1615565088
+C:\GitHub\closed-loop-neuroscience\Mattia\Custom_architecture\Intan_custom/TFIFO64x8a_64x8b.ngc 1615565087
+C:\GitHub\closed-loop-neuroscience\Mattia\Custom_architecture\Intan_custom/fifo_w16_2048_r64_512.ngc 1615565087
+C:\GitHub\closed-loop-neuroscience\Mattia\Custom_architecture\Intan_custom/fifo_w64_512_r16_2048.ngc 1615565087
+C:\GitHub\closed-loop-neuroscience\Mattia\Custom_architecture\Intan_custom/multiplier_18x18.ngc 1615565088
 OK

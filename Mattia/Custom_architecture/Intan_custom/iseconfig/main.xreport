@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2021-03-29T14:23:36</DateModified>
+  <DateModified>2021-03-30T12:39:54</DateModified>
   <ModuleName>main</ModuleName>
-  <SummaryTimeStamp>2019-10-11T19:27:59</SummaryTimeStamp>
-  <SavedFilePath>C:/GitHub/intan_custom_arch/FPGA/New code/Working_project_from_simulink/RHS2000InterfaceXEM6010 release 180814_cust_arch/iseconfig/main.xreport</SavedFilePath>
-  <ImplementationReportsDirectory>C:/GitHub/intan_custom_arch/FPGA/New code/Working_project_from_simulink/RHS2000InterfaceXEM6010 release 180814_cust_arch\</ImplementationReportsDirectory>
+  <SummaryTimeStamp>2021-03-30T09:42:13</SummaryTimeStamp>
+  <SavedFilePath>C:/GitHub/closed-loop-neuroscience/Mattia/Custom_architecture/Intan_custom/iseconfig/main.xreport</SavedFilePath>
+  <ImplementationReportsDirectory>C:/GitHub/closed-loop-neuroscience/Mattia/Custom_architecture/Intan_custom\</ImplementationReportsDirectory>
   <DateInitialized>2012-10-13T13:30:46</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>

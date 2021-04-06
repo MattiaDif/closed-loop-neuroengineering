@@ -5,7 +5,163 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
-<msg type="error" file="Simulator" num="861" delta="unknown" >Failed to link the design
+<msg type="warning" file="HDLCompiler" num="687" delta="unknown" >"C:/Xilinx/14.6/ISE_DS/ISE//verilog/src/glbl.v" Line 5: Illegal redeclaration of module &lt;<arg fmt="%s" index="1">glbl</arg>&gt;.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="604" delta="unknown" >"C:/GitHub/closed-loop-neuroscience/Mattia/Custom_architecture/Intan_custom/main.v" Line 1032: Module instantiation should have an instance name
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="189" delta="unknown" >"C:/GitHub/closed-loop-neuroscience/Mattia/Custom_architecture/Intan_custom/main.v" Line 4143: Size mismatch in connection of port &lt;<arg fmt="%s" index="3">MISO</arg>&gt;. Formal port size is <arg fmt="%d" index="2">33</arg>-bit while actual signal size is <arg fmt="%d" index="1">32</arg>-bit.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="189" delta="unknown" >"C:/GitHub/closed-loop-neuroscience/Mattia/Custom_architecture/Intan_custom/main.v" Line 4146: Size mismatch in connection of port &lt;<arg fmt="%s" index="3">MISO</arg>&gt;. Formal port size is <arg fmt="%d" index="2">33</arg>-bit while actual signal size is <arg fmt="%d" index="1">32</arg>-bit.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="189" delta="unknown" >"C:/GitHub/closed-loop-neuroscience/Mattia/Custom_architecture/Intan_custom/main.v" Line 4149: Size mismatch in connection of port &lt;<arg fmt="%s" index="3">MISO</arg>&gt;. Formal port size is <arg fmt="%d" index="2">33</arg>-bit while actual signal size is <arg fmt="%d" index="1">32</arg>-bit.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="189" delta="unknown" >"C:/GitHub/closed-loop-neuroscience/Mattia/Custom_architecture/Intan_custom/main.v" Line 4152: Size mismatch in connection of port &lt;<arg fmt="%s" index="3">MISO</arg>&gt;. Formal port size is <arg fmt="%d" index="2">33</arg>-bit while actual signal size is <arg fmt="%d" index="1">32</arg>-bit.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="189" delta="unknown" >"C:/GitHub/closed-loop-neuroscience/Mattia/Custom_architecture/Intan_custom/main.v" Line 4155: Size mismatch in connection of port &lt;<arg fmt="%s" index="3">MISO</arg>&gt;. Formal port size is <arg fmt="%d" index="2">33</arg>-bit while actual signal size is <arg fmt="%d" index="1">32</arg>-bit.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="189" delta="unknown" >"C:/GitHub/closed-loop-neuroscience/Mattia/Custom_architecture/Intan_custom/main.v" Line 4158: Size mismatch in connection of port &lt;<arg fmt="%s" index="3">MISO</arg>&gt;. Formal port size is <arg fmt="%d" index="2">33</arg>-bit while actual signal size is <arg fmt="%d" index="1">32</arg>-bit.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="189" delta="unknown" >"C:/GitHub/closed-loop-neuroscience/Mattia/Custom_architecture/Intan_custom/main.v" Line 4161: Size mismatch in connection of port &lt;<arg fmt="%s" index="3">MISO</arg>&gt;. Formal port size is <arg fmt="%d" index="2">33</arg>-bit while actual signal size is <arg fmt="%d" index="1">32</arg>-bit.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="1016" delta="unknown" >"C:/GitHub/closed-loop-neuroscience/Mattia/Custom_architecture/Intan_custom/mcb_raw_wrapper.v" Line 6346: Port <arg fmt="%s" index="1">BUSY</arg> is not connected to this instance
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="329" delta="unknown" >"v:/hipsBuilds/P_hips_v21.0/rst/hips/mcb/common_modules.v" Line 260: Target &lt;<arg fmt="%s" index="1">(null)</arg>&gt; of concurrent assignment or output port connection should be a net type.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="189" delta="unknown" >"C:/GitHub/closed-loop-neuroscience/Mattia/Custom_architecture/Intan_custom/RAM_bank.v" Line 97: Size mismatch in connection of port &lt;<arg fmt="%s" index="3">RAM_addr_A</arg>&gt;. Formal port size is <arg fmt="%d" index="2">10</arg>-bit while actual signal size is <arg fmt="%d" index="1">13</arg>-bit.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="189" delta="unknown" >"C:/GitHub/closed-loop-neuroscience/Mattia/Custom_architecture/Intan_custom/RAM_bank.v" Line 98: Size mismatch in connection of port &lt;<arg fmt="%s" index="3">RAM_addr_B</arg>&gt;. Formal port size is <arg fmt="%d" index="2">10</arg>-bit while actual signal size is <arg fmt="%d" index="1">13</arg>-bit.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="189" delta="unknown" >"C:/GitHub/closed-loop-neuroscience/Mattia/Custom_architecture/Intan_custom/RAM_bank.v" Line 109: Size mismatch in connection of port &lt;<arg fmt="%s" index="3">RAM_addr_A</arg>&gt;. Formal port size is <arg fmt="%d" index="2">10</arg>-bit while actual signal size is <arg fmt="%d" index="1">13</arg>-bit.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="189" delta="unknown" >"C:/GitHub/closed-loop-neuroscience/Mattia/Custom_architecture/Intan_custom/RAM_bank.v" Line 110: Size mismatch in connection of port &lt;<arg fmt="%s" index="3">RAM_addr_B</arg>&gt;. Formal port size is <arg fmt="%d" index="2">10</arg>-bit while actual signal size is <arg fmt="%d" index="1">13</arg>-bit.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="189" delta="unknown" >"C:/GitHub/closed-loop-neuroscience/Mattia/Custom_architecture/Intan_custom/RAM_bank.v" Line 121: Size mismatch in connection of port &lt;<arg fmt="%s" index="3">RAM_addr_A</arg>&gt;. Formal port size is <arg fmt="%d" index="2">10</arg>-bit while actual signal size is <arg fmt="%d" index="1">13</arg>-bit.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="189" delta="unknown" >"C:/GitHub/closed-loop-neuroscience/Mattia/Custom_architecture/Intan_custom/RAM_bank.v" Line 122: Size mismatch in connection of port &lt;<arg fmt="%s" index="3">RAM_addr_B</arg>&gt;. Formal port size is <arg fmt="%d" index="2">10</arg>-bit while actual signal size is <arg fmt="%d" index="1">13</arg>-bit.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="189" delta="unknown" >"C:/GitHub/closed-loop-neuroscience/Mattia/Custom_architecture/Intan_custom/RAM_bank.v" Line 133: Size mismatch in connection of port &lt;<arg fmt="%s" index="3">RAM_addr_A</arg>&gt;. Formal port size is <arg fmt="%d" index="2">10</arg>-bit while actual signal size is <arg fmt="%d" index="1">13</arg>-bit.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="189" delta="unknown" >"C:/GitHub/closed-loop-neuroscience/Mattia/Custom_architecture/Intan_custom/RAM_bank.v" Line 134: Size mismatch in connection of port &lt;<arg fmt="%s" index="3">RAM_addr_B</arg>&gt;. Formal port size is <arg fmt="%d" index="2">10</arg>-bit while actual signal size is <arg fmt="%d" index="1">13</arg>-bit.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="189" delta="unknown" >"C:/GitHub/closed-loop-neuroscience/Mattia/Custom_architecture/Intan_custom/RAM_bank.v" Line 145: Size mismatch in connection of port &lt;<arg fmt="%s" index="3">RAM_addr_A</arg>&gt;. Formal port size is <arg fmt="%d" index="2">10</arg>-bit while actual signal size is <arg fmt="%d" index="1">13</arg>-bit.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="189" delta="unknown" >"C:/GitHub/closed-loop-neuroscience/Mattia/Custom_architecture/Intan_custom/RAM_bank.v" Line 146: Size mismatch in connection of port &lt;<arg fmt="%s" index="3">RAM_addr_B</arg>&gt;. Formal port size is <arg fmt="%d" index="2">10</arg>-bit while actual signal size is <arg fmt="%d" index="1">13</arg>-bit.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="189" delta="unknown" >"C:/GitHub/closed-loop-neuroscience/Mattia/Custom_architecture/Intan_custom/RAM_bank.v" Line 157: Size mismatch in connection of port &lt;<arg fmt="%s" index="3">RAM_addr_A</arg>&gt;. Formal port size is <arg fmt="%d" index="2">10</arg>-bit while actual signal size is <arg fmt="%d" index="1">13</arg>-bit.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="189" delta="unknown" >"C:/GitHub/closed-loop-neuroscience/Mattia/Custom_architecture/Intan_custom/RAM_bank.v" Line 158: Size mismatch in connection of port &lt;<arg fmt="%s" index="3">RAM_addr_B</arg>&gt;. Formal port size is <arg fmt="%d" index="2">10</arg>-bit while actual signal size is <arg fmt="%d" index="1">13</arg>-bit.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="189" delta="unknown" >"C:/GitHub/closed-loop-neuroscience/Mattia/Custom_architecture/Intan_custom/RAM_bank.v" Line 169: Size mismatch in connection of port &lt;<arg fmt="%s" index="3">RAM_addr_A</arg>&gt;. Formal port size is <arg fmt="%d" index="2">10</arg>-bit while actual signal size is <arg fmt="%d" index="1">13</arg>-bit.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="189" delta="unknown" >"C:/GitHub/closed-loop-neuroscience/Mattia/Custom_architecture/Intan_custom/RAM_bank.v" Line 170: Size mismatch in connection of port &lt;<arg fmt="%s" index="3">RAM_addr_B</arg>&gt;. Formal port size is <arg fmt="%d" index="2">10</arg>-bit while actual signal size is <arg fmt="%d" index="1">13</arg>-bit.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="189" delta="unknown" >"C:/GitHub/closed-loop-neuroscience/Mattia/Custom_architecture/Intan_custom/RAM_bank.v" Line 181: Size mismatch in connection of port &lt;<arg fmt="%s" index="3">RAM_addr_A</arg>&gt;. Formal port size is <arg fmt="%d" index="2">10</arg>-bit while actual signal size is <arg fmt="%d" index="1">13</arg>-bit.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="189" delta="unknown" >"C:/GitHub/closed-loop-neuroscience/Mattia/Custom_architecture/Intan_custom/RAM_bank.v" Line 182: Size mismatch in connection of port &lt;<arg fmt="%s" index="3">RAM_addr_B</arg>&gt;. Formal port size is <arg fmt="%d" index="2">10</arg>-bit while actual signal size is <arg fmt="%d" index="1">13</arg>-bit.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="189" delta="unknown" >"C:/GitHub/closed-loop-neuroscience/Mattia/Custom_architecture/Intan_custom/main.v" Line 3804: Size mismatch in connection of port &lt;<arg fmt="%s" index="3">noise_suppress</arg>&gt;. Formal port size is <arg fmt="%d" index="2">7</arg>-bit while actual signal size is <arg fmt="%d" index="1">32</arg>-bit.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="189" delta="unknown" >"C:/GitHub/closed-loop-neuroscience/Mattia/Custom_architecture/Intan_custom/main.v" Line 3837: Size mismatch in connection of port &lt;<arg fmt="%s" index="3">noise_suppress</arg>&gt;. Formal port size is <arg fmt="%d" index="2">7</arg>-bit while actual signal size is <arg fmt="%d" index="1">32</arg>-bit.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="189" delta="unknown" >"C:/GitHub/closed-loop-neuroscience/Mattia/Custom_architecture/Intan_custom/main.v" Line 3870: Size mismatch in connection of port &lt;<arg fmt="%s" index="3">noise_suppress</arg>&gt;. Formal port size is <arg fmt="%d" index="2">7</arg>-bit while actual signal size is <arg fmt="%d" index="1">32</arg>-bit.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="189" delta="unknown" >"C:/GitHub/closed-loop-neuroscience/Mattia/Custom_architecture/Intan_custom/main.v" Line 3903: Size mismatch in connection of port &lt;<arg fmt="%s" index="3">noise_suppress</arg>&gt;. Formal port size is <arg fmt="%d" index="2">7</arg>-bit while actual signal size is <arg fmt="%d" index="1">32</arg>-bit.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="189" delta="unknown" >"C:/GitHub/closed-loop-neuroscience/Mattia/Custom_architecture/Intan_custom/main.v" Line 3936: Size mismatch in connection of port &lt;<arg fmt="%s" index="3">noise_suppress</arg>&gt;. Formal port size is <arg fmt="%d" index="2">7</arg>-bit while actual signal size is <arg fmt="%d" index="1">32</arg>-bit.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="189" delta="unknown" >"C:/GitHub/closed-loop-neuroscience/Mattia/Custom_architecture/Intan_custom/main.v" Line 3969: Size mismatch in connection of port &lt;<arg fmt="%s" index="3">noise_suppress</arg>&gt;. Formal port size is <arg fmt="%d" index="2">7</arg>-bit while actual signal size is <arg fmt="%d" index="1">32</arg>-bit.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="189" delta="unknown" >"C:/GitHub/closed-loop-neuroscience/Mattia/Custom_architecture/Intan_custom/main.v" Line 4140: Size mismatch in connection of port &lt;<arg fmt="%s" index="3">MISO</arg>&gt;. Formal port size is <arg fmt="%d" index="2">33</arg>-bit while actual signal size is <arg fmt="%d" index="1">32</arg>-bit.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="1016" delta="unknown" >"C:/GitHub/closed-loop-neuroscience/Mattia/Custom_architecture/Intan_custom/okLibrary.v" Line 40: Port <arg fmt="%s" index="1">CLK180</arg> is not connected to this instance
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="1016" delta="unknown" >"C:/GitHub/closed-loop-neuroscience/Mattia/Custom_architecture/Intan_custom/okLibrary.v" Line 68: Port <arg fmt="%s" index="1">BUSY</arg> is not connected to this instance
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="1007" delta="unknown" >"N:/P.68d/rtf/verilog/src/unisims/RAMB16BWER.v" Line 1716: Element index <arg fmt="%d" index="1">2</arg> into <arg fmt="%s" index="2">memp</arg> is out of bounds
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="1007" delta="unknown" >"N:/P.68d/rtf/verilog/src/unisims/RAMB16BWER.v" Line 1720: Element index <arg fmt="%d" index="1">3</arg> into <arg fmt="%s" index="2">memp</arg> is out of bounds
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="1007" delta="unknown" >"N:/P.68d/rtf/verilog/src/unisims/RAMB16BWER.v" Line 1803: Element index <arg fmt="%d" index="1">2</arg> into <arg fmt="%s" index="2">memp</arg> is out of bounds
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="1007" delta="unknown" >"N:/P.68d/rtf/verilog/src/unisims/RAMB16BWER.v" Line 1807: Element index <arg fmt="%d" index="1">3</arg> into <arg fmt="%s" index="2">memp</arg> is out of bounds
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="1007" delta="unknown" >"N:/P.68d/rtf/verilog/src/unisims/RAMB16BWER.v" Line 1864: Element index <arg fmt="%d" index="1">2</arg> into <arg fmt="%s" index="2">memp</arg> is out of bounds
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="1007" delta="unknown" >"N:/P.68d/rtf/verilog/src/unisims/RAMB16BWER.v" Line 1865: Element index <arg fmt="%d" index="1">3</arg> into <arg fmt="%s" index="2">memp</arg> is out of bounds
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="1007" delta="unknown" >"N:/P.68d/rtf/verilog/src/unisims/RAMB16BWER.v" Line 1916: Element index <arg fmt="%d" index="1">2</arg> into <arg fmt="%s" index="2">memp</arg> is out of bounds
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="1007" delta="unknown" >"N:/P.68d/rtf/verilog/src/unisims/RAMB16BWER.v" Line 1917: Element index <arg fmt="%d" index="1">3</arg> into <arg fmt="%s" index="2">memp</arg> is out of bounds
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="1007" delta="unknown" >"N:/P.68d/rtf/verilog/src/unisims/RAMB16BWER.v" Line 2012: Element index <arg fmt="%d" index="1">23</arg> into <arg fmt="%s" index="2">mem</arg> is out of bounds
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="1007" delta="unknown" >"N:/P.68d/rtf/verilog/src/unisims/RAMB16BWER.v" Line 2013: Element index <arg fmt="%d" index="1">2</arg> into <arg fmt="%s" index="2">memp</arg> is out of bounds
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="1007" delta="unknown" >"N:/P.68d/rtf/verilog/src/unisims/RAMB16BWER.v" Line 2018: Element index <arg fmt="%d" index="1">31</arg> into <arg fmt="%s" index="2">mem</arg> is out of bounds
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="1007" delta="unknown" >"N:/P.68d/rtf/verilog/src/unisims/RAMB16BWER.v" Line 2019: Element index <arg fmt="%d" index="1">3</arg> into <arg fmt="%s" index="2">memp</arg> is out of bounds
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="1007" delta="unknown" >"N:/P.68d/rtf/verilog/src/unisims/RAMB16BWER.v" Line 2122: Element index <arg fmt="%d" index="1">23</arg> into <arg fmt="%s" index="2">mem</arg> is out of bounds
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="1007" delta="unknown" >"N:/P.68d/rtf/verilog/src/unisims/RAMB16BWER.v" Line 2123: Element index <arg fmt="%d" index="1">2</arg> into <arg fmt="%s" index="2">memp</arg> is out of bounds
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="1007" delta="unknown" >"N:/P.68d/rtf/verilog/src/unisims/RAMB16BWER.v" Line 2128: Element index <arg fmt="%d" index="1">31</arg> into <arg fmt="%s" index="2">mem</arg> is out of bounds
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="1007" delta="unknown" >"N:/P.68d/rtf/verilog/src/unisims/RAMB16BWER.v" Line 2129: Element index <arg fmt="%d" index="1">3</arg> into <arg fmt="%s" index="2">memp</arg> is out of bounds
+</msg>
+
+<msg type="error" file="Simulator" num="793" delta="unknown" >Unable to elaborate instantiated module <arg fmt="%s" index="1">cust_architecture</arg>
 </msg>
 
 </messages>

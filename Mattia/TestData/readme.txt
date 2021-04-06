@@ -8,6 +8,9 @@ monotrode_test_20 (single channel):
 monotrode_test_20_gt:
 -ground truth of monotrode_test_20
 
+monotrode_recording_20_waveforms_mean
+-mean of the waveform extracted for the template matching
+
 
 
 tetrode_test_20 (4 channel):
@@ -19,3 +22,6 @@ tetrode_test_20 (4 channel):
 
 tetrode_test_20_gt:
 -ground truth of tetrode_test_20
+
+tetrode_recording_20_waveforms_mean
+-mean of the waveform extracted for the template matching

@@ -3,17 +3,22 @@ close all
 clc
 
 
-%%%%%%%%% CHANGE THE noise_level VARIABLE ACCORDING TO THE SIMULATION RECORDING %%%%%%%%%
-noise_level = 10;   %10, 20, 30
-%%%%%%%%% CHANGE THE ch VARIABLE ACCORDING TO THE SIMULATION RECORDING %%%%%%%%%
-ch = 'ch7';
+project_path = 'C:\GitHub\closed-loop-neuroscience';    %set the path according to the repository location
+addpath(genpath(project_path)); %adding to the Matlab path all the project folder including all the subfolders
+
+
+% %%%%%%%%% CHANGE THE noise_level VARIABLE ACCORDING TO THE SIMULATION RECORDING %%%%%%%%%
+% noise_level = 10;   %10, 20, 30
+% %%%%%%%%% CHANGE THE ch VARIABLE ACCORDING TO THE SIMULATION RECORDING %%%%%%%%%
+% ch = 'ch10';
+
 %%%%%%%%% CHANGE THE mdl_name VARIABLE ACCORDING TO THE SIMULINK MODEL %%%%%%%%%
-mdl_name = "TemplateMatchingCentered";
+mdl_name = "float_sch_TemplateMatchingCentered";
 
 
 result_flag = 0;    %1 --> save results, 0 --> not save
 
-filename = ['neuronexus32_recording_',num2str(noise_level)];
+filename = 'monotrode_recording_20';
 load([filename,'_waveforms_mean.mat']);
 
 %% Simulation parameters
@@ -21,7 +26,7 @@ load([filename,'.mat']);
 fs = 30000; %Hz - sampling frequency
 fn = fs/2;  %Hz - Nyquist frequency
 refractory = 10^-3; %refractory period
-template = double(mean_waveform{1, 2}(:,str2num(ch(3:end))))';  %template extracted from MEArec dataset
+template = double(mean_waveform{1, 1})';  %template extracted from MEArec dataset
 % template2 = double(mean_waveform{1, 2}(:,str2num(ch(3:end))))';
 % template3 = double(mean_waveform{1, 3}(:,str2num(ch(3:end))))';
 delay = round(length(template)/2);    %delay to apply to the recording to align the template and the buffer
@@ -30,13 +35,13 @@ buffer_rec = length(template);    %buffer length
 buffer_overlap = buffer_rec - 1;    %buffer overlap
 score = [3000];
 sim_type = 'normal'; %simulation speed
-sim_stop_time = '10';   %s
+sim_stop_time = '5';   %s
 
 
 %% Performance analysis parameters
 w_len = fs/1000;  %samples --> 1ms
 peak_diff = 65; %samples --> max spike position distance between recording and ground truth
-spiketrain = 3; %ground_truth selected for performance evaluation
+spiketrain = 1; %ground_truth selected for performance evaluation
 
 
 %% Data loading
@@ -45,12 +50,12 @@ if result_flag == 1
     save(['C:/File/IIT - Neuroengineering/Progetto MathWorks/Data/MEArec/ResultTable/sim_par_',convertStringsToChars(mdl_name),'_',num2str(noise_level),'.mat'])
 end
 
-filename = [ch,'_neuronexus32_recording_',num2str(noise_level)];
+filename = 'monotrode_test_20';
 
 signal = load([filename,'.mat']);
 ground = load([filename,'_gt.mat']);
 
-load(['sim_results_',num2str(noise_level),'.mat']);
+% load(['sim_results_',num2str(noise_level),'.mat']);
 
 
 %% Simulation with different thresholds

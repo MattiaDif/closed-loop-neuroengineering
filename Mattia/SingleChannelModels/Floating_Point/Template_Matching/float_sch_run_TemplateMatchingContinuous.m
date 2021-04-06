@@ -3,17 +3,22 @@ close all
 clc
 
 
-%%%%%%%%% CHANGE THE noise_level VARIABLE ACCORDING TO THE SIMULATION RECORDING %%%%%%%%%
-noise_level = 30;   %10, 20, 30
-%%%%%%%%% CHANGE THE ch VARIABLE ACCORDING TO THE SIMULATION RECORDING %%%%%%%%%
-ch = 'ch7';
+project_path = 'C:\GitHub\closed-loop-neuroscience';    %set the path according to the repository location
+addpath(genpath(project_path)); %adding to the Matlab path all the project folder including all the subfolders
+
+
+% %%%%%%%%% CHANGE THE noise_level VARIABLE ACCORDING TO THE SIMULATION RECORDING %%%%%%%%%
+% noise_level = 30;   %10, 20, 30
+% %%%%%%%%% CHANGE THE ch VARIABLE ACCORDING TO THE SIMULATION RECORDING %%%%%%%%%
+% ch = 'ch7';
+
 %%%%%%%%% CHANGE THE mdl_name VARIABLE ACCORDING TO THE SIMULINK MODEL %%%%%%%%%
-mdl_name = "TemplateMatchingContinuous";
+mdl_name = "float_sch_TemplateMatchingContinuous";
 
 
-result_flag = 1;    %1 --> save results, 0 --> not save
+result_flag = 0;    %1 --> save results, 0 --> not save
 
-filename = ['neuronexus32_recording_',num2str(noise_level)];
+filename = 'monotrode_recording_20';
 load([filename,'_waveforms_mean.mat']);
 
 %% Simulation parameters
@@ -21,20 +26,20 @@ load([filename,'.mat']);
 fs = 30000; %Hz - sampling frequency
 fn = fs/2;  %Hz - Nyquist frequency
 refractory = 10^-3; %refractory period
-template1 = double(mean_waveform{1, 1}(:,str2num(ch(3:end))))';
-template2 = double(mean_waveform{1, 2}(:,str2num(ch(3:end))))';
-template3 = double(mean_waveform{1, 3}(:,str2num(ch(3:end))))';
-buffer_rec = length(template1);    %buffer length
+template = double(mean_waveform{1, 1})';  %template extracted from MEArec dataset
+% template2 = double(mean_waveform{1, 2}(:,str2num(ch(3:end))))';
+% template3 = double(mean_waveform{1, 3}(:,str2num(ch(3:end))))';
+buffer_rec = length(template);    %buffer length
 buffer_overlap = buffer_rec - 1;    %buffer overlap
-score = [3000:25:3600];
-sim_type = 'rapid'; %simulation speed
-sim_stop_time = '180';   %s
+score = [3600];
+sim_type = 'normal'; %simulation speed
+sim_stop_time = '5';   %s
 
 
 %% Performance analysis parameters
 w_len = fs/1000;  %samples --> 1ms
 peak_diff = 65; %samples --> max spike position distance between recording and ground truth
-spiketrain = 3; %ground_truth selected for performance evaluation
+spiketrain = 1; %ground_truth selected for performance evaluation
 
 
 %% Data loading
@@ -43,12 +48,12 @@ if result_flag == 1
     save(['C:/File/IIT - Neuroengineering/Progetto MathWorks/Data/MEArec/ResultTable/sim_par_',convertStringsToChars(mdl_name),'_',num2str(noise_level),'.mat'])
 end
 
-filename = [ch,'_neuronexus32_recording_',num2str(noise_level)];
+filename = 'monotrode_test_20';
 
 signal = load([filename,'.mat']);
 ground = load([filename,'_gt.mat']);
 
-load(['sim_results_',num2str(noise_level),'.mat']);
+% load(['sim_results_',num2str(noise_level),'.mat']);
 
 
 %% Simulation with different thresholds
@@ -60,17 +65,17 @@ load_system(mdl);
 set_param(mdl, 'SimulationMode', sim_type)
 set_param(mdl,'StartTime','0','StopTime',sim_stop_time)
 BlockPaths = find_system(mdl,'Type','Block')
-BlockDialogParameters = get_param([mdl '/template matching1/score_th'],'DialogParameters')
-BlockDialogParameters = get_param([mdl '/template matching2/score_th'],'DialogParameters')
-BlockDialogParameters = get_param([mdl '/template matching2/score_th'],'DialogParameters')
+BlockDialogParameters = get_param([mdl '/template matching/score_th'],'DialogParameters')
+% BlockDialogParameters = get_param([mdl '/template matching2/score_th'],'DialogParameters')
+% BlockDialogParameters = get_param([mdl '/template matching2/score_th'],'DialogParameters')
 
 
 %Input setting
 for curr_sim = 1:numSims
     in(curr_sim) = Simulink.SimulationInput(mdl);
-    in(curr_sim) = setBlockParameter(in(curr_sim), [mdl '/template matching1/score_th'], 'const', num2str(score(curr_sim)));
-    in(curr_sim) = setBlockParameter(in(curr_sim), [mdl '/template matching2/score_th'], 'const', num2str(score(curr_sim)));
-    in(curr_sim) = setBlockParameter(in(curr_sim), [mdl '/template matching3/score_th'], 'const', num2str(score(curr_sim)));
+    in(curr_sim) = setBlockParameter(in(curr_sim), [mdl '/template matching/score_th'], 'const', num2str(score(curr_sim)));
+%     in(curr_sim) = setBlockParameter(in(curr_sim), [mdl '/template matching2/score_th'], 'const', num2str(score(curr_sim)));
+%     in(curr_sim) = setBlockParameter(in(curr_sim), [mdl '/template matching3/score_th'], 'const', num2str(score(curr_sim)));
 end
 
 %Simulation running

@@ -3,15 +3,22 @@ close all
 clc
 
 
-%%%%%%%%% CHANGE THE noise_level VARIABLE ACCORDING TO THE SIMULATION RECORDING %%%%%%%%%
-noise_level = 10;   %10, 20, 30
-%%%%%%%%% CHANGE THE ch VARIABLE ACCORDING TO THE SIMULATION RECORDING %%%%%%%%%
-ch = 'ch7';
-%%%%%%%%% CHANGE THE mdl_name VARIABLE ACCORDING TO THE SIMULINK MODEL %%%%%%%%%
-mdl_name = "SNEO";
+%% Change current folder
+project_path = 'C:\GitHub\closed-loop-neuroscience';    %set the path according to the repository location
+addpath(genpath(project_path)); %adding to the Matlab path all the project folder including all the subfolders
 
 
-result_flag = 1;    %1 --> save results, 0 --> not save
+% %%%%%%%%% CHANGE THE noise_level VARIABLE ACCORDING TO THE SIMULATION RECORDING %%%%%%%%%
+% noise_level = 10;   %10, 20, 30
+% %%%%%%%%% CHANGE THE ch VARIABLE ACCORDING TO THE SIMULATION RECORDING %%%%%%%%%
+% ch = 'ch7';
+
+
+% %%%%%%%%% CHANGE THE mdl_name VARIABLE ACCORDING TO THE SIMULINK MODEL %%%%%%%%%
+mdl_name = "float_sch_SNEO";
+
+
+result_flag = 0;    %1 --> save results, 0 --> not save
 
 
 %% Simulation parameters
@@ -22,15 +29,15 @@ w_smooth = fs/1000;  %smoothing window length
 TEO_buffer = w_smooth;    %TEO buffer length
 TEO_buffer_overlap = TEO_buffer - 1;    %TEO buffer overlap
 feature_buffer = fs;    %feature buffer length
-feature_gain = [1:0.25:7];   %adaptive threshold gain
-sim_type = 'rapid'; %simulation speed
-sim_stop_time = '180';   %s
+feature_gain = [1];   %adaptive threshold gain
+sim_type = 'normal'; %simulation speed
+sim_stop_time = '5';   %s
 
 
 %% Performance analysis parameters
 w_len = fs/1000;  %samples --> 1ms
 peak_diff = 25; %samples --> max spike position distance between recording and ground truth
-spiketrain = 2; %ground_truth selected for performance evaluation
+spiketrain = 1; %ground_truth selected for performance evaluation
 %peak_diff --> tolerance
 
 %% Data loading
@@ -39,12 +46,12 @@ if result_flag == 1
     save(['C:/File/IIT - Neuroengineering/Progetto MathWorks/Data/MEArec/ResultTable/sim_par_',convertStringsToChars(mdl_name),'_',num2str(noise_level),'.mat'])
 end
 
-filename = [ch,'_neuronexus32_recording_',num2str(noise_level)];
+filename = 'monotrode_test_20';
 
 signal = load([filename,'.mat']);
 ground = load([filename,'_gt.mat']);
 
-load(['sim_results_',num2str(noise_level),'.mat']);
+% load(['sim_results_',num2str(noise_level),'.mat']);
 
 
 %% Simulation with different thresholds

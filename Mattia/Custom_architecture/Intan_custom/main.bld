@@ -1,54 +1,43 @@
-Release 14.7 ngdbuild P.20131013 (nt64)
+Release 14.6 ngdbuild P.68d (nt)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-Command Line: C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\ngdbuild.exe
--intstyle ise -dd _ngo -nt timestamp -uc xem6010.ucf -p xc6slx45-fgg484-2
-main.ngc main.ngd
+Command Line: C:\Xilinx\14.6\ISE_DS\ISE\bin\nt\unwrapped\ngdbuild.exe -intstyle
+ise -dd _ngo -nt timestamp -uc xem6010.ucf -p xc6slx45-fgg484-2 main.ngc
+main.ngd
 
 Reading NGO file
-"C:/Users/BuccelliLab/Documents/GitHub/intan_custom_arch/FPGA/New
-code/Working_project_from_simulink/RHS2000InterfaceXEM6010 release
-180814_cust_arch/main.ngc" ...
+"C:/GitHub/closed-loop-neuroscience/Mattia/Custom_architecture/Intan_custom/main
+.ngc" ...
 Loading design module
-"C:\Users\BuccelliLab\Documents\GitHub\intan_custom_arch\FPGA\New
-code\Working_project_from_simulink\RHS2000InterfaceXEM6010 release
-180814_cust_arch/okWireIn.ngc"...
+"C:\GitHub\closed-loop-neuroscience\Mattia\Custom_architecture\Intan_custom/okWi
+reIn.ngc"...
 Loading design module
-"C:\Users\BuccelliLab\Documents\GitHub\intan_custom_arch\FPGA\New
-code\Working_project_from_simulink\RHS2000InterfaceXEM6010 release
-180814_cust_arch/okTriggerIn.ngc"...
+"C:\GitHub\closed-loop-neuroscience\Mattia\Custom_architecture\Intan_custom/okTr
+iggerIn.ngc"...
 Loading design module
-"C:\Users\BuccelliLab\Documents\GitHub\intan_custom_arch\FPGA\New
-code\Working_project_from_simulink\RHS2000InterfaceXEM6010 release
-180814_cust_arch/okWireOut.ngc"...
+"C:\GitHub\closed-loop-neuroscience\Mattia\Custom_architecture\Intan_custom/okWi
+reOut.ngc"...
 Loading design module
-"C:\Users\BuccelliLab\Documents\GitHub\intan_custom_arch\FPGA\New
-code\Working_project_from_simulink\RHS2000InterfaceXEM6010 release
-180814_cust_arch/okPipeIn.ngc"...
+"C:\GitHub\closed-loop-neuroscience\Mattia\Custom_architecture\Intan_custom/okPi
+peIn.ngc"...
 Loading design module
-"C:\Users\BuccelliLab\Documents\GitHub\intan_custom_arch\FPGA\New
-code\Working_project_from_simulink\RHS2000InterfaceXEM6010 release
-180814_cust_arch/okPipeOut.ngc"...
+"C:\GitHub\closed-loop-neuroscience\Mattia\Custom_architecture\Intan_custom/okPi
+peOut.ngc"...
 Loading design module
-"C:\Users\BuccelliLab\Documents\GitHub\intan_custom_arch\FPGA\New
-code\Working_project_from_simulink\RHS2000InterfaceXEM6010 release
-180814_cust_arch/okCoreHarness.ngc"...
+"C:\GitHub\closed-loop-neuroscience\Mattia\Custom_architecture\Intan_custom/okCo
+reHarness.ngc"...
 Loading design module
-"C:\Users\BuccelliLab\Documents\GitHub\intan_custom_arch\FPGA\New
-code\Working_project_from_simulink\RHS2000InterfaceXEM6010 release
-180814_cust_arch/TFIFO64x8a_64x8b.ngc"...
+"C:\GitHub\closed-loop-neuroscience\Mattia\Custom_architecture\Intan_custom/TFIF
+O64x8a_64x8b.ngc"...
 Loading design module
-"C:\Users\BuccelliLab\Documents\GitHub\intan_custom_arch\FPGA\New
-code\Working_project_from_simulink\RHS2000InterfaceXEM6010 release
-180814_cust_arch/fifo_w16_2048_r64_512.ngc"...
+"C:\GitHub\closed-loop-neuroscience\Mattia\Custom_architecture\Intan_custom/fifo
+_w16_2048_r64_512.ngc"...
 Loading design module
-"C:\Users\BuccelliLab\Documents\GitHub\intan_custom_arch\FPGA\New
-code\Working_project_from_simulink\RHS2000InterfaceXEM6010 release
-180814_cust_arch/fifo_w64_512_r16_2048.ngc"...
+"C:\GitHub\closed-loop-neuroscience\Mattia\Custom_architecture\Intan_custom/fifo
+_w64_512_r16_2048.ngc"...
 Loading design module
-"C:\Users\BuccelliLab\Documents\GitHub\intan_custom_arch\FPGA\New
-code\Working_project_from_simulink\RHS2000InterfaceXEM6010 release
-180814_cust_arch/multiplier_18x18.ngc"...
+"C:\GitHub\closed-loop-neuroscience\Mattia\Custom_architecture\Intan_custom/mult
+iplier_18x18.ngc"...
 Gathering constraint information from source properties...
 Done.
 
@@ -124,8 +113,8 @@ WARNING:NgdBuild:443 - SFF primitive
    'host/core0/core0/a0/pc0/k_write_strobe_flop' has unconnected output pin
 WARNING:NgdBuild:440 - FF primitive 'host/core0/core0/a0/pc0/interrupt_ack_flop'
    has unconnected output pin
-WARNING:NgdBuild:452 - logical net 'N2748' has no driver
-WARNING:NgdBuild:452 - logical net 'N2752' has no driver
+WARNING:NgdBuild:452 - logical net 'N2695' has no driver
+WARNING:NgdBuild:452 - logical net 'N2699' has no driver
 
 Partition Implementation Status
 -------------------------------
@@ -138,10 +127,10 @@ NGDBUILD Design Results Summary:
   Number of errors:     0
   Number of warnings:   6
 
-Total memory usage is 288112 kilobytes
+Total memory usage is 205668 kilobytes
 
 Writing NGD file "main.ngd" ...
-Total REAL time to NGDBUILD completion:  22 sec
-Total CPU time to NGDBUILD completion:   22 sec
+Total REAL time to NGDBUILD completion:  10 sec
+Total CPU time to NGDBUILD completion:   10 sec
 
 Writing NGDBUILD log file "main.bld"...

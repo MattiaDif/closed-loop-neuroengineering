@@ -7,7 +7,11 @@
    <ItemView engineview="SynthesisOnly" guiview="Source" compilemode="AutoCompile" >
       <ClosedNodes>
          <ClosedNodesVersion>2</ClosedNodesVersion>
+         <ClosedNode>/CUST_ARCH C:|GitHub|closed-loop-neuroscience|Mattia|Custom_architecture|Intan_custom|cust_arch.v</ClosedNode>
+         <ClosedNode>/Subsystem_block1 C:|GitHub|closed-loop-neuroscience|Mattia|Custom_architecture|Intan_custom|Subsystem_block1.v</ClosedNode>
          <ClosedNode>/cust_architecture C:|Users|BuccelliLab|Documents|GitHub|intan_custom_arch|FPGA|New code|Working_project_from_simulink|RHS2000InterfaceXEM6010 release 180814_cust_arch|cust_architecture.v</ClosedNode>
+         <ClosedNode>/filter_nw C:|GitHub|closed-loop-neuroscience|Mattia|Custom_architecture|Intan_custom|filter_nw.v</ClosedNode>
+         <ClosedNode>/interpreting_from_DC_to_state_charge C:|GitHub|closed-loop-neuroscience|Mattia|Custom_architecture|Intan_custom|interpreting_from_DC_to_state_charge.v</ClosedNode>
          <ClosedNode>/main C:|Users|BuccelliLab|Desktop|RHS2000InterfaceXEM6010 release 180814|main.v/RAM_bank_1_LSW - RAM_bank</ClosedNode>
          <ClosedNode>/main C:|Users|BuccelliLab|Desktop|RHS2000InterfaceXEM6010 release 180814|main.v/RAM_bank_1_MSW - RAM_bank</ClosedNode>
          <ClosedNode>/main C:|Users|BuccelliLab|Desktop|RHS2000InterfaceXEM6010 release 180814|main.v/RAM_bank_2_LSW - RAM_bank</ClosedNode>
@@ -50,34 +54,32 @@
          <ClosedNode>/main C:|Users|Reid|Documents|Xilinx|OpalKelly|RHS2000InterfaceXEM6010|main.v/RAM_bank_1_MSW - RAM_bank</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem>main (C:/GitHub/intan_custom_arch/FPGA/New code/Working_project_from_simulink/RHS2000InterfaceXEM6010 release 180814_cust_arch/main.v)</SelectedItem>
+         <SelectedItem>main (C:/GitHub/closed-loop-neuroscience/Mattia/Custom_architecture/Intan_custom/main.v)</SelectedItem>
       </SelectedItems>
-      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
+      <ScrollbarPosition orientation="vertical" >15</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
       <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000020200000001000000010000006400000443000000020000000000000000000000000200000064ffffffff000000810000000300000002000004430000000100000003000000000000000100000003</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >true</UserChangedColumnWidths>
-      <CurrentItem>main (C:/GitHub/intan_custom_arch/FPGA/New code/Working_project_from_simulink/RHS2000InterfaceXEM6010 release 180814_cust_arch/main.v)</CurrentItem>
+      <CurrentItem>main (C:/GitHub/closed-loop-neuroscience/Mattia/Custom_architecture/Intan_custom/main.v)</CurrentItem>
    </ItemView>
    <ItemView engineview="SynthesisOnly" sourcetype="DESUT_VERILOG" guiview="Process" >
       <ClosedNodes>
          <ClosedNodesVersion>1</ClosedNodesVersion>
          <ClosedNode>Configure Target Device</ClosedNode>
          <ClosedNode>Design Utilities/Compile HDL Simulation Libraries</ClosedNode>
-         <ClosedNode>Implement Design/Map</ClosedNode>
          <ClosedNode>Implement Design/Place &amp; Route/Back-annotate Pin Locations</ClosedNode>
          <ClosedNode>Implement Design/Place &amp; Route/Generate IBIS Model</ClosedNode>
          <ClosedNode>Implement Design/Place &amp; Route/Generate Post-Place &amp; Route Static Timing</ClosedNode>
-         <ClosedNode>Implement Design/Translate</ClosedNode>
          <ClosedNode>User Constraints</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem>Design Summary/Reports</SelectedItem>
+         <SelectedItem>Implement Design</SelectedItem>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
       <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000000000000000001c6000000010000000100000000000000000000000064ffffffff000000810000000000000001000001c60000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
-      <CurrentItem>Design Summary/Reports</CurrentItem>
+      <CurrentItem>Implement Design</CurrentItem>
    </ItemView>
    <ItemView guiview="File" >
       <ClosedNodes>
@@ -105,7 +107,7 @@
       <CurrentItem>work</CurrentItem>
    </ItemView>
    <SourceProcessView>000000ff00000000000000020000017b0000010301000000050100000002</SourceProcessView>
-   <CurrentView>Behavioral Simulation</CurrentView>
+   <CurrentView>Implementation</CurrentView>
    <ItemView engineview="SynthesisOnly" sourcetype="DESUT_UCF" guiview="Process" >
       <ClosedNodes>
          <ClosedNodesVersion>1</ClosedNodesVersion>
@@ -124,16 +126,15 @@
    <ItemView engineview="SynthesisOnly" sourcetype="" guiview="Process" >
       <ClosedNodes>
          <ClosedNodesVersion>1</ClosedNodesVersion>
-         <ClosedNode>Design Utilities/Compile HDL Simulation Libraries</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem/>
+         <SelectedItem>View Compilation Log</SelectedItem>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff0000000000000001000000010000000000000000000000000000000000000000000000025e000000010000000100000000000000000000000064ffffffff0000008100000000000000010000025e0000000100000000</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000000000000000001d7000000010000000100000000000000000000000064ffffffff000000810000000000000001000001d70000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
-      <CurrentItem/>
+      <CurrentItem>View Compilation Log</CurrentItem>
    </ItemView>
    <ItemView engineview="BehavioralSim" guiview="Source" compilemode="AutoCompile" >
       <ClosedNodes>
@@ -158,13 +159,13 @@
          <ClosedNode>/main C:|Users|BuccelliLab|Desktop|RHS2000InterfaceXEM6010 release 180814|main.v/host - okHost</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem>main (C:/GitHub/intan_custom_arch/FPGA/New code/Working_project_from_simulink/RHS2000InterfaceXEM6010 release 180814_cust_arch/main.v)</SelectedItem>
+         <SelectedItem>main (C:/GitHub/closed-loop-neuroscience/Mattia/Custom_architecture/Intan_custom/main.v)</SelectedItem>
       </SelectedItems>
-      <ScrollbarPosition orientation="vertical" >8</ScrollbarPosition>
+      <ScrollbarPosition orientation="vertical" >21</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
       <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000020200000001000000010000006400000443000000020000000000000000000000000200000064ffffffff000000810000000300000002000004430000000100000003000000000000000100000003</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >true</UserChangedColumnWidths>
-      <CurrentItem>main (C:/GitHub/intan_custom_arch/FPGA/New code/Working_project_from_simulink/RHS2000InterfaceXEM6010 release 180814_cust_arch/main.v)</CurrentItem>
+      <CurrentItem>main (C:/GitHub/closed-loop-neuroscience/Mattia/Custom_architecture/Intan_custom/main.v)</CurrentItem>
    </ItemView>
    <ItemView engineview="BehavioralSim" sourcetype="" guiview="Process" >
       <ClosedNodes>
@@ -176,7 +177,7 @@
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000000000000000000231000000010000000100000000000000000000000064ffffffff000000810000000000000001000002310000000100000000</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000000000000000001d7000000010000000100000000000000000000000064ffffffff000000810000000000000001000001d70000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
       <CurrentItem/>
    </ItemView>
