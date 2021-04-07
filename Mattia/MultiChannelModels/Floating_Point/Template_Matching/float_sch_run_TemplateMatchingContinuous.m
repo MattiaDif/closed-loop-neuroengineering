@@ -1,5 +1,3 @@
-%% This script load the parameters necessary for the fixed-point conversion of the hard threshold model
-
 clear all
 close all
 clc
@@ -17,40 +15,41 @@ addpath(genpath(project_path)); %adding to the Matlab path all the project folde
 
 
 % %%%%%%%%% CHANGE THE noise_level VARIABLE ACCORDING TO THE SIMULATION RECORDING %%%%%%%%%
-% noise_level = 10;   %10, 20, 30
+% noise_level = 30;   %10, 20, 30
 % %%%%%%%%% CHANGE THE ch VARIABLE ACCORDING TO THE SIMULATION RECORDING %%%%%%%%%
-% ch = 'ch10';
+% ch = 'ch7';
 
 %%%%%%%%% CHANGE THE mdl_name VARIABLE ACCORDING TO THE SIMULINK MODEL %%%%%%%%%
-mdl_name = "fixed_sch_Sample_HardThreshold";
+mdl_name = "float_sch_TemplateMatchingContinuous";
 
+
+filename = 'tetrode_recording_20';
+load([filename,'_waveforms_mean.mat']);
 
 %% Simulation parameters
+load([filename,'.mat']);
 fs = 30000; %Hz - sampling frequency
 fn = fs/2;  %Hz - Nyquist frequency
 refractory = 10^-3; %refractory period
-th=32408; % sweeping  thresholds, from -70 µV --> (-70*10^-6*192*(2^16-1))/(2*1.225) + 32768 and quantized using a voltage step size of 0.195 µV
+template = double(mean_waveform{1, 1})';  %template extracted from MEArec dataset
+% template2 = double(mean_waveform{1, 2}(:,str2num(ch(3:end))))';
+% template3 = double(mean_waveform{1, 3}(:,str2num(ch(3:end))))';
+buffer_rec = length(template);    %buffer length
+buffer_overlap = buffer_rec - 1;    %buffer overlap
+score = [3600];
 sim_type = 'normal'; %simulation speed
-sim_stop_time = '10';   %s
+sim_stop_time = '5';   %s
 
 
 %% Performance analysis parameters
 w_len = fs/1000;  %samples --> 1ms
-peak_diff = 15; %samples --> max spike position distance between recording and ground truth
-spiketrain = 3; %ground_truth selected for performance evaluation
-%peak_diff --> tolerance
+peak_diff = 65; %samples --> max spike position distance between recording and ground truth
+spiketrain = 1; %ground_truth selected for performance evaluation
+
 
 %% Data loading
-filename = 'monotrode_test_20';
+filename = 'tetrode_test_20';
 
 signal = load([filename,'.mat']);
 ground = load([filename,'_gt.mat']);
-
-
-
-
-
-
-
-
 
