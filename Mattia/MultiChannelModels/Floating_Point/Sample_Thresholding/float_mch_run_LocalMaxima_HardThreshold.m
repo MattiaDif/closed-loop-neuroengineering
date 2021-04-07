@@ -39,7 +39,7 @@ spiketrain = 1; %number of ground_truth
 %peak_diff --> tolerance
 
 %% Data loading
-filename = 'monotrode_test_20';
+filename = 'tetrode_test_20';
 
 signal = load([filename,'.mat']);
 ground = load([filename,'_gt.mat']);

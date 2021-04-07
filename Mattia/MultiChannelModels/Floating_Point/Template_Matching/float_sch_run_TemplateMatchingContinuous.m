@@ -23,7 +23,7 @@ addpath(genpath(project_path)); %adding to the Matlab path all the project folde
 mdl_name = "float_sch_TemplateMatchingContinuous";
 
 
-filename = 'tetrode_recording_20';
+filename = 'tetrode_test_20';
 load([filename,'_waveforms_mean.mat']);
 
 %% Simulation parameters

@@ -24,7 +24,7 @@ mdl_name = "float_sch_TemplateMatchingCentered";
 
 result_flag = 0;    %1 --> save results, 0 --> not save
 
-filename = 'monotrode_recording_20';
+filename = 'monotrode_test_20';
 load([filename,'_waveforms_mean.mat']);
 
 %% Simulation parameters
