@@ -1,1 +1,0 @@
--intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -lib "secureip" -o "C:/GitHub/closed-loop-neuroscience/Mattia/Custom_architecture/Intan_custom/main_isim_beh.exe" -prj "C:/GitHub/closed-loop-neuroscience/Mattia/Custom_architecture/Intan_custom/main_beh.prj" "work.main" "work.glbl" 
