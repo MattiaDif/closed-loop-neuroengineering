@@ -1,6 +1,9 @@
 *.xml
 *.prj
 *.slxc
+*.mexw64
+
+slprj
 
 Mattia/MultiChannelModels/Floating_Point/Energy_Operator/slprj
 
