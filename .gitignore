@@ -2,6 +2,30 @@
 *.prj
 *.slxc
 
+Mattia/MultiChannelModels/Floating_Point/Energy_Operator/slprj
+
+Mattia/MultiChannelModels/Floating_Point/Sample_Thresholding/slprj
+
+Mattia/MultiChannelModels/Floating_Point/Template_Matching/slprj
+
+Mattia/MultiChannelModels/Fixed_Point/Energy_Operator/slprj
+
+Mattia/MultiChannelModels/Fixed_Point/Sample_Thresholding/slprj
+
+Mattia/MultiChannelModels/Fixed_Point/Template_Matching/slprj
+
+Mattia/SingleChannelModels/Floating_Point/Energy_Operator/slprj
+
+Mattia/SingleChannelModels/Floating_Point/Sample_Thresholding/slprj
+
+Mattia/SingleChannelModels/Floating_Point/Template_Matching/slprj
+
+Mattia/SingleChannelModels/Fixed_Point/Energy_Operator/slprj
+
+Mattia/SingleChannelModels/Fixed_Point/Sample_Thresholding/slprj
+
+Mattia/SingleChannelModels/Fixed_Point/Template_Matching/slprj
+
 Stefano/slprj/_jitprj/
 
 Stefano/slprj/_sfprj/EMLReport/sjQRKWPfOqovQn3i39EppuH.mat
