@@ -1,0 +1,7 @@
+15/04/2021
+
+cust_arch_19 --> old version from intan_cust_arch repo
+
+CustArch --> version from cust_arch_22 of intan_cust_arch repo
+
+CustArch_v2 --> processing subsystem erased, AC data put in DC slot

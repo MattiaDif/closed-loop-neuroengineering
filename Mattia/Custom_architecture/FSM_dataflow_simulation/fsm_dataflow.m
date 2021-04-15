@@ -28,7 +28,7 @@ clear
 clc
 
 
-save_flag = 1;
+save_flag = 1;  %1 save fsm out data, 0 not
 
 
 %% Initial conditions
@@ -433,9 +433,13 @@ fsm_valid_def_time = timeseries(fsm_valid_def);
 
 
 if save_flag == 1
-
-    save('C:\GitHub\closed-loop-neuroscience\Mattia\Custom_architecture\CustArch_debug\fsm_out','fsm_out_def_time','-v7.3')
-    save('C:\GitHub\closed-loop-neuroscience\Mattia\Custom_architecture\CustArch_debug\fsm_valid','fsm_valid_def_time','-v7.3')
+    
+    chip = num2str(n_chip);
+    frame = num2str(n_dataframe);
+    save(['C:\GitHub\closed-loop-neuroscience\Mattia\Custom_architecture\CustArch_debug\fsm_out_chip',chip(find(~isspace(chip))),'_nframe',frame(find(~isspace(frame)))],...
+            'fsm_out_def_time','-v7.3')
+    save(['C:\GitHub\closed-loop-neuroscience\Mattia\Custom_architecture\CustArch_debug\fsm_valid_chip',chip(find(~isspace(chip))),'_nframe',frame(find(~isspace(frame)))],...
+            'fsm_valid_def_time','-v7.3')
 
 end
 

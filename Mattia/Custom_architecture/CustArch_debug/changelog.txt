@@ -1,0 +1,27 @@
+15/04/2021
+CustArch_InOut_comparison --> comparison of the in/out dataflow of the Simulink custom architecture
+
+Intan_Out_comparison --> comparison of the output of the Intan system between the original and the custom path and check of the custom path
+
+read_Intan_RHS2000_file --> slight modified original Intan code for .rhs file reading
+
+
+
+
+
+
+
+
+
+Note about MATLAB dat
+chipXXXXXXXX --> if X = 1 that datastream is enabled, if 0 not
+nframeY --> Y is the number of dataframe simulated
+custvN --> N is the version of the custom architecture used
+
+-fsm_out_... / fsm_valid_... --> data generated from the dataflow simulator from the FSM to the host PC
+
+-custvN_out_... / custvN_out_valid... --> output of the Simulink custom architecture 
+
+example --> fsm_out_chip10000000_nframe300, fsm_valid_chip10000000_nframe300 (INPUT)
+custv2_out_chip10000000_nframe300, custv2_out_valid_chip10000000_nframe300 (OUTPUT)
+--> the chipXXXXXXXX and nframeY are coincident. it means the they are the input and the output of the same simulation
