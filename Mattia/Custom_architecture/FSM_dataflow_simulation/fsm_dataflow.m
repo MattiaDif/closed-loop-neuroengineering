@@ -428,18 +428,38 @@ fsm_out_def_reshape(time_high_locks) = timestamp_high;
 
 
 %% saving
-fsm_out_def_time = timeseries(reshape(fsm_out_def_reshape,[],1));
+fsm_out_def_uint16 = reshape(fsm_out_def_reshape,[],1);
+fsm_valid_def = fsm_valid_def;
+
+fsm_out_def_time = timeseries(fsm_out_def_uint16);
 fsm_valid_def_time = timeseries(fsm_valid_def);
+
+fsm_out_def_bin = dec2bin(fsm_out_def_uint16,16);
+fsm_valid_def_bin = dec2bin(fsm_valid_def,1);
 
 
 if save_flag == 1
     
     chip = num2str(n_chip);
+    %for simulink
     frame = num2str(n_dataframe);
     save(['C:\GitHub\closed-loop-neuroscience\Mattia\Custom_architecture\CustArch_debug\fsm_out_chip',chip(find(~isspace(chip))),'_nframe',frame(find(~isspace(frame)))],...
             'fsm_out_def_time','-v7.3')
     save(['C:\GitHub\closed-loop-neuroscience\Mattia\Custom_architecture\CustArch_debug\fsm_valid_chip',chip(find(~isspace(chip))),'_nframe',frame(find(~isspace(frame)))],...
             'fsm_valid_def_time','-v7.3')
+        
+    %for ISE
+    fileID_RHS = fopen(['C:\GitHub\closed-loop-neuroscience\Mattia\Custom_architecture\CustArch_debug\fsm_out_chip',chip(find(~isspace(chip))),...
+                    '_nframe',frame(find(~isspace(frame))),'.txt'], 'w');
+    fileID_data_valid = fopen(['C:\GitHub\closed-loop-neuroscience\Mattia\Custom_architecture\CustArch_debug\fsm_valid_chip',chip(find(~isspace(chip))),...
+                    '_nframe',frame(find(~isspace(frame))),'.txt'], 'w');
+                
+    for i = 1:length(fsm_valid_def)
+  
+        fprintf(fileID_RHS,'%s \n',fsm_out_def_bin(i,:));
+        fprintf(fileID_data_valid,'%s \n',fsm_valid_def_bin(i,:));
+            
+    end
 
 end
 
