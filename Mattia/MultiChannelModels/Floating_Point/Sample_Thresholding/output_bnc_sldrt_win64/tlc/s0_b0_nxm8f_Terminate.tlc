@@ -1,0 +1,27 @@
+%implements s0_b0_nxm8f_Terminate "C"
+
+%function Terminate(block, system) Output
+%assign cfgTxt = ""
+%openfile cfgTxt
+%assign localVarDecl = ""
+%assign tlcTerminateFcnOfS0B0 = OpaqueTLCBlockFcn("Terminate", 0, 0, 0, 3, 0)
+%assign tlcTerminateFcnOfS0B1 = OpaqueTLCBlockFcn("Terminate", 0, 1, 0, 3, 1)
+%if !WHITE_SPACE(tlcTerminateFcnOfS0B0)
+/* Terminate for FromFile: '<Root>/From File' */
+%<tlcTerminateFcnOfS0B0>\
+%endif
+%if !WHITE_SPACE(tlcTerminateFcnOfS0B1)
+/* Terminate for S-Function (sldrtdo): '<Root>/Digital Output' */
+%<tlcTerminateFcnOfS0B1>\
+%endif
+%closefile cfgTxt
+%<cfgTxt>
+%endfunction
+%function TerminateFcnProtoType(block, system) Output
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void Terminate(\
+%assign comma = ""
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(0, 3, fcnProtoType)>
+%endfunction

@@ -1,0 +1,302 @@
+%implements s0_b0_nxm8f_TLCInterface "C"
+
+%function getOutputAddr_0_0_0_0_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&output_bnc_B.FromFile"
+%endfunction
+
+%function getOutput_0_0_0_0_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "output_bnc_B.FromFile"
+%endfunction
+
+%function getDWorkAddr_0_0_0_0_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&output_bnc_DW.FromFile_PWORK"
+%endfunction
+
+%function getDWork_0_0_0_0_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "output_bnc_DW.FromFile_PWORK"
+%endfunction
+
+%function getInputAddr_0_1_0_0_1_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&output_bnc_B.FromFile"
+%endfunction
+
+%function getInput_0_1_0_0_1_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "output_bnc_B.FromFile"
+%endfunction
+
+%function getDWorkAddr_0_1_0_0_1_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&output_bnc_DW.DigitalOutput_PWORK"
+%endfunction
+
+%function getDWork_0_1_0_0_1_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "output_bnc_DW.DigitalOutput_PWORK"
+%endfunction
+
+%function getParamAddr_0_1_0_0_1_1_2(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&output_bnc_P.DigitalOutput_MaxMissedTicks"
+%endfunction
+
+%function getParam_0_1_0_0_1_1_2(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "output_bnc_P.DigitalOutput_MaxMissedTicks"
+%endfunction
+
+%function getParamAddr_0_1_0_0_1_1_3(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&output_bnc_P.DigitalOutput_YieldWhenWaiting"
+%endfunction
+
+%function getParam_0_1_0_0_1_1_3(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "output_bnc_P.DigitalOutput_YieldWhenWaiting"
+%endfunction
+
+%function getParamAddr_0_1_0_0_1_1_5(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&output_bnc_P.DigitalOutput_Channels"
+%endfunction
+
+%function getParam_0_1_0_0_1_1_5(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "output_bnc_P.DigitalOutput_Channels"
+%endfunction
+
+%function getParamAddr_0_1_0_0_1_1_4(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&output_bnc_P.DigitalOutput_BitMode"
+%endfunction
+
+%function getParam_0_1_0_0_1_1_4(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "output_bnc_P.DigitalOutput_BitMode"
+%endfunction
+
+%function getParamAddr_0_1_0_0_1_1_1(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&output_bnc_P.DigitalOutput_InitialValue"
+%endfunction
+
+%function getParam_0_1_0_0_1_1_1(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "output_bnc_P.DigitalOutput_InitialValue"
+%endfunction
+
+%function getParamAddr_0_1_0_0_1_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&output_bnc_P.DigitalOutput_FinalValue"
+%endfunction
+
+%function getParam_0_1_0_0_1_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "output_bnc_P.DigitalOutput_FinalValue"
+%endfunction
+
+%function getOutputAddr_0_0_0_2_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&output_bnc_B.FromFile"
+%endfunction
+
+%function getOutput_0_0_0_2_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "output_bnc_B.FromFile"
+%endfunction
+
+%function getDWorkAddr_0_0_0_2_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&output_bnc_DW.FromFile_PWORK"
+%endfunction
+
+%function getDWork_0_0_0_2_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "output_bnc_DW.FromFile_PWORK"
+%endfunction
+
+%function getInputAddr_0_1_0_2_1_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&output_bnc_B.FromFile"
+%endfunction
+
+%function getInput_0_1_0_2_1_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "output_bnc_B.FromFile"
+%endfunction
+
+%function getDWorkAddr_0_1_0_2_1_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&output_bnc_DW.DigitalOutput_PWORK"
+%endfunction
+
+%function getDWork_0_1_0_2_1_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "output_bnc_DW.DigitalOutput_PWORK"
+%endfunction
+
+%function getParamAddr_0_1_0_2_1_1_2(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&output_bnc_P.DigitalOutput_MaxMissedTicks"
+%endfunction
+
+%function getParam_0_1_0_2_1_1_2(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "output_bnc_P.DigitalOutput_MaxMissedTicks"
+%endfunction
+
+%function getParamAddr_0_1_0_2_1_1_3(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&output_bnc_P.DigitalOutput_YieldWhenWaiting"
+%endfunction
+
+%function getParam_0_1_0_2_1_1_3(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "output_bnc_P.DigitalOutput_YieldWhenWaiting"
+%endfunction
+
+%function getParamAddr_0_1_0_2_1_1_5(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&output_bnc_P.DigitalOutput_Channels"
+%endfunction
+
+%function getParam_0_1_0_2_1_1_5(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "output_bnc_P.DigitalOutput_Channels"
+%endfunction
+
+%function getParamAddr_0_1_0_2_1_1_4(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&output_bnc_P.DigitalOutput_BitMode"
+%endfunction
+
+%function getParam_0_1_0_2_1_1_4(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "output_bnc_P.DigitalOutput_BitMode"
+%endfunction
+
+%function getParamAddr_0_1_0_2_1_1_1(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&output_bnc_P.DigitalOutput_InitialValue"
+%endfunction
+
+%function getParam_0_1_0_2_1_1_1(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "output_bnc_P.DigitalOutput_InitialValue"
+%endfunction
+
+%function getParamAddr_0_1_0_2_1_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&output_bnc_P.DigitalOutput_FinalValue"
+%endfunction
+
+%function getParam_0_1_0_2_1_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "output_bnc_P.DigitalOutput_FinalValue"
+%endfunction
+
+%function getOutputAddr_0_0_0_3_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&output_bnc_B.FromFile"
+%endfunction
+
+%function getOutput_0_0_0_3_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "output_bnc_B.FromFile"
+%endfunction
+
+%function getDWorkAddr_0_0_0_3_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&output_bnc_DW.FromFile_PWORK"
+%endfunction
+
+%function getDWork_0_0_0_3_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "output_bnc_DW.FromFile_PWORK"
+%endfunction
+
+%function getInputAddr_0_1_0_3_1_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&output_bnc_B.FromFile"
+%endfunction
+
+%function getInput_0_1_0_3_1_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "output_bnc_B.FromFile"
+%endfunction
+
+%function getDWorkAddr_0_1_0_3_1_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&output_bnc_DW.DigitalOutput_PWORK"
+%endfunction
+
+%function getDWork_0_1_0_3_1_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "output_bnc_DW.DigitalOutput_PWORK"
+%endfunction
+
+%function getParamAddr_0_1_0_3_1_1_2(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&output_bnc_P.DigitalOutput_MaxMissedTicks"
+%endfunction
+
+%function getParam_0_1_0_3_1_1_2(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "output_bnc_P.DigitalOutput_MaxMissedTicks"
+%endfunction
+
+%function getParamAddr_0_1_0_3_1_1_3(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&output_bnc_P.DigitalOutput_YieldWhenWaiting"
+%endfunction
+
+%function getParam_0_1_0_3_1_1_3(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "output_bnc_P.DigitalOutput_YieldWhenWaiting"
+%endfunction
+
+%function getParamAddr_0_1_0_3_1_1_5(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&output_bnc_P.DigitalOutput_Channels"
+%endfunction
+
+%function getParam_0_1_0_3_1_1_5(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "output_bnc_P.DigitalOutput_Channels"
+%endfunction
+
+%function getParamAddr_0_1_0_3_1_1_4(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&output_bnc_P.DigitalOutput_BitMode"
+%endfunction
+
+%function getParam_0_1_0_3_1_1_4(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "output_bnc_P.DigitalOutput_BitMode"
+%endfunction
+
+%function getParamAddr_0_1_0_3_1_1_1(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&output_bnc_P.DigitalOutput_InitialValue"
+%endfunction
+
+%function getParam_0_1_0_3_1_1_1(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "output_bnc_P.DigitalOutput_InitialValue"
+%endfunction
+
+%function getParamAddr_0_1_0_3_1_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&output_bnc_P.DigitalOutput_FinalValue"
+%endfunction
+
+%function getParam_0_1_0_3_1_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "output_bnc_P.DigitalOutput_FinalValue"
+%endfunction
+

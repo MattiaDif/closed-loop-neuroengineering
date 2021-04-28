@@ -1,0 +1,27 @@
+%implements s0_b0_nxm8f_Start "C"
+
+%function Start(block, system) Output
+%assign cfgTxt = ""
+%openfile cfgTxt
+%assign localVarDecl = ""
+%assign tlcStartFcnOfS0B0 = OpaqueTLCBlockFcn("Start", 0, 0, 0, 0, 0)
+%assign tlcStartFcnOfS0B1 = OpaqueTLCBlockFcn("Start", 0, 1, 0, 0, 1)
+%if !WHITE_SPACE(tlcStartFcnOfS0B0)
+/* Start for FromFile: '<Root>/From File' */
+%<tlcStartFcnOfS0B0>\
+%endif
+%if !WHITE_SPACE(tlcStartFcnOfS0B1)
+/* Start for S-Function (sldrtdo): '<Root>/Digital Output' */
+%<tlcStartFcnOfS0B1>\
+%endif
+%closefile cfgTxt
+%<cfgTxt>
+%endfunction
+%function StartFcnProtoType(block, system) Output
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void Start(\
+%assign comma = ""
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(0, 0, fcnProtoType)>
+%endfunction
