@@ -1,0 +1,12 @@
+/home/ise/ise_projects/RHS2000InterfaceXEM6010 release 180814_cust_arch/main.ngc 1618389286
+/home/ise/ise_projects/RHS2000InterfaceXEM6010 release 180814_cust_arch/okWireIn.ngc 1570192921
+/home/ise/ise_projects/RHS2000InterfaceXEM6010 release 180814_cust_arch/okTriggerIn.ngc 1570192921
+/home/ise/ise_projects/RHS2000InterfaceXEM6010 release 180814_cust_arch/okWireOut.ngc 1570192921
+/home/ise/ise_projects/RHS2000InterfaceXEM6010 release 180814_cust_arch/okPipeIn.ngc 1570192921
+/home/ise/ise_projects/RHS2000InterfaceXEM6010 release 180814_cust_arch/okPipeOut.ngc 1570192921
+/home/ise/ise_projects/RHS2000InterfaceXEM6010 release 180814_cust_arch/okCoreHarness.ngc 1570192921
+/home/ise/ise_projects/RHS2000InterfaceXEM6010 release 180814_cust_arch/TFIFO64x8a_64x8b.ngc 1570192921
+/home/ise/ise_projects/RHS2000InterfaceXEM6010 release 180814_cust_arch/fifo_w16_2048_r64_512.ngc 1570192921
+/home/ise/ise_projects/RHS2000InterfaceXEM6010 release 180814_cust_arch/fifo_w64_512_r16_2048.ngc 1570192921
+/home/ise/ise_projects/RHS2000InterfaceXEM6010 release 180814_cust_arch/multiplier_18x18.ngc 1570192921
+OK
