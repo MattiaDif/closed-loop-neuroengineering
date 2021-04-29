@@ -28,7 +28,7 @@ clear
 clc
 
 
-save_flag = 1;  %1 save fsm out data, 0 not
+save_flag = 0;  %1 save fsm out data, 0 not
 
 
 %% Initial conditions
@@ -441,9 +441,10 @@ fsm_valid_def_bin = dec2bin(fsm_valid_def,1);
 if save_flag == 1
     
     chip = num2str(n_chip);
-    %for simulink
     frame = num2str(n_dataframe);
-    save(['C:\GitHub\closed-loop-neuroscience\Mattia\Custom_architecture\CustArch_debug\fsm_out_chip',chip(find(~isspace(chip))),'_nframe',frame(find(~isspace(frame)))],...
+    
+    %for simulink
+        save(['C:\GitHub\closed-loop-neuroscience\Mattia\Custom_architecture\CustArch_debug\fsm_out_chip',chip(find(~isspace(chip))),'_nframe',frame(find(~isspace(frame)))],...
             'fsm_out_def_time','-v7.3')
     save(['C:\GitHub\closed-loop-neuroscience\Mattia\Custom_architecture\CustArch_debug\fsm_valid_chip',chip(find(~isspace(chip))),'_nframe',frame(find(~isspace(frame)))],...
             'fsm_valid_def_time','-v7.3')
@@ -460,6 +461,13 @@ if save_flag == 1
         fprintf(fileID_data_valid,'%s \n',fsm_valid_def_bin(i,:));
             
     end
+    
+    
+    %for CustArch_InOut_comparison
+    save(['C:\GitHub\closed-loop-neuroscience\Mattia\Custom_architecture\CustArch_debug\raw_fsm_out_chip',chip(find(~isspace(chip))),'_nframe',frame(find(~isspace(frame)))],...
+            'fsm_out_def','-v7.3')
+    save(['C:\GitHub\closed-loop-neuroscience\Mattia\Custom_architecture\CustArch_debug\raw_fsm_valid_chip',chip(find(~isspace(chip))),'_nframe',frame(find(~isspace(frame)))],...
+            'fsm_valid_def','-v7.3')
 
 end
 
