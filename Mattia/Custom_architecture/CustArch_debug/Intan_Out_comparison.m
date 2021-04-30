@@ -5,29 +5,26 @@ clc
 
 
 %% Loading file
-path = 'C:\GitHub\closed-loop-neuroscience\Mattia\Custom_architecture\CustArch_debug\';
-files = dir([path,'*.rhs']);
+[file, path, filterindex] = ...
+    uigetfile('*.rhs', 'Select an RHS2000 Data File', 'MultiSelect', 'off');
 
-for i=1:length(files)
-    read_Intan_RHS2000_file([path,files(i).name])
-    
-    if strfind(files(i).name,'custom')
-        ac_data_cust = amplifier_data;
-        dc_data_cust = dc_amplifier_data;
-    else
-        ac_data_orig = amplifier_data;
-        dc_data_orig = dc_amplifier_data;
-    end
-    
+if (file == 0)
+    return;
 end
+
+read_Intan_RHS2000_file([path,file])
+
+ac_data_cust = amplifier_data;
+dc_data_cust = dc_amplifier_data;
+
 
 
 %% Conversion in uint 16 according to Intan datasheet
-ac_data_cust_uint16 = (ac_data_cust/(0.195*10^-6))+32768;
+ac_data_cust_uint16 = (ac_data_cust/(0.195))+32768;
 dc_data_cust_uint16 = (dc_data_cust/(-19.23*10^-3))+512;
 
-ac_data_orig_uint16 = (ac_data_orig/(0.195*10^-6))+32768;
-dc_data_orig_uint16 = (dc_data_orig/(-19.23*10^-3))+512;
+% ac_data_orig_uint16 = (ac_data_orig/(0.195*10^-6))+32768;
+% dc_data_orig_uint16 = (dc_data_orig/(-19.23*10^-3))+512;
 
 
 for i = 1:size(ac_data_cust,1)

@@ -22,10 +22,10 @@ fsm_valid_def_time = fsm_valid_def_time.Data;
 
 
 %output
-load('custv3_out_chip10000000_nframe300.mat')
+load('custv5_out_chip10000000_nframe300.mat')
 comp_data_out = comp_data_out.Data;
 
-load('custv3_out_valid_chip10000000_nframe300.mat')
+load('custv5_out_valid_chip10000000_nframe300.mat')
 comp_data_out_valid = comp_data_out_valid.Data;
 
 
