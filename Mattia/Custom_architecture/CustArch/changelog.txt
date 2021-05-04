@@ -1,7 +1,19 @@
 15/04/2021
 
-cust_arch_19 --> old version from intan_cust_arch repo
+cust_arch_19 --> old version from intan_cust_arch repo (simulink ok, fpga ok)
 
 CustArch --> version from cust_arch_22 of intan_cust_arch repo
 
-CustArch_v2 --> processing subsystem erased, AC data put in DC slot
+CustArch_v2 --> processing subsystem erased, AC data put in DC slot (simulink ok, fpga ok)
+
+CustArch_v3 --> processing subsystem with the first version of bandpass filter, AC filtered data into DC (WRONG --> filtering approach does not take into account the previous sample)
+
+CustArch_v3 --> processing subsystem only with highpass filter, AC filtered data into DC (WRONG --> filtering approach does not take into account the previous sample)
+
+CustArch_v4 --> processing subsystem only with second version of highpass filter, AC filtered data into DC (WRONG --> filtering approach does not take into account the previous sample)
+
+CustArch_v5 --> processing subsystem (mch) with 1st order IIR highpass (simulink ok, fpga ?)
+
+CustArch_v6 --> processing subsystem (mch) with 2nd order IIR highpass (WRONG --> lose previous sample once used for filtering)
+
+CustArch_v7 --> processing subsystem (mch) with 2nd order IIR highpass (simulink ok, fpga ?)

@@ -24,6 +24,10 @@ vlog  get_enabled_timings.v
 vlog  Interpret_to_RAM_output.v
 vlog  OutputStateMachine.v
 vlog  output_interpret.v
-vlog  highpass.v
+vlog  HP_Butter_1st.v
+vlog  digital_filter.v
+vlog  Detect_Change.v
+vlog  PreviousData_read.v
+vlog  previous_sample_storage.v
 vlog  process_and_retrieve.v
 vlog  cust_architecture.v

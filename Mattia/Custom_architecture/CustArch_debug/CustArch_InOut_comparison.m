@@ -4,28 +4,28 @@ clc
 
 
 
-n_chip = 1; % number of data stream enabled in the data simulated
+n_chip = 8; % number of data stream enabled in the simulated data
 
 %% Loading data
 %raw input
-load('raw_fsm_out_chip10000000_nframe300.mat')
+load('raw_fsm_out_chip11111111_nframe300.mat')
 
 % load('raw_fsm_valid_chip10000000_nframe300.mat')
 
 
 %input
-load('fsm_out_chip10000000_nframe300.mat')
+load('fsm_out_chip11111111_nframe300.mat')
 fsm_out_def_time = fsm_out_def_time.Data;
 
-load('fsm_valid_chip10000000_nframe300.mat')
+load('fsm_valid_chip11111111_nframe300.mat')
 fsm_valid_def_time = fsm_valid_def_time.Data;
 
 
 %output
-load('custv5_out_chip10000000_nframe300.mat')
+load('custv7_out_chip11111111_nframe300.mat')
 comp_data_out = comp_data_out.Data;
 
-load('custv5_out_valid_chip10000000_nframe300.mat')
+load('custv7_out_valid_chip11111111_nframe300.mat')
 comp_data_out_valid = comp_data_out_valid.Data;
 
 
@@ -53,15 +53,28 @@ legend('Input','Output')
 
 
 %AC/DC filter comparison
-AC_raw = reshape(fsm_out(raw_idx_in_AC(find(raw_idx_in_AC <= length(fsm_out)))),16*n_chip,[]);
-AC_filtered = reshape(fsm_out(raw_idx_in_DC(find(raw_idx_in_DC <= length(fsm_out)))),16*n_chip,[]);
+% n_element = round(length(fsm_out)/16,0)*16;
+% fsm_out = fsm_out(1:n_element);
+% fsm_in = fsm_in(1:n_element);
+
+AC_raw = (fsm_out(raw_idx_in_AC(find(raw_idx_in_AC <= length(fsm_out)))));
+AC_filtered = (fsm_out(raw_idx_in_DC(find(raw_idx_in_DC <= length(fsm_out)))));
+
+n_element = round(length(AC_filtered)/(16*n_chip),0)*(16*n_chip)-(16*n_chip);
+
+AC_raw = reshape(AC_raw(1:n_element),16*n_chip,[]);
+AC_filtered = reshape(AC_filtered(1:n_element),16*n_chip,[]);
 
 
-figure
-plot(AC_raw(1,:),'r','LineWidth',1),hold on
-plot(AC_filtered(1,:),'b','LineWidth',1),hold off
-title('AC raw data vs AC filtered data')
-legend('Raw','Filtered')
+for i = 1:n_chip*16
+    
+    figure
+    plot(AC_raw(i,:),'r','LineWidth',1),hold on
+    plot(AC_filtered(i,:),'b','LineWidth',1),hold off
+    title('AC raw data vs AC filtered data')
+    legend('Raw','Filtered')
+    
+end
 
 
 

@@ -5,7 +5,7 @@ Intan_Out_comparison --> comparison of the output of the Intan system between th
 
 read_Intan_RHS2000_file --> slight modified original Intan code for .rhs file reading
 
-
+fsm_dataflow --> script for the simulation of the dataflow from the FSM to the host PC
 
 
 
