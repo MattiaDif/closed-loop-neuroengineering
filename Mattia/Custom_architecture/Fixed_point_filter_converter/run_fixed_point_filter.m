@@ -17,16 +17,35 @@ addpath(genpath(project_path)); %adding to the Matlab path all the project folde
 
 
 %% Simulation parameters
-fs = 30000; %Hz - sampling frequency
+fs = 25000; %Hz - sampling frequency
 fn = fs/2;  %Hz - Nyquist frequency
 
 
 %% Data loading
-filename = 'monotrode_test_20';
+filename = 'C:\File\IIT - Neuroengineering\Progetto MathWorks\Data\Intan recordings\R21-03_00_basal2_210422_154220_ch1';
 
 signal = load([filename,'.mat']);
-ground = load([filename,'_gt.mat']);
 
+
+
+%% Fixed-point conversion 
+% model = 'fixed_point_filter';
+% sub = 'fixed_point_filter/digital_filter';
+% 
+% %make the option object
+% options = fxpOptimizationOptions();
+% options.MaxTime = 15*60;    %15 minutes of search
+% options.MaxIterations = 100;    %100 iterations
+% 
+% %set tolerances
+% addTolerance(options, [model '/filter_output'], 1, 'RelTol', 1e-2);
+% addTolerance(options, [model '/filter_output'], 1, 'AbsTol', 5e-3);
+% 
+% %run optimization
+% result = fxpopt(model, sub, options);
+% 
+% %explore best fixed-point design
+% bestSolution = explore(result);
 
 
 
