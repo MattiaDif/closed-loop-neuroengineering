@@ -518,7 +518,7 @@ release\moc_waveplot.cpp: C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\include\QtWidgets\QWi
 		C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\include\QtCore\QString \
 		..\source\waveplot.h \
 		C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\bin\moc.exe
-	C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/mkspecs/win32-msvc2015 -IC:/Users/diflo/Desktop/IntanStimRecordController_source_code_v1_05_19/source -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtWidgets -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtMultimedia -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtGui -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtANGLE -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtNetwork -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtCore -I. ..\source\waveplot.h -o release\moc_waveplot.cpp
+	C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/mkspecs/win32-msvc2015 -IC:/GitHub/closed-loop-neuroscience/Mattia/Custom_architecture/IntanStimRecordController/source -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtWidgets -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtMultimedia -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtGui -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtANGLE -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtNetwork -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtCore -I. ..\source\waveplot.h -o release\moc_waveplot.cpp
 
 release\moc_mainwindow.cpp: C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\include\QtWidgets\QMainWindow \
 		C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\include\QtWidgets\qmainwindow.h \
@@ -629,7 +629,7 @@ release\moc_mainwindow.cpp: C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\include\QtWidgets\Q
 		C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\include\QtCore\QString \
 		..\source\mainwindow.h \
 		C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\bin\moc.exe
-	C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/mkspecs/win32-msvc2015 -IC:/Users/diflo/Desktop/IntanStimRecordController_source_code_v1_05_19/source -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtWidgets -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtMultimedia -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtGui -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtANGLE -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtNetwork -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtCore -I. ..\source\mainwindow.h -o release\moc_mainwindow.cpp
+	C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/mkspecs/win32-msvc2015 -IC:/GitHub/closed-loop-neuroscience/Mattia/Custom_architecture/IntanStimRecordController/source -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtWidgets -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtMultimedia -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtGui -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtANGLE -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtNetwork -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtCore -I. ..\source\mainwindow.h -o release\moc_mainwindow.cpp
 
 release\moc_bandwidthdialog.cpp: C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\include\QtWidgets\QDialog \
 		C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\include\QtWidgets\qdialog.h \
@@ -731,7 +731,7 @@ release\moc_bandwidthdialog.cpp: C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\include\QtWidg
 		C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\include\QtGui\qtouchdevice.h \
 		..\source\bandwidthdialog.h \
 		C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\bin\moc.exe
-	C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/mkspecs/win32-msvc2015 -IC:/Users/diflo/Desktop/IntanStimRecordController_source_code_v1_05_19/source -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtWidgets -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtMultimedia -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtGui -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtANGLE -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtNetwork -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtCore -I. ..\source\bandwidthdialog.h -o release\moc_bandwidthdialog.cpp
+	C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/mkspecs/win32-msvc2015 -IC:/GitHub/closed-loop-neuroscience/Mattia/Custom_architecture/IntanStimRecordController/source -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtWidgets -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtMultimedia -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtGui -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtANGLE -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtNetwork -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtCore -I. ..\source\bandwidthdialog.h -o release\moc_bandwidthdialog.cpp
 
 release\moc_renamechanneldialog.cpp: C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\include\QtWidgets\QDialog \
 		C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\include\QtWidgets\qdialog.h \
@@ -833,7 +833,7 @@ release\moc_renamechanneldialog.cpp: C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\include\Qt
 		C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\include\QtGui\qtouchdevice.h \
 		..\source\renamechanneldialog.h \
 		C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\bin\moc.exe
-	C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/mkspecs/win32-msvc2015 -IC:/Users/diflo/Desktop/IntanStimRecordController_source_code_v1_05_19/source -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtWidgets -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtMultimedia -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtGui -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtANGLE -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtNetwork -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtCore -I. ..\source\renamechanneldialog.h -o release\moc_renamechanneldialog.cpp
+	C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/mkspecs/win32-msvc2015 -IC:/GitHub/closed-loop-neuroscience/Mattia/Custom_architecture/IntanStimRecordController/source -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtWidgets -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtMultimedia -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtGui -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtANGLE -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtNetwork -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtCore -I. ..\source\renamechanneldialog.h -o release\moc_renamechanneldialog.cpp
 
 release\moc_spikescopedialog.cpp: C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\include\QtWidgets\QDialog \
 		C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\include\QtWidgets\qdialog.h \
@@ -935,7 +935,7 @@ release\moc_spikescopedialog.cpp: C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\include\QtWid
 		C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\include\QtGui\qtouchdevice.h \
 		..\source\spikescopedialog.h \
 		C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\bin\moc.exe
-	C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/mkspecs/win32-msvc2015 -IC:/Users/diflo/Desktop/IntanStimRecordController_source_code_v1_05_19/source -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtWidgets -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtMultimedia -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtGui -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtANGLE -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtNetwork -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtCore -I. ..\source\spikescopedialog.h -o release\moc_spikescopedialog.cpp
+	C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/mkspecs/win32-msvc2015 -IC:/GitHub/closed-loop-neuroscience/Mattia/Custom_architecture/IntanStimRecordController/source -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtWidgets -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtMultimedia -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtGui -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtANGLE -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtNetwork -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtCore -I. ..\source\spikescopedialog.h -o release\moc_spikescopedialog.cpp
 
 release\moc_spikeplot.cpp: C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\include\QtWidgets\QWidget \
 		C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\include\QtWidgets\qwidget.h \
@@ -1036,7 +1036,7 @@ release\moc_spikeplot.cpp: C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\include\QtWidgets\QW
 		C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\include\QtGui\qtouchdevice.h \
 		..\source\spikeplot.h \
 		C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\bin\moc.exe
-	C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/mkspecs/win32-msvc2015 -IC:/Users/diflo/Desktop/IntanStimRecordController_source_code_v1_05_19/source -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtWidgets -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtMultimedia -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtGui -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtANGLE -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtNetwork -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtCore -I. ..\source\spikeplot.h -o release\moc_spikeplot.cpp
+	C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/mkspecs/win32-msvc2015 -IC:/GitHub/closed-loop-neuroscience/Mattia/Custom_architecture/IntanStimRecordController/source -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtWidgets -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtMultimedia -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtGui -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtANGLE -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtNetwork -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtCore -I. ..\source\spikeplot.h -o release\moc_spikeplot.cpp
 
 release\moc_keyboardshortcutdialog.cpp: C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\include\QtWidgets\QDialog \
 		C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\include\QtWidgets\qdialog.h \
@@ -1138,7 +1138,7 @@ release\moc_keyboardshortcutdialog.cpp: C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\include
 		C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\include\QtGui\qtouchdevice.h \
 		..\source\keyboardshortcutdialog.h \
 		C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\bin\moc.exe
-	C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/mkspecs/win32-msvc2015 -IC:/Users/diflo/Desktop/IntanStimRecordController_source_code_v1_05_19/source -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtWidgets -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtMultimedia -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtGui -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtANGLE -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtNetwork -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtCore -I. ..\source\keyboardshortcutdialog.h -o release\moc_keyboardshortcutdialog.cpp
+	C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/mkspecs/win32-msvc2015 -IC:/GitHub/closed-loop-neuroscience/Mattia/Custom_architecture/IntanStimRecordController/source -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtWidgets -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtMultimedia -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtGui -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtANGLE -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtNetwork -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtCore -I. ..\source\keyboardshortcutdialog.h -o release\moc_keyboardshortcutdialog.cpp
 
 release\moc_impedancefreqdialog.cpp: C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\include\QtWidgets\QDialog \
 		C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\include\QtWidgets\qdialog.h \
@@ -1240,7 +1240,7 @@ release\moc_impedancefreqdialog.cpp: C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\include\Qt
 		C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\include\QtGui\qtouchdevice.h \
 		..\source\impedancefreqdialog.h \
 		C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\bin\moc.exe
-	C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/mkspecs/win32-msvc2015 -IC:/Users/diflo/Desktop/IntanStimRecordController_source_code_v1_05_19/source -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtWidgets -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtMultimedia -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtGui -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtANGLE -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtNetwork -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtCore -I. ..\source\impedancefreqdialog.h -o release\moc_impedancefreqdialog.cpp
+	C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/mkspecs/win32-msvc2015 -IC:/GitHub/closed-loop-neuroscience/Mattia/Custom_architecture/IntanStimRecordController/source -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtWidgets -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtMultimedia -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtGui -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtANGLE -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtNetwork -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtCore -I. ..\source\impedancefreqdialog.h -o release\moc_impedancefreqdialog.cpp
 
 release\moc_triggerrecorddialog.cpp: C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\include\QtWidgets\QDialog \
 		C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\include\QtWidgets\qdialog.h \
@@ -1342,7 +1342,7 @@ release\moc_triggerrecorddialog.cpp: C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\include\Qt
 		C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\include\QtGui\qtouchdevice.h \
 		..\source\triggerrecorddialog.h \
 		C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\bin\moc.exe
-	C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/mkspecs/win32-msvc2015 -IC:/Users/diflo/Desktop/IntanStimRecordController_source_code_v1_05_19/source -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtWidgets -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtMultimedia -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtGui -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtANGLE -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtNetwork -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtCore -I. ..\source\triggerrecorddialog.h -o release\moc_triggerrecorddialog.cpp
+	C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/mkspecs/win32-msvc2015 -IC:/GitHub/closed-loop-neuroscience/Mattia/Custom_architecture/IntanStimRecordController/source -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtWidgets -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtMultimedia -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtGui -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtANGLE -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtNetwork -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtCore -I. ..\source\triggerrecorddialog.h -o release\moc_triggerrecorddialog.cpp
 
 release\moc_setsaveformatdialog.cpp: C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\include\QtWidgets\QDialog \
 		C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\include\QtWidgets\qdialog.h \
@@ -1445,7 +1445,7 @@ release\moc_setsaveformatdialog.cpp: C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\include\Qt
 		..\source\globalconstants.h \
 		..\source\setsaveformatdialog.h \
 		C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\bin\moc.exe
-	C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/mkspecs/win32-msvc2015 -IC:/Users/diflo/Desktop/IntanStimRecordController_source_code_v1_05_19/source -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtWidgets -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtMultimedia -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtGui -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtANGLE -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtNetwork -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtCore -I. ..\source\setsaveformatdialog.h -o release\moc_setsaveformatdialog.cpp
+	C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/mkspecs/win32-msvc2015 -IC:/GitHub/closed-loop-neuroscience/Mattia/Custom_architecture/IntanStimRecordController/source -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtWidgets -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtMultimedia -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtGui -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtANGLE -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtNetwork -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtCore -I. ..\source\setsaveformatdialog.h -o release\moc_setsaveformatdialog.cpp
 
 release\moc_helpdialoghighpassfilter.cpp: C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\include\QtWidgets\QDialog \
 		C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\include\QtWidgets\qdialog.h \
@@ -1547,7 +1547,7 @@ release\moc_helpdialoghighpassfilter.cpp: C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\inclu
 		C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\include\QtGui\qtouchdevice.h \
 		..\source\helpdialoghighpassfilter.h \
 		C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\bin\moc.exe
-	C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/mkspecs/win32-msvc2015 -IC:/Users/diflo/Desktop/IntanStimRecordController_source_code_v1_05_19/source -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtWidgets -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtMultimedia -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtGui -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtANGLE -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtNetwork -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtCore -I. ..\source\helpdialoghighpassfilter.h -o release\moc_helpdialoghighpassfilter.cpp
+	C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/mkspecs/win32-msvc2015 -IC:/GitHub/closed-loop-neuroscience/Mattia/Custom_architecture/IntanStimRecordController/source -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtWidgets -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtMultimedia -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtGui -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtANGLE -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtNetwork -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtCore -I. ..\source\helpdialoghighpassfilter.h -o release\moc_helpdialoghighpassfilter.cpp
 
 release\moc_helpdialognotchfilter.cpp: C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\include\QtWidgets\QDialog \
 		C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\include\QtWidgets\qdialog.h \
@@ -1649,7 +1649,7 @@ release\moc_helpdialognotchfilter.cpp: C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\include\
 		C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\include\QtGui\qtouchdevice.h \
 		..\source\helpdialognotchfilter.h \
 		C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\bin\moc.exe
-	C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/mkspecs/win32-msvc2015 -IC:/Users/diflo/Desktop/IntanStimRecordController_source_code_v1_05_19/source -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtWidgets -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtMultimedia -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtGui -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtANGLE -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtNetwork -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtCore -I. ..\source\helpdialognotchfilter.h -o release\moc_helpdialognotchfilter.cpp
+	C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/mkspecs/win32-msvc2015 -IC:/GitHub/closed-loop-neuroscience/Mattia/Custom_architecture/IntanStimRecordController/source -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtWidgets -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtMultimedia -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtGui -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtANGLE -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtNetwork -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtCore -I. ..\source\helpdialognotchfilter.h -o release\moc_helpdialognotchfilter.cpp
 
 release\moc_helpdialogdacs.cpp: C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\include\QtWidgets\QDialog \
 		C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\include\QtWidgets\qdialog.h \
@@ -1751,7 +1751,7 @@ release\moc_helpdialogdacs.cpp: C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\include\QtWidge
 		C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\include\QtGui\qtouchdevice.h \
 		..\source\helpdialogdacs.h \
 		C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\bin\moc.exe
-	C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/mkspecs/win32-msvc2015 -IC:/Users/diflo/Desktop/IntanStimRecordController_source_code_v1_05_19/source -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtWidgets -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtMultimedia -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtGui -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtANGLE -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtNetwork -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtCore -I. ..\source\helpdialogdacs.h -o release\moc_helpdialogdacs.cpp
+	C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/mkspecs/win32-msvc2015 -IC:/GitHub/closed-loop-neuroscience/Mattia/Custom_architecture/IntanStimRecordController/source -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtWidgets -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtMultimedia -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtGui -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtANGLE -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtNetwork -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtCore -I. ..\source\helpdialogdacs.h -o release\moc_helpdialogdacs.cpp
 
 release\moc_helpdialogcomparators.cpp: C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\include\QtWidgets\QDialog \
 		C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\include\QtWidgets\qdialog.h \
@@ -1853,7 +1853,7 @@ release\moc_helpdialogcomparators.cpp: C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\include\
 		C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\include\QtGui\qtouchdevice.h \
 		..\source\helpdialogcomparators.h \
 		C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\bin\moc.exe
-	C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/mkspecs/win32-msvc2015 -IC:/Users/diflo/Desktop/IntanStimRecordController_source_code_v1_05_19/source -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtWidgets -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtMultimedia -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtGui -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtANGLE -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtNetwork -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtCore -I. ..\source\helpdialogcomparators.h -o release\moc_helpdialogcomparators.cpp
+	C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/mkspecs/win32-msvc2015 -IC:/GitHub/closed-loop-neuroscience/Mattia/Custom_architecture/IntanStimRecordController/source -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtWidgets -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtMultimedia -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtGui -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtANGLE -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtNetwork -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtCore -I. ..\source\helpdialogcomparators.h -o release\moc_helpdialogcomparators.cpp
 
 release\moc_helpdialogchipfilters.cpp: C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\include\QtWidgets\QDialog \
 		C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\include\QtWidgets\qdialog.h \
@@ -1955,7 +1955,7 @@ release\moc_helpdialogchipfilters.cpp: C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\include\
 		C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\include\QtGui\qtouchdevice.h \
 		..\source\helpdialogchipfilters.h \
 		C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\bin\moc.exe
-	C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/mkspecs/win32-msvc2015 -IC:/Users/diflo/Desktop/IntanStimRecordController_source_code_v1_05_19/source -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtWidgets -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtMultimedia -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtGui -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtANGLE -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtNetwork -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtCore -I. ..\source\helpdialogchipfilters.h -o release\moc_helpdialogchipfilters.cpp
+	C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/mkspecs/win32-msvc2015 -IC:/GitHub/closed-loop-neuroscience/Mattia/Custom_architecture/IntanStimRecordController/source -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtWidgets -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtMultimedia -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtGui -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtANGLE -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtNetwork -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtCore -I. ..\source\helpdialogchipfilters.h -o release\moc_helpdialogchipfilters.cpp
 
 release\moc_cabledelaydialog.cpp: C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\include\QtWidgets\QDialog \
 		C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\include\QtWidgets\qdialog.h \
@@ -2057,7 +2057,7 @@ release\moc_cabledelaydialog.cpp: C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\include\QtWid
 		C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\include\QtGui\qtouchdevice.h \
 		..\source\cabledelaydialog.h \
 		C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\bin\moc.exe
-	C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/mkspecs/win32-msvc2015 -IC:/Users/diflo/Desktop/IntanStimRecordController_source_code_v1_05_19/source -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtWidgets -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtMultimedia -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtGui -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtANGLE -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtNetwork -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtCore -I. ..\source\cabledelaydialog.h -o release\moc_cabledelaydialog.cpp
+	C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/mkspecs/win32-msvc2015 -IC:/GitHub/closed-loop-neuroscience/Mattia/Custom_architecture/IntanStimRecordController/source -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtWidgets -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtMultimedia -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtGui -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtANGLE -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtNetwork -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtCore -I. ..\source\cabledelaydialog.h -o release\moc_cabledelaydialog.cpp
 
 release\moc_helpdialogfastsettle.cpp: C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\include\QtWidgets\QDialog \
 		C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\include\QtWidgets\qdialog.h \
@@ -2159,7 +2159,7 @@ release\moc_helpdialogfastsettle.cpp: C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\include\Q
 		C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\include\QtGui\qtouchdevice.h \
 		..\source\helpdialogfastsettle.h \
 		C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\bin\moc.exe
-	C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/mkspecs/win32-msvc2015 -IC:/Users/diflo/Desktop/IntanStimRecordController_source_code_v1_05_19/source -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtWidgets -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtMultimedia -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtGui -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtANGLE -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtNetwork -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtCore -I. ..\source\helpdialogfastsettle.h -o release\moc_helpdialogfastsettle.cpp
+	C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/mkspecs/win32-msvc2015 -IC:/GitHub/closed-loop-neuroscience/Mattia/Custom_architecture/IntanStimRecordController/source -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtWidgets -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtMultimedia -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtGui -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtANGLE -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtNetwork -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtCore -I. ..\source\helpdialogfastsettle.h -o release\moc_helpdialogfastsettle.cpp
 
 release\moc_usbdatathread.cpp: C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\include\QtCore\QObject \
 		C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\include\QtCore\qobject.h \
@@ -2217,7 +2217,7 @@ release\moc_usbdatathread.cpp: C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\include\QtCore\Q
 		C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\include\QtCore\qsemaphore.h \
 		..\source\usbdatathread.h \
 		C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\bin\moc.exe
-	C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/mkspecs/win32-msvc2015 -IC:/Users/diflo/Desktop/IntanStimRecordController_source_code_v1_05_19/source -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtWidgets -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtMultimedia -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtGui -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtANGLE -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtNetwork -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtCore -I. ..\source\usbdatathread.h -o release\moc_usbdatathread.cpp
+	C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/mkspecs/win32-msvc2015 -IC:/GitHub/closed-loop-neuroscience/Mattia/Custom_architecture/IntanStimRecordController/source -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtWidgets -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtMultimedia -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtGui -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtANGLE -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtNetwork -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtCore -I. ..\source\usbdatathread.h -o release\moc_usbdatathread.cpp
 
 release\moc_helpdialogreference.cpp: C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\include\QtWidgets\QDialog \
 		C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\include\QtWidgets\qdialog.h \
@@ -2319,7 +2319,7 @@ release\moc_helpdialogreference.cpp: C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\include\Qt
 		C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\include\QtGui\qtouchdevice.h \
 		..\source\helpdialogreference.h \
 		C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\bin\moc.exe
-	C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/mkspecs/win32-msvc2015 -IC:/Users/diflo/Desktop/IntanStimRecordController_source_code_v1_05_19/source -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtWidgets -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtMultimedia -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtGui -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtANGLE -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtNetwork -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtCore -I. ..\source\helpdialogreference.h -o release\moc_helpdialogreference.cpp
+	C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/mkspecs/win32-msvc2015 -IC:/GitHub/closed-loop-neuroscience/Mattia/Custom_architecture/IntanStimRecordController/source -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtWidgets -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtMultimedia -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtGui -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtANGLE -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtNetwork -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtCore -I. ..\source\helpdialogreference.h -o release\moc_helpdialogreference.cpp
 
 release\moc_helpdialogioexpander.cpp: C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\include\QtWidgets\QDialog \
 		C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\include\QtWidgets\qdialog.h \
@@ -2421,7 +2421,7 @@ release\moc_helpdialogioexpander.cpp: C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\include\Q
 		C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\include\QtGui\qtouchdevice.h \
 		..\source\helpdialogioexpander.h \
 		C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\bin\moc.exe
-	C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/mkspecs/win32-msvc2015 -IC:/Users/diflo/Desktop/IntanStimRecordController_source_code_v1_05_19/source -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtWidgets -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtMultimedia -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtGui -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtANGLE -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtNetwork -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtCore -I. ..\source\helpdialogioexpander.h -o release\moc_helpdialogioexpander.cpp
+	C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/mkspecs/win32-msvc2015 -IC:/GitHub/closed-loop-neuroscience/Mattia/Custom_architecture/IntanStimRecordController/source -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtWidgets -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtMultimedia -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtGui -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtANGLE -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtNetwork -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtCore -I. ..\source\helpdialogioexpander.h -o release\moc_helpdialogioexpander.cpp
 
 release\moc_stimparamdialog.cpp: C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\include\QtWidgets\QDialog \
 		C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\include\QtWidgets\qdialog.h \
@@ -2527,7 +2527,7 @@ release\moc_stimparamdialog.cpp: C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\include\QtWidg
 		..\source\globalconstants.h \
 		..\source\stimparamdialog.h \
 		C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\bin\moc.exe
-	C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/mkspecs/win32-msvc2015 -IC:/Users/diflo/Desktop/IntanStimRecordController_source_code_v1_05_19/source -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtWidgets -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtMultimedia -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtGui -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtANGLE -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtNetwork -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtCore -I. ..\source\stimparamdialog.h -o release\moc_stimparamdialog.cpp
+	C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/mkspecs/win32-msvc2015 -IC:/GitHub/closed-loop-neuroscience/Mattia/Custom_architecture/IntanStimRecordController/source -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtWidgets -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtMultimedia -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtGui -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtANGLE -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtNetwork -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtCore -I. ..\source\stimparamdialog.h -o release\moc_stimparamdialog.cpp
 
 release\moc_stimfigure.cpp: C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\include\QtWidgets\QWidget \
 		C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\include\QtWidgets\qwidget.h \
@@ -2632,7 +2632,7 @@ release\moc_stimfigure.cpp: C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\include\QtWidgets\Q
 		..\source\abstractfigure.h \
 		..\source\stimfigure.h \
 		C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\bin\moc.exe
-	C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/mkspecs/win32-msvc2015 -IC:/Users/diflo/Desktop/IntanStimRecordController_source_code_v1_05_19/source -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtWidgets -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtMultimedia -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtGui -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtANGLE -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtNetwork -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtCore -I. ..\source\stimfigure.h -o release\moc_stimfigure.cpp
+	C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/mkspecs/win32-msvc2015 -IC:/GitHub/closed-loop-neuroscience/Mattia/Custom_architecture/IntanStimRecordController/source -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtWidgets -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtMultimedia -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtGui -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtANGLE -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtNetwork -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtCore -I. ..\source\stimfigure.h -o release\moc_stimfigure.cpp
 
 release\moc_timespinbox.cpp: C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\include\QtWidgets\QWidget \
 		C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\include\QtWidgets\qwidget.h \
@@ -2734,7 +2734,7 @@ release\moc_timespinbox.cpp: C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\include\QtWidgets\
 		..\source\globalconstants.h \
 		..\source\timespinbox.h \
 		C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\bin\moc.exe
-	C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/mkspecs/win32-msvc2015 -IC:/Users/diflo/Desktop/IntanStimRecordController_source_code_v1_05_19/source -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtWidgets -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtMultimedia -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtGui -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtANGLE -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtNetwork -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtCore -I. ..\source\timespinbox.h -o release\moc_timespinbox.cpp
+	C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/mkspecs/win32-msvc2015 -IC:/GitHub/closed-loop-neuroscience/Mattia/Custom_architecture/IntanStimRecordController/source -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtWidgets -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtMultimedia -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtGui -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtANGLE -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtNetwork -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtCore -I. ..\source\timespinbox.h -o release\moc_timespinbox.cpp
 
 release\moc_currentspinbox.cpp: C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\include\QtWidgets\QWidget \
 		C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\include\QtWidgets\qwidget.h \
@@ -2836,7 +2836,7 @@ release\moc_currentspinbox.cpp: C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\include\QtWidge
 		..\source\globalconstants.h \
 		..\source\currentspinbox.h \
 		C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\bin\moc.exe
-	C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/mkspecs/win32-msvc2015 -IC:/Users/diflo/Desktop/IntanStimRecordController_source_code_v1_05_19/source -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtWidgets -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtMultimedia -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtGui -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtANGLE -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtNetwork -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtCore -I. ..\source\currentspinbox.h -o release\moc_currentspinbox.cpp
+	C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/mkspecs/win32-msvc2015 -IC:/GitHub/closed-loop-neuroscience/Mattia/Custom_architecture/IntanStimRecordController/source -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtWidgets -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtMultimedia -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtGui -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtANGLE -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtNetwork -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtCore -I. ..\source\currentspinbox.h -o release\moc_currentspinbox.cpp
 
 release\moc_digfigure.cpp: C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\include\QtWidgets\QWidget \
 		C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\include\QtWidgets\qwidget.h \
@@ -2941,7 +2941,7 @@ release\moc_digfigure.cpp: C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\include\QtWidgets\QW
 		..\source\abstractfigure.h \
 		..\source\digfigure.h \
 		C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\bin\moc.exe
-	C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/mkspecs/win32-msvc2015 -IC:/Users/diflo/Desktop/IntanStimRecordController_source_code_v1_05_19/source -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtWidgets -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtMultimedia -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtGui -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtANGLE -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtNetwork -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtCore -I. ..\source\digfigure.h -o release\moc_digfigure.cpp
+	C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/mkspecs/win32-msvc2015 -IC:/GitHub/closed-loop-neuroscience/Mattia/Custom_architecture/IntanStimRecordController/source -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtWidgets -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtMultimedia -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtGui -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtANGLE -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtNetwork -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtCore -I. ..\source\digfigure.h -o release\moc_digfigure.cpp
 
 release\moc_digoutdialog.cpp: C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\include\QtWidgets\QDialog \
 		C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\include\QtWidgets\qdialog.h \
@@ -3047,7 +3047,7 @@ release\moc_digoutdialog.cpp: C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\include\QtWidgets
 		..\source\globalconstants.h \
 		..\source\digoutdialog.h \
 		C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\bin\moc.exe
-	C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/mkspecs/win32-msvc2015 -IC:/Users/diflo/Desktop/IntanStimRecordController_source_code_v1_05_19/source -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtWidgets -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtMultimedia -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtGui -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtANGLE -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtNetwork -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtCore -I. ..\source\digoutdialog.h -o release\moc_digoutdialog.cpp
+	C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/mkspecs/win32-msvc2015 -IC:/GitHub/closed-loop-neuroscience/Mattia/Custom_architecture/IntanStimRecordController/source -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtWidgets -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtMultimedia -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtGui -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtANGLE -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtNetwork -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtCore -I. ..\source\digoutdialog.h -o release\moc_digoutdialog.cpp
 
 release\moc_abstractfigure.cpp: C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\include\QtWidgets\QWidget \
 		C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\include\QtWidgets\qwidget.h \
@@ -3151,7 +3151,7 @@ release\moc_abstractfigure.cpp: C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\include\QtWidge
 		C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\include\QtCore\QString \
 		..\source\abstractfigure.h \
 		C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\bin\moc.exe
-	C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/mkspecs/win32-msvc2015 -IC:/Users/diflo/Desktop/IntanStimRecordController_source_code_v1_05_19/source -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtWidgets -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtMultimedia -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtGui -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtANGLE -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtNetwork -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtCore -I. ..\source\abstractfigure.h -o release\moc_abstractfigure.cpp
+	C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/mkspecs/win32-msvc2015 -IC:/GitHub/closed-loop-neuroscience/Mattia/Custom_architecture/IntanStimRecordController/source -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtWidgets -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtMultimedia -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtGui -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtANGLE -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtNetwork -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtCore -I. ..\source\abstractfigure.h -o release\moc_abstractfigure.cpp
 
 release\moc_anoutfigure.cpp: C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\include\QtWidgets\QWidget \
 		C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\include\QtWidgets\qwidget.h \
@@ -3256,7 +3256,7 @@ release\moc_anoutfigure.cpp: C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\include\QtWidgets\
 		..\source\abstractfigure.h \
 		..\source\anoutfigure.h \
 		C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\bin\moc.exe
-	C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/mkspecs/win32-msvc2015 -IC:/Users/diflo/Desktop/IntanStimRecordController_source_code_v1_05_19/source -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtWidgets -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtMultimedia -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtGui -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtANGLE -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtNetwork -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtCore -I. ..\source\anoutfigure.h -o release\moc_anoutfigure.cpp
+	C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/mkspecs/win32-msvc2015 -IC:/GitHub/closed-loop-neuroscience/Mattia/Custom_architecture/IntanStimRecordController/source -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtWidgets -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtMultimedia -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtGui -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtANGLE -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtNetwork -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtCore -I. ..\source\anoutfigure.h -o release\moc_anoutfigure.cpp
 
 release\moc_anoutdialog.cpp: C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\include\QtWidgets\QDialog \
 		C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\include\QtWidgets\qdialog.h \
@@ -3361,7 +3361,7 @@ release\moc_anoutdialog.cpp: C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\include\QtWidgets\
 		C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\include\QtCore\QString \
 		..\source\anoutdialog.h \
 		C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\bin\moc.exe
-	C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/mkspecs/win32-msvc2015 -IC:/Users/diflo/Desktop/IntanStimRecordController_source_code_v1_05_19/source -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtWidgets -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtMultimedia -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtGui -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtANGLE -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtNetwork -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtCore -I. ..\source\anoutdialog.h -o release\moc_anoutdialog.cpp
+	C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/mkspecs/win32-msvc2015 -IC:/GitHub/closed-loop-neuroscience/Mattia/Custom_architecture/IntanStimRecordController/source -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtWidgets -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtMultimedia -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtGui -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtANGLE -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtNetwork -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtCore -I. ..\source\anoutdialog.h -o release\moc_anoutdialog.cpp
 
 release\moc_voltagespinbox.cpp: C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\include\QtWidgets\QWidget \
 		C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\include\QtWidgets\qwidget.h \
@@ -3462,7 +3462,7 @@ release\moc_voltagespinbox.cpp: C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\include\QtWidge
 		C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\include\QtGui\qtouchdevice.h \
 		..\source\voltagespinbox.h \
 		C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\bin\moc.exe
-	C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/mkspecs/win32-msvc2015 -IC:/Users/diflo/Desktop/IntanStimRecordController_source_code_v1_05_19/source -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtWidgets -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtMultimedia -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtGui -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtANGLE -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtNetwork -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtCore -I. ..\source\voltagespinbox.h -o release\moc_voltagespinbox.cpp
+	C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/mkspecs/win32-msvc2015 -IC:/GitHub/closed-loop-neuroscience/Mattia/Custom_architecture/IntanStimRecordController/source -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtWidgets -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtMultimedia -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtGui -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtANGLE -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtNetwork -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtCore -I. ..\source\voltagespinbox.h -o release\moc_voltagespinbox.cpp
 
 release\moc_startupdialog.cpp: C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\include\QtWidgets\QDialog \
 		C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\include\QtWidgets\qdialog.h \
@@ -3564,7 +3564,7 @@ release\moc_startupdialog.cpp: C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\include\QtWidget
 		C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\include\QtGui\qtouchdevice.h \
 		..\source\startupdialog.h \
 		C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\bin\moc.exe
-	C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/mkspecs/win32-msvc2015 -IC:/Users/diflo/Desktop/IntanStimRecordController_source_code_v1_05_19/source -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtWidgets -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtMultimedia -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtGui -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtANGLE -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtNetwork -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtCore -I. ..\source\startupdialog.h -o release\moc_startupdialog.cpp
+	C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/mkspecs/win32-msvc2015 -IC:/GitHub/closed-loop-neuroscience/Mattia/Custom_architecture/IntanStimRecordController/source -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtWidgets -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtMultimedia -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtGui -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtANGLE -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtNetwork -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtCore -I. ..\source\startupdialog.h -o release\moc_startupdialog.cpp
 
 release\moc_ampsettledialog.cpp: C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\include\QtWidgets\QDialog \
 		C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\include\QtWidgets\qdialog.h \
@@ -3666,7 +3666,7 @@ release\moc_ampsettledialog.cpp: C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\include\QtWidg
 		C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\include\QtGui\qtouchdevice.h \
 		..\source\ampsettledialog.h \
 		C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\bin\moc.exe
-	C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/mkspecs/win32-msvc2015 -IC:/Users/diflo/Desktop/IntanStimRecordController_source_code_v1_05_19/source -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtWidgets -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtMultimedia -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtGui -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtANGLE -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtNetwork -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtCore -I. ..\source\ampsettledialog.h -o release\moc_ampsettledialog.cpp
+	C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/mkspecs/win32-msvc2015 -IC:/GitHub/closed-loop-neuroscience/Mattia/Custom_architecture/IntanStimRecordController/source -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtWidgets -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtMultimedia -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtGui -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtANGLE -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtNetwork -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtCore -I. ..\source\ampsettledialog.h -o release\moc_ampsettledialog.cpp
 
 release\moc_chargerecoverydialog.cpp: C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\include\QtWidgets\QDialog \
 		C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\include\QtWidgets\qdialog.h \
@@ -3769,7 +3769,7 @@ release\moc_chargerecoverydialog.cpp: C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\include\Q
 		..\source\rhs2000registers.h \
 		..\source\chargerecoverydialog.h \
 		C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\bin\moc.exe
-	C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/mkspecs/win32-msvc2015 -IC:/Users/diflo/Desktop/IntanStimRecordController_source_code_v1_05_19/source -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtWidgets -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtMultimedia -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtGui -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtANGLE -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtNetwork -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtCore -I. ..\source\chargerecoverydialog.h -o release\moc_chargerecoverydialog.cpp
+	C:\Qt\Qt5.7.1_32bit\5.7\msvc2015\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/mkspecs/win32-msvc2015 -IC:/GitHub/closed-loop-neuroscience/Mattia/Custom_architecture/IntanStimRecordController/source -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtWidgets -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtMultimedia -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtGui -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtANGLE -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtNetwork -IC:/Qt/Qt5.7.1_32bit/5.7/msvc2015/include/QtCore -I. ..\source\chargerecoverydialog.h -o release\moc_chargerecoverydialog.cpp
 
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
