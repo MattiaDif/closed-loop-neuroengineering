@@ -4,39 +4,39 @@ clc
 
 
 
-data_stream_enable = [1 0 0 0 0 0 0 0]; %data stream enable rollmap
+data_stream_enable = [1 1 1 1 1 1 1 1]; %data stream enable rollmap
 n_chip = sum(data_stream_enable); % number of data stream enabled in the simulated data
-n_dataframe = 30000;
-cust_version = 5;   %version of custom architecture
+n_dataframe = 300;
+cust_version = 8;   %version of custom architecture
 
 chip = num2str(data_stream_enable);
 frame = num2str(n_dataframe);
 
 power_spect_ch = 10; %performig the PSD of this channel
-fs = 30000; %sampling frequency (Hz)
+fs = 25000; %sampling frequency (Hz)
 
 
 %% Loading data
 %raw input
-load(['C:\GitHub\closed-loop-neuroscience\Mattia\Custom_architecture\CustArch_debug\In_Out_Simulink\In\raw_fsm_out_chip',chip(find(~isspace(chip))),'_nframe',frame,'.mat'])
+load(['C:\GitHub\closed-loop-neuroscience\Mattia\Custom_architecture\CustArch_debug\In_Out_Simulink\In\invivo_raw_fsm_out_chip',chip(find(~isspace(chip))),'_nframe',frame,'.mat'])
 
 % load('raw_fsm_valid_chip10000000_nframe300.mat')
 
 
 %input
-load(['C:\GitHub\closed-loop-neuroscience\Mattia\Custom_architecture\CustArch_debug\In_Out_Simulink\In\fsm_out_chip',chip(find(~isspace(chip))),'_nframe',frame,'.mat'])
+load(['C:\GitHub\closed-loop-neuroscience\Mattia\Custom_architecture\CustArch_debug\In_Out_Simulink\In\invivo_fsm_out_chip',chip(find(~isspace(chip))),'_nframe',frame,'.mat'])
 fsm_out_def_time = fsm_out_def_time.Data;
 
-load(['C:\GitHub\closed-loop-neuroscience\Mattia\Custom_architecture\CustArch_debug\In_Out_Simulink\In\fsm_valid_chip',chip(find(~isspace(chip))),'_nframe',frame,'.mat'])
+load(['C:\GitHub\closed-loop-neuroscience\Mattia\Custom_architecture\CustArch_debug\In_Out_Simulink\In\invivo_fsm_valid_chip',chip(find(~isspace(chip))),'_nframe',frame,'.mat'])
 fsm_valid_def_time = fsm_valid_def_time.Data;
 
 
 %output
-load(['C:\GitHub\closed-loop-neuroscience\Mattia\Custom_architecture\CustArch_debug\In_Out_Simulink\Out\custv',num2str(cust_version),...
+load(['C:\GitHub\closed-loop-neuroscience\Mattia\Custom_architecture\CustArch_debug\In_Out_Simulink\Out\invivo_custv',num2str(cust_version),...
         '_out_chip',chip(find(~isspace(chip))),'_nframe',frame,'.mat'])
 comp_data_out = comp_data_out.Data;
 
-load(['C:\GitHub\closed-loop-neuroscience\Mattia\Custom_architecture\CustArch_debug\In_Out_Simulink\Out\custv',num2str(cust_version),...
+load(['C:\GitHub\closed-loop-neuroscience\Mattia\Custom_architecture\CustArch_debug\In_Out_Simulink\Out\invivo_custv',num2str(cust_version),...
         '_out_valid_chip',chip(find(~isspace(chip))),'_nframe',frame,'.mat'])
     
 comp_data_out_valid = comp_data_out_valid.Data;
