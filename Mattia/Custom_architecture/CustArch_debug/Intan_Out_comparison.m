@@ -18,6 +18,10 @@ ac_data_cust = amplifier_data;
 dc_data_cust = dc_amplifier_data;
 
 
+power_spect_ch = 10; %performig the PSD of this channel
+fs = 30000; %sampling frequency (Hz)
+
+
 
 %% Conversion in uint 16 according to Intan datasheet
 ac_data_cust_uint16 = (ac_data_cust/(0.195))+32768;
@@ -38,3 +42,26 @@ for i = 1:size(ac_data_cust,1)
     linkaxes(ax,'x')
     
 end
+
+
+w = hamming(128);
+noverlap = length(w)/2;
+NFFT = 1024;
+
+
+%PSD
+%pwelch needs single or double data
+AC_raw_double = double(ac_data_cust_uint16);
+AC_filtered_double = double(dc_data_cust_uint16);
+
+
+[pxx,f] = pwelch(AC_raw_double(power_spect_ch,:)-mean(AC_raw_double(power_spect_ch,:)),w,noverlap,NFFT,fs);
+[pxx_f,f_f] = pwelch(AC_filtered_double(power_spect_ch,:)-mean(AC_filtered_double(power_spect_ch,:)),w,noverlap,NFFT,fs);
+
+
+figure
+plot(f,pxx,'r'),hold on
+plot(f_f,pxx_f,'b')
+hold off
+title('PSD')
+legend('Raw','Filtered')
