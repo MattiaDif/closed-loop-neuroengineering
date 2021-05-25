@@ -12,10 +12,14 @@ CustArch_v3 --> processing subsystem only with highpass filter, AC filtered data
 
 CustArch_v4 --> processing subsystem only with second version of highpass filter, AC filtered data into DC (WRONG --> filtering approach does not take into account the previous sample)
 
-CustArch_v5 --> processing subsystem (mch) with 1st order IIR highpass (simulink ok, fpga big overflow)
+CustArch_v5 --> processing subsystem (mch) with 1st order IIR highpass (simulink ok, fpga timing issue)
 
 CustArch_v6 --> processing subsystem (mch) with 2nd order IIR highpass (WRONG --> lose previous sample once used for filtering)
 
-CustArch_v7 --> processing subsystem (mch) with 2nd order IIR highpass (simulink ok, fpga big overflow)
+CustArch_v7 --> processing subsystem (mch) with 2nd order IIR highpass (simulink ok, fpga timing issue)
 
-CustArch_v8 --> processing subsystem (mch) with 2nd order IIR highpass with new fixed-point conversion according to real in-vivo recording (Mondino project Marta)
+CustArch_v8 --> processing subsystem (mch) with 2nd order IIR highpass with new fixed-point conversion according to real in-vivo recording (Mondino project Marta) + deleting of one input RAM (for processing RAM) (simulink ok, fpga timing issue)
+
+CustArch_v9 --> filtering method according to cust_arch_18, filter 1st order IIR + change output logic input processing RAM (simulink ok, fpga seems ok)
+
+CustArch_v10 --> filtering method according to cust_arch_18, 2nd order IIR highpass
