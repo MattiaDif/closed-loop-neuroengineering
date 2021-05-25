@@ -18,7 +18,7 @@ ac_data_cust = amplifier_data;
 dc_data_cust = dc_amplifier_data;
 
 
-power_spect_ch = 10; %performig the PSD of this channel
+power_spect_ch = 1; %performig the PSD of this channel
 fs = 30000; %sampling frequency (Hz)
 
 
@@ -30,16 +30,27 @@ dc_data_cust_uint16 = (dc_data_cust/(-19.23*10^-3))+512;
 % ac_data_orig_uint16 = (ac_data_orig/(0.195*10^-6))+32768;
 % dc_data_orig_uint16 = (dc_data_orig/(-19.23*10^-3))+512;
 
+time = (0:length(ac_data_cust_uint16(1,:))-1);
+
 
 for i = 1:size(ac_data_cust,1)
     
     figure
-    ax(1)=subplot(2,1,1);
-    title('AC vs DC data custom architecture')
-    plot(ac_data_cust_uint16(i,:))
-    ax(2)=subplot(2,1,2);
-    plot(dc_data_cust_uint16(i,:))
-    linkaxes(ax,'x')
+%     ax(1)=subplot(2,1,1);
+    stairs(time,ac_data_cust_uint16(i,:),'r','LineWidth',1),hold on
+    title('High-gain vs Low-gain data')
+    ylabel('Amplitude')
+%     axis([0 length(time) 32000 33200])
+    set(gca,'FontSize',14)
+%     ax(2)=subplot(2,1,2);
+    stairs(time,dc_data_cust_uint16(i,:),'b','LineWidth',1)
+%     title('Low-gain data')
+    xlabel('Time (Samples)')
+    ylabel('Amplitude')
+%     axis([0 length(time) 32000 33200])
+    set(gca,'FontSize',14)
+    legend('High-gain','Low-gain')
+%     linkaxes(ax,'x')
     
 end
 

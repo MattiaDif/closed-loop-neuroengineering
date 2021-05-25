@@ -28,14 +28,14 @@ clear
 clc
 
 
-save_flag = 1;  %1 save fsm out data, 0 not
+save_flag = 0;  %1 save fsm out data, 0 not
 save_ISE = 0;   %1 save txt for ISim, 0 not
 
 
 %% Initial conditions
 %MIN 1, MAX 8 --> n_chip
 n_chip = [1 1 1 1 1 1 1 1]; %1 chip data stream enabled, 0 not (max 8 element == max 8 amplifier)
-n_dataframe = 300;  %how much dataframe simulate (samples per channel)
+n_dataframe = 30000;  %how much dataframe simulate (samples per channel)
 % on_off = 0; %stimulation on/off, 1 --> on, 0 --> not
 % polarity = 0; %polarity, 1 --> on, 0 --> not
 % settle = 0; %amplifier settle, 1 --> on, 0 --> not
@@ -43,7 +43,7 @@ n_dataframe = 300;  %how much dataframe simulate (samples per channel)
 
 
 %% Data flow replica
-signal = load('C:\File\IIT - Neuroengineering\Progetto MathWorks\Data\Intan recordings\R21-03_00_basal2_210422_154220.mat'); %MEArec data to simulate ac high gain samples
+signal = load('C:\File\IIT - Neuroengineering\Progetto MathWorks\Data\Intan recordings\CustArch_v8_invivo_210513_154318.mat'); %MEArec data to simulate ac high gain samples
 signal = signal.amplifier_data;
 
 dc_data = randi([500,1000],8*16,n_dataframe); % DC low gain amplifier data
@@ -51,7 +51,7 @@ dc_data = dc_data.*repmat(n_chip',16,n_dataframe);
 dc_data = dc_data(dc_data ~= 0);
 dc_data = reshape(dc_data,[],n_dataframe);
 
-ac_data = repmat(signal,128/size(signal,1),1)/10^6;  % AC high gain amplifier data
+ac_data = repmat(signal,128/size(signal,1),1)/10^6;  % AC high gain amplifier data scaled to V
 ac_data = ac_data(:,1:n_dataframe);
 ac_data = ac_data.*repmat(n_chip',16,n_dataframe);
 ac_data = ac_data(ac_data ~= 0);

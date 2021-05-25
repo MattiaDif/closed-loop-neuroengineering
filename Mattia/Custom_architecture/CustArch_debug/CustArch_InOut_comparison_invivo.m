@@ -7,12 +7,12 @@ clc
 data_stream_enable = [1 1 1 1 1 1 1 1]; %data stream enable rollmap
 n_chip = sum(data_stream_enable); % number of data stream enabled in the simulated data
 n_dataframe = 300;
-cust_version = 8;   %version of custom architecture
+cust_version = 10;   %version of custom architecture
 
 chip = num2str(data_stream_enable);
 frame = num2str(n_dataframe);
 
-power_spect_ch = 10; %performig the PSD of this channel
+power_spect_ch = 1; %performig the PSD of this channel
 fs = 25000; %sampling frequency (Hz)
 
 
@@ -78,14 +78,25 @@ n_element = round(length(AC_filtered)/(16*n_chip),0)*(16*n_chip)-(16*n_chip);
 AC_raw = reshape(AC_raw(1:n_element),16*n_chip,[]);
 AC_filtered = reshape(AC_filtered(1:n_element),16*n_chip,[]);
 
+time = (0:length(AC_raw(1,:))-1);
 
 %raw vs filtered data
 for i = 1:n_chip*16
     
     figure
-    plot(AC_raw(i,:),'r','LineWidth',1),hold on
-    plot(AC_filtered(i,:),'b','LineWidth',1),hold off
-    title('AC raw data vs AC filtered data')
+%     subplot(2,1,1)
+    plot(time,AC_raw(i,:),'r','LineWidth',1),hold on
+%     title('Raw data')
+%     ylabel('Amplitude')
+%     axis([0 length(time) 32000 33200])
+%     set(gca,'FontSize',14)
+%     subplot(2,1,2)
+    plot(time,AC_filtered(i,:),'b','LineWidth',1)
+    title('Raw data vs Filtered')
+    xlabel('Time (Samples)')
+    ylabel('Amplitude')
+%     axis([0 length(time) 32000 33200])
+    set(gca,'FontSize',14)
     legend('Raw','Filtered')
     
 end

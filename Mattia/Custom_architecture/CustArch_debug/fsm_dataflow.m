@@ -51,7 +51,7 @@ dc_data = dc_data.*repmat(n_chip',16,n_dataframe);
 dc_data = dc_data(dc_data ~= 0);
 dc_data = reshape(dc_data,[],n_dataframe);
 
-ac_data = repmat(signal,128/size(signal,1),1)/10^6;  % AC high gain amplifier data
+ac_data = repmat(signal,128/size(signal,1),1)/10^6;  % AC high gain amplifier data scaled to V
 ac_data = ac_data(:,1:n_dataframe);
 ac_data = ac_data.*repmat(n_chip',16,n_dataframe);
 ac_data = ac_data(ac_data ~= 0);
