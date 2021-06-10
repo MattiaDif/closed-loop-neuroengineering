@@ -19,7 +19,7 @@ dc_data_cust = dc_amplifier_data;
 
 
 power_spect_ch = 1; %performig the PSD of this channel
-fs = 30000; %sampling frequency (Hz)
+fs = 1/t(2); %sampling frequency (Hz)
 
 
 
@@ -27,30 +27,45 @@ fs = 30000; %sampling frequency (Hz)
 ac_data_cust_uint16 = (ac_data_cust/(0.195))+32768;
 dc_data_cust_uint16 = (dc_data_cust/(-19.23*10^-3))+512;
 
+time = t;
+
 % ac_data_orig_uint16 = (ac_data_orig/(0.195*10^-6))+32768;
 % dc_data_orig_uint16 = (dc_data_orig/(-19.23*10^-3))+512;
 
-time = (0:length(ac_data_cust_uint16(1,:))-1);
+
+
+%% Load simulation
+% mdl_name = ["Filter_",;
+
+
 
 
 for i = 1:size(ac_data_cust,1)
     
     figure
-%     ax(1)=subplot(2,1,1);
-    stairs(time,ac_data_cust_uint16(i,:),'r','LineWidth',1),hold on
-    title('High-gain vs Low-gain data')
+    ax(1)=subplot(3,1,1);
+    stairs(time,ac_data_cust_uint16(i,:),'r','LineWidth',1)
+    title(['Raw data - ch: ',num2str(i)])
     ylabel('Amplitude')
-%     axis([0 length(time) 32000 33200])
     set(gca,'FontSize',14)
-%     ax(2)=subplot(2,1,2);
+    
+    ax(2)=subplot(3,1,2);
     stairs(time,dc_data_cust_uint16(i,:),'b','LineWidth',1)
-%     title('Low-gain data')
+    title(['Filtered data - ch: ',num2str(i)])
+    ylabel('Amplitude')
+    set(gca,'FontSize',14)
+    
+    ax(3)=subplot(3,1,3);
+    stairs(time,ac_data_cust_uint16(i,:),'r','LineWidth',1),hold on
+    stairs(time,dc_data_cust_uint16(i,:),'b','LineWidth',1),hold on
+    title('Comparison')
     xlabel('Time (Samples)')
     ylabel('Amplitude')
-%     axis([0 length(time) 32000 33200])
     set(gca,'FontSize',14)
-    legend('High-gain','Low-gain')
-%     linkaxes(ax,'x')
+    legend('Raw','Filtered')
+    
+    linkaxes(ax,'x')
+    hold off
     
 end
 
@@ -74,5 +89,5 @@ figure
 plot(f,pxx,'r'),hold on
 plot(f_f,pxx_f,'b')
 hold off
-title('PSD')
+title(['PSD - ch: ',num2str(power_spect_ch)])
 legend('Raw','Filtered')
