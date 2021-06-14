@@ -17,12 +17,12 @@ addpath(genpath(project_path)); %adding to the Matlab path all the project folde
 
 
 %% Simulation parameters
-fs = 25000; %Hz - sampling frequency
+fs = 30000; %Hz - sampling frequency
 fn = fs/2;  %Hz - Nyquist frequency
 
 
 %% Data loading
-filename = 'C:\File\IIT - Neuroengineering\Progetto MathWorks\Data\Intan recordings\R21-03_00_basal2_210422_154220_ch1';
+filename = 'C:\File\IIT - Neuroengineering\Progetto MathWorks\Data\Intan recordings\CustArch_v9_invivo_noanalog_210603_145114_ch19';
 
 signal = load([filename,'.mat']);
 
