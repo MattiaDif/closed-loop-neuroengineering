@@ -1,6 +1,8 @@
 15/04/2021
 
-cust_arch_19 --> old version from intan_cust_arch repo (simulink ok, fpga ok)
+cust_arch_18 --> old version from intan_cust_arch repo, first filter
+
+cust_arch_19 --> old version from intan_cust_arch repo, rough spike detection (simulink ok, fpga ok)
 
 CustArch --> version from cust_arch_22 of intan_cust_arch repo
 
@@ -20,6 +22,8 @@ CustArch_v7 --> processing subsystem (mch) with 2nd order IIR highpass (simulink
 
 CustArch_v8 --> processing subsystem (mch) with 2nd order IIR highpass with new fixed-point conversion according to real in-vivo recording (Mondino project Marta) + deleting of one input RAM (for processing RAM) (simulink ok, fpga timing issue)
 
-CustArch_v9 --> filtering method according to cust_arch_18, filter 1st order IIR + change output logic input processing RAM (simulink ok, fpga seems ok)
+CustArch_v9 --> filtering method according to cust_arch_18, filter 1st order IIR + change output logic input processing RAM (simulink ok, fpga ok)
 
-CustArch_v10 --> filtering method according to cust_arch_18, 2nd order IIR highpass
+CustArch_v10 --> filtering method according to cust_arch_18, 2nd order IIR highpass (simulink ok, fpga no)
+
+CustArch_v10 --> as CustArch_v9 but with other filter parameters (simulink ok, fpga no --> need to check)
