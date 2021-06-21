@@ -7,7 +7,7 @@ clc
 data_stream_enable = [1 1 1 1 1 1 1 1]; %data stream enable rollmap
 n_chip = sum(data_stream_enable); % number of data stream enabled in the simulated data
 n_dataframe = 300;
-cust_version = 12;   %version of custom architecture
+cust_version = 10;   %version of custom architecture
 
 chip = num2str(data_stream_enable);
 frame = num2str(n_dataframe);

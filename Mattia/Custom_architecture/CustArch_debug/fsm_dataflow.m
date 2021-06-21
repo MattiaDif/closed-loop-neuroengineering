@@ -34,7 +34,7 @@ save_ISE = 0;   %1 save txt for ISim, 0 not
 
 %% Initial conditions
 %MIN 1, MAX 8 --> n_chip
-n_chip = [1 1 1 1 1 1 1 1]; %1 chip data stream enabled, 0 not (max 8 element == max 8 amplifier)
+n_chip = [1 1 1 1 1 1 1 1]; %1 chip data stream enabled, 0 not (max 8 elements == max 8 amplifiers)
 n_dataframe = 30000;  %how much dataframe simulate (samples per channel)
 % on_off = 0; %stimulation on/off, 1 --> on, 0 --> not
 % polarity = 0; %polarity, 1 --> on, 0 --> not

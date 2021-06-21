@@ -28,18 +28,20 @@ clear
 clc
 
 
-save_flag = 0;  %1 save fsm out data, 0 not
+save_flag = 1;  %1 save fsm out data, 0 not
 save_ISE = 0;   %1 save txt for ISim, 0 not
 
 
 %% Initial conditions
 %MIN 1, MAX 8 --> n_chip
-n_chip = [1 1 1 1 1 1 1 1]; %1 chip data stream enabled, 0 not (max 8 element == max 8 amplifier)
-n_dataframe = 30000;  %how much dataframe simulate (samples per channel)
+n_chip = [1 1 1 1 1 1 1 1]; %1 chip data stream enabled, 0 not (max 8 elements == max 8 amplifiers)
+n_dataframe = 300;  %how much dataframe simulate (samples per channel)
 % on_off = 0; %stimulation on/off, 1 --> on, 0 --> not
 % polarity = 0; %polarity, 1 --> on, 0 --> not
 % settle = 0; %amplifier settle, 1 --> on, 0 --> not
 % recovery = 0; %charge recovery, 1 --> on, 0 --> not
+
+% clock_freq = 100e6;
 
 
 %% Data flow replica
@@ -434,6 +436,8 @@ fsm_valid_def = fsm_valid_def;
 
 fsm_out_def_time = timeseries(fsm_out_def_uint16);
 fsm_valid_def_time = timeseries(fsm_valid_def);
+% fsm_out_def_time.Time = fsm_out_def_time.Time/clock_freq;
+% fsm_valid_def_time.Time = fsm_valid_def_time.Time/clock_freq;
 
 fsm_out_def_bin = dec2bin(fsm_out_def_uint16,16);
 fsm_valid_def_bin = dec2bin(fsm_valid_def,1);
