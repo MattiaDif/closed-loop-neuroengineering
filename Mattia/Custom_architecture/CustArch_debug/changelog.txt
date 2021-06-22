@@ -12,3 +12,7 @@ fsm_dataflow --> script for the simulation of the dataflow from the FSM to the h
 fsm_dataflow_invivo --> script for the simulation of the dataflow from the FSM to the host PC with invivo data
 
 
+22/06/2021
+..._filter --> script for filtering check
+..._SD --> scripts for spike detection check
+
