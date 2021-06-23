@@ -38,4 +38,4 @@ CustArch_v15 --> same as v13 but with partly serial architecture of the filter (
 
 CustArch_v16 --> new multichannel filtering method by using FIFO and change detector blocks (simulink ok, fpga no)
 
-CustArch_v17 --> 
+CustArch_v17 --> spike detection with filter of v9 (simulink ok, fpga ok), local maxima hard th, same th all channels, first refractory period subsystem, no Qt/C++ (simulink ok, fpga ok)
