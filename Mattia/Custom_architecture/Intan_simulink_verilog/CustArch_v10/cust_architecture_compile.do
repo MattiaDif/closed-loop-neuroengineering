@@ -25,6 +25,6 @@ vlog  Interpret_to_RAM_output.v
 vlog  OutputStateMachine.v
 vlog  output_interpret.v
 vlog  HP_Butter_2nd.v
-vlog  digital_filter.v
+vlog  two_pole_IIR.v
 vlog  process_and_retrieve.v
 vlog  cust_architecture.v

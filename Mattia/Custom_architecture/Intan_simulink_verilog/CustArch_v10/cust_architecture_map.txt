@@ -23,7 +23,7 @@ CustArch_v10/cust_architecture/output_interpret/Interpret_to_RAM_output/get_enab
 CustArch_v10/cust_architecture/output_interpret/Interpret_to_RAM_output --> Interpret_to_RAM_output
 CustArch_v10/cust_architecture/output_interpret/OutputStateMachine --> OutputStateMachine
 CustArch_v10/cust_architecture/output_interpret --> output_interpret
-CustArch_v10/cust_architecture/process_and_retrieve/digital_filter/HP_Butter_2nd --> HP_Butter_2nd
-CustArch_v10/cust_architecture/process_and_retrieve/digital_filter --> digital_filter
+CustArch_v10/cust_architecture/process_and_retrieve/two_pole_IIR/HP_Butter_2nd --> HP_Butter_2nd
+CustArch_v10/cust_architecture/process_and_retrieve/two_pole_IIR --> two_pole_IIR
 CustArch_v10/cust_architecture/process_and_retrieve --> process_and_retrieve
 CustArch_v10/cust_architecture --> cust_architecture
