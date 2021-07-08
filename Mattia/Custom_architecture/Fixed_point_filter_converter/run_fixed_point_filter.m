@@ -22,7 +22,7 @@ fn = fs/2;  %Hz - Nyquist frequency
 
 
 %% Data loading
-filename = 'C:\File\IIT - Neuroengineering\Progetto MathWorks\Data\Intan recordings\CustArch_v16_A_210622_092242_ch10';
+filename = 'C:\File\IIT - Neuroengineering\Progetto MathWorks\Dataset\Intan\CustArch_v10_210526_110108_ch4';
 
 signal = load([filename,'.mat']);
 

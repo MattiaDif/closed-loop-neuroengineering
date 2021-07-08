@@ -18,7 +18,7 @@ ac_data_cust = amplifier_data;
 dc_data_cust = dc_amplifier_data;
 
 
-power_spect_ch = 1; %performig the PSD of this channel
+power_spect_ch = 4; %performig the PSD of this channel
 fs = 1/t(2); %sampling frequency (Hz)
 
 
@@ -43,29 +43,31 @@ time = t;
 for i = 1:size(ac_data_cust,1)
     
     figure
-    ax(1)=subplot(3,1,1);
-    stairs(time,ac_data_cust_uint16(i,:),'r','LineWidth',1)
-    title(['Raw data - ch: ',num2str(i)])
-    ylabel('Amplitude')
-    set(gca,'FontSize',14)
+%     ax(1)=subplot(3,1,1);
+%     stairs(time,ac_data_cust_uint16(i,:)*0.195,'r','LineWidth',1)
+%     title(['Raw data - ch: ',num2str(i)])
+%     ylabel('µV')
+%     set(gca,'FontSize',14)
+%     
+%     ax(2)=subplot(3,1,2);
+%     stairs(time,dc_data_cust_uint16(i,:)*0.195,'b','LineWidth',1)
+%     title(['Filtered data - ch: ',num2str(i)])
+%     ylabel('µV')
+%     set(gca,'FontSize',14)
     
-    ax(2)=subplot(3,1,2);
-    stairs(time,dc_data_cust_uint16(i,:),'b','LineWidth',1)
-    title(['Filtered data - ch: ',num2str(i)])
-    ylabel('Amplitude')
-    set(gca,'FontSize',14)
-    
-    ax(3)=subplot(3,1,3);
-    stairs(time,ac_data_cust_uint16(i,:),'r','LineWidth',1),hold on
-    stairs(time,dc_data_cust_uint16(i,:),'b','LineWidth',1),hold on
-    title('Comparison')
-    xlabel('Time (Samples)')
-    ylabel('Amplitude')
+%     ax(3)=subplot(3,1,3);
+    stairs(time*1000,(ac_data_cust_uint16(i,:)-32768)*0.195,'r','LineWidth',1),hold on
+    stairs(time*1000,(dc_data_cust_uint16(i,:)-32768)*0.195,'k','LineWidth',1),hold on
+    title(['FPGA Raw vs Filtered signal (in vivo) - ch: ',num2str(i)])
+    xlabel('Time (ms)')
+    ylabel('µV')
     set(gca,'FontSize',14)
     legend('Raw','Filtered')
     
-    linkaxes(ax,'x')
+%     linkaxes(ax,'x')
     hold off
+    grid on
+    grid minor
     
 end
 
@@ -86,8 +88,8 @@ AC_filtered_double = double(dc_data_cust_uint16);
 
 
 figure
-plot(f,pxx,'r'),hold on
-plot(f_f,pxx_f,'b')
+plot(f,pxx/max(pxx),'r'),hold on
+plot(f_f,pxx_f/max(pxx_f),'b')
 hold off
-title(['PSD - ch: ',num2str(power_spect_ch)])
+title(['Normalized PSD - ch: ',num2str(power_spect_ch)])
 legend('Raw','Filtered')
