@@ -68,14 +68,15 @@ legend('Raw','Filtered')
 
 %% SIMULINK STUFF
 %% Simulation parameters
-mdl_name = "fixed_point_filter_CustArch_v9";
-sim_type = 'rapid'; %simulation speed
+mdl_name = "fixed_point_filter_CustArch_v19";
+sim_type = 'normal'; %simulation speed
 sim_stop_time = num2str(size(ac_data_cust,2)/fs);   %s
 mdl=convertStringsToChars(mdl_name);
 load_system(mdl);
 set_param(mdl, 'SimulationMode', sim_type)
 set_param(mdl,'StartTime','0','StopTime',sim_stop_time)
 flag_progress = 'off';  %show simulation progress or not
+
 
 %run simulation
 for curr_sim = 1:size(ac_data_cust,1)
@@ -85,12 +86,15 @@ for curr_sim = 1:size(ac_data_cust,1)
     
     out = sim(in,'ShowProgress', flag_progress);
     
-    ac_data_cust_uint16_sim(curr_sim,:) = double(out.logsout{1}.Values.Data);
+    %take the same number of samples of the Intan acquisition (sometimes
+    %discrepance between sym_stop_time due to rounding)
+    ac_data_cust_uint16_sim(curr_sim,:) = out.logsout{1}.Values.Data(1:length(dc_data_cust_uint16));
     ac_data_cust_uint16_sim = double(ac_data_cust_uint16_sim);
-    dc_data_cust_uint16_sim(curr_sim,:) = double(out.logsout{2}.Values.Data);
+    dc_data_cust_uint16_sim(curr_sim,:) = out.logsout{2}.Values.Data(1:length(dc_data_cust_uint16));
     dc_data_cust_uint16_sim = double(dc_data_cust_uint16_sim);
+       
     
-    residuals = dc_data_cust_uint16(curr_sim,:)-dc_data_cust_uint16_sim(curr_sim,:);
+    residuals = abs(dc_data_cust_uint16(curr_sim,:)-dc_data_cust_uint16_sim(curr_sim,:));
     
     figure
     ax(1)=subplot(2,2,1);
@@ -135,11 +139,10 @@ for curr_sim = 1:size(ac_data_cust,1)
     xlabel('Time (ms)')
 %     ylabel('Amplitude (uint16)')
     set(gca,'FontSize',14)
-    legend('Simulink','FPGA')
     hold off
     grid on
     grid minor
-    linkaxes(ax,'x')
+    linkaxes(ax,'xy')
     
 end
 

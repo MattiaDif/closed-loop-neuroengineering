@@ -3,11 +3,22 @@ close all
 clc
 
 
+%% Change current folder
+if(~isdeployed)
+    cd(fileparts(which(mfilename)));
+end
+curr_folder = pwd;
+path_index = strfind(curr_folder,'closed-loop-neuroscience');
 
+project_path = curr_folder(1:path_index+length('closed-loop-neuroscience')-1);
+addpath(genpath(project_path)); %adding to the Matlab path all the project folder including all the subfolders
+
+
+%% Parameter setting
 data_stream_enable = [1 1 1 1 1 1 1 1]; %data stream enable rollmap
 n_chip = sum(data_stream_enable); % number of data stream enabled in the simulated data
 n_dataframe = 300;
-cust_version = 12;   %version of custom architecture
+cust_version = 19;   %version of custom architecture
 
 chip = num2str(data_stream_enable);
 frame = num2str(n_dataframe);
@@ -92,7 +103,7 @@ for i = 1:n_chip*16
 %     set(gca,'FontSize',14)
 %     subplot(2,1,2)
     plot(time,AC_filtered(i,:),'b','LineWidth',1)
-    title('Raw data vs Filtered')
+    title(['Raw data vs Filtered ch: ',num2str(i)])
     xlabel('Time (Samples)')
     ylabel('Amplitude')
 %     axis([0 length(time) 32000 33200])

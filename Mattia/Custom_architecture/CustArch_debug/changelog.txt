@@ -16,3 +16,6 @@ fsm_dataflow_invivo --> script for the simulation of the dataflow from the FSM t
 ..._filter --> script for filtering check
 ..._SD --> scripts for spike detection check
 
+
+08/07/21
+Intan_Out_comparison_filter --> automated the comparison process between filter outputs of simulink and FPGA
