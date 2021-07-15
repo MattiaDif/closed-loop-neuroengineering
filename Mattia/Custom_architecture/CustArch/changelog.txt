@@ -28,7 +28,7 @@ CustArch_v10 --> filtering method according to cust_arch_18, 2nd order IIR highp
 
 CustArch_v11 --> as CustArch_v9 but with other filter parameters (simulink ok, fpga ok)
 
-CustArch_v12 --> first spike detection with filter of v9 (simulink ok, fpga ok), hard th, same th all channels, first refractory period subsystem, no Qt/C++
+CustArch_v12 --> hard threshold spike detection with filter of v9 (simulink ok, fpga ok), hard th, same th all channels, first refractory period subsystem, no Qt/C++
 
 CustArch_v13 --> multichannel parallel filter for all ch1 of all chips (simulink ok, fpga no due to huge size of the model --> filter architecture fully parallel)
 
@@ -38,4 +38,4 @@ CustArch_v15 --> same as v13 but with partly serial architecture of the filter (
 
 CustArch_v16 --> new multichannel filtering method by using FIFO and change detector blocks (simulink ok, fpga no)
 
-CustArch_v17 --> spike detection with filter of v9 (simulink ok, fpga ok), local maxima hard th, same th all channels, first refractory period subsystem, no Qt/C++ (simulink ok, fpga ok)
+CustArch_v17 --> hard threshold local maxima spike detection with filter of v9 (simulink ok, fpga ok), local maxima hard th, same th all channels, first refractory period subsystem, no Qt/C++ (simulink ok, fpga ok)
