@@ -43,6 +43,10 @@ annotate_port('gm_CustArch_v20/cust_architecture/input_interpret_store_retrieve/
 annotate_port('CustArch_v20/cust_architecture/input_interpret_store_retrieve/store_and_retrieve_input/input_storage', 1, 1, '');
 annotate_port('gm_CustArch_v20/cust_architecture/input_interpret_store_retrieve/store_and_retrieve_input/input_storage', 1, 1, '');
 annotate_port('CustArch_v20/cust_architecture/input_interpret_store_retrieve/store_and_retrieve_input/input_storage', 1, 1, '');
+annotate_port('gm_CustArch_v20/cust_architecture/input_interpret_store_retrieve/store_and_retrieve_input/input_storage_for_processing', 1, 1, '');
+annotate_port('CustArch_v20/cust_architecture/input_interpret_store_retrieve/store_and_retrieve_input/input_storage_for_processing', 1, 1, '');
+annotate_port('gm_CustArch_v20/cust_architecture/input_interpret_store_retrieve/store_and_retrieve_input/input_storage_for_processing', 1, 1, '');
+annotate_port('CustArch_v20/cust_architecture/input_interpret_store_retrieve/store_and_retrieve_input/input_storage_for_processing', 1, 1, '');
 annotate_port('gm_CustArch_v20/cust_architecture/output_interpret/Interpret_to_RAM_output/get_enabled_timings /Detect change ch cnt', 1, 1, '');
 annotate_port('CustArch_v20/cust_architecture/output_interpret/Interpret_to_RAM_output/get_enabled_timings /Detect change ch cnt', 1, 1, '');
 annotate_port('gm_CustArch_v20/cust_architecture/output_interpret/Interpret_to_RAM_output/get_enabled_timings /find_next_chip_rollmap/Bit Rotate', 1, 1, '');
@@ -61,8 +65,6 @@ annotate_port('gm_CustArch_v20/cust_architecture/output_interpret/Interpret_to_R
 annotate_port('CustArch_v20/cust_architecture/output_interpret/Interpret_to_RAM_output/get_enabled_timings /reading_address/Bit Rotate5', 1, 1, '');
 annotate_port('gm_CustArch_v20/cust_architecture/output_interpret/Interpret_to_RAM_output/get_enabled_timings /reading_address/Bit Rotate6', 1, 1, '');
 annotate_port('CustArch_v20/cust_architecture/output_interpret/Interpret_to_RAM_output/get_enabled_timings /reading_address/Bit Rotate6', 1, 1, '');
-annotate_port('gm_CustArch_v20/cust_architecture/process_and_retrieve/two_pole_IIR', 1, 1, '');
-annotate_port('CustArch_v20/cust_architecture/process_and_retrieve/two_pole_IIR', 1, 1, '');
 annotate_port('gm_CustArch_v20/cust_architecture/process_and_retrieve/PreviousData1_storage', 1, 1, '');
 annotate_port('CustArch_v20/cust_architecture/process_and_retrieve/PreviousData1_storage', 1, 1, '');
 annotate_port('gm_CustArch_v20/cust_architecture/process_and_retrieve/PreviousData1_storage', 1, 1, '');
@@ -75,8 +77,6 @@ annotate_port('gm_CustArch_v20/cust_architecture/process_and_retrieve/ProcessedD
 annotate_port('CustArch_v20/cust_architecture/process_and_retrieve/ProcessedData_storage', 1, 1, '');
 annotate_port('gm_CustArch_v20/cust_architecture/process_and_retrieve/ProcessedData_storage', 1, 1, '');
 annotate_port('CustArch_v20/cust_architecture/process_and_retrieve/ProcessedData_storage', 1, 1, '');
-annotate_port('gm_CustArch_v20/cust_architecture/process_and_retrieve/two_pole_IIR/HP_Butter_2nd', 1, 1, '');
-annotate_port('CustArch_v20/cust_architecture/process_and_retrieve/two_pole_IIR/HP_Butter_2nd', 1, 1, '');
 annotate_port('gm_CustArch_v20/cust_architecture/input_interpret_store_retrieve/InputStateMachine/InputStateMachine', 0, 1, '');
 annotate_port('gm_CustArch_v20/cust_architecture/input_interpret_store_retrieve/InputStateMachine/InputStateMachine', 1, 4, '');
 annotate_port('gm_CustArch_v20/cust_architecture/input_interpret_store_retrieve/InputStateMachine/InputStateMachine', 1, 1, '');

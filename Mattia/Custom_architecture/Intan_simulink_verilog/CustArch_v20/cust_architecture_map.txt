@@ -26,5 +26,4 @@ CustArch_v20/cust_architecture/output_interpret --> output_interpret
 CustArch_v20/cust_architecture/process_and_retrieve/two_pole_IIR/HP_Butter_2nd --> HP_Butter_2nd
 CustArch_v20/cust_architecture/process_and_retrieve/two_pole_IIR --> two_pole_IIR
 CustArch_v20/cust_architecture/process_and_retrieve --> process_and_retrieve
-cust_architecture_tc --> cust_architecture_tc
 CustArch_v20/cust_architecture --> cust_architecture

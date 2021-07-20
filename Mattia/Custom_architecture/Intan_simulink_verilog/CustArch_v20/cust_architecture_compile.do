@@ -27,5 +27,4 @@ vlog  output_interpret.v
 vlog  HP_Butter_2nd.v
 vlog  two_pole_IIR.v
 vlog  process_and_retrieve.v
-vlog  cust_architecture_tc.v
 vlog  cust_architecture.v
