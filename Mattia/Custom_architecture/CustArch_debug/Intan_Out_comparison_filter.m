@@ -68,8 +68,8 @@ legend('Raw','Filtered')
 
 %% SIMULINK STUFF
 %% Simulation parameters
-mdl_name = "fixed_point_filter_CustArch_v19";
-sim_type = 'normal'; %simulation speed
+mdl_name = "fixed_point_filter_CustArch_v20";
+sim_type = 'rapid'; %simulation speed
 sim_stop_time = num2str(size(ac_data_cust,2)/fs);   %s
 mdl=convertStringsToChars(mdl_name);
 load_system(mdl);
@@ -100,7 +100,7 @@ for curr_sim = 1:size(ac_data_cust,1)
     ax(1)=subplot(2,2,1);
     stairs(time*1000,(ac_data_cust_uint16_sim(curr_sim,:)),'r','LineWidth',1),hold on
     stairs(time*1000,(dc_data_cust_uint16_sim(curr_sim,:)),'b','LineWidth',1),hold on
-    title(['Simulink Raw vs Filtered signal - ch: ',num2str(curr_sim)])
+    title(['Simulink Raw vs Filtered - ch: ',num2str(curr_sim)])
 %     xlabel('Time (ms)')
     ylabel('Amplitude (uint16)')
     set(gca,'FontSize',14)
@@ -112,7 +112,7 @@ for curr_sim = 1:size(ac_data_cust,1)
     ax(2)=subplot(2,2,3);
     stairs(time*1000,(ac_data_cust_uint16(curr_sim,:)),'r','LineWidth',1),hold on
     stairs(time*1000,(dc_data_cust_uint16(curr_sim,:)),'k','LineWidth',1),hold on
-    title(['FPGA Raw vs Filtered signal - ch: ',num2str(curr_sim)])
+    title(['FPGA Raw vs Filtered - ch: ',num2str(curr_sim)])
     xlabel('Time (ms)')
     ylabel('Amplitude (uint16)')
     set(gca,'FontSize',14)
@@ -124,7 +124,7 @@ for curr_sim = 1:size(ac_data_cust,1)
     ax(3)=subplot(2,2,2);
     stairs(time*1000,(dc_data_cust_uint16_sim(curr_sim,:)),'b','LineWidth',1),hold on
     stairs(time*1000,(dc_data_cust_uint16(curr_sim,:)),'k','LineWidth',1),hold on
-    title(['Simulink Filtered vs FPGA Filtered signal - ch: ',num2str(curr_sim)])
+    title(['Simulink Filtered vs FPGA Filtered - ch: ',num2str(curr_sim)])
 %     xlabel('Time (ms)')
 %     ylabel('Amplitude (uint16)')
     set(gca,'FontSize',14)
@@ -135,7 +135,7 @@ for curr_sim = 1:size(ac_data_cust,1)
     
     ax(4)=subplot(2,2,4);
     stairs(time*1000,residuals,'g','LineWidth',1)
-    title(['Residuals (FPGA - Simulink outputs) - ch: ',num2str(curr_sim)])
+    title(['Residuals (FPGA - Simulink) - ch: ',num2str(curr_sim)])
     xlabel('Time (ms)')
 %     ylabel('Amplitude (uint16)')
     set(gca,'FontSize',14)
