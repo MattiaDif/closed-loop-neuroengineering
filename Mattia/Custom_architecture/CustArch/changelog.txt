@@ -1,4 +1,6 @@
-15/04/2021
+with fpga ok I mean that I am able to filter/detect spike at the maximum sampling frequency (30kHz), otherwise I specify the maximum sampling frequency reachable 
+
+-----------------------------------------------------------------------------
 
 cust_arch_18 --> old version from intan_cust_arch repo, first filter
 
@@ -39,3 +41,11 @@ CustArch_v15 --> same as v13 but with partly serial architecture of the filter (
 CustArch_v16 --> new multichannel filtering method by using FIFO and change detector blocks (simulink ok, fpga no)
 
 CustArch_v17 --> hard threshold local maxima spike detection with filter of v9 (simulink ok, fpga ok), local maxima hard th, same th all channels, first refractory period subsystem, no Qt/C++ (simulink ok, fpga ok)
+
+CustArch_v18 --> unuseful
+
+CustArch_v19 --> first working version of the 2nd order IIR filter HP! no spike detection (simulink ok, fpga ok)
+
+CustArch_v20 --> as v19 but with memory substituted by delay (simulink ok, fpga ok)
+
+CustArch_v21 --> IIR HP 2nd order, local maxima spike detection + scalable refractory regardless of the filter order 
