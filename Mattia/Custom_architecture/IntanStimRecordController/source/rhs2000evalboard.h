@@ -241,7 +241,7 @@ private:
     unsigned char instruction[2];
     unsigned char instruction_value[2];
 
-    // endupdate GUI - SB - 05-04-2019
+    // end update GUI - SB - 05-04-2019
 
 	// Opal Kelly module USB interface endpoint addresses
 	enum OkEndPoint {

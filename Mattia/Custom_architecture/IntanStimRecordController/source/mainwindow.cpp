@@ -1109,7 +1109,7 @@ void MainWindow::createLayout()
 
     frameTab5->setLayout(displayParamsLayout);
 
-// start update GUI - SB - 05-04-2019
+// start - SB - 05-04-2019
     cst_en_CheckBox = new QCheckBox(tr("Cst_en"));
     cst_trig_CheckBox = new QCheckBox(tr("Cst_trig"));
 
@@ -1149,7 +1149,7 @@ void MainWindow::createLayout()
     tabWidget1->addTab(frameTab3, tr("Analog Out/Audio"));
     tabWidget1->addTab(frameTab4, tr("Configure"));
     tabWidget1->addTab(frameTab5, tr("Display"));
-    tabWidget1->addTab(frameTab6, tr("Custom_arch")); // update GUI - SB - 05-04-2019
+    tabWidget1->addTab(frameTab6, tr("Custom_arch")); // - SB - 05-04-2019
 
     dspCutoffFreqLabel = new QLabel("0.00 Hz");
     lowerBandwidthLabel = new QLabel("0.00 Hz");
