@@ -48,10 +48,10 @@ time = t;
 for i = 1:size(ac_data_cust,1)
     
     figure
-    plot(time*1000,(ac_data_cust_uint16(i,:)-32768)*0.195,'b','LineWidth',1), hold on
-    plot(time(find(dc_data_cust_uint16(i,:)))*1000,(ac_data_cust_uint16(i,find(dc_data_cust_uint16(i,:)))-32768)*0.195,'r*','LineWidth',1)
+    plot(time*1000,ac_data_cust_uint16(i,:),'b','LineWidth',1), hold on
+    plot(time(find(dc_data_cust_uint16(i,:))-1)*1000,ac_data_cust_uint16(i,find(dc_data_cust_uint16(i,:))-1),'r*','LineWidth',1)
     title(['Filtered data + SD - ch: ',num2str(i)])
-    ylabel('µV')
+    ylabel('Amplitude (uint16)')
     xlabel('Time (ms)')
     set(gca,'FontSize',14)
     legend('Filtered','Spikes')
