@@ -1,0 +1,6 @@
+the version of the pipe_in_vxxx corresponds to the version of the IntanStimRecordController project
+
+-----------------------------------------------------------------------------------------------------
+
+pipe_in_v2 --> put pipe_in in DC (ok fpga with some software buffer issue)
+
