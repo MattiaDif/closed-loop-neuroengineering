@@ -34,7 +34,7 @@ fs = 1/t(2); %sampling frequency (Hz)
 
 
 %% Conversion in uint 16 according to Intan datasheet
-% ac_data_cust_uint16 = (ac_data_cust/(0.195))+32768;
+ac_data_cust_uint16 = (ac_data_cust/(0.195))+32768;
 dc_data_cust_uint16 = (dc_data_cust/(-19.23*10^-3))+512;
 
 time = t;
@@ -48,16 +48,32 @@ time = t;
 for i = 1:size(ac_data_cust,1)
     
     figure
-    plot(time*1000,dc_data_cust_uint16(i,:),'b','LineWidth',1), hold on
+    ax(1)=subplot(2,1,1);
+    plot(time*1000,dc_data_cust_uint16(i,:),'b','LineWidth',1)
 %     plot(time(find(dc_data_cust_uint16(i,:))-1)*1000,ac_data_cust_uint16(i,find(dc_data_cust_uint16(i,:))-1),'r*','LineWidth',1)
     title(['PipeIn data in DC - channel: ',num2str(i)])
     ylabel('Amplitude (uint16)')
     xlabel('Time (ms)')
     set(gca,'FontSize',14)
 %     legend('Filtered','Spikes')
-    hold off
+
+    ax(2)=subplot(2,1,2);
+    plot(time*1000,ac_data_cust_uint16(i,:),'b','LineWidth',1)
+%     plot(time(find(dc_data_cust_uint16(i,:))-1)*1000,ac_data_cust_uint16(i,find(dc_data_cust_uint16(i,:))-1),'r*','LineWidth',1)
+    title(['PipeIn data in AC - channel: ',num2str(i)])
+    ylabel('Amplitude (uint16)')
+    xlabel('Time (ms)')
+    set(gca,'FontSize',14)
+%     legend('Filtered','Spikes')
+
+    linkaxes(ax,'x')
+  
     
 end
+
+
+
+
 
 
 
