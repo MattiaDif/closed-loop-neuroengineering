@@ -36,6 +36,9 @@
 #include <queue>
 #include <mutex>
 
+#include <iostream> //update MD 16-09-2021
+#include <fstream>  //update MD 16-09-2021
+
 using namespace std;
 
 class okCFrontPanel;
@@ -148,7 +151,7 @@ public:
     void setCA_HardThreshold(double th);    //update GUI MD 03-09-2021
     void setCA_Refractory(double refractory);   //update GUI MD 07-09-2021
     //void setCA_PipeIn();   //update GUI MD 10/09/2021
-    void setCA_ConfigFile(unsigned int conf_data[3]);    //update GUI MD 14/09/2021
+    void setCA_ConfigFile(unsigned int conf_data[3]);    //update GUI MD 14-09-2021
 
     void setDacThreshold(int dacChannel, int threshold, bool trigPolarity);
 
@@ -240,22 +243,14 @@ private:
 	unsigned char commandBufferMsw[65536];
 	unsigned char commandBufferLsw[65536];
 
-    // start update GUI - SB - 05-04-2019
-
-    // Buffers for writing bytes to custom architecture
-    //unsigned char instruction[2];
-    //unsigned char instruction_value[2];
-
-    // end update GUI - SB - 05-04-2019
-
 
     // start update GUI MD 03-09-2021
 
     // Buffers for writing bytes to custom architecture
     unsigned char data_in[2];   //buffer of 2 bytes //update GUI MD 07-09-2021
-    //unsigned char data_refractory[2];   //buffer of 2 bytes //update GUI MD 09-09-2021
 
-    // end update GUI MD 03-09-2021
+    //Custom Architecture variables
+    ofstream rms;
 
 
 

@@ -1178,9 +1178,9 @@ void Rhs2000EvalBoard::setDacHighpassFilter(double cutoff)
 
 
 
-//unsigned int pipe_in[2];    //update GUI MD 08-09-2021
+//unsigned int pipe_in[2];    // MD 08-09-2021
 
-// start update GUI MD 08-09-2021
+// start  MD 08-09-2021
 
 void Rhs2000EvalBoard::setCA_HardThreshold(double th)
 {
@@ -1268,6 +1268,7 @@ void Rhs2000EvalBoard::setCA_ConfigFile(unsigned int conf_data[3])
 }
 
 // end update GUI MD 08-09-2021
+
 
 
 
@@ -1378,6 +1379,30 @@ long Rhs2000EvalBoard::readDataBlocksRaw(int numBlocks, unsigned char* buffer)
     } else if (result == ok_Timeout) {
         cerr << "CRITICAL (readDataBlockRaw): Timeout on pipe read.  Check buffer size." << endl;
     }
+
+
+
+
+    //start update GUI MD 16-09-2021
+
+    unsigned char data_out[2];
+    unsigned int pipe_out;
+
+    dev->ReadFromPipeOut(PipeOutData_CA, sizeof(data_out), data_out);
+
+    pipe_out = (unsigned int)((unsigned char)(data_out[2 * 0 + 1]) << 8 |    //output buffer check
+                                (unsigned char)(data_out[2 * 0]) << 0);
+
+    cout << "rms: " << pipe_out << endl;
+
+    rms.open("C:\\Users\\diflo\\Desktop\\C++_debug\\rms.txt",  std::ios::app);
+
+    rms << pipe_out << "\n";
+
+    rms.close();
+
+    //end  MD 16-09-2021
+
 
     return result;
 }
@@ -2144,7 +2169,7 @@ void Rhs2000EvalBoard::setAmpSettleMode(bool useFastSettle)
     dev->UpdateWireIns();
 }
 
-// start update GUI - SB - 05-04-2019
+// start  - SB - 05-04-2019
 
 // Set custom architecture
 void Rhs2000EvalBoard::custom_architecture_Enable(bool cst_en)
@@ -2164,7 +2189,7 @@ void Rhs2000EvalBoard::custom_architecture_trig_Enable(bool cst_trig_en)
     dev->UpdateWireIns();
     cout << "  enable(1)/disable(0) cst trig " << cst_trig_en << endl;
 }
-// stop update GUI - SB - 05-04-2019
+// stop  - SB - 05-04-2019
 
 
 // Select charge recovery mode for all connected chips:
