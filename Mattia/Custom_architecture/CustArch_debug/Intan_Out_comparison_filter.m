@@ -38,7 +38,7 @@ fs = 1/t(2); %sampling frequency (Hz)
 
 %% Conversion in uint 16 according to Intan datasheet
 ac_data_cust_uint16 = (ac_data_cust/(0.195))+32768;
-dc_data_cust_uint16 = (dc_data_cust/(-19.23*10^-3))+512;
+dc_data_cust_uint16 = (dc_data_cust/(0.195))+32768;
 
 time = t;
 

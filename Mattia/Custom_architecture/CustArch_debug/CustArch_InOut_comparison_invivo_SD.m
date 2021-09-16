@@ -18,7 +18,7 @@ addpath(genpath(project_path)); %adding to the Matlab path all the project folde
 data_stream_enable = [1 1 1 1 1 1 1 1]; %data stream enable rollmap
 n_chip = sum(data_stream_enable); % number of data stream enabled in the simulated data
 n_dataframe = 300;
-cust_version = 21;   %version of custom architecture
+cust_version = 22;   %version of custom architecture
 
 chip = num2str(data_stream_enable);
 frame = num2str(n_dataframe);
@@ -80,28 +80,28 @@ legend('Input','Output')
 % fsm_out = fsm_out(1:n_element);
 % fsm_in = fsm_in(1:n_element);
 
-AC_raw = (fsm_out(raw_idx_in_AC(find(raw_idx_in_AC <= length(fsm_out)))));
-AC_filtered = (fsm_out(raw_idx_in_DC(find(raw_idx_in_DC <= length(fsm_out)))));
+AC_filtered = (fsm_out(raw_idx_in_AC(find(raw_idx_in_AC <= length(fsm_out)))));
+spikes = (fsm_out(raw_idx_in_DC(find(raw_idx_in_DC <= length(fsm_out)))));
 
-n_element = round(length(AC_filtered)/(16*n_chip),0)*(16*n_chip)-(16*n_chip);
+n_element = round(length(spikes)/(16*n_chip),0)*(16*n_chip)-(16*n_chip);
 
-AC_raw = reshape(AC_raw(1:n_element),16*n_chip,[]);
 AC_filtered = reshape(AC_filtered(1:n_element),16*n_chip,[]);
+spikes = reshape(spikes(1:n_element),16*n_chip,[]);
 
-time = (0:length(AC_raw(1,:))-1);
+time = (0:length(AC_filtered(1,:))-1);
 
 %% SD check
 for i = 1:n_chip*16
     
     figure
 %     subplot(2,1,1)
-    plot(time,AC_raw(i,:),'b','LineWidth',1),hold on
+    plot(time,AC_filtered(i,:),'b','LineWidth',1),hold on
 %     title('Raw data')
 %     ylabel('Amplitude')
 %     axis([0 length(time) 32000 33200])
 %     set(gca,'FontSize',14)
 %     subplot(2,1,2)
-    plot(time(find(AC_filtered(i,:))),AC_raw(i,find(AC_filtered(i,:))),'ro')
+    plot(time(find(spikes(i,:))),AC_filtered(i,find(spikes(i,:))),'ro')
     title('Filtered data vs Spikes')
     xlabel('Time (Samples)')
     ylabel('Amplitude')
@@ -113,9 +113,9 @@ end
 
 
 %% Interspike interval
-for i = 1:size(AC_filtered,1)
+for i = 1:size(spikes,1)
     
-    ISI{i,:} = diff(find(AC_filtered(i,:)));
+    ISI{i,:} = diff(find(spikes(i,:)));
     min_ISI(i) = min(ISI{i,:});
     max_ISI(i) = max(ISI{i,:});
     

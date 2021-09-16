@@ -402,7 +402,8 @@ if (data_present)
     % Scale voltage levels appropriately.
     amplifier_data = 0.195 * (amplifier_data - 32768); % units = microvolts
     if (dc_amp_data_saved ~= 0)
-        dc_amplifier_data = -0.01923 * (dc_amplifier_data - 512); % units = volts
+        %dc_amplifier_data = -0.01923 * (dc_amplifier_data - 512); % units = volts
+        dc_amplifier_data = 0.195 * (dc_amplifier_data - 32768); % units = volts
     end
     compliance_limit_data = stim_data >= 2^15;
     stim_data = stim_data - (compliance_limit_data * 2^15);
