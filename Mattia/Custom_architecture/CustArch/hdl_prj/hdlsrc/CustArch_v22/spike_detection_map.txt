@@ -1,0 +1,12 @@
+spike_detection/LocalMaximaAdaptiveThreshold/LocalMaxima/DualPortRAM_generic --> DualPortRAM_generic
+spike_detection/LocalMaximaAdaptiveThreshold/LocalMaxima --> LocalMaxima
+spike_detection/LocalMaximaAdaptiveThreshold/RMS_computation/adaptive_th_computation --> adaptive_th_computation
+spike_detection/LocalMaximaAdaptiveThreshold/RMS_computation/buffer_counter --> buffer_counter
+spike_detection/LocalMaximaAdaptiveThreshold/RMS_computation/Square Root1/Square Root1_iv/NewtonPolynomialIVStage --> NewtonPolynomialIVStage
+spike_detection/LocalMaximaAdaptiveThreshold/RMS_computation/Square Root1/Square Root1_iv --> Square_Root1_iv
+spike_detection/LocalMaximaAdaptiveThreshold/RMS_computation/Square Root1/Square Root1_core --> Square_Root1_core
+spike_detection/LocalMaximaAdaptiveThreshold/RMS_computation/Square Root1 --> Square_Root1
+spike_detection/LocalMaximaAdaptiveThreshold/RMS_computation --> RMS_computation
+spike_detection/LocalMaximaAdaptiveThreshold --> LocalMaximaAdaptiveThreshold
+spike_detection/refractory_period --> refractory_period
+spike_detection --> spike_detection
