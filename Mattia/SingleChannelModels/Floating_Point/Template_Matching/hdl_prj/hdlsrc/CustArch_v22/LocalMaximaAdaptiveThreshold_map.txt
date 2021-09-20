@@ -1,0 +1,7 @@
+LocalMaximaAdaptiveThreshold/LocalMaxima/DualPortRAM_generic --> DualPortRAM_generic
+LocalMaximaAdaptiveThreshold/LocalMaxima --> LocalMaxima
+LocalMaximaAdaptiveThreshold/RMS_computation/adaptive_th_computation --> adaptive_th_computation
+LocalMaximaAdaptiveThreshold/RMS_computation/buffer_counter --> buffer_counter
+LocalMaximaAdaptiveThreshold/RMS_computation/Square Root1 --> Square_Root1
+LocalMaximaAdaptiveThreshold/RMS_computation --> RMS_computation
+LocalMaximaAdaptiveThreshold --> LocalMaximaAdaptiveThreshold

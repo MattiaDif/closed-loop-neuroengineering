@@ -41,11 +41,11 @@ n_dataframe = 300;  %how much dataframe simulate (samples per channel)
 % settle = 0; %amplifier settle, 1 --> on, 0 --> not
 % recovery = 0; %charge recovery, 1 --> on, 0 --> not
 
-% clock_freq = 100e6;
+% clock_freq = 84e6;
 
 
 %% Data flow replica
-signal = load('C:\File\IIT - Neuroengineering\Progetto MathWorks\Data\Intan recordings\CustArch_v8_invivo_210513_154318.mat'); %MEArec data to simulate ac high gain samples
+signal = load('C:\Users\diflo\OneDrive - Fondazione Istituto Italiano Tecnologia\IIT\Progetto MathWorks\Dataset\Intan\CustArch_v8_invivo_210513_154318.mat'); %MEArec data to simulate ac high gain samples
 signal = signal.amplifier_data;
 
 dc_data = randi([500,1000],8*16,n_dataframe); % DC low gain amplifier data
