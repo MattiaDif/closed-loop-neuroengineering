@@ -1,9 +1,0 @@
-vlib work
-vlog  adaptive_th_computation.v
-vlog  DualPortRAM_generic.v
-vlog  buffer_counter.v
-vlog  NewtonPolynomialIVStage.v
-vlog  Square_Root1_iv.v
-vlog  Square_Root1_core.v
-vlog  Square_Root1.v
-vlog  RMS_computation.v

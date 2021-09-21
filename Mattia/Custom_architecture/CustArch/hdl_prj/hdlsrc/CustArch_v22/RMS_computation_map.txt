@@ -1,8 +1,0 @@
-RMS_computation/adaptive_th_computation --> adaptive_th_computation
-RMS_computation/DualPortRAM_generic --> DualPortRAM_generic
-RMS_computation/buffer_counter --> buffer_counter
-RMS_computation/Square Root1/Square Root1_iv/NewtonPolynomialIVStage --> NewtonPolynomialIVStage
-RMS_computation/Square Root1/Square Root1_iv --> Square_Root1_iv
-RMS_computation/Square Root1/Square Root1_core --> Square_Root1_core
-RMS_computation/Square Root1 --> Square_Root1
-RMS_computation --> RMS_computation

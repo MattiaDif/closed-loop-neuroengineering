@@ -1,5 +1,0 @@
-get_sources_and_RAM_addresses/RAM_address_channel_data --> RAM_address_channel_data
-get_sources_and_RAM_addresses/enable_source_chip_transmission --> enable_source_chip_transmission
-get_sources_and_RAM_addresses/find_first_one_pos --> find_first_one_pos
-get_sources_and_RAM_addresses/find_next_chip_rollmap --> find_next_chip_rollmap
-get_sources_and_RAM_addresses --> get_sources_and_RAM_addresses
