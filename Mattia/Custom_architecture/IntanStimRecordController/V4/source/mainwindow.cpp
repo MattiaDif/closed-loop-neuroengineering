@@ -5210,8 +5210,8 @@ void MainWindow::loadStimSettings()
 void MainWindow::loadConfigFile_CA()
 {
     unsigned int i;
-    double conf_data_double[3];
-    unsigned int conf_data[3];
+    //double conf_data_double[129];
+    unsigned int conf_data[129];
 
     QString loadConfigFileFileName_CA;
     loadConfigFileFileName_CA = QFileDialog::getOpenFileName(this,
@@ -5235,21 +5235,23 @@ void MainWindow::loadConfigFile_CA()
     while (!ConfigFile.atEnd()) {
         file = ConfigFile.readLine();
         cout << "config file content: " << file.data();
-        conf_data_double[i] = file.toDouble(&ok);     // hex == 255, ok == true
-        conf_data[i] = conf_data_double[i];
+        conf_data[i] = file.toDouble(&ok);     // hex == 255, ok == true
+        //conf_data[i] = conf_data_double[i];
         i = i + 1;
        }
 
+
     cout << "config file - size of byte array: " << file.size() << endl;
 
-    for (i=0; i<3; ++i) {
+    /*for (i=0; i<sizeof(conf_data)/sizeof(conf_data[0]); ++i) {
         cout << "config file - reading check: " << conf_data[i] << endl;
-    }
+    }*/
 
 
-    if (!synthMode) {
+
+    /*if (!synthMode) {
         evalBoard->setCA_ConfigFile(conf_data);
-    }
+    }*/
 
 }
 
