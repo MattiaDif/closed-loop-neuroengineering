@@ -442,6 +442,9 @@ fsm_valid_def_time = timeseries(fsm_valid_def);
 fsm_out_def_bin = dec2bin(fsm_out_def_uint16,16);
 fsm_valid_def_bin = dec2bin(fsm_valid_def,1);
 
+paramater_array = uint16([0 32000 32000 32000 32000 32000 1 35000 35000 35000 35000 2 38000 7 41000]');    %th parameter test
+paramater_array_time = timeseries(paramater_array);
+
 
 if save_flag == 1
     
@@ -449,10 +452,17 @@ if save_flag == 1
     frame = num2str(n_dataframe);
     
     %for simulink
-        save(['C:\GitHub\closed-loop-neuroscience\Mattia\Custom_architecture\CustArch_debug\invivo_fsm_out_chip',chip(find(~isspace(chip))),'_nframe',frame(find(~isspace(frame)))],...
+    save(['C:\GitHub\closed-loop-neuroscience\Mattia\Custom_architecture\CustArch_debug\invivo_fsm_out_chip',chip(find(~isspace(chip))),'_nframe',frame(find(~isspace(frame)))],...
             'fsm_out_def_time','-v7.3')
     save(['C:\GitHub\closed-loop-neuroscience\Mattia\Custom_architecture\CustArch_debug\invivo_fsm_valid_chip',chip(find(~isspace(chip))),'_nframe',frame(find(~isspace(frame)))],...
             'fsm_valid_def_time','-v7.3')
+        
+    save(['C:\GitHub\closed-loop-neuroscience\Mattia\Custom_architecture\CustArch_debug\pipe_in',chip(find(~isspace(chip))),'_nframe',frame(find(~isspace(frame)))],...
+            'paramater_array_time','-v7.3')   %th parameter test
+    
+    
+        
+        
         
     if save_ISE == 1    
         %for ISE
