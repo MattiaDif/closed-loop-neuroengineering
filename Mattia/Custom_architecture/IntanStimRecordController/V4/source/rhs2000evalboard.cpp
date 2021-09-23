@@ -1256,15 +1256,36 @@ void Rhs2000EvalBoard::setCA_Refractory(double refractory)
 
 // start update GUI MD 14-09-2021
 
-void Rhs2000EvalBoard::setCA_ConfigFile(unsigned int conf_data[3])
+void Rhs2000EvalBoard::setCA_ConfigFile(unsigned int conf_data, unsigned int i)
 {
-    unsigned int i;
+    lock_guard<mutex> lockOk(okMutex);
 
-    unsigned int a = *conf_data;
+    unsigned int pipe_in;
+    unsigned int pipe_out;
 
-    for (i=0; i<3; ++i) {
-        cout << "config file - evalboard check: " << a << endl;
+    cout << "config file - evalboard check:  " << conf_data << endl;
+
+    data_in[2 * i-1] = (unsigned char)((conf_data & 0x00ff) >> 0);    //LSB
+    data_in[2 * i] = (unsigned char)((conf_data & 0xff00) >> 8);    //MSB
+
+
+    pipe_in = (unsigned int)((unsigned char)(data_in[2 * i]) << 8 |    //input buffer check
+                                    (unsigned char)(data_in[2 * i-1]) << 0);
+
+    cout << "config file - pipe in check: " << pipe_in << endl;
+
+
+    if (i==129) {
+        dev->WriteToPipeIn(PipeInCustomArch, sizeof(data_in), data_in);
+
+        dev->ReadFromPipeOut(PipeOutData_CA, sizeof(data_out), data_out);
+
+        pipe_out = (unsigned int)((unsigned char)(data_out[1]) << 8 |    //output buffer check
+                                    (unsigned char)(data_out[0]) << 0);
+
+        cout << "config file - pipe out check: " << pipe_out << endl;
     }
+
 }
 
 // end update GUI MD 08-09-2021
@@ -1385,7 +1406,6 @@ long Rhs2000EvalBoard::readDataBlocksRaw(int numBlocks, unsigned char* buffer)
 
     //start update GUI MD 16-09-2021
 
-    unsigned char data_out[2];
     unsigned int pipe_out;
 
     dev->ReadFromPipeOut(PipeOutData_CA, sizeof(data_out), data_out);
@@ -1393,13 +1413,7 @@ long Rhs2000EvalBoard::readDataBlocksRaw(int numBlocks, unsigned char* buffer)
     pipe_out = (unsigned int)((unsigned char)(data_out[2 * 0 + 1]) << 8 |    //output buffer check
                                 (unsigned char)(data_out[2 * 0]) << 0);
 
-    cout << "rms: " << pipe_out << endl;
-
-    rms.open("C:\\Users\\diflo\\Desktop\\C++_debug\\rms.txt",  std::ios::app);
-
-    rms << pipe_out << "\n";
-
-    rms.close();
+    cout << "pipe out check: " << pipe_out << endl;
 
     //end  MD 16-09-2021
 
