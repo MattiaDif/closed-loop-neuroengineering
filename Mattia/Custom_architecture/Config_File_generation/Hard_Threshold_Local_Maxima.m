@@ -5,8 +5,8 @@ n_ch = 128;
 
 rng(0,'twister');
 
-a = 24000;
-b = 35000;
+a = 38000;
+b = 50000;
 r = (b-a).*rand(n_ch,1) + a;
 
 r_range = [min(r) max(r)]
