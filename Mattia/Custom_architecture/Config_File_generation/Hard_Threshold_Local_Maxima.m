@@ -16,12 +16,12 @@ refractory = 300;    %samples
 config_file = zeros(n_ch,1);
 for i=1 : 1 : n_ch
     
-    config_file((i-1)*2+1) = i-1;
+    config_file((i-1)*2+1) = (i-1)*2;
     config_file((i)*2) = r(i);
     
 end
 
-config_file = uint16([config_file; n_ch; refractory]);
+config_file = uint16([config_file; 512; refractory]);
 
 
 config_file_txt = fopen(['config_file.txt'], 'w');

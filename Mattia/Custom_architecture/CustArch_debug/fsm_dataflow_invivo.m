@@ -442,7 +442,7 @@ fsm_valid_def_time = timeseries(fsm_valid_def);
 fsm_out_def_bin = dec2bin(fsm_out_def_uint16,16);
 fsm_valid_def_bin = dec2bin(fsm_valid_def,1);
 
-paramater_array = uint16([0 32000 1 32001 2 32002 16 33000 18 33002 32 34000 48 35000 64 36000 80 37000 96 38000 112 39000 119 39007 128 300]');    %th parameter test
+paramater_array = uint16([0 32000 2 32001 4 32002 32 33000 36 33002 64 34000 56 35000 128 36000 160 37000 192 38000 224 39000 238 39007 512 300]');    %th parameter test
 paramater_array_time = timeseries(paramater_array);
 
 
