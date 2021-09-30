@@ -151,7 +151,7 @@ public:
     void setCA_HardThreshold(double th);    //update GUI MD 03-09-2021
     void setCA_Refractory(double refractory);   //update GUI MD 07-09-2021
     //void setCA_PipeIn();   //update GUI MD 10/09/2021
-    void setCA_ConfigFile(unsigned int conf_data, unsigned int i);    //update GUI MD 14-09-2021
+    void setCA_ConfigFile(unsigned int conf_data);    //update GUI MD 14-09-2021
 
     void setDacThreshold(int dacChannel, int threshold, bool trigPolarity);
 
@@ -247,7 +247,7 @@ private:
     // start update GUI MD 03-09-2021
 
     // Buffers for writing bytes to custom architecture
-    unsigned char data_in[129*4];   //buffer of 2 bytes for sending configuration file parameters //update GUI MD 07-09-2021
+    unsigned char data_in[2];   //buffer of 2 bytes for sending configuration file parameters //update GUI MD 07-09-2021
     unsigned char change_par[2];    //buffer for changing parameters online
 
     unsigned char data_out[2];  //buffer to read from pipe out

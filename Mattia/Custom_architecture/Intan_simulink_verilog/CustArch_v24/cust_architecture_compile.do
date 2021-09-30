@@ -24,14 +24,14 @@ vlog  get_enabled_timings.v
 vlog  Interpret_to_RAM_output.v
 vlog  OutputStateMachine.v
 vlog  output_interpret.v
+vlog  HP_Butter_2nd.v
+vlog  two_pole_IIR.v
+vlog  filtering.v
 vlog  Detect_Change.v
 vlog  channel_threshold.v
 vlog  Detect_Change1.v
 vlog  refractory.v
 vlog  pipe_in_interpret.v
-vlog  HP_Butter_2nd.v
-vlog  two_pole_IIR.v
-vlog  filtering.v
 vlog  LocalMaxima.v
 vlog  refractory_period.v
 vlog  spike_detection.v

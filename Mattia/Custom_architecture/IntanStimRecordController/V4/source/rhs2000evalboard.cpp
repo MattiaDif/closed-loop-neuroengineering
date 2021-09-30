@@ -1256,35 +1256,38 @@ void Rhs2000EvalBoard::setCA_Refractory(double refractory)
 
 // start update GUI MD 14-09-2021
 
-void Rhs2000EvalBoard::setCA_ConfigFile(unsigned int conf_data, unsigned int i)
+void Rhs2000EvalBoard::setCA_ConfigFile(unsigned int conf_data)
 {
     lock_guard<mutex> lockOk(okMutex);
 
     unsigned int pipe_in;
     unsigned int pipe_out;
+    unsigned int i;
 
     cout << "config file - evalboard check:  " << conf_data << endl;
 
-    data_in[2 * i-1] = (unsigned char)((conf_data & 0x00ff) >> 0);    //LSB
-    data_in[2 * i] = (unsigned char)((conf_data & 0xff00) >> 8);    //MSB
+    for (i = 0; i < 1; ++i) {
+        data_in[2 * i] = (unsigned char)((conf_data & 0x00ff) >> 0);    //LSB
+        data_in[2 * i + 1] = (unsigned char)((conf_data & 0xff00) >> 8);    //MSB
+    }
 
 
-    pipe_in = (unsigned int)((unsigned char)(data_in[2 * i]) << 8 |    //input buffer check
-                                    (unsigned char)(data_in[2 * i-1]) << 0);
+    pipe_in = (unsigned int)((unsigned char)(data_in[1]) << 8 |    //input buffer check
+                                    (unsigned char)(data_in[0]) << 0);
 
     cout << "config file - pipe in check: " << pipe_in << endl;
 
 
-    if (i==129) {
-        dev->WriteToPipeIn(PipeInCustomArch, sizeof(data_in), data_in);
 
-        dev->ReadFromPipeOut(PipeOutData_CA, sizeof(data_out), data_out);
+    dev->WriteToPipeIn(PipeInCustomArch, sizeof(data_in), data_in);
 
-        pipe_out = (unsigned int)((unsigned char)(data_out[1]) << 8 |    //output buffer check
-                                    (unsigned char)(data_out[0]) << 0);
+    dev->ReadFromPipeOut(PipeOutData_CA, sizeof(data_out), data_out);
 
-        cout << "config file - pipe out check: " << pipe_out << endl;
-    }
+    pipe_out = (unsigned int)((unsigned char)(data_out[1]) << 8 |    //output buffer check
+                                (unsigned char)(data_out[0]) << 0);
+
+    cout << "config file - pipe out check: " << pipe_out << endl;
+
 
 }
 

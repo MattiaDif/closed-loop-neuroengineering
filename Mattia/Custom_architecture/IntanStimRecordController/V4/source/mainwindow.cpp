@@ -5236,9 +5236,8 @@ void MainWindow::loadConfigFile_CA()
         cout << "config file - content: " << file.data() << endl;
         conf_data = file.toDouble(&ok);
         cout << "config file - reading check: " << conf_data << endl;
-        i = i + 1;
         if (!synthMode) {
-            evalBoard->setCA_ConfigFile(conf_data, i);
+            evalBoard->setCA_ConfigFile(conf_data);
         }
     }
 
