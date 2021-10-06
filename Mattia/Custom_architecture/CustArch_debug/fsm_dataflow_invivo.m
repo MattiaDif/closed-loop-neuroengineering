@@ -45,7 +45,7 @@ n_dataframe = 300;  %how much dataframe simulate (samples per channel)
 
 
 %% Data flow replica
-signal = load('C:\Users\diflo\OneDrive - Fondazione Istituto Italiano Tecnologia\IIT\Progetto MathWorks\Dataset\Intan\CustArch_v8_invivo_210513_154318.mat'); %MEArec data to simulate ac high gain samples
+signal = load('D:\File\OneDrive - Fondazione Istituto Italiano Tecnologia\IIT\Progetto MathWorks\Dataset\Intan\CustArch_v8_invivo_210513_154318.mat'); %MEArec data to simulate ac high gain samples
 signal = signal.amplifier_data;
 
 dc_data = randi([500,1000],8*16,n_dataframe); % DC low gain amplifier data
@@ -442,7 +442,7 @@ fsm_valid_def_time = timeseries(fsm_valid_def);
 fsm_out_def_bin = dec2bin(fsm_out_def_uint16,16);
 fsm_valid_def_bin = dec2bin(fsm_valid_def,1);
 
-paramater_array = uint16([0 32000 2 32001 4 32002 32 33000 36 33002 64 34000 56 35000 128 36000 160 37000 192 38000 224 39000 238 39007 512 300]');    %th parameter test
+paramater_array = uint16([0 32000 1 300]');    %th parameter test
 paramater_array_time = timeseries(paramater_array);
 
 
@@ -452,12 +452,12 @@ if save_flag == 1
     frame = num2str(n_dataframe);
     
     %for simulink
-    save(['C:\GitHub\closed-loop-neuroscience\Mattia\Custom_architecture\CustArch_debug\invivo_fsm_out_chip',chip(find(~isspace(chip))),'_nframe',frame(find(~isspace(frame)))],...
+    save(['D:\GitHub\closed-loop-neuroscience\Mattia\Custom_architecture\CustArch_debug\invivo_fsm_out_chip',chip(find(~isspace(chip))),'_nframe',frame(find(~isspace(frame)))],...
             'fsm_out_def_time','-v7.3')
-    save(['C:\GitHub\closed-loop-neuroscience\Mattia\Custom_architecture\CustArch_debug\invivo_fsm_valid_chip',chip(find(~isspace(chip))),'_nframe',frame(find(~isspace(frame)))],...
+    save(['D:\GitHub\closed-loop-neuroscience\Mattia\Custom_architecture\CustArch_debug\invivo_fsm_valid_chip',chip(find(~isspace(chip))),'_nframe',frame(find(~isspace(frame)))],...
             'fsm_valid_def_time','-v7.3')
         
-    save(['C:\GitHub\closed-loop-neuroscience\Mattia\Custom_architecture\CustArch_debug\pipe_in',chip(find(~isspace(chip))),'_nframe',frame(find(~isspace(frame)))],...
+    save(['D:\GitHub\closed-loop-neuroscience\Mattia\Custom_architecture\CustArch_debug\pipe_in',chip(find(~isspace(chip))),'_nframe',frame(find(~isspace(frame)))],...
             'paramater_array_time','-v7.3')   %th parameter test
     
     
@@ -481,9 +481,9 @@ if save_flag == 1
     
     
     %for CustArch_InOut_comparison
-    save(['C:\GitHub\closed-loop-neuroscience\Mattia\Custom_architecture\CustArch_debug\invivo_raw_fsm_out_chip',chip(find(~isspace(chip))),'_nframe',frame(find(~isspace(frame)))],...
+    save(['D:\GitHub\closed-loop-neuroscience\Mattia\Custom_architecture\CustArch_debug\invivo_raw_fsm_out_chip',chip(find(~isspace(chip))),'_nframe',frame(find(~isspace(frame)))],...
             'fsm_out_def','-v7.3')
-    save(['C:\GitHub\closed-loop-neuroscience\Mattia\Custom_architecture\CustArch_debug\invivo_raw_fsm_valid_chip',chip(find(~isspace(chip))),'_nframe',frame(find(~isspace(frame)))],...
+    save(['D:\GitHub\closed-loop-neuroscience\Mattia\Custom_architecture\CustArch_debug\invivo_raw_fsm_valid_chip',chip(find(~isspace(chip))),'_nframe',frame(find(~isspace(frame)))],...
             'fsm_valid_def','-v7.3')
 
 end
