@@ -55,3 +55,9 @@ CustArch_v22 --> as v21 + adaptive th local maxima rms (simulink ok, to be teste
 CustArch_v23 --> as v21 + pipe in for th (!= all channels), refractory (simulink ok, timing issue fpga)
 
 CustArch_v24 --> as v21 + pipe in for th (!= all channels), refractory (simulink ok, timing issue fpga)
+
+CustArch_v25 --> as v21 + pipe in for th (= all channels), refractory (simulink ok, to be tested fpga)
+
+CustArch_v26 --> as v12 + pipe in for th (= all channels), refractory, no filter to avoid potential additional timing issues
+
+CustArch_v27 --> as v12 + pipe in for th (!= all channels), refractory, no filter to avoid potential additional timing issues
