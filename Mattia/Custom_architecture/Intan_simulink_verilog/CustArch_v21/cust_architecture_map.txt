@@ -25,9 +25,11 @@ CustArch_v21/cust_architecture/output_interpret/OutputStateMachine --> OutputSta
 CustArch_v21/cust_architecture/output_interpret --> output_interpret
 CustArch_v21/cust_architecture/process_and_retrieve/filtering/two_pole_IIR/HP_Butter_2nd --> HP_Butter_2nd
 CustArch_v21/cust_architecture/process_and_retrieve/filtering/two_pole_IIR --> two_pole_IIR
+CustArch_v21/cust_architecture/process_and_retrieve/DualPortRAM_generic --> DualPortRAM_generic_block
 CustArch_v21/cust_architecture/process_and_retrieve/filtering --> filtering
 CustArch_v21/cust_architecture/process_and_retrieve/spike_detection/LocalMaxima --> LocalMaxima
 CustArch_v21/cust_architecture/process_and_retrieve/spike_detection/refractory_period --> refractory_period
 CustArch_v21/cust_architecture/process_and_retrieve/spike_detection --> spike_detection
 CustArch_v21/cust_architecture/process_and_retrieve --> process_and_retrieve
+cust_architecture_tc --> cust_architecture_tc
 CustArch_v21/cust_architecture --> cust_architecture

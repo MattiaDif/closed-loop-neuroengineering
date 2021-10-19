@@ -26,9 +26,11 @@ vlog  OutputStateMachine.v
 vlog  output_interpret.v
 vlog  HP_Butter_2nd.v
 vlog  two_pole_IIR.v
+vlog  DualPortRAM_generic_block.v
 vlog  filtering.v
 vlog  LocalMaxima.v
 vlog  refractory_period.v
 vlog  spike_detection.v
 vlog  process_and_retrieve.v
+vlog  cust_architecture_tc.v
 vlog  cust_architecture.v

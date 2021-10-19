@@ -34,7 +34,7 @@ save_ISE = 0;   %1 save txt for ISim, 0 not
 
 %% Initial conditions
 %MIN 1, MAX 8 --> n_chip
-n_chip = [0 0 0 1 0 0 0 0]; %1 chip data stream enabled, 0 not (max 8 elements == max 8 amplifiers)
+n_chip = [0 0 1 0 0 0 0 0]; %1 chip data stream enabled, 0 not (max 8 elements == max 8 amplifiers)
 n_dataframe = 300;  %how much dataframe simulate (samples per channel)
 % on_off = 0; %stimulation on/off, 1 --> on, 0 --> not
 % polarity = 0; %polarity, 1 --> on, 0 --> not
@@ -442,8 +442,8 @@ fsm_valid_def_time = timeseries(fsm_valid_def);
 fsm_out_def_bin = dec2bin(fsm_out_def_uint16,16);
 fsm_valid_def_bin = dec2bin(fsm_valid_def,1);
 
-paramater_array = uint16([0 32000 1 300]');    %th parameter test
-paramater_array_time = timeseries(paramater_array);
+% paramater_array = uint16([4 35000 20 37000 36 38000 52 39000 68 40000 84 36000 512 30]');    %th parameter test
+% paramater_array_time = timeseries(paramater_array);
 
 
 if save_flag == 1
@@ -456,10 +456,7 @@ if save_flag == 1
             'fsm_out_def_time','-v7.3')
     save(['C:\GitHub\closed-loop-neuroscience\Mattia\Custom_architecture\CustArch_debug\invivo_fsm_valid_chip',chip(find(~isspace(chip))),'_nframe',frame(find(~isspace(frame)))],...
             'fsm_valid_def_time','-v7.3')
-        
-    save(['C:\GitHub\closed-loop-neuroscience\Mattia\Custom_architecture\CustArch_debug\pipe_in',chip(find(~isspace(chip))),'_nframe',frame(find(~isspace(frame)))],...
-            'paramater_array_time','-v7.3')   %th parameter test
-    
+           
     
         
         

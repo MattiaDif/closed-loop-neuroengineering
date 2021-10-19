@@ -48,7 +48,7 @@ CustArch_v19 --> first working version of the 2nd order IIR filter HP! no spike 
 
 CustArch_v20 --> as v19 but with memory substituted by delay (simulink ok, fpga ok)
 
-CustArch_v21 --> IIR HP 2nd order, local maxima spike detection + scalable refractory regardless of the filter order (simulink ok, to be tested on fpga)
+CustArch_v21 --> IIR HP 2nd order, local maxima spike detection + scalable refractory regardless of the filter order (simulink ok, fpga ok)
 
 CustArch_v22 --> as v21 + adaptive th local maxima rms (simulink ok, fpga no --> logical issue refractory counter)
 
@@ -58,5 +58,9 @@ CustArch_v24 --> as v21 + pipe in for th (!= all channels), refractory (simulink
 
 CustArch_v25 --> as v21 + pipe in for th (= all channels), refractory (simulink ok, to be tested fpga + logical issue refractory counter)
 
-CustArch_v26 --> as v17 + + pipe in for th (= all channels)
+CustArch_v26 --> as v17 + + pipe in for th (= all channels) (simulink ok, fpga ok)
+
+CustArch_v27 --> as v26 + + pipe in for th (!= all channels) (simulink ok, fpga timing issue)
+
+CustArch_v28 --> as v21 with multirate 2nd order filter
 

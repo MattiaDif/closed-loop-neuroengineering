@@ -15,7 +15,7 @@ addpath(genpath(project_path)); %adding to the Matlab path all the project folde
 
 
 %% Parameter setting
-data_stream_enable = [0 0 0 1 0 0 0 0]; %data stream enable rollmap
+data_stream_enable = [1 1 1 1 1 1 1 1]; %data stream enable rollmap
 n_chip = sum(data_stream_enable); % number of data stream enabled in the simulated data
 n_dataframe = 300;
 cust_version = 21;   %version of custom architecture

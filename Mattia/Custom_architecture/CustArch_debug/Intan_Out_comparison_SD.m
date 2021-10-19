@@ -67,17 +67,36 @@ for i = 1:size(dc_data_cust_uint16,1)
     min_ISI(i) = min(ISI{i,:});
     max_ISI(i) = max(ISI{i,:});
     
+    max_amp(i) = max(ac_data_cust_uint16(i,find(dc_data_cust_uint16(i,:))-1));
+    min_amp(i) = min(ac_data_cust_uint16(i,find(dc_data_cust_uint16(i,:))-1));
+    
 end
 
+max(max_amp)
+min(min_amp)
+
 figure
+subplot(2,1,1)
 stem(min_ISI,'b','LineWidth',1),hold on
 stem(max_ISI,'r','LineWidth',1)
 title('min vs max ISI')
 ylabel('Samples')
-xlabel('Channel number')
+% xlabel('Channel number')
 legend('Min','Max')
 set(gca,'FontSize',14)
 hold off
+
+subplot(2,1,2)
+stem(min_amp,'b','LineWidth',1),hold on
+stem(max_amp,'r','LineWidth',1)
+title('min vs max ISI')
+ylabel('uint16')
+xlabel('Channel number')
+title('min vs max spike amplitude')
+legend('Min','Max')
+set(gca,'FontSize',14)
+hold off
+
 
 
 
