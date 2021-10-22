@@ -62,5 +62,5 @@ CustArch_v26 --> as v17 + + pipe in for th (= all channels) (simulink ok, fpga o
 
 CustArch_v27 --> as v26 + + pipe in for th (!= all channels) (simulink ok, fpga timing issue)
 
-CustArch_v28 --> as v21 with multirate 2nd order filter
+CustArch_v28 --> as v21 with multirate 2nd order filter (fpga ok, to be tested on fpga)
 
