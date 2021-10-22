@@ -10,6 +10,15 @@ The goal is to provide a rapid-prototyping, model-based design architecture to s
 
 Retracing these steps, the user will be driven through the development process of a closed-loop system starting from the model design until the hardware immplementation.
 
+<br />
+
+<p>
+    <img src="https://github.com/StefanoBuccelli/closed-loop-neuroscience/blob/master/Mattia/Images/project_scheme.png" width=70% height=70%>
+    <figcaption  align = "center"> <b>Fig.1 - Project overview scheme</b></figcaption>
+</p>
+
+<br />
+
 
 ## Required Software
 
