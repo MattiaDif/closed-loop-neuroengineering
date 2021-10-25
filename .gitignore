@@ -2,9 +2,12 @@
 *.prj
 *.slxc
 *.mexw64
+*.autosave
 
-Desktop.ini
+desktop.ini
 
 slprj
+
+
 
 
