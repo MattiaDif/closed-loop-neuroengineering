@@ -1,0 +1,2344 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="rtwreport.css" /><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>
+High-level Resource Utilization Report for CustArch_v24
+</title>
+
+</head>
+<body bgcolor="#ffffff" link="0033CC" vlink="#666666" onload="try {if (top) {if (top.rtwPageOnLoad) top.rtwPageOnLoad('rtwIdBillOfMaterials'); else local_onload();}} catch(err) {};hdlTableShrink(this, 'Input_Port');hdlTableShrink(this, 'Output_Port');hdlTableShrink(this, 'Register_2_1');hdlTableShrink(this, 'RAM_2_1');hdlTableShrink(this, 'Multiplexer_2_1');hdlTableShrink(this, 'Adder_3_1');hdlTableShrink(this, 'Subtractor_3_1');hdlTableShrink(this, 'Register_3_1');hdlTableShrink(this, 'Register_3_2');hdlTableShrink(this, 'RAM_3_1');hdlTableShrink(this, 'RAM_3_2');hdlTableShrink(this, 'Multiplexer_3_1');hdlTableShrink(this, 'RAM_4_1');hdlTableShrink(this, 'Register_5_2');hdlTableShrink(this, 'RAM_5_1');hdlTableShrink(this, 'Register_7_2');hdlTableShrink(this, 'Register_7_3');hdlTableShrink(this, 'RAM_7_1');hdlTableShrink(this, 'Register_9_1');hdlTableShrink(this, 'Register_9_2');hdlTableShrink(this, 'Register_9_3');hdlTableShrink(this, 'RAM_9_1');hdlTableShrink(this, 'Adder_10_1');hdlTableShrink(this, 'Subtractor_10_1');hdlTableShrink(this, 'Multiply_11_1');hdlTableShrink(this, 'Multiply_11_2');hdlTableShrink(this, 'Adder_11_1');hdlTableShrink(this, 'Adder_11_2');hdlTableShrink(this, 'Subtractor_11_1');hdlTableShrink(this, 'Subtractor_11_2');hdlTableShrink(this, 'Register_11_1');hdlTableShrink(this, 'Multiplexer_11_1');hdlTableShrink(this, 'Adder_13_1');hdlTableShrink(this, 'Register_13_1');hdlTableShrink(this, 'Register_13_2');hdlTableShrink(this, 'Multiplexer_13_1');hdlTableShrink(this, 'Multiplexer_13_2');hdlTableShrink(this, 'Multiplexer_14_1');hdlTableShrink(this, 'Multiplexer_17_1');hdlTableShrink(this, 'Multiplexer_17_2');hdlTableShrink(this, 'Register_19_1');hdlTableShrink(this, 'RAM_19_1');hdlTableShrink(this, 'Adder_20_1');hdlTableShrink(this, 'Register_20_1');hdlTableShrink(this, 'Multiplexer_20_1');hdlTableShrink(this, 'Adder_21_1');hdlTableShrink(this, 'Register_21_1');hdlTableShrink(this, 'Register_21_2');hdlTableShrink(this, 'Multiplexer_21_1');hdlTableShrink(this, 'Multiplexer_21_2');hdlTableShrink(this, 'Multiplexer_22_1');hdlTableShrink(this, 'Multiplexer_23_1');hdlTableShrink(this, 'Multiplexer_26_1');hdlTableShrink(this, 'Multiplexer_26_2');hdlTableShrink(this, 'Register_27_1');hdlTableShrink(this, 'Register_27_2');hdlTableShrink(this, 'Multiplexer_27_1');hdlTableShrink(this, 'RAM_28_1');hdlTableShrink(this, 'Multiplexer_29_1');">
+<script>
+<!--
+function hdlTableShrink(o,tagNameStr)
+{
+var temp = document.getElementsByName(tagNameStr);
+if (temp[0].style.display == "")
+{
+	temp[0].style.display = "none";
+	o.innerHTML = '<span style="font-family:monospace">[+]</span>';
+}
+else
+{
+	temp[0].style.display = "";
+	o.innerHTML = '<span style="font-family:monospace">[-]</span>';
+}
+}
+// -->
+</script>
+<script>
+<!--
+function hdlTableCollapseAll(o, numNtks, numComps)
+{
+	var id = "";
+	for (i = 1; i <= numNtks; i++)
+	{
+		for (j = 1; j <= numComps; j++)
+		{
+			id = "Multiply" + "_" + i + "_" + j;
+			var temp = document.getElementsByName(id);
+			if (temp != null && temp.length > 0)
+			{
+				temp[0].style.display = "none";
+			}
+			id = "Adder" + "_" + i + "_" + j;
+			temp = document.getElementsByName(id);
+			if (temp != null && temp.length > 0)
+			{
+				temp[0].style.display = "none";
+			}
+			id = "Subtractor" + "_" + i + "_" + j;
+			temp = document.getElementsByName(id);
+			if (temp != null && temp.length > 0)
+			{
+				temp[0].style.display = "none";
+			}
+			id = "Register" + "_" + i + "_" + j;
+			temp = document.getElementsByName(id);
+			if (temp != null && temp.length > 0)
+			{
+				temp[0].style.display = "none";
+			}
+			id = "RAM" + "_" + i + "_" + j;
+			temp = document.getElementsByName(id);
+			if (temp != null && temp.length > 0)
+			{
+				temp[0].style.display = "none";
+			}
+			id = "Multiplexer" + "_" + i + "_" + j;
+			temp = document.getElementsByName(id);
+			if (temp != null && temp.length > 0)
+			{
+				temp[0].style.display = "none";
+			}
+		}
+	}
+	var collapsibles = document.getElementsByName('collapsible');
+	for (i = 0; i < collapsibles.length; i++)
+	{
+		collapsibles[i].innerHTML = '<span style="font-family:monospace">[+]</span>';
+	}
+}
+// -->
+</script>
+<script>
+<!--
+function hdlTableExpandAll(o, numNtks, numComps)
+{
+	var id = "";
+	for (i = 1; i <= numNtks; i++)
+	{
+		for (j = 1; j <= numComps; j++)
+		{
+			id = "Multiply" + "_" + i + "_" + j;
+			var temp = document.getElementsByName(id);
+			if (temp != null && temp.length > 0)
+			{
+				temp[0].style.display = "";
+			}
+			id = "Adder" + "_" + i + "_" + j;
+			temp = document.getElementsByName(id);
+			if (temp != null && temp.length > 0)
+			{
+				temp[0].style.display = "";
+			}
+			id = "Subtractor" + "_" + i + "_" + j;
+			temp = document.getElementsByName(id);
+			if (temp != null && temp.length > 0)
+			{
+				temp[0].style.display = "";
+			}
+			id = "Register" + "_" + i + "_" + j;
+			temp = document.getElementsByName(id);
+			if (temp != null && temp.length > 0)
+			{
+				temp[0].style.display = "";
+			}
+			id = "RAM" + "_" + i + "_" + j;
+			temp = document.getElementsByName(id);
+			if (temp != null && temp.length > 0)
+			{
+				temp[0].style.display = "";
+			}
+			id = "Multiplexer" + "_" + i + "_" + j;
+			temp = document.getElementsByName(id);
+			if (temp != null && temp.length > 0)
+			{
+				temp[0].style.display = "";
+			}
+		}
+	}
+	var collapsibles = document.getElementsByName('collapsible');
+	for (i = 0; i < collapsibles.length; i++)
+	{
+		collapsibles[i].innerHTML = '<span style="font-family:monospace">[-]</span>';
+	}
+}
+// -->
+</script>
+<font SIZE="+2" COLOR="#000066">
+Generic Resource Report for CustArch_v24
+</font>
+<br /><br /><br /><a name="Summary">
+<font size="+1" color="#000066">
+<b class="midprod">
+Summary
+</b>
+
+</font>
+
+</a>
+<br /><br /><table width="100%" border="1">
+<tr style="background-color: #eeeeff">
+<td align="left" valign="top" style="border-style: none">
+Multipliers
+</td>
+<td align="center" valign="top" style="border-style: none">
+3
+</td>
+
+</tr>
+<tr style="background-color: #ffffff">
+<td align="left" valign="top" style="border-style: none">
+Adders/Subtractors
+</td>
+<td align="center" valign="top" style="border-style: none">
+30
+</td>
+
+</tr>
+<tr style="background-color: #eeeeff">
+<td align="left" valign="top" style="border-style: none">
+Registers
+</td>
+<td align="center" valign="top" style="border-style: none">
+200
+</td>
+
+</tr>
+<tr style="background-color: #ffffff">
+<td align="left" valign="top" style="border-style: none">
+Total 1-Bit Registers
+</td>
+<td align="center" valign="top" style="border-style: none">
+1843
+</td>
+
+</tr>
+<tr style="background-color: #eeeeff">
+<td align="left" valign="top" style="border-style: none">
+RAMs
+</td>
+<td align="center" valign="top" style="border-style: none">
+12
+</td>
+
+</tr>
+<tr style="background-color: #ffffff">
+<td align="left" valign="top" style="border-style: none">
+Multiplexers
+</td>
+<td align="center" valign="top" style="border-style: none">
+115
+</td>
+
+</tr>
+<tr style="background-color: #eeeeff">
+<td align="left" valign="top" style="border-style: none">
+I/O Bits
+</td>
+<td align="center" valign="top" style="border-style: none">
+121
+</td>
+
+</tr>
+<tr style="background-color: #ffffff">
+<td align="left" valign="top" style="border-style: none">
+Static Shift operators
+</td>
+<td align="center" valign="top" style="border-style: none">
+0
+</td>
+
+</tr>
+<tr style="background-color: #eeeeff">
+<td align="left" valign="top" style="border-style: none">
+Dynamic Shift operators
+</td>
+<td align="center" valign="top" style="border-style: none">
+0
+</td>
+
+</tr>
+
+</table>
+<br /><br /><a name="Detailed Report">
+<font size="+1" color="#000066">
+<b class="midprod">
+Detailed Report
+</b>
+
+</font>
+
+</a>
+<br /><br /><p><hr /></p><h5>
+Report for Subsystem:    <a href="matlab:coder.internal.code2model('CustArch_v24:10')" name="code2model" class="code2model">
+cust_architecture
+</a>
+
+</h5>
+<h5>
+Number of I/O Bits (121)
+</h5>
+<span name="collapsible" id="collapsible" style="font-family:monospace" onclick="hdlTableShrink(this, 'Input_Port')" onmouseover="this.style.cursor = 'pointer'">
+[+]
+</span>
+<span style="font-family:monospace">
+Number of Input Bits: 62
+</span>
+<span name="Input_Port" id="Input_Port">
+<ul>
+<li>
+clk: 1 bit
+</li>
+<li>
+reset: 1 bit
+</li>
+<li>
+clk_enable: 1 bit
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('CustArch_v24:11')" name="code2model" class="code2model">
+FIFO_data_in
+</a>
+: 16 bits
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('CustArch_v24:12')" name="code2model" class="code2model">
+FIFO_write_to
+</a>
+: 1 bit
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('CustArch_v24:13')" name="code2model" class="code2model">
+data_stream_en
+</a>
+: 8 bits
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('CustArch_v24:14')" name="code2model" class="code2model">
+pipe_in_data
+</a>
+: 16 bits
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('CustArch_v24:15')" name="code2model" class="code2model">
+pipe_in_en
+</a>
+: 1 bit
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('CustArch_v24:16')" name="code2model" class="code2model">
+pipe_out_read
+</a>
+: 1 bit
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('CustArch_v24:17')" name="code2model" class="code2model">
+cfg
+</a>
+: 16 bits
+</li>
+
+</ul>
+
+</span>
+<br /><span name="collapsible" id="collapsible" style="font-family:monospace" onclick="hdlTableShrink(this, 'Output_Port')" onmouseover="this.style.cursor = 'pointer'">
+[+]
+</span>
+<span style="font-family:monospace">
+Number of Output Bits: 59
+</span>
+<span name="Output_Port" id="Output_Port">
+<ul>
+<li>
+ce_out: 1 bit
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('CustArch_v24:697')" name="code2model" class="code2model">
+comp_data_out
+</a>
+: 16 bits
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('CustArch_v24:698')" name="code2model" class="code2model">
+comp_data_out_valid
+</a>
+: 1 bit
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('CustArch_v24:699')" name="code2model" class="code2model">
+trig_stim
+</a>
+: 8 bits
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('CustArch_v24:700')" name="code2model" class="code2model">
+computing
+</a>
+: 1 bit
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('CustArch_v24:701')" name="code2model" class="code2model">
+pipe_out_data
+</a>
+: 16 bits
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('CustArch_v24:702')" name="code2model" class="code2model">
+status
+</a>
+: 16 bits
+</li>
+
+</ul>
+
+</span>
+<br /><p><hr /></p><h5>
+Report for Subsystem:    <a href="matlab:coder.internal.code2model('CustArch_v24:582')" name="code2model" class="code2model">
+process_and_retrieve
+</a>
+
+</h5>
+<h5>
+Registers (1)
+</h5>
+<span name="collapsible" id="collapsible" style="font-family:monospace" onclick="hdlTableShrink(this, 'Register_2_1')" onmouseover="this.style.cursor = 'pointer'">
+[+]
+</span>
+<span style="font-family:monospace">
+8-bit Register 							: 1
+</span>
+<span name="Register_2_1" id="Register_2_1">
+<ul>
+<li>
+<a href="matlab:coder.internal.code2model('CustArch_v24:588')" name="code2model" class="code2model">
+Delay
+</a>
+
+</li>
+
+</ul>
+
+</span>
+<br /><h5>
+RAMs (1)
+</h5>
+<span name="collapsible" id="collapsible" style="font-family:monospace" onclick="hdlTableShrink(this, 'RAM_2_1')" onmouseover="this.style.cursor = 'pointer'">
+[+]
+</span>
+<span style="font-family:monospace">
+512x16-bit RAM 							: 1
+</span>
+<span name="RAM_2_1" id="RAM_2_1">
+<ul>
+<li>
+<a href="matlab:coder.internal.code2model('CustArch_v24:83')" name="code2model" class="code2model">
+DualPortRAM_generic
+</a>
+
+</li>
+
+</ul>
+
+</span>
+<br /><h5>
+Multiplexers (1)
+</h5>
+<span name="collapsible" id="collapsible" style="font-family:monospace" onclick="hdlTableShrink(this, 'Multiplexer_2_1')" onmouseover="this.style.cursor = 'pointer'">
+[+]
+</span>
+<span style="font-family:monospace">
+16-bit 2-to-1 Multiplexer 							: 1
+</span>
+<span name="Multiplexer_2_1" id="Multiplexer_2_1">
+<ul>
+<li>
+<a href="matlab:coder.internal.code2model('CustArch_v24:590')" name="code2model" class="code2model">
+Switch
+</a>
+
+</li>
+
+</ul>
+
+</span>
+<br /><p><hr /></p><h5>
+Report for Subsystem:    <a href="matlab:coder.internal.code2model('CustArch_v24:667')" name="code2model" class="code2model">
+refractory_period
+</a>
+
+</h5>
+<h5>
+Adders/Subtractors (2)
+</h5>
+<span name="collapsible" id="collapsible" style="font-family:monospace" onclick="hdlTableShrink(this, 'Adder_3_1')" onmouseover="this.style.cursor = 'pointer'">
+[+]
+</span>
+<span style="font-family:monospace">
+32x32-bit Adder 							: 1
+</span>
+<span name="Adder_3_1" id="Adder_3_1">
+<ul>
+<li>
+<a href="matlab:coder.internal.code2model('CustArch_v24:677')" name="code2model" class="code2model">
+HDL Counter
+</a>
+
+</li>
+
+</ul>
+
+</span>
+<br /><span name="collapsible" id="collapsible" style="font-family:monospace" onclick="hdlTableShrink(this, 'Subtractor_3_1')" onmouseover="this.style.cursor = 'pointer'">
+[+]
+</span>
+<span style="font-family:monospace">
+33x33-bit Subtractor 							: 1
+</span>
+<span name="Subtractor_3_1" id="Subtractor_3_1">
+<ul>
+<li>
+<a href="matlab:coder.internal.code2model('CustArch_v24:679')" name="code2model" class="code2model">
+Sum
+</a>
+
+</li>
+
+</ul>
+
+</span>
+<br /><h5>
+Registers (2)
+</h5>
+<span name="collapsible" id="collapsible" style="font-family:monospace" onclick="hdlTableShrink(this, 'Register_3_1')" onmouseover="this.style.cursor = 'pointer'">
+[+]
+</span>
+<span style="font-family:monospace">
+32-bit Register 							: 1
+</span>
+<span name="Register_3_1" id="Register_3_1">
+<ul>
+<li>
+<a href="matlab:coder.internal.code2model('CustArch_v24:677')" name="code2model" class="code2model">
+HDL Counter
+</a>
+
+</li>
+
+</ul>
+
+</span>
+<br /><span name="collapsible" id="collapsible" style="font-family:monospace" onclick="hdlTableShrink(this, 'Register_3_2')" onmouseover="this.style.cursor = 'pointer'">
+[+]
+</span>
+<span style="font-family:monospace">
+9-bit Register 							: 1
+</span>
+<span name="Register_3_2" id="Register_3_2">
+<ul>
+<li>
+<a href="matlab:coder.internal.code2model('CustArch_v24:674')" name="code2model" class="code2model">
+Delay
+</a>
+
+</li>
+
+</ul>
+
+</span>
+<br /><h5>
+RAMs (2)
+</h5>
+<span name="collapsible" id="collapsible" style="font-family:monospace" onclick="hdlTableShrink(this, 'RAM_3_1')" onmouseover="this.style.cursor = 'pointer'">
+[+]
+</span>
+<span style="font-family:monospace">
+512x32-bit RAM 							: 1
+</span>
+<span name="RAM_3_1" id="RAM_3_1">
+<ul>
+<li>
+<a href="matlab:coder.internal.code2model('CustArch_v24:83')" name="code2model" class="code2model">
+DualPortRAM_generic
+</a>
+
+</li>
+
+</ul>
+
+</span>
+<br /><span name="collapsible" id="collapsible" style="font-family:monospace" onclick="hdlTableShrink(this, 'RAM_3_2')" onmouseover="this.style.cursor = 'pointer'">
+[+]
+</span>
+<span style="font-family:monospace">
+512x16-bit RAM 							: 1
+</span>
+<span name="RAM_3_2" id="RAM_3_2">
+<ul>
+<li>
+<a href="matlab:coder.internal.code2model('CustArch_v24:83')" name="code2model" class="code2model">
+DualPortRAM_generic
+</a>
+
+</li>
+
+</ul>
+
+</span>
+<br /><h5>
+Multiplexers (1)
+</h5>
+<span name="collapsible" id="collapsible" style="font-family:monospace" onclick="hdlTableShrink(this, 'Multiplexer_3_1')" onmouseover="this.style.cursor = 'pointer'">
+[+]
+</span>
+<span style="font-family:monospace">
+16-bit 2-to-1 Multiplexer 							: 1
+</span>
+<span name="Multiplexer_3_1" id="Multiplexer_3_1">
+<ul>
+<li>
+<a href="matlab:coder.internal.code2model('CustArch_v24:680')" name="code2model" class="code2model">
+Switch
+</a>
+
+</li>
+
+</ul>
+
+</span>
+<br /><p><hr /></p><h5>
+Report for Subsystem:    <a href="matlab:coder.internal.code2model('CustArch_v24:650')" name="code2model" class="code2model">
+LocalMaxima
+</a>
+
+</h5>
+<h5>
+Registers (1)
+</h5>
+<span style="font-family:monospace">
+9-bit Register 							: 1
+</span>
+<br /><h5>
+RAMs (2)
+</h5>
+<span name="collapsible" id="collapsible" style="font-family:monospace" onclick="hdlTableShrink(this, 'RAM_4_1')" onmouseover="this.style.cursor = 'pointer'">
+[+]
+</span>
+<span style="font-family:monospace">
+512x16-bit RAM 							: 2
+</span>
+<span name="RAM_4_1" id="RAM_4_1">
+<ul>
+<li>
+<a href="matlab:coder.internal.code2model('CustArch_v24:83')" name="code2model" class="code2model">
+DualPortRAM_generic
+</a>
+
+</li>
+
+</ul>
+
+</span>
+<br /><p><hr /></p><h5>
+Report for Subsystem:    <a href="matlab:coder.internal.code2model('CustArch_v24:567')" name="code2model" class="code2model">
+refractory
+</a>
+
+</h5>
+<h5>
+Registers (3)
+</h5>
+<span style="font-family:monospace">
+16-bit Register 							: 1
+</span>
+<br /><span name="collapsible" id="collapsible" style="font-family:monospace" onclick="hdlTableShrink(this, 'Register_5_2')" onmouseover="this.style.cursor = 'pointer'">
+[+]
+</span>
+<span style="font-family:monospace">
+1-bit Register 							: 2
+</span>
+<span name="Register_5_2" id="Register_5_2">
+<ul>
+<li>
+<a href="matlab:coder.internal.code2model('CustArch_v24:784')" name="code2model" class="code2model">
+Delay2
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('CustArch_v24:785')" name="code2model" class="code2model">
+Delay3
+</a>
+
+</li>
+
+</ul>
+
+</span>
+<br /><h5>
+RAMs (1)
+</h5>
+<span name="collapsible" id="collapsible" style="font-family:monospace" onclick="hdlTableShrink(this, 'RAM_5_1')" onmouseover="this.style.cursor = 'pointer'">
+[+]
+</span>
+<span style="font-family:monospace">
+4x16-bit RAM 							: 1
+</span>
+<span name="RAM_5_1" id="RAM_5_1">
+<ul>
+<li>
+<a href="matlab:coder.internal.code2model('CustArch_v24:83')" name="code2model" class="code2model">
+DualPortRAM_generic
+</a>
+
+</li>
+
+</ul>
+
+</span>
+<br /><p><hr /></p><h5>
+Report for Subsystem:    <a href="matlab:coder.internal.code2model('CustArch_v24:779')" name="code2model" class="code2model">
+Detect
+Change1
+</a>
+
+</h5>
+<h5>
+Registers (1)
+</h5>
+<span style="font-family:monospace">
+16-bit Register 							: 1
+</span>
+<br /><p><hr /></p><h5>
+Report for Subsystem:    <a href="matlab:coder.internal.code2model('CustArch_v24:549')" name="code2model" class="code2model">
+channel_threshold
+</a>
+
+</h5>
+<h5>
+Registers (4)
+</h5>
+<span style="font-family:monospace">
+16-bit Register 							: 1
+</span>
+<br /><span name="collapsible" id="collapsible" style="font-family:monospace" onclick="hdlTableShrink(this, 'Register_7_2')" onmouseover="this.style.cursor = 'pointer'">
+[+]
+</span>
+<span style="font-family:monospace">
+9-bit Register 							: 1
+</span>
+<span name="Register_7_2" id="Register_7_2">
+<ul>
+<li>
+<a href="matlab:coder.internal.code2model('CustArch_v24:782')" name="code2model" class="code2model">
+Delay4
+</a>
+
+</li>
+
+</ul>
+
+</span>
+<br /><span name="collapsible" id="collapsible" style="font-family:monospace" onclick="hdlTableShrink(this, 'Register_7_3')" onmouseover="this.style.cursor = 'pointer'">
+[+]
+</span>
+<span style="font-family:monospace">
+1-bit Register 							: 2
+</span>
+<span name="Register_7_3" id="Register_7_3">
+<ul>
+<li>
+<a href="matlab:coder.internal.code2model('CustArch_v24:780')" name="code2model" class="code2model">
+Delay2
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('CustArch_v24:781')" name="code2model" class="code2model">
+Delay3
+</a>
+
+</li>
+
+</ul>
+
+</span>
+<br /><h5>
+RAMs (1)
+</h5>
+<span name="collapsible" id="collapsible" style="font-family:monospace" onclick="hdlTableShrink(this, 'RAM_7_1')" onmouseover="this.style.cursor = 'pointer'">
+[+]
+</span>
+<span style="font-family:monospace">
+512x16-bit RAM 							: 1
+</span>
+<span name="RAM_7_1" id="RAM_7_1">
+<ul>
+<li>
+<a href="matlab:coder.internal.code2model('CustArch_v24:83')" name="code2model" class="code2model">
+DualPortRAM_generic
+</a>
+
+</li>
+
+</ul>
+
+</span>
+<br /><p><hr /></p><h5>
+Report for Subsystem:    <a href="matlab:coder.internal.code2model('CustArch_v24:774')" name="code2model" class="code2model">
+Detect
+Change
+</a>
+
+</h5>
+<h5>
+Registers (1)
+</h5>
+<span style="font-family:monospace">
+16-bit Register 							: 1
+</span>
+<br /><p><hr /></p><h5>
+Report for Subsystem:    <a href="matlab:coder.internal.code2model('CustArch_v24:592')" name="code2model" class="code2model">
+filtering
+</a>
+
+</h5>
+<h5>
+Registers (11)
+</h5>
+<span name="collapsible" id="collapsible" style="font-family:monospace" onclick="hdlTableShrink(this, 'Register_9_1')" onmouseover="this.style.cursor = 'pointer'">
+[+]
+</span>
+<span style="font-family:monospace">
+9-bit Register 							: 5
+</span>
+<span name="Register_9_1" id="Register_9_1">
+<ul>
+<li>
+<a href="matlab:coder.internal.code2model('CustArch_v24:598')" name="code2model" class="code2model">
+Delay2
+</a>
+
+</li>
+
+</ul>
+
+</span>
+<br /><span name="collapsible" id="collapsible" style="font-family:monospace" onclick="hdlTableShrink(this, 'Register_9_2')" onmouseover="this.style.cursor = 'pointer'">
+[+]
+</span>
+<span style="font-family:monospace">
+8-bit Register 							: 1
+</span>
+<span name="Register_9_2" id="Register_9_2">
+<ul>
+<li>
+<a href="matlab:coder.internal.code2model('CustArch_v24:596')" name="code2model" class="code2model">
+Delay
+</a>
+
+</li>
+
+</ul>
+
+</span>
+<br /><span name="collapsible" id="collapsible" style="font-family:monospace" onclick="hdlTableShrink(this, 'Register_9_3')" onmouseover="this.style.cursor = 'pointer'">
+[+]
+</span>
+<span style="font-family:monospace">
+1-bit Register 							: 5
+</span>
+<span name="Register_9_3" id="Register_9_3">
+<ul>
+<li>
+<a href="matlab:coder.internal.code2model('CustArch_v24:597')" name="code2model" class="code2model">
+Delay1
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('CustArch_v24:602')" name="code2model" class="code2model">
+Delay6
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('CustArch_v24:600')" name="code2model" class="code2model">
+Delay4
+</a>
+
+</li>
+
+</ul>
+
+</span>
+<br /><h5>
+RAMs (2)
+</h5>
+<span name="collapsible" id="collapsible" style="font-family:monospace" onclick="hdlTableShrink(this, 'RAM_9_1')" onmouseover="this.style.cursor = 'pointer'">
+[+]
+</span>
+<span style="font-family:monospace">
+512x32-bit RAM 							: 2
+</span>
+<span name="RAM_9_1" id="RAM_9_1">
+<ul>
+<li>
+<a href="matlab:coder.internal.code2model('CustArch_v24:83')" name="code2model" class="code2model">
+DualPortRAM_generic
+</a>
+
+</li>
+
+</ul>
+
+</span>
+<br /><p><hr /></p><h5>
+Report for Subsystem:    <a href="matlab:coder.internal.code2model('CustArch_v24:609')" name="code2model" class="code2model">
+two_pole_IIR
+</a>
+
+</h5>
+<h5>
+Adders/Subtractors (2)
+</h5>
+<span name="collapsible" id="collapsible" style="font-family:monospace" onclick="hdlTableShrink(this, 'Adder_10_1')" onmouseover="this.style.cursor = 'pointer'">
+[+]
+</span>
+<span style="font-family:monospace">
+32x32-bit Adder 							: 1
+</span>
+<span name="Adder_10_1" id="Adder_10_1">
+<ul>
+<li>
+<a href="matlab:coder.internal.code2model('CustArch_v24:637')" name="code2model" class="code2model">
+Subtract1
+</a>
+
+</li>
+
+</ul>
+
+</span>
+<br /><span name="collapsible" id="collapsible" style="font-family:monospace" onclick="hdlTableShrink(this, 'Subtractor_10_1')" onmouseover="this.style.cursor = 'pointer'">
+[+]
+</span>
+<span style="font-family:monospace">
+32x32-bit Subtractor 							: 1
+</span>
+<span name="Subtractor_10_1" id="Subtractor_10_1">
+<ul>
+<li>
+<a href="matlab:coder.internal.code2model('CustArch_v24:636')" name="code2model" class="code2model">
+Subtract
+</a>
+
+</li>
+
+</ul>
+
+</span>
+<br /><p><hr /></p><h5>
+Report for Subsystem:    <a href="matlab:coder.internal.code2model('CustArch_v24:614')" name="code2model" class="code2model">
+HP_Butter_2nd
+</a>
+
+</h5>
+<h5>
+Multipliers (3)
+</h5>
+<span name="collapsible" id="collapsible" style="font-family:monospace" onclick="hdlTableShrink(this, 'Multiply_11_1')" onmouseover="this.style.cursor = 'pointer'">
+[+]
+</span>
+<span style="font-family:monospace">
+33x32-bit Multiply 							: 2
+</span>
+<span name="Multiply_11_1" id="Multiply_11_1">
+<ul>
+<li>
+<a href="matlab:coder.internal.code2model('CustArch_v24:633')" name="code2model" class="code2model">
+s(1)
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('CustArch_v24:631')" name="code2model" class="code2model">
+a(3)(1)
+</a>
+
+</li>
+
+</ul>
+
+</span>
+<br /><span name="collapsible" id="collapsible" style="font-family:monospace" onclick="hdlTableShrink(this, 'Multiply_11_2')" onmouseover="this.style.cursor = 'pointer'">
+[+]
+</span>
+<span style="font-family:monospace">
+32x32-bit Multiply 							: 1
+</span>
+<span name="Multiply_11_2" id="Multiply_11_2">
+<ul>
+<li>
+<a href="matlab:coder.internal.code2model('CustArch_v24:630')" name="code2model" class="code2model">
+a(2)(1)
+</a>
+
+</li>
+
+</ul>
+
+</span>
+<br /><h5>
+Adders/Subtractors (12)
+</h5>
+<span name="collapsible" id="collapsible" style="font-family:monospace" onclick="hdlTableShrink(this, 'Adder_11_1')" onmouseover="this.style.cursor = 'pointer'">
+[+]
+</span>
+<span style="font-family:monospace">
+32x32-bit Adder 							: 7
+</span>
+<span name="Adder_11_1" id="Adder_11_1">
+<ul>
+<li>
+<a href="matlab:coder.internal.code2model('CustArch_v24:633')" name="code2model" class="code2model">
+s(1)
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('CustArch_v24:630')" name="code2model" class="code2model">
+a(2)(1)
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('CustArch_v24:626')" name="code2model" class="code2model">
+SumA21
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('CustArch_v24:631')" name="code2model" class="code2model">
+a(3)(1)
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('CustArch_v24:627')" name="code2model" class="code2model">
+SumA31
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('CustArch_v24:632')" name="code2model" class="code2model">
+b(2)(1)
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('CustArch_v24:628')" name="code2model" class="code2model">
+SumB21
+</a>
+
+</li>
+
+</ul>
+
+</span>
+<br /><span name="collapsible" id="collapsible" style="font-family:monospace" onclick="hdlTableShrink(this, 'Adder_11_2')" onmouseover="this.style.cursor = 'pointer'">
+[+]
+</span>
+<span style="font-family:monospace">
+33x33-bit Adder 							: 2
+</span>
+<span name="Adder_11_2" id="Adder_11_2">
+<ul>
+<li>
+<a href="matlab:coder.internal.code2model('CustArch_v24:628')" name="code2model" class="code2model">
+SumB21
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('CustArch_v24:629')" name="code2model" class="code2model">
+SumB31
+</a>
+
+</li>
+
+</ul>
+
+</span>
+<br /><span name="collapsible" id="collapsible" style="font-family:monospace" onclick="hdlTableShrink(this, 'Subtractor_11_1')" onmouseover="this.style.cursor = 'pointer'">
+[+]
+</span>
+<span style="font-family:monospace">
+33x33-bit Subtractor 							: 2
+</span>
+<span name="Subtractor_11_1" id="Subtractor_11_1">
+<ul>
+<li>
+<a href="matlab:coder.internal.code2model('CustArch_v24:626')" name="code2model" class="code2model">
+SumA21
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('CustArch_v24:627')" name="code2model" class="code2model">
+SumA31
+</a>
+
+</li>
+
+</ul>
+
+</span>
+<br /><span name="collapsible" id="collapsible" style="font-family:monospace" onclick="hdlTableShrink(this, 'Subtractor_11_2')" onmouseover="this.style.cursor = 'pointer'">
+[+]
+</span>
+<span style="font-family:monospace">
+64-bit Subtractor 							: 1
+</span>
+<span name="Subtractor_11_2" id="Subtractor_11_2">
+<ul>
+<li>
+<a href="matlab:coder.internal.code2model('CustArch_v24:632')" name="code2model" class="code2model">
+b(2)(1)
+</a>
+
+</li>
+
+</ul>
+
+</span>
+<br /><h5>
+Registers (14)
+</h5>
+<span name="collapsible" id="collapsible" style="font-family:monospace" onclick="hdlTableShrink(this, 'Register_11_1')" onmouseover="this.style.cursor = 'pointer'">
+[+]
+</span>
+<span style="font-family:monospace">
+32-bit Register 							: 14
+</span>
+<span name="Register_11_1" id="Register_11_1">
+<ul>
+<li>
+<a href="matlab:coder.internal.code2model('CustArch_v24:623')" name="code2model" class="code2model">
+Delay6
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('CustArch_v24:624')" name="code2model" class="code2model">
+Delay7
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('CustArch_v24:617')" name="code2model" class="code2model">
+Delay
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('CustArch_v24:618')" name="code2model" class="code2model">
+Delay1
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('CustArch_v24:619')" name="code2model" class="code2model">
+Delay2
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('CustArch_v24:620')" name="code2model" class="code2model">
+Delay3
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('CustArch_v24:622')" name="code2model" class="code2model">
+Delay5
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('CustArch_v24:621')" name="code2model" class="code2model">
+Delay4
+</a>
+
+</li>
+
+</ul>
+
+</span>
+<br /><h5>
+Multiplexers (11)
+</h5>
+<span name="collapsible" id="collapsible" style="font-family:monospace" onclick="hdlTableShrink(this, 'Multiplexer_11_1')" onmouseover="this.style.cursor = 'pointer'">
+[+]
+</span>
+<span style="font-family:monospace">
+32-bit 3-to-1 Multiplexer 							: 11
+</span>
+<span name="Multiplexer_11_1" id="Multiplexer_11_1">
+<ul>
+<li>
+<a href="matlab:coder.internal.code2model('CustArch_v24:633')" name="code2model" class="code2model">
+s(1)
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('CustArch_v24:630')" name="code2model" class="code2model">
+a(2)(1)
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('CustArch_v24:626')" name="code2model" class="code2model">
+SumA21
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('CustArch_v24:631')" name="code2model" class="code2model">
+a(3)(1)
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('CustArch_v24:627')" name="code2model" class="code2model">
+SumA31
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('CustArch_v24:632')" name="code2model" class="code2model">
+b(2)(1)
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('CustArch_v24:628')" name="code2model" class="code2model">
+SumB21
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('CustArch_v24:629')" name="code2model" class="code2model">
+SumB31
+</a>
+
+</li>
+
+</ul>
+
+</span>
+<br /><p><hr /></p><h5>
+Report for User-defined block:    <a href="matlab:coder.internal.code2model('CustArch_v24:540')" name="code2model" class="code2model">
+OutputStateMachine
+</a>
+
+</h5>
+<h5>
+Adders/Subtractors (7)
+</h5>
+<span style="font-family:monospace">
+9x9-bit Adder 							: 7
+</span>
+<br /><h5>
+Registers (85)
+</h5>
+<span style="font-family:monospace">
+9-bit Register 							: 28
+</span>
+<br /><span style="font-family:monospace">
+8-bit Register 							: 35
+</span>
+<br /><span style="font-family:monospace">
+6-bit Register 							: 22
+</span>
+<br /><h5>
+Multiplexers (23)
+</h5>
+<span style="font-family:monospace">
+8-bit 4-to-1 Multiplexer 							: 7
+</span>
+<br /><span style="font-family:monospace">
+9-bit 2-to-1 Multiplexer 							: 14
+</span>
+<br /><span style="font-family:monospace">
+6-bit 21-to-1 Multiplexer 							: 1
+</span>
+<br /><span style="font-family:monospace">
+8-bit 17-to-1 Multiplexer 							: 1
+</span>
+<br /><p><hr /></p><h5>
+Report for Subsystem:    <a href="matlab:coder.internal.code2model('CustArch_v24:457')" name="code2model" class="code2model">
+get_enabled_timings 
+</a>
+
+</h5>
+<h5>
+Adders/Subtractors (3)
+</h5>
+<span name="collapsible" id="collapsible" style="font-family:monospace" onclick="hdlTableShrink(this, 'Adder_13_1')" onmouseover="this.style.cursor = 'pointer'">
+[+]
+</span>
+<span style="font-family:monospace">
+8x8-bit Adder 							: 3
+</span>
+<span name="Adder_13_1" id="Adder_13_1">
+<ul>
+<li>
+<a href="matlab:coder.internal.code2model('CustArch_v24:480')" name="code2model" class="code2model">
+channel_counter
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('CustArch_v24:521')" name="code2model" class="code2model">
+stimulators counter
+</a>
+
+</li>
+
+</ul>
+
+</span>
+<br /><h5>
+Registers (9)
+</h5>
+<span name="collapsible" id="collapsible" style="font-family:monospace" onclick="hdlTableShrink(this, 'Register_13_1')" onmouseover="this.style.cursor = 'pointer'">
+[+]
+</span>
+<span style="font-family:monospace">
+8-bit Register 							: 8
+</span>
+<span name="Register_13_1" id="Register_13_1">
+<ul>
+<li>
+<a href="matlab:coder.internal.code2model('CustArch_v24:480')" name="code2model" class="code2model">
+channel_counter
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('CustArch_v24:475')" name="code2model" class="code2model">
+Delay1
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('CustArch_v24:521')" name="code2model" class="code2model">
+stimulators counter
+</a>
+
+</li>
+
+</ul>
+
+</span>
+<br /><span name="collapsible" id="collapsible" style="font-family:monospace" onclick="hdlTableShrink(this, 'Register_13_2')" onmouseover="this.style.cursor = 'pointer'">
+[+]
+</span>
+<span style="font-family:monospace">
+1-bit Register 							: 1
+</span>
+<span name="Register_13_2" id="Register_13_2">
+<ul>
+<li>
+<a href="matlab:coder.internal.code2model('CustArch_v24:476')" name="code2model" class="code2model">
+Delay2
+</a>
+
+</li>
+
+</ul>
+
+</span>
+<br /><h5>
+Multiplexers (5)
+</h5>
+<span name="collapsible" id="collapsible" style="font-family:monospace" onclick="hdlTableShrink(this, 'Multiplexer_13_1')" onmouseover="this.style.cursor = 'pointer'">
+[+]
+</span>
+<span style="font-family:monospace">
+8-bit 3-to-1 Multiplexer 							: 1
+</span>
+<span name="Multiplexer_13_1" id="Multiplexer_13_1">
+<ul>
+<li>
+<a href="matlab:coder.internal.code2model('CustArch_v24:480')" name="code2model" class="code2model">
+channel_counter
+</a>
+
+</li>
+
+</ul>
+
+</span>
+<br /><span name="collapsible" id="collapsible" style="font-family:monospace" onclick="hdlTableShrink(this, 'Multiplexer_13_2')" onmouseover="this.style.cursor = 'pointer'">
+[+]
+</span>
+<span style="font-family:monospace">
+8-bit 2-to-1 Multiplexer 							: 4
+</span>
+<span name="Multiplexer_13_2" id="Multiplexer_13_2">
+<ul>
+<li>
+<a href="matlab:coder.internal.code2model('CustArch_v24:479')" name="code2model" class="code2model">
+Switch2
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('CustArch_v24:478')" name="code2model" class="code2model">
+Switch1
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('CustArch_v24:521')" name="code2model" class="code2model">
+stimulators counter
+</a>
+
+</li>
+
+</ul>
+
+</span>
+<br /><p><hr /></p><h5>
+Report for Subsystem:    <a href="matlab:coder.internal.code2model('CustArch_v24:490')" name="code2model" class="code2model">
+reading_address
+</a>
+
+</h5>
+<h5>
+Multiplexers (8)
+</h5>
+<span name="collapsible" id="collapsible" style="font-family:monospace" onclick="hdlTableShrink(this, 'Multiplexer_14_1')" onmouseover="this.style.cursor = 'pointer'">
+[+]
+</span>
+<span style="font-family:monospace">
+8-bit 2-to-1 Multiplexer 							: 8
+</span>
+<span name="Multiplexer_14_1" id="Multiplexer_14_1">
+<ul>
+<li>
+<a href="matlab:coder.internal.code2model('CustArch_v24:517')" name="code2model" class="code2model">
+Switch7
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('CustArch_v24:516')" name="code2model" class="code2model">
+Switch6
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('CustArch_v24:515')" name="code2model" class="code2model">
+Switch5
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('CustArch_v24:514')" name="code2model" class="code2model">
+Switch4
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('CustArch_v24:513')" name="code2model" class="code2model">
+Switch3
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('CustArch_v24:512')" name="code2model" class="code2model">
+Switch2
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('CustArch_v24:511')" name="code2model" class="code2model">
+Switch1
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('CustArch_v24:510')" name="code2model" class="code2model">
+Switch
+</a>
+
+</li>
+
+</ul>
+
+</span>
+<br /><p><hr /></p><h5>
+Report for Subsystem:    <a href="matlab:coder.internal.code2model('CustArch_v24:483')" name="code2model" class="code2model">
+find_next_chip_rollmap
+</a>
+
+</h5>
+<h5>
+Registers (1)
+</h5>
+<span style="font-family:monospace">
+8-bit Register 							: 1
+</span>
+<br /><h5>
+Multiplexers (1)
+</h5>
+<span style="font-family:monospace">
+8-bit 2-to-1 Multiplexer 							: 1
+</span>
+<br /><p><hr /></p><h5>
+Report for Subsystem:    <a href="matlab:coder.internal.code2model('CustArch_v24:477')" name="code2model" class="code2model">
+Detect change ch cnt
+</a>
+
+</h5>
+<h5>
+Registers (1)
+</h5>
+<span style="font-family:monospace">
+8-bit Register 							: 1
+</span>
+<br /><p><hr /></p><h5>
+Report for Subsystem:    <a href="matlab:coder.internal.code2model('CustArch_v24:376')" name="code2model" class="code2model">
+Output_State_to_RAM_address (to read)
+</a>
+
+</h5>
+<h5>
+Multiplexers (13)
+</h5>
+<span name="collapsible" id="collapsible" style="font-family:monospace" onclick="hdlTableShrink(this, 'Multiplexer_17_1')" onmouseover="this.style.cursor = 'pointer'">
+[+]
+</span>
+<span style="font-family:monospace">
+1-bit 2-to-1 Multiplexer 							: 3
+</span>
+<span name="Multiplexer_17_1" id="Multiplexer_17_1">
+<ul>
+<li>
+<a href="matlab:coder.internal.code2model('CustArch_v24:416')" name="code2model" class="code2model">
+Switch12
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('CustArch_v24:415')" name="code2model" class="code2model">
+Switch11
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('CustArch_v24:414')" name="code2model" class="code2model">
+Switch10
+</a>
+
+</li>
+
+</ul>
+
+</span>
+<br /><span name="collapsible" id="collapsible" style="font-family:monospace" onclick="hdlTableShrink(this, 'Multiplexer_17_2')" onmouseover="this.style.cursor = 'pointer'">
+[+]
+</span>
+<span style="font-family:monospace">
+9-bit 2-to-1 Multiplexer 							: 10
+</span>
+<span name="Multiplexer_17_2" id="Multiplexer_17_2">
+<ul>
+<li>
+<a href="matlab:coder.internal.code2model('CustArch_v24:424')" name="code2model" class="code2model">
+Switch9
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('CustArch_v24:423')" name="code2model" class="code2model">
+Switch8
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('CustArch_v24:422')" name="code2model" class="code2model">
+Switch7
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('CustArch_v24:421')" name="code2model" class="code2model">
+Switch6
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('CustArch_v24:420')" name="code2model" class="code2model">
+Switch5
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('CustArch_v24:419')" name="code2model" class="code2model">
+Switch4
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('CustArch_v24:418')" name="code2model" class="code2model">
+Switch3
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('CustArch_v24:417')" name="code2model" class="code2model">
+Switch2
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('CustArch_v24:413')" name="code2model" class="code2model">
+Switch1
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('CustArch_v24:412')" name="code2model" class="code2model">
+Switch
+</a>
+
+</li>
+
+</ul>
+
+</span>
+<br /><p><hr /></p><h5>
+Report for User-defined block:    <a href="matlab:coder.internal.code2model('CustArch_v24:98')" name="code2model" class="code2model">
+InputStateMachine
+</a>
+
+</h5>
+<h5>
+Adders/Subtractors (2)
+</h5>
+<span style="font-family:monospace">
+9x9-bit Adder 							: 2
+</span>
+<br /><h5>
+Registers (49)
+</h5>
+<span style="font-family:monospace">
+9-bit Register 							: 8
+</span>
+<br /><span style="font-family:monospace">
+8-bit Register 							: 11
+</span>
+<br /><span style="font-family:monospace">
+6-bit Register 							: 30
+</span>
+<br /><h5>
+Multiplexers (8)
+</h5>
+<span style="font-family:monospace">
+8-bit 5-to-1 Multiplexer 							: 1
+</span>
+<br /><span style="font-family:monospace">
+9-bit 2-to-1 Multiplexer 							: 4
+</span>
+<br /><span style="font-family:monospace">
+8-bit 4-to-1 Multiplexer 							: 1
+</span>
+<br /><span style="font-family:monospace">
+6-bit 29-to-1 Multiplexer 							: 1
+</span>
+<br /><span style="font-family:monospace">
+8-bit 18-to-1 Multiplexer 							: 1
+</span>
+<br /><p><hr /></p><h5>
+Report for Subsystem:    <a href="matlab:coder.internal.code2model('CustArch_v24:338')" name="code2model" class="code2model">
+store_and_retrieve_input
+</a>
+
+</h5>
+<h5>
+Registers (1)
+</h5>
+<span name="collapsible" id="collapsible" style="font-family:monospace" onclick="hdlTableShrink(this, 'Register_19_1')" onmouseover="this.style.cursor = 'pointer'">
+[+]
+</span>
+<span style="font-family:monospace">
+9-bit Register 							: 1
+</span>
+<span name="Register_19_1" id="Register_19_1">
+<ul>
+<li>
+<a href="matlab:coder.internal.code2model('CustArch_v24:345')" name="code2model" class="code2model">
+Delay1
+</a>
+
+</li>
+
+</ul>
+
+</span>
+<br /><h5>
+RAMs (2)
+</h5>
+<span name="collapsible" id="collapsible" style="font-family:monospace" onclick="hdlTableShrink(this, 'RAM_19_1')" onmouseover="this.style.cursor = 'pointer'">
+[+]
+</span>
+<span style="font-family:monospace">
+512x16-bit RAM 							: 2
+</span>
+<span name="RAM_19_1" id="RAM_19_1">
+<ul>
+<li>
+<a href="matlab:coder.internal.code2model('CustArch_v24:83')" name="code2model" class="code2model">
+DualPortRAM_generic
+</a>
+
+</li>
+
+</ul>
+
+</span>
+<br /><p><hr /></p><h5>
+Report for Subsystem:    <a href="matlab:coder.internal.code2model('CustArch_v24:177')" name="code2model" class="code2model">
+interpret incoming data
+</a>
+
+</h5>
+<h5>
+Adders/Subtractors (1)
+</h5>
+<span name="collapsible" id="collapsible" style="font-family:monospace" onclick="hdlTableShrink(this, 'Adder_20_1')" onmouseover="this.style.cursor = 'pointer'">
+[+]
+</span>
+<span style="font-family:monospace">
+8x8-bit Adder 							: 1
+</span>
+<span name="Adder_20_1" id="Adder_20_1">
+<ul>
+<li>
+<a href="matlab:coder.internal.code2model('CustArch_v24:183')" name="code2model" class="code2model">
+HDL Counter
+</a>
+
+</li>
+
+</ul>
+
+</span>
+<br /><h5>
+Registers (2)
+</h5>
+<span name="collapsible" id="collapsible" style="font-family:monospace" onclick="hdlTableShrink(this, 'Register_20_1')" onmouseover="this.style.cursor = 'pointer'">
+[+]
+</span>
+<span style="font-family:monospace">
+8-bit Register 							: 2
+</span>
+<span name="Register_20_1" id="Register_20_1">
+<ul>
+<li>
+<a href="matlab:coder.internal.code2model('CustArch_v24:183')" name="code2model" class="code2model">
+HDL Counter
+</a>
+
+</li>
+
+</ul>
+
+</span>
+<br /><h5>
+Multiplexers (1)
+</h5>
+<span name="collapsible" id="collapsible" style="font-family:monospace" onclick="hdlTableShrink(this, 'Multiplexer_20_1')" onmouseover="this.style.cursor = 'pointer'">
+[+]
+</span>
+<span style="font-family:monospace">
+8-bit 2-to-1 Multiplexer 							: 1
+</span>
+<span name="Multiplexer_20_1" id="Multiplexer_20_1">
+<ul>
+<li>
+<a href="matlab:coder.internal.code2model('CustArch_v24:183')" name="code2model" class="code2model">
+HDL Counter
+</a>
+
+</li>
+
+</ul>
+
+</span>
+<br /><p><hr /></p><h5>
+Report for Subsystem:    <a href="matlab:coder.internal.code2model('CustArch_v24:192')" name="code2model" class="code2model">
+get_sources_and_RAM_addresses
+</a>
+
+</h5>
+<h5>
+Adders/Subtractors (1)
+</h5>
+<span name="collapsible" id="collapsible" style="font-family:monospace" onclick="hdlTableShrink(this, 'Adder_21_1')" onmouseover="this.style.cursor = 'pointer'">
+[+]
+</span>
+<span style="font-family:monospace">
+8x8-bit Adder 							: 1
+</span>
+<span name="Adder_21_1" id="Adder_21_1">
+<ul>
+<li>
+<a href="matlab:coder.internal.code2model('CustArch_v24:220')" name="code2model" class="code2model">
+channel_counter
+</a>
+
+</li>
+
+</ul>
+
+</span>
+<br /><h5>
+Registers (6)
+</h5>
+<span name="collapsible" id="collapsible" style="font-family:monospace" onclick="hdlTableShrink(this, 'Register_21_1')" onmouseover="this.style.cursor = 'pointer'">
+[+]
+</span>
+<span style="font-family:monospace">
+8-bit Register 							: 4
+</span>
+<span name="Register_21_1" id="Register_21_1">
+<ul>
+<li>
+<a href="matlab:coder.internal.code2model('CustArch_v24:205')" name="code2model" class="code2model">
+Delay
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('CustArch_v24:220')" name="code2model" class="code2model">
+channel_counter
+</a>
+
+</li>
+
+</ul>
+
+</span>
+<br /><span name="collapsible" id="collapsible" style="font-family:monospace" onclick="hdlTableShrink(this, 'Register_21_2')" onmouseover="this.style.cursor = 'pointer'">
+[+]
+</span>
+<span style="font-family:monospace">
+1-bit Register 							: 2
+</span>
+<span name="Register_21_2" id="Register_21_2">
+<ul>
+<li>
+<a href="matlab:coder.internal.code2model('CustArch_v24:206')" name="code2model" class="code2model">
+Delay1
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('CustArch_v24:207')" name="code2model" class="code2model">
+Delay2
+</a>
+
+</li>
+
+</ul>
+
+</span>
+<br /><h5>
+Multiplexers (3)
+</h5>
+<span name="collapsible" id="collapsible" style="font-family:monospace" onclick="hdlTableShrink(this, 'Multiplexer_21_1')" onmouseover="this.style.cursor = 'pointer'">
+[+]
+</span>
+<span style="font-family:monospace">
+8-bit 2-to-1 Multiplexer 							: 2
+</span>
+<span name="Multiplexer_21_1" id="Multiplexer_21_1">
+<ul>
+<li>
+<a href="matlab:coder.internal.code2model('CustArch_v24:219')" name="code2model" class="code2model">
+Switch1
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('CustArch_v24:218')" name="code2model" class="code2model">
+Switch
+</a>
+
+</li>
+
+</ul>
+
+</span>
+<br /><span name="collapsible" id="collapsible" style="font-family:monospace" onclick="hdlTableShrink(this, 'Multiplexer_21_2')" onmouseover="this.style.cursor = 'pointer'">
+[+]
+</span>
+<span style="font-family:monospace">
+8-bit 3-to-1 Multiplexer 							: 1
+</span>
+<span name="Multiplexer_21_2" id="Multiplexer_21_2">
+<ul>
+<li>
+<a href="matlab:coder.internal.code2model('CustArch_v24:220')" name="code2model" class="code2model">
+channel_counter
+</a>
+
+</li>
+
+</ul>
+
+</span>
+<br /><p><hr /></p><h5>
+Report for Subsystem:    <a href="matlab:coder.internal.code2model('CustArch_v24:264')" name="code2model" class="code2model">
+find_next_chip_rollmap
+</a>
+
+</h5>
+<h5>
+Registers (1)
+</h5>
+<span style="font-family:monospace">
+8-bit Register 							: 1
+</span>
+<br /><h5>
+Multiplexers (9)
+</h5>
+<span name="collapsible" id="collapsible" style="font-family:monospace" onclick="hdlTableShrink(this, 'Multiplexer_22_1')" onmouseover="this.style.cursor = 'pointer'">
+[+]
+</span>
+<span style="font-family:monospace">
+8-bit 2-to-1 Multiplexer 							: 9
+</span>
+<span name="Multiplexer_22_1" id="Multiplexer_22_1">
+<ul>
+<li>
+<a href="matlab:coder.internal.code2model('CustArch_v24:294')" name="code2model" class="code2model">
+Switch7
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('CustArch_v24:293')" name="code2model" class="code2model">
+Switch6
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('CustArch_v24:292')" name="code2model" class="code2model">
+Switch5
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('CustArch_v24:291')" name="code2model" class="code2model">
+Switch4
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('CustArch_v24:290')" name="code2model" class="code2model">
+Switch3
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('CustArch_v24:289')" name="code2model" class="code2model">
+Switch2
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('CustArch_v24:288')" name="code2model" class="code2model">
+Switch1
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('CustArch_v24:287')" name="code2model" class="code2model">
+Switch
+</a>
+
+</li>
+
+</ul>
+
+</span>
+<br /><p><hr /></p><h5>
+Report for Subsystem:    <a href="matlab:coder.internal.code2model('CustArch_v24:226')" name="code2model" class="code2model">
+find_first_one_pos
+</a>
+
+</h5>
+<h5>
+Registers (1)
+</h5>
+<span style="font-family:monospace">
+8-bit Register 							: 1
+</span>
+<br /><h5>
+Multiplexers (9)
+</h5>
+<span name="collapsible" id="collapsible" style="font-family:monospace" onclick="hdlTableShrink(this, 'Multiplexer_23_1')" onmouseover="this.style.cursor = 'pointer'">
+[+]
+</span>
+<span style="font-family:monospace">
+8-bit 2-to-1 Multiplexer 							: 9
+</span>
+<span name="Multiplexer_23_1" id="Multiplexer_23_1">
+<ul>
+<li>
+<a href="matlab:coder.internal.code2model('CustArch_v24:261')" name="code2model" class="code2model">
+Switch7
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('CustArch_v24:260')" name="code2model" class="code2model">
+Switch6
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('CustArch_v24:259')" name="code2model" class="code2model">
+Switch5
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('CustArch_v24:258')" name="code2model" class="code2model">
+Switch4
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('CustArch_v24:257')" name="code2model" class="code2model">
+Switch3
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('CustArch_v24:256')" name="code2model" class="code2model">
+Switch2
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('CustArch_v24:255')" name="code2model" class="code2model">
+Switch1
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('CustArch_v24:254')" name="code2model" class="code2model">
+Switch
+</a>
+
+</li>
+
+</ul>
+
+</span>
+<br /><p><hr /></p><h5>
+Report for Subsystem:    <a href="matlab:coder.internal.code2model('CustArch_v24:222')" name="code2model" class="code2model">
+enable_source_chip_transmission
+</a>
+
+</h5>
+<h5>
+Registers (1)
+</h5>
+<span style="font-family:monospace">
+8-bit Register 							: 1
+</span>
+<br /><h5>
+Multiplexers (1)
+</h5>
+<span style="font-family:monospace">
+8-bit 2-to-1 Multiplexer 							: 1
+</span>
+<br /><p><hr /></p><h5>
+Report for Subsystem:    <a href="matlab:coder.internal.code2model('CustArch_v24:209')" name="code2model" class="code2model">
+RAM_address_channel_data
+</a>
+
+</h5>
+<h5>
+Registers (1)
+</h5>
+<span style="font-family:monospace">
+8-bit Register 							: 1
+</span>
+<br /><h5>
+Multiplexers (1)
+</h5>
+<span style="font-family:monospace">
+8-bit 2-to-1 Multiplexer 							: 1
+</span>
+<br /><p><hr /></p><h5>
+Report for Subsystem:    <a href="matlab:coder.internal.code2model('CustArch_v24:104')" name="code2model" class="code2model">
+RAM address definition
+</a>
+
+</h5>
+<h5>
+Multiplexers (11)
+</h5>
+<span name="collapsible" id="collapsible" style="font-family:monospace" onclick="hdlTableShrink(this, 'Multiplexer_26_1')" onmouseover="this.style.cursor = 'pointer'">
+[+]
+</span>
+<span style="font-family:monospace">
+9-bit 2-to-1 Multiplexer 							: 10
+</span>
+<span name="Multiplexer_26_1" id="Multiplexer_26_1">
+<ul>
+<li>
+<a href="matlab:coder.internal.code2model('CustArch_v24:144')" name="code2model" class="code2model">
+Switch9
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('CustArch_v24:143')" name="code2model" class="code2model">
+Switch8
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('CustArch_v24:142')" name="code2model" class="code2model">
+Switch7
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('CustArch_v24:141')" name="code2model" class="code2model">
+Switch6
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('CustArch_v24:140')" name="code2model" class="code2model">
+Switch5
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('CustArch_v24:139')" name="code2model" class="code2model">
+Switch4
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('CustArch_v24:138')" name="code2model" class="code2model">
+Switch3
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('CustArch_v24:137')" name="code2model" class="code2model">
+Switch2
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('CustArch_v24:135')" name="code2model" class="code2model">
+Switch1
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('CustArch_v24:134')" name="code2model" class="code2model">
+Switch
+</a>
+
+</li>
+
+</ul>
+
+</span>
+<br /><span name="collapsible" id="collapsible" style="font-family:monospace" onclick="hdlTableShrink(this, 'Multiplexer_26_2')" onmouseover="this.style.cursor = 'pointer'">
+[+]
+</span>
+<span style="font-family:monospace">
+1-bit 2-to-1 Multiplexer 							: 1
+</span>
+<span name="Multiplexer_26_2" id="Multiplexer_26_2">
+<ul>
+<li>
+<a href="matlab:coder.internal.code2model('CustArch_v24:136')" name="code2model" class="code2model">
+Switch10
+</a>
+
+</li>
+
+</ul>
+
+</span>
+<br /><p><hr /></p><h5>
+Report for Subsystem:    <a href="matlab:coder.internal.code2model('CustArch_v24:25')" name="code2model" class="code2model">
+collect_output
+</a>
+
+</h5>
+<h5>
+Registers (3)
+</h5>
+<span name="collapsible" id="collapsible" style="font-family:monospace" onclick="hdlTableShrink(this, 'Register_27_1')" onmouseover="this.style.cursor = 'pointer'">
+[+]
+</span>
+<span style="font-family:monospace">
+1-bit Register 							: 2
+</span>
+<span name="Register_27_1" id="Register_27_1">
+<ul>
+<li>
+<a href="matlab:coder.internal.code2model('CustArch_v24:37')" name="code2model" class="code2model">
+Delay2
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('CustArch_v24:38')" name="code2model" class="code2model">
+Delay3
+</a>
+
+</li>
+
+</ul>
+
+</span>
+<br /><span name="collapsible" id="collapsible" style="font-family:monospace" onclick="hdlTableShrink(this, 'Register_27_2')" onmouseover="this.style.cursor = 'pointer'">
+[+]
+</span>
+<span style="font-family:monospace">
+8-bit Register 							: 1
+</span>
+<span name="Register_27_2" id="Register_27_2">
+<ul>
+<li>
+<a href="matlab:coder.internal.code2model('CustArch_v24:36')" name="code2model" class="code2model">
+Delay1
+</a>
+
+</li>
+
+</ul>
+
+</span>
+<br /><h5>
+Multiplexers (2)
+</h5>
+<span name="collapsible" id="collapsible" style="font-family:monospace" onclick="hdlTableShrink(this, 'Multiplexer_27_1')" onmouseover="this.style.cursor = 'pointer'">
+[+]
+</span>
+<span style="font-family:monospace">
+16-bit 2-to-1 Multiplexer 							: 2
+</span>
+<span name="Multiplexer_27_1" id="Multiplexer_27_1">
+<ul>
+<li>
+<a href="matlab:coder.internal.code2model('CustArch_v24:41')" name="code2model" class="code2model">
+Switch2
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('CustArch_v24:40')" name="code2model" class="code2model">
+Switch
+</a>
+
+</li>
+
+</ul>
+
+</span>
+<br /><p><hr /></p><h5>
+Report for Subsystem:    <a href="matlab:coder.internal.code2model('CustArch_v24:48')" name="code2model" class="code2model">
+read_from_magic_and_timestamp
+</a>
+
+</h5>
+<h5>
+RAMs (1)
+</h5>
+<span name="collapsible" id="collapsible" style="font-family:monospace" onclick="hdlTableShrink(this, 'RAM_28_1')" onmouseover="this.style.cursor = 'pointer'">
+[+]
+</span>
+<span style="font-family:monospace">
+256x16-bit RAM 							: 1
+</span>
+<span name="RAM_28_1" id="RAM_28_1">
+<ul>
+<li>
+<a href="matlab:coder.internal.code2model('CustArch_v24:83')" name="code2model" class="code2model">
+DualPortRAM_generic
+</a>
+
+</li>
+
+</ul>
+
+</span>
+<br /><p><hr /></p><h5>
+Report for Subsystem:    <a href="matlab:coder.internal.code2model('CustArch_v24:54')" name="code2model" class="code2model">
+getting address and enable for Magic and Timestamps
+</a>
+
+</h5>
+<h5>
+Multiplexers (6)
+</h5>
+<span name="collapsible" id="collapsible" style="font-family:monospace" onclick="hdlTableShrink(this, 'Multiplexer_29_1')" onmouseover="this.style.cursor = 'pointer'">
+[+]
+</span>
+<span style="font-family:monospace">
+8-bit 2-to-1 Multiplexer 							: 6
+</span>
+<span name="Multiplexer_29_1" id="Multiplexer_29_1">
+<ul>
+<li>
+<a href="matlab:coder.internal.code2model('CustArch_v24:73')" name="code2model" class="code2model">
+Switch11
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('CustArch_v24:72')" name="code2model" class="code2model">
+Switch10
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('CustArch_v24:77')" name="code2model" class="code2model">
+Switch9
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('CustArch_v24:76')" name="code2model" class="code2model">
+Switch8
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('CustArch_v24:75')" name="code2model" class="code2model">
+Switch7
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('CustArch_v24:74')" name="code2model" class="code2model">
+Switch6
+</a>
+
+</li>
+
+</ul>
+
+</span>
+<br /><p><hr /></p><h5>
+Report for Subsystem:    <a href="matlab:coder.internal.code2model('CustArch_v24:42')" name="code2model" class="code2model">
+get_data_only_when_enabled
+</a>
+
+</h5>
+<h5>
+Registers (1)
+</h5>
+<span style="font-family:monospace">
+16-bit Register 							: 1
+</span>
+<br /><h5>
+Multiplexers (1)
+</h5>
+<span style="font-family:monospace">
+16-bit 2-to-1 Multiplexer 							: 1
+</span>
+<br /><p><hr /></p>
+</body>
+
+</html>

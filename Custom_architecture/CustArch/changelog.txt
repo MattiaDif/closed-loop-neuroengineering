@@ -1,0 +1,66 @@
+with fpga ok I mean that I am able to filter/detect spike at the maximum sampling frequency (30kHz), otherwise I specify the maximum sampling frequency reachable 
+
+-----------------------------------------------------------------------------
+
+cust_arch_18 --> old version from intan_cust_arch repo, first filter
+
+cust_arch_19 --> old version from intan_cust_arch repo, rough spike detection (simulink ok, fpga ok)
+
+CustArch --> version from cust_arch_22 of intan_cust_arch repo
+
+CustArch_v2 --> processing subsystem erased, AC data put in DC slot (simulink ok, fpga ok)
+
+CustArch_v3 --> processing subsystem with the first version of bandpass filter, AC filtered data into DC (WRONG --> filtering approach does not take into account the previous sample)
+
+CustArch_v3 --> processing subsystem only with highpass filter, AC filtered data into DC (WRONG --> filtering approach does not take into account the previous sample)
+
+CustArch_v4 --> processing subsystem only with second version of highpass filter, AC filtered data into DC (WRONG --> filtering approach does not take into account the previous sample)
+
+CustArch_v5 --> processing subsystem (mch) with 1st order IIR highpass (simulink ok, fpga timing issue)
+
+CustArch_v6 --> processing subsystem (mch) with 2nd order IIR highpass (WRONG --> lose previous sample once used for filtering)
+
+CustArch_v7 --> processing subsystem (mch) with 2nd order IIR highpass (simulink ok, fpga timing issue)
+
+CustArch_v8 --> processing subsystem (mch) with 2nd order IIR highpass with new fixed-point conversion according to real in-vivo recording (Mondino project Marta) + deleting of one input RAM (for processing RAM) (simulink ok, fpga timing issue)
+
+CustArch_v9 --> filtering method according to cust_arch_18, filter 1st order IIR + change output logic input processing RAM (simulink ok, fpga ok)
+
+CustArch_v10 --> filtering method according to cust_arch_18, 2nd order IIR highpass (simulink ok, fpga no)
+
+CustArch_v11 --> as CustArch_v9 but with other filter parameters (simulink ok, fpga ok)
+
+CustArch_v12 --> hard threshold spike detection with filter of v9 (simulink ok, fpga ok), hard th, same th all channels, first refractory period subsystem, no Qt/C++
+
+CustArch_v13 --> multichannel parallel filter for all ch1 of all chips (simulink ok, fpga no due to huge size of the model --> filter architecture fully parallel)
+
+CustArch_v14 --> same as v13 but for ch1 to ch4 of all chips (simulink ok, fpga no due to huge size of the model --> filter architectures fully parallel)
+
+CustArch_v15 --> same as v13 but with partly serial architecture of the filter (simulink ok, timing problem between filtering and filtered sample storage --> still not tested on fpga)
+
+CustArch_v16 --> new multichannel filtering method by using FIFO and change detector blocks (simulink ok, fpga no)
+
+CustArch_v17 --> hard threshold local maxima spike detection with filter of v9 (simulink ok, fpga ok), local maxima hard th, same th all channels, first refractory period subsystem, no Qt/C++ (simulink ok, fpga ok)
+
+CustArch_v18 --> unuseful
+
+CustArch_v19 --> first working version of the 2nd order IIR filter HP! no spike detection (simulink ok, fpga ok)
+
+CustArch_v20 --> as v19 but with memory substituted by delay (simulink ok, fpga ok)
+
+CustArch_v21 --> IIR HP 2nd order, local maxima spike detection + scalable refractory regardless of the filter order (simulink ok, fpga ok)
+
+CustArch_v22 --> as v21 + adaptive th local maxima rms (simulink ok, fpga no --> logical issue refractory counter)
+
+CustArch_v23 --> as v21 + pipe in for th (!= all channels), refractory (simulink ok, timing issue fpga + logical issue refractory counter)
+
+CustArch_v24 --> as v21 + pipe in for th (!= all channels), refractory (simulink ok, timing issue fpga + logical issue refractory counter)
+
+CustArch_v25 --> as v21 + pipe in for th (= all channels), refractory (simulink ok, to be tested fpga + logical issue refractory counter)
+
+CustArch_v26 --> as v17 + + pipe in for th (= all channels) (simulink ok, fpga ok)
+
+CustArch_v27 --> as v26 + + pipe in for th (!= all channels) (simulink ok, fpga timing issue)
+
+CustArch_v28 --> as v21 with multirate 2nd order filter (fpga ok, to be tested on fpga)
+

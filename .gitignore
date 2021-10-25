@@ -2,6 +2,7 @@
 *.prj
 *.slxc
 *.mexw64
+*.ini
 
 slprj
 

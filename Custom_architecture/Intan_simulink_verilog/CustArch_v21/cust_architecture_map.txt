@@ -1,0 +1,35 @@
+CustArch_v21/cust_architecture/collect_output/get_data_only_when_enabled --> get_data_only_when_enabled
+CustArch_v21/cust_architecture/collect_output/read_from_magic_and_timestamp/getting address and enable for Magic and Timestamps --> getting_address_and_enable_for_Magic_and_Timestamps
+CustArch_v21/cust_architecture/collect_output/read_from_magic_and_timestamp/DualPortRAM_generic --> DualPortRAM_generic
+CustArch_v21/cust_architecture/collect_output/read_from_magic_and_timestamp --> read_from_magic_and_timestamp
+CustArch_v21/cust_architecture/collect_output --> collect_output
+CustArch_v21/cust_architecture/input_interpret_store_retrieve/Interpret_to_RAM_input/RAM address definition --> RAM_address_definition
+CustArch_v21/cust_architecture/input_interpret_store_retrieve/Interpret_to_RAM_input/interpret incoming data/condition to count DAC or ADC  --> condition_to_count_DAC_or_ADC
+CustArch_v21/cust_architecture/input_interpret_store_retrieve/Interpret_to_RAM_input/interpret incoming data/get_sources_and_RAM_addresses/RAM_address_channel_data --> RAM_address_channel_data
+CustArch_v21/cust_architecture/input_interpret_store_retrieve/Interpret_to_RAM_input/interpret incoming data/get_sources_and_RAM_addresses/enable_source_chip_transmission --> enable_source_chip_transmission
+CustArch_v21/cust_architecture/input_interpret_store_retrieve/Interpret_to_RAM_input/interpret incoming data/get_sources_and_RAM_addresses/find_first_one_pos --> find_first_one_pos
+CustArch_v21/cust_architecture/input_interpret_store_retrieve/Interpret_to_RAM_input/interpret incoming data/get_sources_and_RAM_addresses/find_next_chip_rollmap --> find_next_chip_rollmap
+CustArch_v21/cust_architecture/input_interpret_store_retrieve/Interpret_to_RAM_input/interpret incoming data/get_sources_and_RAM_addresses --> get_sources_and_RAM_addresses
+CustArch_v21/cust_architecture/input_interpret_store_retrieve/Interpret_to_RAM_input/interpret incoming data --> interpret_incoming_data
+CustArch_v21/cust_architecture/input_interpret_store_retrieve/Interpret_to_RAM_input --> Interpret_to_RAM_input
+CustArch_v21/cust_architecture/input_interpret_store_retrieve/store_and_retrieve_input --> store_and_retrieve_input
+CustArch_v21/cust_architecture/input_interpret_store_retrieve/InputStateMachine --> InputStateMachine
+CustArch_v21/cust_architecture/input_interpret_store_retrieve --> input_interpret_store_retrieve
+CustArch_v21/cust_architecture/output_interpret/Interpret_to_RAM_output/Output_State_to_RAM_address (to read) --> Output_State_to_RAM_address_to_read
+CustArch_v21/cust_architecture/output_interpret/Interpret_to_RAM_output/get_enabled_timings /Detect change ch cnt --> Detect_change_ch_cnt
+CustArch_v21/cust_architecture/output_interpret/Interpret_to_RAM_output/get_enabled_timings /find_next_chip_rollmap --> find_next_chip_rollmap_block
+CustArch_v21/cust_architecture/output_interpret/Interpret_to_RAM_output/get_enabled_timings /reading_address --> reading_address
+CustArch_v21/cust_architecture/output_interpret/Interpret_to_RAM_output/get_enabled_timings  --> get_enabled_timings
+CustArch_v21/cust_architecture/output_interpret/Interpret_to_RAM_output --> Interpret_to_RAM_output
+CustArch_v21/cust_architecture/output_interpret/OutputStateMachine --> OutputStateMachine
+CustArch_v21/cust_architecture/output_interpret --> output_interpret
+CustArch_v21/cust_architecture/process_and_retrieve/filtering/two_pole_IIR/HP_Butter_2nd --> HP_Butter_2nd
+CustArch_v21/cust_architecture/process_and_retrieve/filtering/two_pole_IIR --> two_pole_IIR
+CustArch_v21/cust_architecture/process_and_retrieve/DualPortRAM_generic --> DualPortRAM_generic_block
+CustArch_v21/cust_architecture/process_and_retrieve/filtering --> filtering
+CustArch_v21/cust_architecture/process_and_retrieve/spike_detection/LocalMaxima --> LocalMaxima
+CustArch_v21/cust_architecture/process_and_retrieve/spike_detection/refractory_period --> refractory_period
+CustArch_v21/cust_architecture/process_and_retrieve/spike_detection --> spike_detection
+CustArch_v21/cust_architecture/process_and_retrieve --> process_and_retrieve
+cust_architecture_tc --> cust_architecture_tc
+CustArch_v21/cust_architecture --> cust_architecture

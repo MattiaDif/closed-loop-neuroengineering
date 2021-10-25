@@ -1,8 +1,0 @@
-the version of the pipe_in_vxxx corresponds to the version of the IntanStimRecordController project
-
------------------------------------------------------------------------------------------------------
-
--pipe_in_v1 does not exist because in the V1 of the custom controller I did not need to modify the custom architecture to verify if it worked
-
--pipe_in_v2 --> put pipe_in in DC (ok fpga)
-
