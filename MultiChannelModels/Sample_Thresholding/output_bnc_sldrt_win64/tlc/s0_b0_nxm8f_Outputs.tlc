@@ -1,0 +1,32 @@
+%implements s0_b0_nxm8f_Outputs "C"
+
+%function Outputs(block, system) Output
+%assign cfgTxt = ""
+%openfile cfgTxt
+%assign localVarDecl = ""
+%assign tlcOutputsFcnOfS0B0 = OpaqueTLCBlockFcn("Outputs", 0, 0, 0, 2, 0)
+%assign tlcOutputsFcnOfS0B1 = OpaqueTLCBlockFcn("Outputs", 0, 1, 0, 2, 1)
+%<SLibGenerateExtModeOutput(system)>
+if (%<(SLibCGIRIsSampleHit(1, 0))>) {
+%if !WHITE_SPACE(tlcOutputsFcnOfS0B0)
+    /* {S!d60}FromFile: '<Root>/From File' */
+%<tlcOutputsFcnOfS0B0>\
+%endif
+}
+%if !WHITE_SPACE(tlcOutputsFcnOfS0B1)
+/* {S!d62}S-Function (sldrtdo): '<Root>/Digital Output' */
+%<tlcOutputsFcnOfS0B1>\
+%endif
+%<SLibInsertSolverResetCode()>\
+%closefile cfgTxt
+%<cfgTxt>
+%<LibSetSystemField(system, "CachedOutputLocalVars", localVarDecl)>
+%endfunction
+%function OutputsFcnProtoType(block, system) Output
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void Outputs(\
+%assign comma = ""
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(0, 2, fcnProtoType)>
+%endfunction
