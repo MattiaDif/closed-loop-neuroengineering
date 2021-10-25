@@ -3,26 +3,8 @@ close all
 clc
 
 
-if(~isdeployed)
-    cd(fileparts(which(mfilename)));
-end
-curr_folder = pwd;
-path_index = strfind(curr_folder,'closed-loop-neuroscience');
-
-project_path = curr_folder(1:path_index+length('closed-loop-neuroscience')-1);
-addpath(genpath(project_path)); %adding to the Matlab path all the project folder including all the subfolders
-
-
-% %%%%%%%%% CHANGE THE noise_level VARIABLE ACCORDING TO THE SIMULATION RECORDING %%%%%%%%%
-% noise_level = 30;   %10, 20, 30
-% %%%%%%%%% CHANGE THE ch VARIABLE ACCORDING TO THE SIMULATION RECORDING %%%%%%%%%
-% ch = 'ch7';
-
-%%%%%%%%% CHANGE THE mdl_name VARIABLE ACCORDING TO THE SIMULINK MODEL %%%%%%%%%
 mdl_name = "float_sch_TemplateMatchingContinuous";
 
-
-result_flag = 0;    %1 --> save results, 0 --> not save
 
 filename = 'monotrode_test_20';
 load([filename,'_waveforms_mean.mat']);
@@ -37,29 +19,22 @@ template = double(mean_waveform{1, 1})';  %template extracted from MEArec datase
 % template3 = double(mean_waveform{1, 3}(:,str2num(ch(3:end))))';
 buffer_rec = length(template);    %buffer length
 buffer_overlap = buffer_rec - 1;    %buffer overlap
-score = [3600];
+score = [4500];
 sim_type = 'normal'; %simulation speed
 sim_stop_time = '5';   %s
 
 
 %% Performance analysis parameters
 w_len = fs/1000;  %samples --> 1ms
-peak_diff = 65; %samples --> max spike position distance between recording and ground truth
+peak_diff = 100; %samples --> max spike position distance between recording and ground truth
 spiketrain = 1; %ground_truth selected for performance evaluation
 
 
 %% Data loading
-%worskpace saving --> sim parameters saving
-if result_flag == 1
-    save(['C:/File/IIT - Neuroengineering/Progetto MathWorks/Data/MEArec/ResultTable/sim_par_',convertStringsToChars(mdl_name),'_',num2str(noise_level),'.mat'])
-end
-
 filename = 'monotrode_test_20';
 
 signal = load([filename,'.mat']);
 ground = load([filename,'_gt.mat']);
-
-% load(['sim_results_',num2str(noise_level),'.mat']);
 
 
 %% Simulation with different thresholds
@@ -167,43 +142,6 @@ set(gca,'FontSize',14)
 axis([0 1 0 1])
 
 AUC = -trapz(FPrate,TPrate);
-
-
-
-%% Result saving
-if result_flag == 1
-    results_table{"P",mdl_name} = num2cell(P,2);
-    results_table{"NDS",mdl_name} = num2cell(NDS,2);
-    results_table{"TP",mdl_name} = num2cell(TP,2);
-    results_table{"FN",mdl_name} = num2cell(FN,2);
-    results_table{"FP",mdl_name} = num2cell(FP,2);
-    results_table{"N",mdl_name} = num2cell(N,2);
-    results_table{"TN",mdl_name} = num2cell(TN,2);
-    results_table{"accuracy",mdl_name} = num2cell(accuracy,2);
-    results_table{"perf",mdl_name} = num2cell(perf,2);
-    results_table{"eff",mdl_name} = num2cell(eff,2);
-    results_table{"sens",mdl_name} = num2cell(sens,2);
-    results_table{"spec",mdl_name} = num2cell(spec,2);
-    results_table{"prec",mdl_name} = num2cell(prec,2);
-    results_table{"NPV",mdl_name} = num2cell(NPV,2);
-    results_table{"FNR",mdl_name} = num2cell(FNR,2);
-    results_table{"FPR",mdl_name} = num2cell(FPR,2);
-    results_table{"F1score",mdl_name} = num2cell(F1score,2);
-    results_table{"MCC",mdl_name} = num2cell(MCC,2);
-    results_table{"FPrate",mdl_name} = num2cell(FPrate,2);
-    results_table{"TPrate",mdl_name} = num2cell(TPrate,2);
-    results_table{"AUC",mdl_name} = num2cell(AUC,2);
-    
-    save(['C:/File/IIT - Neuroengineering/Progetto MathWorks/Data/MEArec/ResultTable/sim_results_',num2str(noise_level),'.mat'],'results_table');   %std noise: 10
-
-end
-
-
-
-
-
-
-
 
 
 

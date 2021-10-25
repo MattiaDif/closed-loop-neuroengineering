@@ -3,28 +3,7 @@ close all
 clc
 
 
-%% Change current folder
-if(~isdeployed)
-    cd(fileparts(which(mfilename)));
-end
-curr_folder = pwd;
-path_index = strfind(curr_folder,'closed-loop-neuroscience');
-
-project_path = curr_folder(1:path_index+length('closed-loop-neuroscience')-1);
-addpath(genpath(project_path)); %adding to the Matlab path all the project folder including all the subfolders
-
-
-% %%%%%%%%% CHANGE THE noise_level VARIABLE ACCORDING TO THE SIMULATION RECORDING %%%%%%%%%
-% noise_level = 10;   %10, 20, 30
-% %%%%%%%%% CHANGE THE ch VARIABLE ACCORDING TO THE SIMULATION RECORDING %%%%%%%%%
-% ch = 'ch7';
-
-
-%%%%%%%%% CHANGE THE mdl_name VARIABLE ACCORDING TO THE SIMULINK MODEL %%%%%%%%%
 mdl_name = "float_sch_SigmaDelta_AdaptiveThreshold";
-
-
-result_flag = 0;    %1 --> save results, 0 --> not save
 
 
 %% Simulation parameters
@@ -47,17 +26,10 @@ spiketrain = 1; %ground_truth selected for performance evaluation
 %peak_diff --> tolerance
 
 %% Data loading
-%worskpace saving --> sim parameters saving
-if result_flag == 1
-    save(['C:/File/IIT - Neuroengineering/Progetto MathWorks/Data/MEArec/ResultTable/sim_par_',convertStringsToChars(mdl_name),'_',num2str(noise_level),'.mat'])
-end
-
 filename = 'monotrode_test_20';
 
 signal = load([filename,'.mat']);
 ground = load([filename,'_gt.mat']);
-
-% load(['sim_results_',num2str(noise_level),'.mat']);
 
 
 %% Simulation with different thresholds
@@ -94,17 +66,18 @@ for curr_sim = 1:numSims
     interspike_ts(curr_sim,:) = simOut.logsout.get('interspike').Values;
     
     % to avoid the first 30s of recording to allow the achievement of the
-    % convergence by the adaptive threshold except for PWM
-    recording(curr_sim,:) = recording_ts(curr_sim).Data(1,1,fs*30+1:end);
+    % convergence by the adaptive threshold except for PWM (in this case I
+    % avoided just 1 second due to the length of the example signal)
+    recording(curr_sim,:) = recording_ts(curr_sim).Data(1,1,fs+1:end);
     PWM(curr_sim,:) = PWM_ts(curr_sim).Data;
-    threshold(curr_sim,:) = threshold_ts(curr_sim).Data(1,1,fs*30+1:end);
-    sample_above_th(curr_sim,:) = sample_above_th_ts(curr_sim).Data(1,1,fs*30+1:end);
-    spikes(curr_sim,:) = spikes_ts(curr_sim).Data(1,1,fs*30+1:end);
-    interspike(curr_sim,:) = interspike_ts(curr_sim).Data(1,1,fs*30+1:end);
+    threshold(curr_sim,:) = threshold_ts(curr_sim).Data(1,1,fs+1:end);
+    sample_above_th(curr_sim,:) = sample_above_th_ts(curr_sim).Data(1,1,fs+1:end);
+    spikes(curr_sim,:) = spikes_ts(curr_sim).Data(1,1,fs+1:end);
+    interspike(curr_sim,:) = interspike_ts(curr_sim).Data(1,1,fs+1:end);
     
     ground_truth(curr_sim,:) = zeros(1,size(recording,2));
     for train = 1:spiketrain
-        ground_truth(curr_sim,:) = ground_truth(curr_sim,:) + ground_truth_ts(curr_sim).Data(fs*30+1:end,train)';
+        ground_truth(curr_sim,:) = ground_truth(curr_sim,:) + ground_truth_ts(curr_sim).Data(fs+1:end,train)';
     end
 
 
@@ -162,46 +135,11 @@ figure
 plot(flip(FPrate),flip(TPrate),'r','LineWidth',2)
 xlabel('FP rate')
 ylabel('TP rate')
-title('Hard Threshold ROC')
+title('SigmaDelta ROC')
 set(gca,'FontSize',14)
 axis([0 1 0 1])
 
 AUC = -trapz(FPrate,TPrate);
-
-
-
-%% Result saving
-if result_flag == 1
-    results_table{"P",mdl_name} = num2cell(P,2);
-    results_table{"NDS",mdl_name} = num2cell(NDS,2);
-    results_table{"TP",mdl_name} = num2cell(TP,2);
-    results_table{"FN",mdl_name} = num2cell(FN,2);
-    results_table{"FP",mdl_name} = num2cell(FP,2);
-    results_table{"N",mdl_name} = num2cell(N,2);
-    results_table{"TN",mdl_name} = num2cell(TN,2);
-    results_table{"accuracy",mdl_name} = num2cell(accuracy,2);
-    results_table{"perf",mdl_name} = num2cell(perf,2);
-    results_table{"eff",mdl_name} = num2cell(eff,2);
-    results_table{"sens",mdl_name} = num2cell(sens,2);
-    results_table{"spec",mdl_name} = num2cell(spec,2);
-    results_table{"prec",mdl_name} = num2cell(prec,2);
-    results_table{"NPV",mdl_name} = num2cell(NPV,2);
-    results_table{"FNR",mdl_name} = num2cell(FNR,2);
-    results_table{"FPR",mdl_name} = num2cell(FPR,2);
-    results_table{"F1score",mdl_name} = num2cell(F1score,2);
-    results_table{"MCC",mdl_name} = num2cell(MCC,2);
-    results_table{"FPrate",mdl_name} = num2cell(FPrate,2);
-    results_table{"TPrate",mdl_name} = num2cell(TPrate,2);
-    results_table{"AUC",mdl_name} = num2cell(AUC,2);
-    
-    save(['C:/File/IIT - Neuroengineering/Progetto MathWorks/Data/MEArec/ResultTable/sim_results_',num2str(noise_level),'.mat'],'results_table');   %std noise: 10
-
-end
-
-
-
-
-
 
 
 

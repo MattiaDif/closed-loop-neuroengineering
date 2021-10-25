@@ -4,5 +4,4 @@ Project structure:
 
 sch --> single channel
 mch --> multi-channel
-fixed --> fixed-point model
 float --> floating point model
