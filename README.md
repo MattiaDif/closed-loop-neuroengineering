@@ -19,6 +19,12 @@ Retracing these steps, the user will be driven through the development process o
 
 <br />
 
+## Content Overview
+
+1. Custom_architecture contains all the file/scripts/models and examples to develop from scratch a closed-loop system by exploiting a model-based design approach.
+2. Docs contains all the Intan RHS documentation useful for a better understanding of how the whole system works.
+3. Spike_Detection_models contains all the single- and multi-channel spike detection models developed in Simulink with data to test how they function.
+
 
 ## Required Software
 
@@ -30,9 +36,17 @@ Retracing these steps, the user will be driven through the development process o
 
 ## Installation
 
+### Repo cloning
+
 To clone this repo open your terminal and run:
 
 `git clone https://github.com/StefanoBuccelli/closed-loop-neuroscience.git`
+
+Thereafter, to start using all the repo functionalities avoiding potential missing file issues, please run the setup.exe to add to your Matlab path all the project.
+
+### Simulink library
+
+### Example application
 
 
 ## Documentation
