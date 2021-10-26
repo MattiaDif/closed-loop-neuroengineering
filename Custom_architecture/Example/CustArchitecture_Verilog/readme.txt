@@ -1,1 +1,1 @@
-Verilog code generated ffrom Simulink model
+Verilog code generated from CustomArchitecture Simulink model
