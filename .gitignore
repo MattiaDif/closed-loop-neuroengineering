@@ -7,16 +7,11 @@
 **/desktop.ini
 
 slprj
-
-closed-loop-neuroscience\Custom_architecture\bitfiles
-
-closed-loop-neuroscience\Custom_architecture\ise_projects
-
-closed-loop-neuroscience\Custom_architecture\Intan_original_verilog
-
-closed-loop-neuroscience\Custom_architecture\pipe_in_debug
-
-closed-loop-neuroscience\Custom_architecture\IntanStimRecordController
+bitfiles
+ise_projects
+Intan_original_verilog
+pipe_in_debug
+IntanStimRecordController
 
 
 
