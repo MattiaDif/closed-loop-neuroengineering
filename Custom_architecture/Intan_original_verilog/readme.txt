@@ -1,1 +1,0 @@
-Original verilog code downloaded from Intan website

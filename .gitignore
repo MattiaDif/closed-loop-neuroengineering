@@ -6,12 +6,12 @@
 
 **/desktop.ini
 
-slprj/
-bitfiles/
-ise_projects/
-Intan_original_verilog/
-pipe_in_debug/
-IntanStimRecordController/
+slprj
+bitfiles
+ise_projects
+Intan_original_verilog
+pipe_in_debug
+IntanStimRecordController
 
 
 
