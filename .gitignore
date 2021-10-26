@@ -3,15 +3,14 @@
 *.slxc
 *.mexw64
 *.slx.original
-
 **/desktop.ini
 
 slprj
 bitfiles
-ise_projects
 Intan_original_verilog
 pipe_in_debug
 IntanStimRecordController
+RhythmStim_API_Release_180814
 
 
 
