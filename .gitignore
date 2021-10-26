@@ -2,15 +2,21 @@
 *.prj
 *.slxc
 *.mexw64
-
-closed-loop-neuroscience\Custom_architecture\bitfiles
-
-untitled.slx.autosave
+*.slx.original
 
 **/desktop.ini
 
 slprj
 
+closed-loop-neuroscience\Custom_architecture\bitfiles
+
+closed-loop-neuroscience\Custom_architecture\ise_projects
+
+closed-loop-neuroscience\Custom_architecture\Intan_original_verilog
+
+closed-loop-neuroscience\Custom_architecture\pipe_in_debug
+
+closed-loop-neuroscience\Custom_architecture\IntanStimRecordController
 
 
 
