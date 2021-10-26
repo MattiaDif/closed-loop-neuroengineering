@@ -1,8 +1,0 @@
-INTSTYLE=ise
-INFILE=/home/ise/ise_projects/RHS2000InterfaceXEM6010 release 180814_cust_arch/main.ncd
-OUTFILE=/home/ise/ise_projects/RHS2000InterfaceXEM6010 release 180814_cust_arch/main.bit
-FAMILY=Spartan6
-PART=xc6slx45-2fgg484
-WORKINGDIR=/home/ise/ise_projects/RHS2000InterfaceXEM6010 release 180814_cust_arch
-LICENSE=ISE
-USER_INFO=8416_11442_1478797146_620

@@ -1,1 +1,0 @@
-Verilog code generated from the custom architecture only

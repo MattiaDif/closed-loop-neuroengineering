@@ -1,1 +1,0 @@
-floating- and fixed-point generated from the Filter design app of Matlab
