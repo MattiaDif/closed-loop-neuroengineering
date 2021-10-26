@@ -2,7 +2,10 @@
 *.prj
 *.slxc
 *.mexw64
-*.autosave
+
+closed-loop-neuroscience\Custom_architecture\bitfiles
+
+untitled.slx.autosave
 
 desktop.ini
 
