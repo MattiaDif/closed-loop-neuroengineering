@@ -1,0 +1,15 @@
+<RCC>
+    <qresource prefix="/">
+        <file>images/Intan_Icon_32p_trans24.png</file>
+        <file>sounds/triggerbeep.wav</file>
+        <file>images/help_diagram_chip_filters.png</file>
+        <file>images/help_diagram_comparators.png</file>
+        <file>images/help_diagram_DACs.png</file>
+        <file>images/help_diagram_notch_filter.png</file>
+        <file>images/help_diagram_software_HPFs.png</file>
+        <file>sounds/triggerendbeep.wav</file>
+        <file>images/splash.png</file>
+        <file>images/front_panel_expander_small.jpg</file>
+        <file>images/back_panel_expander_small.jpg</file>
+    </qresource>
+</RCC>
