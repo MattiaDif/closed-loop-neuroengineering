@@ -1,0 +1,29 @@
+Command line:
+   cust_hp_filter_tb_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  19831
+
+Wed Jun 26 14:11:03 2019
+
+
+ Elaboration Time: 0.0624 sec
+
+ Current Memory Usage: 678.445 Meg
+
+ Total Signals          : 31
+ Total Nets             : 156
+ Total Signal Drivers   : 18
+ Total Blocks           : 3
+ Total Primitive Blocks : 2
+ Total Processes        : 28
+ Total Traceable Variables  : 51
+ Total Scalar Nets and Variables : 10245803
+Total Line Count : 95
+
+ Total Simulation Time: 0.951605 sec
+
+ Current Memory Usage: 678.445 Meg
+
+Wed Jun 26 16:25:27 2019
+

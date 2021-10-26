@@ -1,0 +1,1 @@
+script to make a I/O comparison of the custom architecture model

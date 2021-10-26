@@ -3,7 +3,9 @@
 *.slxc
 *.mexw64
 *.slx.original
+*.autosave
 **/desktop.ini
+
 
 slprj
 Development
