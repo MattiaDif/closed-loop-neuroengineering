@@ -42,11 +42,11 @@ To clone this repo open your terminal and run:
 
 `git clone https://github.com/StefanoBuccelli/closed-loop-neuroscience.git`
 
-Thereafter, to start using all the repo functionalities avoiding potential missing file issues, please run the setup.exe to add to your Matlab path all the project.
-
-### Simulink library
+To start using all the repo functionalities avoiding potential missing file issues, please run the setup.exe to add to your Matlab path all the project.
 
 ### Example application
+
+If you just want to have a look at the Simulink library functionalities, please download the example application here: https://it.mathworks.com/matlabcentral/fileexchange/101238-iit-genoa-intan-hdl-blocks
 
 
 ## Documentation
