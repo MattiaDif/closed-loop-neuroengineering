@@ -21,8 +21,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_MainWindow_t {
-    QByteArrayData data[105];
-    char stringdata0[1763];
+    QByteArrayData data[102];
+    char stringdata0[1670];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -70,72 +70,69 @@ QT_MOC_LITERAL(35, 538, 16), // "notchFilterIndex"
 QT_MOC_LITERAL(36, 555, 20), // "enableHighpassFilter"
 QT_MOC_LITERAL(37, 576, 6), // "enable"
 QT_MOC_LITERAL(38, 583, 29), // "highpassFilterLineEditChanged"
-QT_MOC_LITERAL(39, 613, 31), // "hardThresholdLineEditChanged_CA"
-QT_MOC_LITERAL(40, 645, 28), // "refractoryLineEditChanged_CA"
-QT_MOC_LITERAL(41, 674, 15), // "changeBandwidth"
-QT_MOC_LITERAL(42, 690, 24), // "changeImpedanceFrequency"
-QT_MOC_LITERAL(43, 715, 10), // "changePort"
-QT_MOC_LITERAL(44, 726, 4), // "port"
-QT_MOC_LITERAL(45, 731, 13), // "changeDacGain"
-QT_MOC_LITERAL(46, 745, 22), // "changeDacNoiseSuppress"
-QT_MOC_LITERAL(47, 768, 9), // "dacEnable"
-QT_MOC_LITERAL(48, 778, 13), // "dacSetChannel"
-QT_MOC_LITERAL(49, 792, 11), // "dacSelected"
-QT_MOC_LITERAL(50, 804, 10), // "dacChannel"
-QT_MOC_LITERAL(51, 815, 13), // "renameChannel"
-QT_MOC_LITERAL(52, 829, 20), // "sortChannelsByNumber"
-QT_MOC_LITERAL(53, 850, 18), // "sortChannelsByName"
-QT_MOC_LITERAL(54, 869, 27), // "restoreOriginalChannelOrder"
-QT_MOC_LITERAL(55, 897, 19), // "alphabetizeChannels"
-QT_MOC_LITERAL(56, 917, 19), // "toggleChannelEnable"
-QT_MOC_LITERAL(57, 937, 17), // "enableAllChannels"
-QT_MOC_LITERAL(58, 955, 18), // "disableAllChannels"
-QT_MOC_LITERAL(59, 974, 10), // "spikeScope"
-QT_MOC_LITERAL(60, 985, 18), // "newSelectedChannel"
-QT_MOC_LITERAL(61, 1004, 14), // "SignalChannel*"
-QT_MOC_LITERAL(62, 1019, 10), // "newChannel"
-QT_MOC_LITERAL(63, 1030, 9), // "scanPorts"
-QT_MOC_LITERAL(64, 1040, 12), // "loadSettings"
-QT_MOC_LITERAL(65, 1053, 12), // "saveSettings"
-QT_MOC_LITERAL(66, 1066, 16), // "loadStimSettings"
-QT_MOC_LITERAL(67, 1083, 16), // "saveStimSettings"
-QT_MOC_LITERAL(68, 1100, 17), // "loadConfigFile_CA"
-QT_MOC_LITERAL(69, 1118, 14), // "showImpedances"
-QT_MOC_LITERAL(70, 1133, 7), // "enabled"
-QT_MOC_LITERAL(71, 1141, 14), // "saveImpedances"
-QT_MOC_LITERAL(72, 1156, 23), // "runImpedanceMeasurement"
-QT_MOC_LITERAL(73, 1180, 23), // "manualCableDelayControl"
-QT_MOC_LITERAL(74, 1204, 14), // "plotPointsMode"
-QT_MOC_LITERAL(75, 1219, 19), // "setSaveFormatDialog"
-QT_MOC_LITERAL(76, 1239, 16), // "setDacThreshold1"
-QT_MOC_LITERAL(77, 1256, 9), // "threshold"
-QT_MOC_LITERAL(78, 1266, 16), // "setDacThreshold2"
-QT_MOC_LITERAL(79, 1283, 16), // "setDacThreshold3"
-QT_MOC_LITERAL(80, 1300, 16), // "setDacThreshold4"
-QT_MOC_LITERAL(81, 1317, 16), // "setDacThreshold5"
-QT_MOC_LITERAL(82, 1334, 16), // "setDacThreshold6"
-QT_MOC_LITERAL(83, 1351, 16), // "setDacThreshold7"
-QT_MOC_LITERAL(84, 1368, 16), // "setDacThreshold8"
-QT_MOC_LITERAL(85, 1385, 18), // "dacThresholdEnable"
-QT_MOC_LITERAL(86, 1404, 27), // "referenceSetSelectedChannel"
-QT_MOC_LITERAL(87, 1432, 20), // "referenceSetHardware"
-QT_MOC_LITERAL(88, 1453, 13), // "referenceHelp"
-QT_MOC_LITERAL(89, 1467, 9), // "stimParam"
-QT_MOC_LITERAL(90, 1477, 31), // "setDigitalOutSequenceParameters"
-QT_MOC_LITERAL(91, 1509, 17), // "Rhs2000EvalBoard*"
-QT_MOC_LITERAL(92, 1527, 9), // "evalBoard"
-QT_MOC_LITERAL(93, 1537, 11), // "timestep_us"
-QT_MOC_LITERAL(94, 1549, 7), // "channel"
-QT_MOC_LITERAL(95, 1557, 15), // "StimParameters*"
-QT_MOC_LITERAL(96, 1573, 10), // "parameters"
-QT_MOC_LITERAL(97, 1584, 30), // "setAnalogOutSequenceParameters"
-QT_MOC_LITERAL(98, 1615, 25), // "setStimSequenceParameters"
-QT_MOC_LITERAL(99, 1641, 14), // "currentstep_uA"
-QT_MOC_LITERAL(100, 1656, 6), // "stream"
-QT_MOC_LITERAL(101, 1663, 17), // "ampSettleSettings"
-QT_MOC_LITERAL(102, 1681, 22), // "chargeRecoverySettings"
-QT_MOC_LITERAL(103, 1704, 26), // "custom_architecture_Enable"
-QT_MOC_LITERAL(104, 1731, 31) // "custom_architecture_trig_Enable"
+QT_MOC_LITERAL(39, 613, 15), // "changeBandwidth"
+QT_MOC_LITERAL(40, 629, 24), // "changeImpedanceFrequency"
+QT_MOC_LITERAL(41, 654, 10), // "changePort"
+QT_MOC_LITERAL(42, 665, 4), // "port"
+QT_MOC_LITERAL(43, 670, 13), // "changeDacGain"
+QT_MOC_LITERAL(44, 684, 22), // "changeDacNoiseSuppress"
+QT_MOC_LITERAL(45, 707, 9), // "dacEnable"
+QT_MOC_LITERAL(46, 717, 13), // "dacSetChannel"
+QT_MOC_LITERAL(47, 731, 11), // "dacSelected"
+QT_MOC_LITERAL(48, 743, 10), // "dacChannel"
+QT_MOC_LITERAL(49, 754, 13), // "renameChannel"
+QT_MOC_LITERAL(50, 768, 20), // "sortChannelsByNumber"
+QT_MOC_LITERAL(51, 789, 18), // "sortChannelsByName"
+QT_MOC_LITERAL(52, 808, 27), // "restoreOriginalChannelOrder"
+QT_MOC_LITERAL(53, 836, 19), // "alphabetizeChannels"
+QT_MOC_LITERAL(54, 856, 19), // "toggleChannelEnable"
+QT_MOC_LITERAL(55, 876, 17), // "enableAllChannels"
+QT_MOC_LITERAL(56, 894, 18), // "disableAllChannels"
+QT_MOC_LITERAL(57, 913, 10), // "spikeScope"
+QT_MOC_LITERAL(58, 924, 18), // "newSelectedChannel"
+QT_MOC_LITERAL(59, 943, 14), // "SignalChannel*"
+QT_MOC_LITERAL(60, 958, 10), // "newChannel"
+QT_MOC_LITERAL(61, 969, 9), // "scanPorts"
+QT_MOC_LITERAL(62, 979, 12), // "loadSettings"
+QT_MOC_LITERAL(63, 992, 12), // "saveSettings"
+QT_MOC_LITERAL(64, 1005, 16), // "loadStimSettings"
+QT_MOC_LITERAL(65, 1022, 16), // "saveStimSettings"
+QT_MOC_LITERAL(66, 1039, 17), // "loadConfigFile_CA"
+QT_MOC_LITERAL(67, 1057, 14), // "showImpedances"
+QT_MOC_LITERAL(68, 1072, 7), // "enabled"
+QT_MOC_LITERAL(69, 1080, 14), // "saveImpedances"
+QT_MOC_LITERAL(70, 1095, 23), // "runImpedanceMeasurement"
+QT_MOC_LITERAL(71, 1119, 23), // "manualCableDelayControl"
+QT_MOC_LITERAL(72, 1143, 14), // "plotPointsMode"
+QT_MOC_LITERAL(73, 1158, 19), // "setSaveFormatDialog"
+QT_MOC_LITERAL(74, 1178, 16), // "setDacThreshold1"
+QT_MOC_LITERAL(75, 1195, 9), // "threshold"
+QT_MOC_LITERAL(76, 1205, 16), // "setDacThreshold2"
+QT_MOC_LITERAL(77, 1222, 16), // "setDacThreshold3"
+QT_MOC_LITERAL(78, 1239, 16), // "setDacThreshold4"
+QT_MOC_LITERAL(79, 1256, 16), // "setDacThreshold5"
+QT_MOC_LITERAL(80, 1273, 16), // "setDacThreshold6"
+QT_MOC_LITERAL(81, 1290, 16), // "setDacThreshold7"
+QT_MOC_LITERAL(82, 1307, 16), // "setDacThreshold8"
+QT_MOC_LITERAL(83, 1324, 18), // "dacThresholdEnable"
+QT_MOC_LITERAL(84, 1343, 27), // "referenceSetSelectedChannel"
+QT_MOC_LITERAL(85, 1371, 20), // "referenceSetHardware"
+QT_MOC_LITERAL(86, 1392, 13), // "referenceHelp"
+QT_MOC_LITERAL(87, 1406, 9), // "stimParam"
+QT_MOC_LITERAL(88, 1416, 31), // "setDigitalOutSequenceParameters"
+QT_MOC_LITERAL(89, 1448, 17), // "Rhs2000EvalBoard*"
+QT_MOC_LITERAL(90, 1466, 9), // "evalBoard"
+QT_MOC_LITERAL(91, 1476, 11), // "timestep_us"
+QT_MOC_LITERAL(92, 1488, 7), // "channel"
+QT_MOC_LITERAL(93, 1496, 15), // "StimParameters*"
+QT_MOC_LITERAL(94, 1512, 10), // "parameters"
+QT_MOC_LITERAL(95, 1523, 30), // "setAnalogOutSequenceParameters"
+QT_MOC_LITERAL(96, 1554, 25), // "setStimSequenceParameters"
+QT_MOC_LITERAL(97, 1580, 14), // "currentstep_uA"
+QT_MOC_LITERAL(98, 1595, 6), // "stream"
+QT_MOC_LITERAL(99, 1602, 17), // "ampSettleSettings"
+QT_MOC_LITERAL(100, 1620, 22), // "chargeRecoverySettings"
+QT_MOC_LITERAL(101, 1643, 26) // "custom_architecture_Enable"
 
     },
     "MainWindow\0focusChanged\0\0QWidget*\0"
@@ -155,8 +152,6 @@ QT_MOC_LITERAL(104, 1731, 31) // "custom_architecture_trig_Enable"
     "changeNotchFilter\0notchFilterIndex\0"
     "enableHighpassFilter\0enable\0"
     "highpassFilterLineEditChanged\0"
-    "hardThresholdLineEditChanged_CA\0"
-    "refractoryLineEditChanged_CA\0"
     "changeBandwidth\0changeImpedanceFrequency\0"
     "changePort\0port\0changeDacGain\0"
     "changeDacNoiseSuppress\0dacEnable\0"
@@ -185,8 +180,7 @@ QT_MOC_LITERAL(104, 1731, 31) // "custom_architecture_trig_Enable"
     "setStimSequenceParameters\0currentstep_uA\0"
     "stream\0ampSettleSettings\0"
     "chargeRecoverySettings\0"
-    "custom_architecture_Enable\0"
-    "custom_architecture_trig_Enable"
+    "custom_architecture_Enable"
 };
 #undef QT_MOC_LITERAL
 
@@ -196,7 +190,7 @@ static const uint qt_meta_data_MainWindow[] = {
        8,       // revision
        0,       // classname
        0,    0, // classinfo
-      81,   14, // methods
+      78,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -204,89 +198,86 @@ static const uint qt_meta_data_MainWindow[] = {
        1,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    2,  419,    2, 0x06 /* Public */,
+       1,    2,  404,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-       6,    2,  424,    2, 0x0a /* Public */,
-       7,    0,  429,    2, 0x0a /* Public */,
-       8,    0,  430,    2, 0x0a /* Public */,
-       9,    0,  431,    2, 0x08 /* Private */,
-      10,    0,  432,    2, 0x08 /* Private */,
-      11,    0,  433,    2, 0x08 /* Private */,
-      12,    0,  434,    2, 0x08 /* Private */,
-      13,    0,  435,    2, 0x08 /* Private */,
-      14,    0,  436,    2, 0x08 /* Private */,
-      15,    0,  437,    2, 0x08 /* Private */,
-      16,    0,  438,    2, 0x08 /* Private */,
-      17,    0,  439,    2, 0x08 /* Private */,
-      18,    0,  440,    2, 0x08 /* Private */,
-      19,    0,  441,    2, 0x08 /* Private */,
-      20,    0,  442,    2, 0x08 /* Private */,
-      21,    0,  443,    2, 0x08 /* Private */,
-      22,    0,  444,    2, 0x08 /* Private */,
-      23,    0,  445,    2, 0x08 /* Private */,
-      24,    1,  446,    2, 0x08 /* Private */,
-      26,    1,  449,    2, 0x08 /* Private */,
-      27,    1,  452,    2, 0x08 /* Private */,
-      28,    1,  455,    2, 0x08 /* Private */,
-      29,    1,  458,    2, 0x08 /* Private */,
-      30,    1,  461,    2, 0x08 /* Private */,
-      31,    2,  464,    2, 0x08 /* Private */,
-      34,    1,  469,    2, 0x08 /* Private */,
-      36,    1,  472,    2, 0x08 /* Private */,
-      38,    0,  475,    2, 0x08 /* Private */,
-      39,    0,  476,    2, 0x08 /* Private */,
-      40,    0,  477,    2, 0x08 /* Private */,
-      41,    0,  478,    2, 0x08 /* Private */,
-      42,    0,  479,    2, 0x08 /* Private */,
-      43,    1,  480,    2, 0x08 /* Private */,
-      45,    1,  483,    2, 0x08 /* Private */,
-      46,    1,  486,    2, 0x08 /* Private */,
-      47,    1,  489,    2, 0x08 /* Private */,
-      48,    0,  492,    2, 0x08 /* Private */,
-      49,    1,  493,    2, 0x08 /* Private */,
-      51,    0,  496,    2, 0x08 /* Private */,
-      52,    0,  497,    2, 0x08 /* Private */,
-      53,    0,  498,    2, 0x08 /* Private */,
-      54,    0,  499,    2, 0x08 /* Private */,
-      55,    0,  500,    2, 0x08 /* Private */,
-      56,    0,  501,    2, 0x08 /* Private */,
-      57,    0,  502,    2, 0x08 /* Private */,
-      58,    0,  503,    2, 0x08 /* Private */,
-      59,    0,  504,    2, 0x08 /* Private */,
-      60,    1,  505,    2, 0x08 /* Private */,
-      63,    0,  508,    2, 0x08 /* Private */,
-      64,    0,  509,    2, 0x08 /* Private */,
-      65,    0,  510,    2, 0x08 /* Private */,
-      66,    0,  511,    2, 0x08 /* Private */,
-      67,    0,  512,    2, 0x08 /* Private */,
-      68,    0,  513,    2, 0x08 /* Private */,
-      69,    1,  514,    2, 0x08 /* Private */,
-      71,    0,  517,    2, 0x08 /* Private */,
-      72,    0,  518,    2, 0x08 /* Private */,
-      73,    0,  519,    2, 0x08 /* Private */,
-      74,    1,  520,    2, 0x08 /* Private */,
-      75,    0,  523,    2, 0x08 /* Private */,
-      76,    1,  524,    2, 0x08 /* Private */,
-      78,    1,  527,    2, 0x08 /* Private */,
-      79,    1,  530,    2, 0x08 /* Private */,
-      80,    1,  533,    2, 0x08 /* Private */,
-      81,    1,  536,    2, 0x08 /* Private */,
-      82,    1,  539,    2, 0x08 /* Private */,
-      83,    1,  542,    2, 0x08 /* Private */,
-      84,    1,  545,    2, 0x08 /* Private */,
-      85,    0,  548,    2, 0x08 /* Private */,
-      86,    0,  549,    2, 0x08 /* Private */,
-      87,    0,  550,    2, 0x08 /* Private */,
-      88,    0,  551,    2, 0x08 /* Private */,
-      89,    0,  552,    2, 0x08 /* Private */,
-      90,    4,  553,    2, 0x08 /* Private */,
-      97,    4,  562,    2, 0x08 /* Private */,
-      98,    6,  571,    2, 0x08 /* Private */,
-     101,    0,  584,    2, 0x08 /* Private */,
-     102,    0,  585,    2, 0x08 /* Private */,
-     103,    0,  586,    2, 0x08 /* Private */,
-     104,    0,  587,    2, 0x08 /* Private */,
+       6,    2,  409,    2, 0x0a /* Public */,
+       7,    0,  414,    2, 0x0a /* Public */,
+       8,    0,  415,    2, 0x0a /* Public */,
+       9,    0,  416,    2, 0x08 /* Private */,
+      10,    0,  417,    2, 0x08 /* Private */,
+      11,    0,  418,    2, 0x08 /* Private */,
+      12,    0,  419,    2, 0x08 /* Private */,
+      13,    0,  420,    2, 0x08 /* Private */,
+      14,    0,  421,    2, 0x08 /* Private */,
+      15,    0,  422,    2, 0x08 /* Private */,
+      16,    0,  423,    2, 0x08 /* Private */,
+      17,    0,  424,    2, 0x08 /* Private */,
+      18,    0,  425,    2, 0x08 /* Private */,
+      19,    0,  426,    2, 0x08 /* Private */,
+      20,    0,  427,    2, 0x08 /* Private */,
+      21,    0,  428,    2, 0x08 /* Private */,
+      22,    0,  429,    2, 0x08 /* Private */,
+      23,    0,  430,    2, 0x08 /* Private */,
+      24,    1,  431,    2, 0x08 /* Private */,
+      26,    1,  434,    2, 0x08 /* Private */,
+      27,    1,  437,    2, 0x08 /* Private */,
+      28,    1,  440,    2, 0x08 /* Private */,
+      29,    1,  443,    2, 0x08 /* Private */,
+      30,    1,  446,    2, 0x08 /* Private */,
+      31,    2,  449,    2, 0x08 /* Private */,
+      34,    1,  454,    2, 0x08 /* Private */,
+      36,    1,  457,    2, 0x08 /* Private */,
+      38,    0,  460,    2, 0x08 /* Private */,
+      39,    0,  461,    2, 0x08 /* Private */,
+      40,    0,  462,    2, 0x08 /* Private */,
+      41,    1,  463,    2, 0x08 /* Private */,
+      43,    1,  466,    2, 0x08 /* Private */,
+      44,    1,  469,    2, 0x08 /* Private */,
+      45,    1,  472,    2, 0x08 /* Private */,
+      46,    0,  475,    2, 0x08 /* Private */,
+      47,    1,  476,    2, 0x08 /* Private */,
+      49,    0,  479,    2, 0x08 /* Private */,
+      50,    0,  480,    2, 0x08 /* Private */,
+      51,    0,  481,    2, 0x08 /* Private */,
+      52,    0,  482,    2, 0x08 /* Private */,
+      53,    0,  483,    2, 0x08 /* Private */,
+      54,    0,  484,    2, 0x08 /* Private */,
+      55,    0,  485,    2, 0x08 /* Private */,
+      56,    0,  486,    2, 0x08 /* Private */,
+      57,    0,  487,    2, 0x08 /* Private */,
+      58,    1,  488,    2, 0x08 /* Private */,
+      61,    0,  491,    2, 0x08 /* Private */,
+      62,    0,  492,    2, 0x08 /* Private */,
+      63,    0,  493,    2, 0x08 /* Private */,
+      64,    0,  494,    2, 0x08 /* Private */,
+      65,    0,  495,    2, 0x08 /* Private */,
+      66,    0,  496,    2, 0x08 /* Private */,
+      67,    1,  497,    2, 0x08 /* Private */,
+      69,    0,  500,    2, 0x08 /* Private */,
+      70,    0,  501,    2, 0x08 /* Private */,
+      71,    0,  502,    2, 0x08 /* Private */,
+      72,    1,  503,    2, 0x08 /* Private */,
+      73,    0,  506,    2, 0x08 /* Private */,
+      74,    1,  507,    2, 0x08 /* Private */,
+      76,    1,  510,    2, 0x08 /* Private */,
+      77,    1,  513,    2, 0x08 /* Private */,
+      78,    1,  516,    2, 0x08 /* Private */,
+      79,    1,  519,    2, 0x08 /* Private */,
+      80,    1,  522,    2, 0x08 /* Private */,
+      81,    1,  525,    2, 0x08 /* Private */,
+      82,    1,  528,    2, 0x08 /* Private */,
+      83,    0,  531,    2, 0x08 /* Private */,
+      84,    0,  532,    2, 0x08 /* Private */,
+      85,    0,  533,    2, 0x08 /* Private */,
+      86,    0,  534,    2, 0x08 /* Private */,
+      87,    0,  535,    2, 0x08 /* Private */,
+      88,    4,  536,    2, 0x08 /* Private */,
+      95,    4,  545,    2, 0x08 /* Private */,
+      96,    6,  554,    2, 0x08 /* Private */,
+      99,    0,  567,    2, 0x08 /* Private */,
+     100,    0,  568,    2, 0x08 /* Private */,
+     101,    0,  569,    2, 0x08 /* Private */,
 
  // signals: parameters
     QMetaType::Void, 0x80000000 | 3, 0x80000000 | 3,    4,    5,
@@ -322,14 +313,12 @@ static const uint qt_meta_data_MainWindow[] = {
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
-    QMetaType::Void,
-    QMetaType::Void,
-    QMetaType::Void, QMetaType::Int,   44,
+    QMetaType::Void, QMetaType::Int,   42,
     QMetaType::Void, QMetaType::Int,   25,
     QMetaType::Void, QMetaType::Int,   25,
     QMetaType::Void, QMetaType::Bool,   37,
     QMetaType::Void,
-    QMetaType::Void, QMetaType::Int,   50,
+    QMetaType::Void, QMetaType::Int,   48,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
@@ -339,36 +328,35 @@ static const uint qt_meta_data_MainWindow[] = {
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
-    QMetaType::Void, 0x80000000 | 61,   62,
+    QMetaType::Void, 0x80000000 | 59,   60,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
-    QMetaType::Void, QMetaType::Bool,   70,
+    QMetaType::Void, QMetaType::Bool,   68,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
-    QMetaType::Void, QMetaType::Bool,   70,
+    QMetaType::Void, QMetaType::Bool,   68,
     QMetaType::Void,
-    QMetaType::Void, QMetaType::Int,   77,
-    QMetaType::Void, QMetaType::Int,   77,
-    QMetaType::Void, QMetaType::Int,   77,
-    QMetaType::Void, QMetaType::Int,   77,
-    QMetaType::Void, QMetaType::Int,   77,
-    QMetaType::Void, QMetaType::Int,   77,
-    QMetaType::Void, QMetaType::Int,   77,
-    QMetaType::Void, QMetaType::Int,   77,
-    QMetaType::Void,
-    QMetaType::Void,
+    QMetaType::Void, QMetaType::Int,   75,
+    QMetaType::Void, QMetaType::Int,   75,
+    QMetaType::Void, QMetaType::Int,   75,
+    QMetaType::Void, QMetaType::Int,   75,
+    QMetaType::Void, QMetaType::Int,   75,
+    QMetaType::Void, QMetaType::Int,   75,
+    QMetaType::Void, QMetaType::Int,   75,
+    QMetaType::Void, QMetaType::Int,   75,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
-    QMetaType::Void, 0x80000000 | 91, QMetaType::Double, QMetaType::Int, 0x80000000 | 95,   92,   93,   94,   96,
-    QMetaType::Void, 0x80000000 | 91, QMetaType::Double, QMetaType::Int, 0x80000000 | 95,   92,   93,   94,   96,
-    QMetaType::Void, 0x80000000 | 91, QMetaType::Double, QMetaType::Double, QMetaType::Int, QMetaType::Int, 0x80000000 | 95,   92,   93,   99,  100,   94,   96,
     QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void, 0x80000000 | 89, QMetaType::Double, QMetaType::Int, 0x80000000 | 93,   90,   91,   92,   94,
+    QMetaType::Void, 0x80000000 | 89, QMetaType::Double, QMetaType::Int, 0x80000000 | 93,   90,   91,   92,   94,
+    QMetaType::Void, 0x80000000 | 89, QMetaType::Double, QMetaType::Double, QMetaType::Int, QMetaType::Int, 0x80000000 | 93,   90,   91,   97,   98,   92,   94,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
@@ -411,58 +399,55 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 26: _t->changeNotchFilter((*reinterpret_cast< int(*)>(_a[1]))); break;
         case 27: _t->enableHighpassFilter((*reinterpret_cast< bool(*)>(_a[1]))); break;
         case 28: _t->highpassFilterLineEditChanged(); break;
-        case 29: _t->hardThresholdLineEditChanged_CA(); break;
-        case 30: _t->refractoryLineEditChanged_CA(); break;
-        case 31: _t->changeBandwidth(); break;
-        case 32: _t->changeImpedanceFrequency(); break;
-        case 33: _t->changePort((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 34: _t->changeDacGain((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 35: _t->changeDacNoiseSuppress((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 36: _t->dacEnable((*reinterpret_cast< bool(*)>(_a[1]))); break;
-        case 37: _t->dacSetChannel(); break;
-        case 38: _t->dacSelected((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 39: _t->renameChannel(); break;
-        case 40: _t->sortChannelsByNumber(); break;
-        case 41: _t->sortChannelsByName(); break;
-        case 42: _t->restoreOriginalChannelOrder(); break;
-        case 43: _t->alphabetizeChannels(); break;
-        case 44: _t->toggleChannelEnable(); break;
-        case 45: _t->enableAllChannels(); break;
-        case 46: _t->disableAllChannels(); break;
-        case 47: _t->spikeScope(); break;
-        case 48: _t->newSelectedChannel((*reinterpret_cast< SignalChannel*(*)>(_a[1]))); break;
-        case 49: _t->scanPorts(); break;
-        case 50: _t->loadSettings(); break;
-        case 51: _t->saveSettings(); break;
-        case 52: _t->loadStimSettings(); break;
-        case 53: _t->saveStimSettings(); break;
-        case 54: _t->loadConfigFile_CA(); break;
-        case 55: _t->showImpedances((*reinterpret_cast< bool(*)>(_a[1]))); break;
-        case 56: _t->saveImpedances(); break;
-        case 57: _t->runImpedanceMeasurement(); break;
-        case 58: _t->manualCableDelayControl(); break;
-        case 59: _t->plotPointsMode((*reinterpret_cast< bool(*)>(_a[1]))); break;
-        case 60: _t->setSaveFormatDialog(); break;
-        case 61: _t->setDacThreshold1((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 62: _t->setDacThreshold2((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 63: _t->setDacThreshold3((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 64: _t->setDacThreshold4((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 65: _t->setDacThreshold5((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 66: _t->setDacThreshold6((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 67: _t->setDacThreshold7((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 68: _t->setDacThreshold8((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 69: _t->dacThresholdEnable(); break;
-        case 70: _t->referenceSetSelectedChannel(); break;
-        case 71: _t->referenceSetHardware(); break;
-        case 72: _t->referenceHelp(); break;
-        case 73: _t->stimParam(); break;
-        case 74: _t->setDigitalOutSequenceParameters((*reinterpret_cast< Rhs2000EvalBoard*(*)>(_a[1])),(*reinterpret_cast< double(*)>(_a[2])),(*reinterpret_cast< int(*)>(_a[3])),(*reinterpret_cast< StimParameters*(*)>(_a[4]))); break;
-        case 75: _t->setAnalogOutSequenceParameters((*reinterpret_cast< Rhs2000EvalBoard*(*)>(_a[1])),(*reinterpret_cast< double(*)>(_a[2])),(*reinterpret_cast< int(*)>(_a[3])),(*reinterpret_cast< StimParameters*(*)>(_a[4]))); break;
-        case 76: _t->setStimSequenceParameters((*reinterpret_cast< Rhs2000EvalBoard*(*)>(_a[1])),(*reinterpret_cast< double(*)>(_a[2])),(*reinterpret_cast< double(*)>(_a[3])),(*reinterpret_cast< int(*)>(_a[4])),(*reinterpret_cast< int(*)>(_a[5])),(*reinterpret_cast< StimParameters*(*)>(_a[6]))); break;
-        case 77: _t->ampSettleSettings(); break;
-        case 78: _t->chargeRecoverySettings(); break;
-        case 79: _t->custom_architecture_Enable(); break;
-        case 80: _t->custom_architecture_trig_Enable(); break;
+        case 29: _t->changeBandwidth(); break;
+        case 30: _t->changeImpedanceFrequency(); break;
+        case 31: _t->changePort((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 32: _t->changeDacGain((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 33: _t->changeDacNoiseSuppress((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 34: _t->dacEnable((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 35: _t->dacSetChannel(); break;
+        case 36: _t->dacSelected((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 37: _t->renameChannel(); break;
+        case 38: _t->sortChannelsByNumber(); break;
+        case 39: _t->sortChannelsByName(); break;
+        case 40: _t->restoreOriginalChannelOrder(); break;
+        case 41: _t->alphabetizeChannels(); break;
+        case 42: _t->toggleChannelEnable(); break;
+        case 43: _t->enableAllChannels(); break;
+        case 44: _t->disableAllChannels(); break;
+        case 45: _t->spikeScope(); break;
+        case 46: _t->newSelectedChannel((*reinterpret_cast< SignalChannel*(*)>(_a[1]))); break;
+        case 47: _t->scanPorts(); break;
+        case 48: _t->loadSettings(); break;
+        case 49: _t->saveSettings(); break;
+        case 50: _t->loadStimSettings(); break;
+        case 51: _t->saveStimSettings(); break;
+        case 52: _t->loadConfigFile_CA(); break;
+        case 53: _t->showImpedances((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 54: _t->saveImpedances(); break;
+        case 55: _t->runImpedanceMeasurement(); break;
+        case 56: _t->manualCableDelayControl(); break;
+        case 57: _t->plotPointsMode((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 58: _t->setSaveFormatDialog(); break;
+        case 59: _t->setDacThreshold1((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 60: _t->setDacThreshold2((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 61: _t->setDacThreshold3((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 62: _t->setDacThreshold4((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 63: _t->setDacThreshold5((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 64: _t->setDacThreshold6((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 65: _t->setDacThreshold7((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 66: _t->setDacThreshold8((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 67: _t->dacThresholdEnable(); break;
+        case 68: _t->referenceSetSelectedChannel(); break;
+        case 69: _t->referenceSetHardware(); break;
+        case 70: _t->referenceHelp(); break;
+        case 71: _t->stimParam(); break;
+        case 72: _t->setDigitalOutSequenceParameters((*reinterpret_cast< Rhs2000EvalBoard*(*)>(_a[1])),(*reinterpret_cast< double(*)>(_a[2])),(*reinterpret_cast< int(*)>(_a[3])),(*reinterpret_cast< StimParameters*(*)>(_a[4]))); break;
+        case 73: _t->setAnalogOutSequenceParameters((*reinterpret_cast< Rhs2000EvalBoard*(*)>(_a[1])),(*reinterpret_cast< double(*)>(_a[2])),(*reinterpret_cast< int(*)>(_a[3])),(*reinterpret_cast< StimParameters*(*)>(_a[4]))); break;
+        case 74: _t->setStimSequenceParameters((*reinterpret_cast< Rhs2000EvalBoard*(*)>(_a[1])),(*reinterpret_cast< double(*)>(_a[2])),(*reinterpret_cast< double(*)>(_a[3])),(*reinterpret_cast< int(*)>(_a[4])),(*reinterpret_cast< int(*)>(_a[5])),(*reinterpret_cast< StimParameters*(*)>(_a[6]))); break;
+        case 75: _t->ampSettleSettings(); break;
+        case 76: _t->chargeRecoverySettings(); break;
+        case 77: _t->custom_architecture_Enable(); break;
         default: ;
         }
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
@@ -526,13 +511,13 @@ int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 81)
+        if (_id < 78)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 81;
+        _id -= 78;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 81)
+        if (_id < 78)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 81;
+        _id -= 78;
     }
     return _id;
 }
