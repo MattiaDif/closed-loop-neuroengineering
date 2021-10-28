@@ -55,5 +55,16 @@ You can find the closed-loop-neuroscience detailed documentation here: https://m
 
 ## References
 
+## Core Team
+The following people have contributed to the current state of the project (28/10/2021). Specifically:
+- Development: Stefano Buccelli [1], Mattia Di Florio [1],[3].
+- Conceptualization/Supervision: Vijay Iyer [2], Akshay Rajhans [2], Kiran Kintali [2], Stefano Buccelli [1], Michela Chiappalone [1],[3].
+
+For any questions, please reach via email Mattia Di Florio (di.florio.mattia@gmail.com) or Stefano Buccelli (stefano.buccelli@iit.it) or write an issue!
+
+[1] Rehab Technologies IIT-INAIL Lab, Istituto Italiano di Tecnologia, Via Morego 30, 16163 Genova, Italy
+[2] The MathWorks, Inc.
+[3] Dept. Informatics, Bioengineering, Robotics and Systems Engineering, University of Genoa, 16145 Genova, Italy
+
 
 
