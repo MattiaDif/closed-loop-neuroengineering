@@ -36,7 +36,7 @@ Retracing these steps, the user will be driven through the development process o
 
 ## Installation
 
-### Repo cloning
+#### Repo cloning
 
 To clone this repo open your terminal and run:
 
@@ -44,7 +44,7 @@ To clone this repo open your terminal and run:
 
 To start using all the repo functionalities avoiding potential missing file issues, please run the installer.m script to add to your Matlab path all the project.
 
-### Example application
+#### Example application
 
 If you just want to have a look at the Simulink library functionalities, please download the example application here: https://it.mathworks.com/matlabcentral/fileexchange/101238-iit-genoa-intan-hdl-blocks
 
