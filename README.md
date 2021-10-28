@@ -26,7 +26,7 @@ Retracing these steps, the user will be driven through the development process o
 3. Spike_Detection_models contains all the single- and multi-channel spike detection models developed in Simulink with data to test how they function.
 
 
-## Required Software
+## Required Softwares
 
 1. Matlab version R2020a or later
 2. MathWorks HDL Coder™
