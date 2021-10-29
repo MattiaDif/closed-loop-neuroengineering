@@ -44,12 +44,12 @@ To clone this repo open your terminal and run:
 
 To start using all the repo functionalities avoiding potential missing file issues, please run the installer.m script to add to your Matlab path all the project.
 
-### Example application
+### Example application (WORK IN PROGRESS)
 
 If you just want to have a look at the Simulink library functionalities, please download the example application here: https://it.mathworks.com/matlabcentral/fileexchange/101238-iit-genoa-intan-hdl-blocks
 
 
-## Documentation
+## Documentation (WORK IN PROGRESS)
 
 You can find the closed-loop-neuroscience detailed documentation here: https://mattia-di-florio.gitbook.io/closed-loop-neuroscience-1/.
 
