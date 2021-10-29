@@ -44,9 +44,9 @@ To clone this repo open your terminal and run:
 
 To start using all the repo functionalities avoiding potential missing file issues, please run the installer.m script to add to your Matlab path all the project.
 
-### Example application (WORK IN PROGRESS)
+### Getting Started Tutorial (WORK IN PROGRESS)
 
-If you just want to have a look at the Simulink library functionalities, please download the example application here: https://it.mathworks.com/matlabcentral/fileexchange/101238-iit-genoa-intan-hdl-blocks
+If you just want to have a look at the Simulink library functionalities and how to implement your model on FPGA, please download the example application here: https://it.mathworks.com/matlabcentral/fileexchange/101238-iit-genoa-intan-hdl-blocks
 
 
 ## Documentation (WORK IN PROGRESS)
