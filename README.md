@@ -53,7 +53,6 @@ If you just want to have a look at the Simulink library functionalities, please 
 
 You can find the closed-loop-neuroscience detailed documentation here: https://mattia-di-florio.gitbook.io/closed-loop-neuroscience-1/.
 
-## References
 
 ## Core Team
 The following people have contributed to the current state of the project (28/10/2021). Specifically:
