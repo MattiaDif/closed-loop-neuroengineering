@@ -29,13 +29,12 @@ clc
 
 
 save_flag = 1;  %1 save fsm out data, 0 not
-save_ISE = 0;   %1 save txt for ISim, 0 not
 
 
 %% Initial conditions
 %MIN 1, MAX 8 --> n_chip
 n_chip = [1 1 1 1 1 1 1 1]; %1 chip data stream enabled, 0 not (max 8 elements == max 8 amplifiers)
-n_dataframe = 30000;  %how much dataframe simulate (samples per channel)
+n_dataframe = 300;  %how much dataframe simulate (samples per channel)
 % on_off = 0; %stimulation on/off, 1 --> on, 0 --> not
 % polarity = 0; %polarity, 1 --> on, 0 --> not
 % settle = 0; %amplifier settle, 1 --> on, 0 --> not
@@ -43,7 +42,9 @@ n_dataframe = 30000;  %how much dataframe simulate (samples per channel)
 
 
 %% Data flow replica
-signal = load('neuronexus32_recording_20.mat'); %MEArec data to simulate ac high gain samples
+saving_path = 'C:\GitHub\closed-loop-neuroscience\Custom_architecture\Source_Code\';
+
+signal = load('tetrode_test_20.mat'); %MEArec data to simulate ac high gain samples
 signal = signal.signal(2:end,:);
 
 dc_data = randi([500,1000],8*16,n_dataframe); % DC low gain amplifier data
@@ -445,31 +446,16 @@ if save_flag == 1
     frame = num2str(n_dataframe);
     
     %for simulink
-        save(['C:\GitHub\closed-loop-neuroscience\Mattia\Custom_architecture\CustArch_debug\fsm_out_chip',chip(find(~isspace(chip))),'_nframe',frame(find(~isspace(frame)))],...
+    save([saving_path,'fsm_out_chip',chip(find(~isspace(chip))),'_nframe',frame(find(~isspace(frame)))],...
             'fsm_out_def_time','-v7.3')
-    save(['C:\GitHub\closed-loop-neuroscience\Mattia\Custom_architecture\CustArch_debug\fsm_valid_chip',chip(find(~isspace(chip))),'_nframe',frame(find(~isspace(frame)))],...
+    save([saving_path,'fsm_valid_chip',chip(find(~isspace(chip))),'_nframe',frame(find(~isspace(frame)))],...
             'fsm_valid_def_time','-v7.3')
-        
-    if save_ISE == 1    
-        %for ISE
-        fileID_RHS = fopen(['C:\GitHub\closed-loop-neuroscience\Mattia\Custom_architecture\CustArch_debug\fsm_out_chip',chip(find(~isspace(chip))),...
-                        '_nframe',frame(find(~isspace(frame))),'.txt'], 'w');
-        fileID_data_valid = fopen(['C:\GitHub\closed-loop-neuroscience\Mattia\Custom_architecture\CustArch_debug\fsm_valid_chip',chip(find(~isspace(chip))),...
-                        '_nframe',frame(find(~isspace(frame))),'.txt'], 'w');
-
-        for i = 1:length(fsm_valid_def)
-
-            fprintf(fileID_RHS,'%s \n',fsm_out_def_bin(i,:));
-            fprintf(fileID_data_valid,'%s \n',fsm_valid_def_bin(i,:));
-
-        end
-    end
-    
+           
     
     %for CustArch_InOut_comparison
-    save(['C:\GitHub\closed-loop-neuroscience\Mattia\Custom_architecture\CustArch_debug\raw_fsm_out_chip',chip(find(~isspace(chip))),'_nframe',frame(find(~isspace(frame)))],...
+    save([saving_path,'raw_fsm_out_chip',chip(find(~isspace(chip))),'_nframe',frame(find(~isspace(frame)))],...
             'fsm_out_def','-v7.3')
-    save(['C:\GitHub\closed-loop-neuroscience\Mattia\Custom_architecture\CustArch_debug\raw_fsm_valid_chip',chip(find(~isspace(chip))),'_nframe',frame(find(~isspace(frame)))],...
+    save([saving_path,'raw_fsm_valid_chip',chip(find(~isspace(chip))),'_nframe',frame(find(~isspace(frame)))],...
             'fsm_valid_def','-v7.3')
 
 end
