@@ -13,8 +13,8 @@ Retracing these steps, the user will be driven through the development process o
 <br />
 
 <p>
-    <img src="https://github.com/StefanoBuccelli/closed-loop-neuroscience/blob/master/Images/project_scheme.png" width=70% height=70%>
-    <figcaption  align = "center"> <b>Fig.1 - Project overview scheme</b></figcaption>
+    <img src="https://github.com/StefanoBuccelli/closed-loop-neuroscience/blob/master/Images/cust_arch_example.png" width=70% height=70%>
+    <figcaption  align = "center"> <b>Fig.1 - Simulink library application example</b></figcaption>
 </p>
 
 <br />
