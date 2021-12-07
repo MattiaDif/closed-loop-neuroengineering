@@ -50,6 +50,10 @@ To start using all the repo functionalities avoiding potential missing file issu
 
 If you just want to have a look at the Simulink library functionalities and how to implement your model on FPGA, please download the example application here: https://it.mathworks.com/matlabcentral/fileexchange/101238-iit-genoa-intan-hdl-blocks.
 
+A supplemental explanation about how to use the repo is provided at this link: https://app.gitbook.com/s/wHExZxdCVJjuZ6FQM5Eq/getting-started-tutorial.
+
+## Backgroung
+
 
 ## Documentation (WORK IN PROGRESS)
 
