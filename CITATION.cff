@@ -1,0 +1,11 @@
+cff-version: 1.0.0
+message: "If you use this software, please cite it as below."
+authors:
+- family-names: "Di Florio"
+  given-names: "Mattia"
+- family-names: "Buccelli"
+  given-names: "Stefano"
+title: "closed-loop-neuroscience"
+version: 1.0.0
+date-released: XX/XX/XXXX
+url: "https://github.com/StefanoBuccelli/closed-loop-neuroscience"
