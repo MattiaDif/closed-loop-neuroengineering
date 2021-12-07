@@ -19,22 +19,24 @@ Retracing these steps, the user will be driven through the development process o
 
 <br />
 
-## Content Overview
+## Repo Content Overview
 
 1. Custom_architecture contains all the file/scripts/models and examples to develop from scratch a closed-loop system by exploiting a model-based design approach.
 2. Docs contains all the Intan RHS documentation useful for a better understanding of how the whole system works.
 3. Spike_Detection_models contains all the single- and multi-channel spike detection models developed in Simulink with data to test how they function.
 
+For a deeper description about the repo content, please refer to this link: https://app.gitbook.com/s/wHExZxdCVJjuZ6FQM5Eq/c/FE53jT3DUmAwsrZJRfZq/closed-loop-neuroscience-repo.
 
-## Required Softwares
+## Installation
+
+### Required Software
 
 1. Matlab version R2020a or later
 2. MathWorks HDL Coder™
 3. MathWorks Fixed-Point Designer
 4. Xilinx ISE Design Suite
+5. Windows 10 Pro / Enterprise
 
-
-## Installation
 
 ### Repo cloning
 
@@ -46,7 +48,7 @@ To start using all the repo functionalities avoiding potential missing file issu
 
 ### Getting Started Tutorial
 
-If you just want to have a look at the Simulink library functionalities and how to implement your model on FPGA, please download the example application here: https://it.mathworks.com/matlabcentral/fileexchange/101238-iit-genoa-intan-hdl-blocks
+If you just want to have a look at the Simulink library functionalities and how to implement your model on FPGA, please download the example application here: https://it.mathworks.com/matlabcentral/fileexchange/101238-iit-genoa-intan-hdl-blocks.
 
 
 ## Documentation (WORK IN PROGRESS)
@@ -56,14 +58,14 @@ You can find the closed-loop-neuroscience detailed documentation here: https://m
 
 ## Core Team
 The following people have contributed to the current state of the project (28/10/2021). Specifically:
-- Development: Stefano Buccelli [1], Mattia Di Florio [1],[3].
+- Development: Stefano Buccelli [1], Mattia Di Florio [1],[3], Yannick Bornat [4].
 - Conceptualization/Supervision: Vijay Iyer [2], Akshay Rajhans [2], Kiran Kintali [2], Stefano Buccelli [1], Michela Chiappalone [1],[3].
 
 For any questions, please reach via email Mattia Di Florio (di.florio.mattia@gmail.com) or Stefano Buccelli (stefano.buccelli@iit.it) or write an issue!
 
-1. Rehab Technologies IIT-INAIL Lab, Istituto Italiano di Tecnologia, Via Morego 30, 16163 Genova, Italy
+1. Rehab Technologies IIT-INAIL Lab, Istituto Italiano di Tecnologia, Via Morego 30, 12 16163 Genova, Italy
 2. The MathWorks, Inc.
-3. Dept. Informatics, Bioengineering, Robotics and Systems Engineering, University of Genoa, 16145 Genova, Italy
-
+3.  Department of Informatics, Bioengineering, Robotics, System Engineering (DIBRIS), 20 University of Genova, Via all’Opera Pia 13, 16145, Genova, Italy
+4.  Laboratoire de l’Intégration du Matériau au Système (IMS), University of Bordeaux, 18 Bordeaux INP, CNRS UMR 5218, 351 Cours de la Libération, 33405 Talence           Cedex, France
 
 
