@@ -19,7 +19,7 @@ Retracing these steps, the user will be driven through the development process o
 
 <br />
 
-## Repo Content Overview
+## REPO CONTENT OVERVIEW
 
 1. Custom_architecture contains all the file/scripts/models and examples to develop from scratch a closed-loop system by exploiting a model-based design approach.
 2. Docs contains all the Intan RHS documentation useful for a better understanding of how the whole system works.
@@ -27,7 +27,7 @@ Retracing these steps, the user will be driven through the development process o
 
 For a deeper description about the repo content, please refer to this link: https://app.gitbook.com/s/wHExZxdCVJjuZ6FQM5Eq/c/FE53jT3DUmAwsrZJRfZq/closed-loop-neuroscience-repo.
 
-## Installation
+## INSTALLATION
 
 ### Required Software
 
@@ -46,14 +46,14 @@ To clone this repo open your terminal and run:
 
 To start using all the repo functionalities avoiding potential missing file issues, please run the installer.m script to add to your Matlab path all the project.
 
-## Getting Started Tutorial
+## GETTING STARTED TUTORIAL
 
 If you just want to have a look at the Simulink library functionalities and how to implement your model on FPGA, please download the example application here: [MISSING LINK].
 
 A supplemental explanation about how to use the repo is provided at this link: https://app.gitbook.com/s/wHExZxdCVJjuZ6FQM5Eq/getting-started-tutorial.
 
 
-## Backgroung
+## BACKGROUND
 
 Backstage of the project: brief introduction of the leading concept and how the main goals have been achieved. 
 
@@ -103,12 +103,12 @@ Aiming at simplifying the development process of closed-loop system reducing the
 
 Further details at: https://app.gitbook.com/s/wHExZxdCVJjuZ6FQM5Eq/background/6.-gui-customization.
 
-## Documentation (WORK IN PROGRESS)
+## DOCUMENTATION (WORK IN PROGRESS)
 
 You can find the closed-loop-neuroscience detailed documentation here: https://app.gitbook.com/s/wHExZxdCVJjuZ6FQM5Eq/background/7.-simulink-library.
 
 
-## Core Team
+## CORE TEAM
 The following people have contributed to the current state of the project (28/10/2021). Specifically:
 - Development: Stefano Buccelli [1], Mattia Di Florio [1],[3], Yannick Bornat [4].
 - Conceptualization/Supervision: Vijay Iyer [2], Akshay Rajhans [2], Kiran Kintali [2], Stefano Buccelli [1], Michela Chiappalone [1],[3].
