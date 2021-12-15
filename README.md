@@ -101,11 +101,11 @@ Further details at: https://app.gitbook.com/s/wHExZxdCVJjuZ6FQM5Eq/background/6.
 
 Aiming at simplifying the development process of closed-loop system reducing the entry barrier for a non-expert, a custom Simulink library with ready-to-use blocks has been developed. Thus, the user can design his own algorithms for the Intan RHS system just connecting the already tested and preconfigured Simulink blocks.
 
-Further details at: https://app.gitbook.com/s/wHExZxdCVJjuZ6FQM5Eq/background/6.-gui-customization.
+Further details at: hhttps://app.gitbook.com/s/wHExZxdCVJjuZ6FQM5Eq/background/7.-simulink-library.
 
 ## DOCUMENTATION (WORK IN PROGRESS)
 
-You can find the closed-loop-neuroscience detailed documentation here: https://app.gitbook.com/s/wHExZxdCVJjuZ6FQM5Eq/background/7.-simulink-library.
+You can find the closed-loop-neuroscience detailed documentation here: https://mattia-di-florio.gitbook.io/closed-loop-neuroscience-1/.
 
 
 ## CORE TEAM
