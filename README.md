@@ -25,7 +25,7 @@ Retracing these steps, the user will be driven through the development process o
 2. Spike_Detection_models contains all the single- and multi-channel spike detection models developed in Simulink with data to test how they function.
 3. Videoguide contains a couple of tutorial videos about model design and FPGA implementation.
 
-For a deeper description about the repo content, please refer to this link: [repo overview](https://app.gitbook.com/s/wHExZxdCVJjuZ6FQM5Eq/c/FE53jT3DUmAwsrZJRfZq/closed-loop-neuroscience-repo).
+For a deeper description about the repo content, please refer to this link: [repo overview](https://mattia-di-florio.gitbook.io/closed-loop-neuroscience-1/closed-loop-neuroscience-repo).
 
 ## INSTALLATION
 
