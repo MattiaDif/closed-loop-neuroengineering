@@ -27,6 +27,13 @@
 clear
 clc
 
+if(~isdeployed)
+    cd(fileparts(which(mfilename)));
+end
+
+curr_folder = pwd;
+
+disk_path = curr_folder(1:3);
 
 save_flag = 1;  %1 save fsm out data, 0 not
 
@@ -42,7 +49,7 @@ n_dataframe = 300;  %how much dataframe simulate (samples per channel)
 
 
 %% Data flow replica
-saving_path = 'C:\GitHub\closed-loop-neuroscience\Custom_architecture\Source_Code\';
+saving_path = [disk_path,'GitHub\closed-loop-neuroscience\Custom_architecture\Source_Code\'];
 
 signal = load('tetrode_test_20.mat'); %MEArec data to simulate ac high gain samples
 signal = signal.signal(2:end,:);
