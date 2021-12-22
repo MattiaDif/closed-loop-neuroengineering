@@ -35,7 +35,7 @@ For a deeper description about the repo content, please refer to this link: [rep
 2. MathWorks HDL Coder™
 3. MathWorks Fixed-Point Designer
 4. Xilinx ISE Design Suite
-5. Windows 10 Pro / Enterprise
+5. If you use Windows --> Windows 10 Pro / Enterprise
 
 
 ### Repo cloning
