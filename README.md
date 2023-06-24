@@ -31,7 +31,7 @@ For a deeper description about the repo content, please refer to this link: [rep
 
 ### Required Software
 
-1. Matlab version R2020a or later
+1. Matlab version R2020a
 2. MathWorks HDL Coder™
 3. MathWorks Fixed-Point Designer
 4. Xilinx ISE Design Suite
