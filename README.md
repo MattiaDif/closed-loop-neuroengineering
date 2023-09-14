@@ -103,7 +103,7 @@ Aiming at simplifying the development process of closed-loop system reducing the
 
 Further details at: [here](https://mattia-di-florio.gitbook.io/closed-loop-neuroscience-1/background/7.-simulink-library).
 
-## DOCUMENTATION (WORK IN PROGRESS)
+## DOCUMENTATION
 
 You can find the closed-loop-neuroscience detailed documentation here: [docs](https://mattia-di-florio.gitbook.io/closed-loop-neuroscience-1/).
 
