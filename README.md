@@ -121,3 +121,9 @@ For any questions, please reach via email Mattia Di Florio (di.florio.mattia@gma
 4.  Laboratoire de l’Intégration du Matériau au Système (IMS), University of Bordeaux, 18 Bordeaux INP, CNRS UMR 5218, 351 Cours de la Libération, 33405 Talence           Cedex, France
 
 
+## REFERENCE
+For further information please refer to the scientific publication: [link](https://doi.org/10.1101/2023.09.11.557151)
+
+If you use this repo, please cite:
+
+"Di Florio, M., Bornat, Y., Caré, M., Cota, V.R., Buccelli, S., & Chiappalone M. (2023, September). Enabling Model-based Design for closed-loop applications in neuroengineering. biorXiv."
