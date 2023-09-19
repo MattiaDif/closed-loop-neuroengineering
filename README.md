@@ -42,7 +42,7 @@ For a deeper description about the repo content, please refer to this link: [rep
 
 To clone this repo open your terminal and run:
 
-`git clone https://github.com/StefanoBuccelli/closed-loop-neuroscience.git`
+`git clone https://github.com/MattiaDif/closed-loop-neuroengineering`
 
 To start using all the repo functionalities avoiding potential missing file issues, please run the installer.m script to add to your Matlab path all the project.
 
