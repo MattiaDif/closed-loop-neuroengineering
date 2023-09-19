@@ -109,7 +109,7 @@ You can find the closed-loop-neuroscience detailed documentation here: [docs](ht
 
 
 ## CORE TEAM
-The following people have contributed to the current state of the project (15/09/2023). Specifically:
+The following people have contributed to the current state of the project. Specifically:
 - Development: [Stefano Buccelli](https://www.iit.it/it/people-details/-/people/stefano-buccelli) [1], [Mattia Di Florio](https://rubrica.unige.it/personale/UUZFUllo) [1],[3], [Yannick Bornat](https://www.linkedin.com/in/yannick-bornat-253242153/?originalSubdomain=fr) [4].
 - Conceptualization/Supervision: [Vijay Iyer](https://www.mathworks.com/matlabcentral/profile/authors/6910229) [2], [Akshay Rajhans](https://www.mathworks.com/matlabcentral/profile/authors/4409783) [2], [Kiran Kintali](https://www.mathworks.com/matlabcentral/profile/authors/893333) [2], [Stefano Buccelli](https://www.iit.it/it/people-details/-/people/stefano-buccelli) [1], [Michela Chiappalone](https://rubrica.unige.it/personale/UkNHWlNg) [1],[3].
 
