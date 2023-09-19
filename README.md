@@ -13,7 +13,7 @@ Retracing these steps, the user will be driven through the development process o
 <br />
 
 <p>
-    <img src="https://github.com/MattiaDif/closed-loop-neuroengineering/tree/master/Images/master/Images/cust_arch_example.png" width=100% height=100%>
+    <img src="https://github.com/MattiaDif/closed-loop-neuroengineering/tree/master/Images/cust_arch_example.png" width=100% height=100%>
     <figcaption  align = "center"> <b>Fig.1 - Simulink library application example</b></figcaption>
 </p>
 
@@ -31,11 +31,11 @@ For a deeper description about the repo content, please refer to this link: [rep
 
 ### Required Software
 
-1. Matlab version R2020a
+1. Matlab R2020a
 2. MathWorks HDL Coder™
 3. MathWorks Fixed-Point Designer
-4. Xilinx ISE Design Suite
-5. If you use Windows --> Windows 10 Pro / Enterprise
+4. Xilinx ISE Design Suite 14.7
+5. If you use Windows --> Windows 10 Pro / Enterprise (required for Xilinx ISE Design Suite)
 
 
 ### Repo cloning
