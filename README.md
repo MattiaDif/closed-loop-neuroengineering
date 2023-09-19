@@ -46,7 +46,7 @@ For a deeper description about the repo content, please refer to this link: [rep
 4. MathWorks Fixed-Point Designer
 5. Signal Processing Toolbox
 6. Xilinx ISE Design Suite 14.7
-7. If you use Windows --> Windows 10 Pro / Enterprise (required for Xilinx ISE Design Suite)
+7. If you use Windows --> Windows 10 Pro / Enterprise (required for Xilinx ISE Design Suite 14.7)
 
 
 ### Repo cloning
@@ -55,7 +55,7 @@ To clone this repo open your terminal and run:
 
 `git clone https://github.com/MattiaDif/closed-loop-neuroengineering`
 
-To start using all the repo functionalities avoiding potential missing file issues, please run the installer.m script to add to your Matlab path all the project.
+Before start, please run the installer.m script to add to your Matlab path all the project.
 
 ## GETTING STARTED TUTORIAL
 
