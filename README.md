@@ -1,3 +1,6 @@
+[![View model-based-spike-detection on File Exchange](https://www.mathworks.com/matlabcentral/images/matlab-file-exchange.svg)](https://it.mathworks.com/matlabcentral/fileexchange/135592-closed-loop-neuroengineering)
+
+
 # A reference architecture for closed-loop systems in the neurotechnology field
 
 This project comes from a collaboration between the Rehab Technologies Lab at the Italian Institute of Technologies (Genoa) and the MathWorks® company.
