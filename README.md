@@ -32,10 +32,12 @@ For a deeper description about the repo content, please refer to this link: [rep
 ### Required Software
 
 1. Matlab R2020a
-2. MathWorks HDL Coder™
-3. MathWorks Fixed-Point Designer
-4. Xilinx ISE Design Suite 14.7
-5. If you use Windows --> Windows 10 Pro / Enterprise (required for Xilinx ISE Design Suite)
+2. Simulink®
+3. MathWorks HDL Coder™
+4. MathWorks Fixed-Point Designer
+5. Signal Processing Toolbox
+6. Xilinx ISE Design Suite 14.7
+7. If you use Windows --> Windows 10 Pro / Enterprise (required for Xilinx ISE Design Suite)
 
 
 ### Repo cloning
