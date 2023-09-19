@@ -31,8 +31,7 @@ Retracing these steps, the user will be driven through the development process o
 ## REPO CONTENT OVERVIEW
 
 1. Custom_architecture contains all the file/scripts/models and examples to develop from scratch a closed-loop system by exploiting a model-based design approach.
-2. Spike_Detection_models contains all the single- and multi-channel spike detection models developed in Simulink with data to test how they function.
-3. Videoguide contains a couple of tutorial videos about model design and FPGA implementation.
+2. Videoguide folder contains a couple of tutorial videos about model design and FPGA implementation.
 
 For a deeper description about the repo content, please refer to this link: [repo overview](https://mattia-di-florio.gitbook.io/closed-loop-neuroengineering/closed-loop-neuroscience-repo).
 
@@ -73,16 +72,6 @@ Backstage of the project: brief introduction of the leading concept and how the 
 A synthetic neuronal dataset was built to test the spike detection model developed in Simulink by exploiting MEArec ([MEArec repo](https://github.com/alejoe91/MEArec)). Synthetic data have been used in order to have a total control on the position and number of spikes in the signal.
 
 Further details at: [here](https://mattia-di-florio.gitbook.io/closed-loop-neuroengineering/background/1.-synthetic-neuronal-dataset).
-
-### Spike detection models
-
-Single-channel and multi-channel spike detection models has been developed in Simulink to investigate their feasibility in a real-time environment. The algorithms are subdivided among 3 main categories according to the spike detection methods found in literature:
-
-1. Sample Thresholding: a spike is detected if the sample overcomes a threshold.
-2. Energy Operator: non-linear energy operator (NEO) computation to enhance the high frequency content. A spike is detected if the NEO sample overcomes a threshold.
-3. Template Matching: spike detection based on the similarity between a waveform and a template. A spike is detected if the similarity metric is greater than a set value.
-
-Further details at: [here](https://mattia-di-florio.gitbook.io/closed-loop-neuroengineering/background/2.-spike-detection-models).
 
 ### Fixed-point architecture
 
