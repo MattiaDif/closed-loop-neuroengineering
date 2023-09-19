@@ -1,5 +1,11 @@
 [![View model-based-spike-detection on File Exchange](https://www.mathworks.com/matlabcentral/images/matlab-file-exchange.svg)](https://it.mathworks.com/matlabcentral/fileexchange/135592-closed-loop-neuroengineering)
 
+<p align="center">
+
+<img src="https://github.com/StefanoBuccelli/closed-loop-neuroscience/blob/master/Images//closed-loop.png?raw=true" width="250">
+
+</p>
+
 
 # A reference architecture for closed-loop systems in the neurotechnology field
 
