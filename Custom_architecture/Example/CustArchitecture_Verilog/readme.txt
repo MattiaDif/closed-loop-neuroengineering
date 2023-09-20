@@ -1,1 +1,0 @@
-Verilog code generated from CustomArchitecture Simulink model
