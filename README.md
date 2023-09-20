@@ -105,7 +105,7 @@ For any questions, please reach via email Mattia Di Florio (di.florio.mattia@gma
 
 
 ## REFERENCE
-For further information please refer to the scientific publication: [link](https://doi.org/10.1101/2023.09.11.557151)
+For further information please refer to the scientific publication: [link](https://doi.org/10.1101/2023.09.11.557151).
 
 If you use this repo, please cite:
 
