@@ -11,13 +11,11 @@
 
 This project comes from a collaboration between the Rehab Technologies Lab at the Italian Institute of Technologies (Genoa) and the MathWorks® company.
 
-The goal is to provide a rapid-prototyping, model-based design architecture to speed up the implementation of closed-loop systems for neuroengineering application on FPGAs. The repo consists in a customized Simulink library to develop personalized spike detection algorithms for the Intan RHS Stim/Recording System ([Intan website](https://intantech.com/RHS_system.html)). This is reached by means of the following process:
+The goal is to provide a rapid-prototyping, model-based design architecture to speed up the implementation of closed-loop systems for neuroengineering application on FPGAs. This has been reached by means of the following process:
 
 1. Build a reference Simulink model to process neural data;
 2. Take advantage of the Fixed-Point Designer and HDL code generator provided by MathWorks to implement the model on FPGA;
-3. Implementation and test on commercially available systems such as the Inatn RHS Stim/Recording System.
-
-Retracing these steps, the user will be driven through the development process of a closed-loop system starting from the model design until the hardware immplementation.
+3. Implementation and test on commercially available systems such as the Inatn RHS Stim/Recording System ([Intan website](https://intantech.com/RHS_system.html)).
 
 <br />
 
@@ -30,10 +28,10 @@ Retracing these steps, the user will be driven through the development process o
 
 ## REPO CONTENT OVERVIEW
 
-1. Custom_architecture contains all the file/scripts/models and examples to develop from scratch a closed-loop system by exploiting a model-based design approach.
-2. Videoguide folder contains a couple of tutorial videos about model design and FPGA implementation.
+1. Custom_architecture contains all the file/scripts/models and examples to build from scratch a neuroengineering system by exploiting a model-based design approach.
+2. Videoguide folder which contains two tutorial videos about model design in Simulink and FPGA implementation.
 
-For a deeper description about the repo content, please refer to this link: [repo overview](https://mattia-di-florio.gitbook.io/closed-loop-neuroengineering/closed-loop-neuroscience-repo).
+For a deeper description about the repo content, please refer to: [repo overview](https://mattia-di-florio.gitbook.io/closed-loop-neuroengineering/closed-loop-neuroscience-repo).
 
 ## INSTALLATION
 
@@ -54,30 +52,15 @@ To clone this repo open your terminal and run:
 
 `git clone https://github.com/MattiaDif/closed-loop-neuroengineering`
 
-Before start, please run the installer.m script to add to your Matlab path all the project.
+Before start, please run the installer.m script to add to your Matlab path all the project!
 
 ## GETTING STARTED TUTORIAL
 
-If you just want to have a look at the Simulink library functionalities and how to implement your model on FPGA, please download the example application here: [MISSING LINK].
-
-A supplemental explanation about how to use the repo is provided at this link: [tutorial](https://mattia-di-florio.gitbook.io/closed-loop-neuroengineering/getting-started-tutorial).
-
+An explanation about how to use the repo is provided at this link: [tutorial](https://mattia-di-florio.gitbook.io/closed-loop-neuroengineering/getting-started-tutorial).
 
 ## BACKGROUND
 
-Backstage of the project: brief introduction of the leading concept and how the main goals have been achieved. 
-
-### Synthetic Neuronal dataset
-
-A synthetic neuronal dataset was built to test the spike detection model developed in Simulink by exploiting MEArec ([MEArec repo](https://github.com/alejoe91/MEArec)). Synthetic data have been used in order to have a total control on the position and number of spikes in the signal.
-
-Further details at: [here](https://mattia-di-florio.gitbook.io/closed-loop-neuroengineering/background/1.-synthetic-neuronal-dataset).
-
-### Fixed-point architecture
-
-During modelling, the default setting allows to design in floating-point architecture. Thinking about the next FPGA implementation, the models have been converted in fixed-point architecture according the FPGA specs.
-
-Further details at: [here](https://mattia-di-florio.gitbook.io/closed-loop-neuroengineering/background/3.-fixed-point-architecture).
+Backstage of the project: brief introduction of the main concepts and how the main goals have been achieved. 
 
 ### Custom Architecture
 
@@ -87,25 +70,25 @@ Further details at: [here](https://mattia-di-florio.gitbook.io/closed-loop-neuro
 
 ### Custom Architecture on FPGA
 
-After the modelling of the custom architecture, the next step has been its implementation on FPGA. In this step, the MathWorks HDL Coder™ is required to generate the Verilog code to be included in the custom Verilog code.
+After the modelling of the custom architecture, the next step has been its implementation on FPGA. In this step, the MathWorks HDL Coder™ is required to generate the Verilog code to be integrated into the original Verilog architecture.
 
 Further details at: [here](https://mattia-di-florio.gitbook.io/closed-loop-neuroengineering/background/5.-custom-architecture-on-fpga).
 
 ### GUI Customization
 
-To provide custom communication between the Host PC and the FPGA a personalization of the original Intan GUI has been developed. The two main modification at the C++/Qt code regards the possibility to enable or not the CA from the user interface and adding an action to load custom parameters for the spike detection.
+To provide custom communication between the Host PC and the FPGA a personalization of the original Intan GUI has been developed. The two main modification at the C++/Qt code regards the possibility to enable or not the CA from the user interface, and adding an option to load custom parameters for the spike detection.
 
 Further details at: [here](https://mattia-di-florio.gitbook.io/closed-loop-neuroengineering/background/6.-gui-customization).
 
 ### Simulink Library
 
-Aiming at simplifying the development process of closed-loop system reducing the entry barrier for a non-expert, a custom Simulink library with ready-to-use blocks has been developed. Thus, the user can design his own algorithms for the Intan RHS system just connecting the already tested and preconfigured Simulink blocks.
+A custom Simulink library with ready-to-use blocks has been developed. Thus, the user can design his own algorithms for the Intan RHS system just connecting the already tested and preconfigured Simulink blocks.
 
 Further details at: [here](https://mattia-di-florio.gitbook.io/closed-loop-neuroengineering/background/7.-simulink-library).
 
 ## DOCUMENTATION
 
-You can find the closed-loop-neuroscience detailed documentation here: [docs](https://mattia-di-florio.gitbook.io/closed-loop-neuroengineering/).
+You can find the closed-loop-neuroengineering documentation here: [docs](https://mattia-di-florio.gitbook.io/closed-loop-neuroengineering/).
 
 
 ## CORE TEAM
