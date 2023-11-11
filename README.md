@@ -2,7 +2,7 @@
 
 <p align="center">
 
-<img src="https://github.com/StefanoBuccelli/closed-loop-neuroscience/blob/master/Images//closed-loop.png?raw=true" width="250">
+<img src="https://github.com/MattiaDif/closed-loop-neuroengineering/blob/master/Images/closed-loop.png?raw=true" width="250">
 
 </p>
 
