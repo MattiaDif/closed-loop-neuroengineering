@@ -1,5 +1,3 @@
-[![View model-based-spike-detection on File Exchange](https://www.mathworks.com/matlabcentral/images/matlab-file-exchange.svg)](https://it.mathworks.com/matlabcentral/fileexchange/135592-closed-loop-neuroengineering)
-
 <p align="center">
 
 <img src="https://github.com/MattiaDif/closed-loop-neuroengineering/blob/master/Images/closed-loop.png?raw=true" width="250">
